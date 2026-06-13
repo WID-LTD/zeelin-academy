@@ -38,3 +38,11 @@ export function clearUserAuth() {
   localStorage.removeItem('user-token')
   localStorage.removeItem('user-data')
 }
+
+export const AUTH_EVENT = 'auth-changed'
+
+export function dispatchAuthEvent() {
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new CustomEvent(AUTH_EVENT))
+  }
+}

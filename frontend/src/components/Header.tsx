@@ -7,22 +7,33 @@ import { Search, Moon, Sun, Menu, X } from 'lucide-react'
 import { useTheme } from './ThemeProvider'
 import { usePathname, useRouter } from 'next/navigation'
 import { useEffect } from 'react'
+import { getUserToken, clearUserAuth, AUTH_EVENT } from '@/lib/auth'
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isAdmin, setIsAdmin] = useState(false)
   const { theme, toggle } = useTheme()
   const pathname = usePathname()
   const router = useRouter()
 
   useEffect(() => {
-    const token = localStorage.getItem('zeelin_token')
-    if (token) setIsLoggedIn(true)
+    const token = getUserToken()
+    setIsLoggedIn(!!token)
+    setIsAdmin(!!localStorage.getItem('admin-token'))
+  }, [pathname])
+
+  useEffect(() => {
+    const handler = () => {
+      setIsLoggedIn(!!getUserToken())
+      setIsAdmin(!!localStorage.getItem('admin-token'))
+    }
+    window.addEventListener(AUTH_EVENT, handler)
+    return () => window.removeEventListener(AUTH_EVENT, handler)
   }, [])
 
   const handleSignOut = () => {
-    localStorage.removeItem('zeelin_token')
-    localStorage.removeItem('zeelin_user')
+    clearUserAuth()
     setIsLoggedIn(false)
     router.push('/')
   }
@@ -68,6 +79,7 @@ export default function Header() {
             <div className="flex items-center gap-3 ml-2">
               {isLoggedIn ? (
                 <>
+                  {isAdmin && <Link href="/admin" className="px-3 py-1.5 text-xs font-bold gold border border-[color:var(--brand-gold)] rounded-lg">Admin</Link>}
                   <Link href="/dashboard" className="px-5 py-2 text-sm font-medium border border-[color:var(--border)] rounded-lg hover:bg-[color:var(--bg-secondary)] transition-colors">
                     Dashboard
                   </Link>
@@ -118,6 +130,7 @@ export default function Header() {
               <Link href="/contact" className={`nav-link text-base font-medium py-2 px-2 ${isActive('/contact') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Contact</Link>
               {isLoggedIn ? (
                 <>
+                  {isAdmin && <Link href="/admin" className="nav-link text-base font-medium py-2 px-2" onClick={() => setMenuOpen(false)}>Admin Panel</Link>}
                   <Link href="/dashboard" className={`nav-link text-base font-medium py-2 px-2 mt-2 ${isActive('/dashboard') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Dashboard</Link>
                   <button onClick={() => { handleSignOut(); setMenuOpen(false); }} className="btn-gold px-6 py-3 mt-2 text-base font-bold text-center shadow-md block">Sign Out</button>
                 </>

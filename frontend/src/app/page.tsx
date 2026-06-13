@@ -474,8 +474,8 @@ export default function Home() {
           <div className="bg-[color:var(--bg-card)] border border-[color:var(--brand-gold)] rounded-3xl p-10 md:p-16 text-center shadow-[0_20px_60px_rgba(212,175,55,0.1)]">
             <h2 className="font-display text-4xl font-bold mb-4 text-[color:var(--text-core)]">Join Our Newsletter</h2>
             <p className="text-secondary mb-8 max-w-xl mx-auto">Subscribe to get weekly insights on Tech, Business, exclusive course discounts, and free resources.</p>
-            <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto" onSubmit={(e) => { e.preventDefault(); }}>
-              <input type="email" placeholder="Enter your email address" required className="flex-grow px-6 py-4 rounded-xl border border-[color:var(--border)] bg-[color:var(--bg-primary)] text-[color:var(--text-core)] outline-none focus:border-[color:var(--brand-gold)] focus:ring-2 focus:ring-[rgba(212,175,55,0.2)] transition-all" />
+              <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto" onSubmit={async (e) => { e.preventDefault(); const fd = new FormData(e.currentTarget); const email = fd.get('email'); if (!email) return; try { await fetch('/api/newsletter', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) }); alert('Subscribed successfully!'); e.currentTarget.reset(); } catch { alert('Subscription failed. Please try again.'); } }}>
+              <input type="email" name="email" placeholder="Enter your email address" required className="flex-grow px-6 py-4 rounded-xl border border-[color:var(--border)] bg-[color:var(--bg-primary)] text-[color:var(--text-core)] outline-none focus:border-[color:var(--brand-gold)] focus:ring-2 focus:ring-[rgba(212,175,55,0.2)] transition-all" />
               <button type="submit" className="btn-gold px-8 py-4 rounded-xl font-bold text-black uppercase tracking-wider whitespace-nowrap">Subscribe</button>
             </form>
             <div className="flex items-center justify-center gap-6 mt-8 text-sm text-muted">

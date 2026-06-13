@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { publicApi } from '@/lib/api'
 import type { LoginResponse } from '@/lib/types'
 import { AlertCircle, Loader2, ArrowLeft } from 'lucide-react'
+import { dispatchAuthEvent } from '@/lib/auth'
 
 interface LoginFormProps {
   title: string
@@ -42,6 +43,7 @@ export default function LoginForm({
       localStorage.setItem(tokenKey, data.token)
       localStorage.setItem(userKey, JSON.stringify(data.user))
       storageSetter?.(data.token, data.user)
+      dispatchAuthEvent()
       router.push(redirectTo)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Connection failed')
