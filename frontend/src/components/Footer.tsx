@@ -1,23 +1,8 @@
-'use client'
-
 import Link from 'next/link'
 import Image from 'next/image'
 import { Globe, MapPin, Mail, Phone } from 'lucide-react'
-import { useState, useEffect } from 'react'
-import { getUserToken } from '@/lib/auth'
 
 export default function Footer() {
-  const [show, setShow] = useState(true)
-
-  useEffect(() => {
-    const check = () => setShow(!getUserToken() && !localStorage.getItem('admin-token'))
-    check()
-    window.addEventListener('auth-changed', check)
-    return () => window.removeEventListener('auth-changed', check)
-  }, [])
-
-  if (!show) return null
-
   return (
     <footer id="contact" className="bg-[color:var(--bg-primary)] border-t border-[color:var(--border)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
