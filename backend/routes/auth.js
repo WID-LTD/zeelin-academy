@@ -1,0 +1,188 @@
+const { Router } = require('express')
+const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
+const { pool } = require('../db')
+
+const router = Router()
+const JWT_SECRET = process.env.JWT_SECRET || 'zeelin-academy-jwt-secret-2026'
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'ikewisdom92@gmail.com'
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin'
+
+// Seed admin on first run
+async function seedAdmin() {
+  try {
+    const existing = await pool.query('SELECT * FROM users WHERE email = $1', [ADMIN_EMAIL])
+    if (existing.rows.length === 0) {
+      const hashed = await bcrypt.hash(ADMIN_PASSWORD, 10)
+      await pool.query(
+        'INSERT INTO users (email, password, full_name, phone, role) VALUES ($1, $2, $3, $4, $5)',
+        [ADMIN_EMAIL, hashed, 'Admin', '', 'admin']
+      )
+      console.log('Admin user seeded')
+    }
+  } catch (err) {
+    console.error('Seed admin error:', err.message)
+  }
+}
+// Admin login
+router.post('/login', async (req, res) => {
+  try {
+    const { email, password } = req.body
+    const result = await pool.query('SELECT * FROM users WHERE email = $1', [email])
+    const user = result.rows[0]
+    if (!user) return res.status(401).json({ error: 'Invalid credentials' })
+
+    const valid = await bcrypt.compare(password, user.password)
+    if (!valid) return res.status(401).json({ error: 'Invalid credentials' })
+
+    const token = jwt.sign({ id: user.id, email: user.email, role: user.role }, JWT_SECRET, { expiresIn: '7d' })
+    res.cookie('token', token, { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'strict', maxAge: 7 * 24 * 60 * 60 * 1000 })
+    res.json({ token, user: { id: user.id, email: user.email, full_name: user.full_name, role: user.role } })
+  } catch (err) {
+    console.error('Login error:', err.message)
+    res.status(500).json({ error: 'Login failed' })
+  }
+})
+
+// User registration (for student accounts)
+router.post('/register', async (req, res) => {
+  try {
+    const { email, password, full_name, phone } = req.body
+    const existing = await pool.query('SELECT * FROM users WHERE email = $1', [email])
+    if (existing.rows.length > 0) return res.status(400).json({ error: 'User already exists' })
+
+    const hashed = await bcrypt.hash(password, 10)
+    const result = await pool.query(
+      'INSERT INTO users (email, password, full_name, phone, role) VALUES ($1, $2, $3, $4, $5) RETURNING id, email, full_name, role',
+      [email, hashed, full_name, phone, 'student']
+    )
+    res.json({ user: result.rows[0] })
+  } catch (err) {
+    res.status(500).json({ error: 'Registration failed' })
+  }
+})
+
+// Forgot password
+router.post('/forgot-password', async (req, res) => {
+  try {
+    const { email } = req.body
+    const result = await pool.query('SELECT * FROM users WHERE email = $1', [email])
+    if (result.rows.length === 0) return res.status(404).json({ error: 'Email not found' })
+
+    // Generate reset token
+    const resetToken = jwt.sign({ email }, JWT_SECRET, { expiresIn: '1h' })
+    
+    // Send email via Brevo
+    try {
+      await fetch('https://api.brevo.com/v3/smtp/email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'api-key': process.env.BREVO_API_KEY || ''
+        },
+        body: JSON.stringify({
+          sender: { name: 'Zeelin Academy', email: process.env.BREVO_SENDER_EMAIL || 'noreply@zeelinacademy.com' },
+          to: [{ email }],
+          subject: 'Reset your Zeelin Academy Password',
+          htmlContent: `<p>You requested a password reset. Click the link below to reset it:<br/><br/><a href="http://localhost:3000/dashboard/reset-password?token=${resetToken}">Reset Password</a></p>`
+        })
+      })
+    } catch (e) {
+      console.error('Password reset email error:', e)
+    }
+
+    res.json({ message: 'Reset link sent' })
+  } catch (err) {
+    res.status(500).json({ error: 'Failed' })
+  }
+})
+
+// Verify token middleware
+function verifyToken(req, res, next) {
+  const token = req.cookies.token || (req.headers.authorization ? req.headers.authorization.split(' ')[1] : null)
+  if (!token) return res.status(401).json({ error: 'No token' })
+  try {
+    const decoded = jwt.verify(token, JWT_SECRET)
+    req.user = decoded
+    next()
+  } catch {
+    res.status(401).json({ error: 'Invalid token' })
+  }
+}
+
+// Get admin dashboard stats
+router.get('/admin/stats', verifyToken, async (req, res) => {
+  if (req.user.role !== 'admin') return res.status(403).json({ error: 'Forbidden' })
+  try {
+    const total = await pool.query('SELECT COUNT(*) FROM enrollments')
+    const free = await pool.query("SELECT COUNT(*) FROM enrollments WHERE enrollment_type = 'free'")
+    const paid = await pool.query("SELECT COUNT(*) FROM enrollments WHERE enrollment_type = 'paid'")
+    const verified = await pool.query('SELECT COUNT(*) FROM verified_enrollments')
+    res.json({
+      total: parseInt(total.rows[0].count),
+      free: parseInt(free.rows[0].count),
+      paid: parseInt(paid.rows[0].count),
+      verified: parseInt(verified.rows[0].count)
+    })
+  } catch (err) {
+    res.status(500).json({ error: 'Failed' })
+  }
+})
+
+// Get all enrollments (admin)
+router.get('/admin/enrollments', verifyToken, async (req, res) => {
+  if (req.user.role !== 'admin') return res.status(403).json({ error: 'Forbidden' })
+  try {
+    const result = await pool.query('SELECT * FROM enrollments ORDER BY created_at DESC')
+    res.json(result.rows)
+  } catch (err) {
+    res.status(500).json({ error: 'Failed' })
+  }
+})
+
+// Get all users (admin)
+router.get('/admin/users', verifyToken, async (req, res) => {
+  if (req.user.role !== 'admin') return res.status(403).json({ error: 'Forbidden' })
+  try {
+    const result = await pool.query('SELECT id, email, full_name, phone, role, created_at FROM users ORDER BY created_at DESC')
+    res.json(result.rows)
+  } catch (err) {
+    res.status(500).json({ error: 'Failed' })
+  }
+})
+
+// Change user password (admin)
+router.post('/admin/change-password', verifyToken, async (req, res) => {
+  if (req.user.role !== 'admin') return res.status(403).json({ error: 'Forbidden' })
+  try {
+    const { user_id, password } = req.body
+    const hashed = await bcrypt.hash(password, 10)
+    await pool.query('UPDATE users SET password = $1 WHERE id = $2', [hashed, user_id])
+    res.json({ success: true })
+  } catch (err) {
+    res.status(500).json({ error: 'Failed' })
+  }
+})
+
+// Generate credentials for a verified enrollment (admin)
+router.post('/admin/generate-credentials', verifyToken, async (req, res) => {
+  if (req.user.role !== 'admin') return res.status(403).json({ error: 'Forbidden' })
+  try {
+    const { enrollment_id, email, full_name } = req.body
+    const existing = await pool.query('SELECT * FROM users WHERE email = $1', [email])
+    if (existing.rows.length > 0) return res.json({ message: 'User already has credentials', user: existing.rows[0] })
+
+    const genPassword = Math.random().toString(36).slice(-8)
+    const hashed = await bcrypt.hash(genPassword, 10)
+    const result = await pool.query(
+      'INSERT INTO users (email, password, full_name, role) VALUES ($1, $2, $3, $4) RETURNING id, email, full_name',
+      [email, hashed, full_name, 'student']
+    )
+    res.json({ user: result.rows[0], generatedPassword: genPassword })
+  } catch (err) {
+    res.status(500).json({ error: 'Failed' })
+  }
+})
+
+module.exports = router
+module.exports.seedAdmin = seedAdmin

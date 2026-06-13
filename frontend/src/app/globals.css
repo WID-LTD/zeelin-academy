@@ -1,0 +1,300 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black: #0f1115;
+  --black-light: #1a1d24;
+  --black-lighter: #242830;
+  --brand-gold: #D4AF37;
+  --brand-gold-dark: #B5952F;
+  --brand-gold-light: #F0C94F;
+  --brand-blue: var(--brand-gold);
+  --brand-blue-dark: var(--brand-gold-dark);
+}
+
+.light {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f3f5;
+  --text-core: #0f1115;
+  --text-primary: var(--text-core);
+  --text-secondary: #2d3748;
+  --text-muted: #4a5568;
+  --border: #e2e8f0;
+  --premium-border: var(--brand-gold);
+  --premium-shadow: 0 8px 30px rgba(223, 186, 107, 0.15);
+  --free-cta-text: var(--text-secondary);
+  --border-hover: var(--brand-gold);
+}
+
+.dark {
+  --bg-primary: #0f1115;
+  --bg-secondary: #1a1d24;
+  --bg-card: #242830;
+  --bg-card-hover: #2d323e;
+  --text-core: #f1f1f1;
+  --text-primary: var(--text-core);
+  --text-secondary: #cbd5e0;
+  --text-muted: #a0aec0;
+  --border: #2d3748;
+  --premium-border: var(--brand-gold);
+  --premium-shadow: 0 8px 30px rgba(223, 186, 107, 0.1);
+  --free-cta-text: var(--text-secondary);
+  --border-hover: var(--brand-gold);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 2px solid var(--brand-gold);
+  outline-offset: 4px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-core);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::selection {
+  background: var(--brand-gold);
+  color: var(--black);
+}
+
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.gold, .gold-text {
+  color: var(--brand-gold);
+}
+
+.blue {
+  color: var(--brand-blue);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+  font-size: 1.0625rem;
+}
+
+.text-muted {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.gold-bg {
+  background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-dark) 100%);
+}
+
+.gold-border {
+  border-color: var(--brand-gold);
+}
+
+.blue-border {
+  border-color: var(--brand-blue);
+}
+
+.glow-gold {
+  box-shadow: 0 0 30px rgba(223, 186, 107, 0.15);
+}
+
+.glow-blue {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.dark .card-hover:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-dark) 100%);
+  color: var(--black);
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 20px rgba(223, 186, 107, 0.35);
+}
+
+.btn-outline-gold {
+  border: 1.5px solid var(--brand-gold);
+  color: var(--brand-gold);
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-gold:hover {
+  background: rgba(223, 186, 107, 0.1);
+}
+
+.btn-blue {
+  background: var(--brand-blue);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-blue:hover {
+  background: var(--brand-blue-dark);
+  transform: scale(1.02);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.35);
+}
+
+.btn-outline-blue {
+  border: 1.5px solid var(--brand-blue);
+  color: var(--brand-blue);
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-blue:hover {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.card-premium {
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(223, 186, 107, 0.05) 100%);
+  border: 1px solid rgba(223, 186, 107, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.card-premium:hover {
+  border-color: rgba(223, 186, 107, 0.4);
+  box-shadow: 0 8px 30px rgba(223, 186, 107, 0.1);
+  transform: translateY(-4px);
+}
+
+.card-free {
+  opacity: 1;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(56, 189, 248, 0.04) 100%);
+  transition: all 0.3s ease;
+}
+
+.card-free:hover {
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 8px 30px rgba(56, 189, 248, 0.08);
+  transform: translateY(-4px);
+}
+
+.btn-premium-cta {
+  background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-dark) 100%);
+  color: var(--black);
+  font-weight: 700;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-premium-cta:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 20px rgba(223, 186, 107, 0.3);
+}
+
+.btn-free-cta {
+  border: 1.5px solid var(--border);
+  color: var(--text-secondary);
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-free-cta:hover {
+  border-color: var(--brand-gold);
+  color: var(--brand-gold);
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--brand-gold);
+}
+
+.nav-link.active {
+  color: var(--brand-gold);
+}
+
+.footer-link {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: var(--brand-gold);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-gold);
+  border-radius: 4px;
+}
+
+@keyframes blink-cta {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(212, 175, 55, 0);
+  }
+}
+@keyframes pulse-glow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.9;
+  }
+}
+.btn-blink {
+  animation: blink-cta 2s infinite, pulse-glow 2s infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-blink,
+  .btn-blink::before {
+    animation: none;
+  }
+}
