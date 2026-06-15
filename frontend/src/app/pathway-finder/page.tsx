@@ -265,7 +265,7 @@ export default function PathwayFinder() {
 
       <div>
         <label className="block text-md font-semibold mb-2 text-[color:var(--text-core)]">Tell us anything else about your career goal</label>
-        <p className="text-xs text-[color:var(--text-muted)] mb-3">Example: "I want to become an IT Business Analyst," or "I want to move into data projects."</p>
+        <p className="text-xs text-[color:var(--text-muted)] mb-3">Example: &quot;I want to become an IT Business Analyst,&quot; or &quot;I want to move into data projects.&quot;</p>
         <textarea 
           value={formData.q9} 
           onChange={e => setFormData({...formData, q9: e.target.value})} 
