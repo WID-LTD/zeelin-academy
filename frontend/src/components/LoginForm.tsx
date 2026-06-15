@@ -62,8 +62,8 @@ export default function LoginForm({
                 src="/logo.png"
                 alt="Zeelin Academy"
                 width={150}
-                height={45}
-                className="object-contain mb-10 drop-shadow-sm"
+                height={54}
+                className="w-auto h-[48px] object-contain mb-10 drop-shadow-sm logo-filter-theme"
                 priority
               />
             </Link>
