@@ -4,11 +4,13 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useTheme } from '@/components/ThemeProvider'
 import { publicApi } from '@/lib/api'
 import { dispatchAuthEvent } from '@/lib/auth'
 import { AlertCircle, Loader2, ArrowLeft } from 'lucide-react'
 
 export default function LoginPage() {
+  const { theme } = useTheme()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -58,7 +60,7 @@ export default function LoginPage() {
         <div className="w-full md:w-[50%] p-8 md:p-14 lg:p-16 flex flex-col justify-center relative">
           <div className="mb-10">
             <Link href="/">
-              <Image src="/logo.png" alt="Zeelin Academy" width={150} height={45} className="object-contain mb-10 drop-shadow-sm" priority />
+              <Image src={theme === 'dark' ? '/logo.png' : '/logo-light.png'} alt="Zeelin Academy" width={150} height={54} className="w-auto h-[48px] object-contain mb-10 drop-shadow-sm" priority />
             </Link>
             <h1 className="text-3xl font-bold text-[color:var(--text-core)] mb-3">Welcome Back</h1>
             <p className="text-[color:var(--text-muted)] text-sm">Sign in to your account to continue.</p>

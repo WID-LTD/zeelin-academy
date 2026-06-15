@@ -172,8 +172,17 @@ export default function ResourcesPage() {
               {templates.map((temp) => (
                 <div 
                   key={temp.id} 
-                  className={`p-6 rounded-2xl border bg-[color:var(--bg-card)] transition-all cursor-pointer flex flex-col justify-between ${selectedTemplate?.id === temp.id ? 'border-[color:var(--brand-gold)] shadow-lg' : 'border-[color:var(--border)] hover:border-[color:var(--brand-gold)]/50'}`}
+                  role="button"
+                  tabIndex={0}
+                  aria-pressed={selectedTemplate?.id === temp.id}
+                  className={`p-6 rounded-2xl border bg-[color:var(--bg-card)] transition-all cursor-pointer flex flex-col justify-between focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-gold)] ${selectedTemplate?.id === temp.id ? 'border-[color:var(--brand-gold)] shadow-lg' : 'border-[color:var(--border)] hover:border-[color:var(--brand-gold)]/50'}`}
                   onClick={() => setSelectedTemplate(temp)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      setSelectedTemplate(temp)
+                    }
+                  }}
                 >
                   <div>
                     <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4 bg-[rgba(223,186,107,0.08)]">
@@ -195,7 +204,7 @@ export default function ResourcesPage() {
           </div>
 
           {/* Template Detail Viewer - 5 columns */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5" aria-live="polite">
             {selectedTemplate ? (
               <div className="p-8 rounded-2xl border bg-[color:var(--bg-card)] border-[color:var(--border)] shadow-xl relative overflow-hidden animate-in fade-in duration-300">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-[rgba(212,175,55,0.02)] rounded-bl-full pointer-events-none"></div>

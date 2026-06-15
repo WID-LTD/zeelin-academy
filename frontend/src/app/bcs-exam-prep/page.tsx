@@ -182,7 +182,7 @@ export default function BcsExamPrepPage() {
                 </div>
 
                 {isAnswered && (
-                  <div className="p-4 rounded-xl bg-[color:var(--bg-secondary)] border border-[color:var(--border)] mb-6 animate-in fade-in duration-300">
+                  <div className="p-4 rounded-xl bg-[color:var(--bg-secondary)] border border-[color:var(--border)] mb-6 animate-in fade-in duration-300" aria-live="polite">
                     <h4 className="text-sm font-bold text-[color:var(--text-core)] mb-1">Explanation:</h4>
                     <p className="text-sm text-secondary leading-relaxed">
                       {quizQuestions[currentQuestion].explanation}
