@@ -19,11 +19,11 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center" aria-label="Zeelin Academy - Go to homepage">
             <Image
-              src="/logo.png"
+              src={theme === 'dark' ? '/logo.png' : '/logo-light.png'}
               alt="Zeelin Academy Logo"
               width={166}
               height={60}
-              className="w-auto h-[48px] md:h-[54px] logo-filter-theme object-contain"
+              className="w-auto h-[48px] md:h-[54px] object-contain"
               priority
             />
           </Link>

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useTheme } from './ThemeProvider'
 import { publicApi } from '@/lib/api'
 import type { LoginResponse } from '@/lib/types'
 import { AlertCircle, Loader2, ArrowLeft } from 'lucide-react'
@@ -27,6 +28,7 @@ export default function LoginForm({
   showForgotPassword,
   storageSetter,
 }: LoginFormProps) {
+  const { theme } = useTheme()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -59,11 +61,11 @@ export default function LoginForm({
           <div className="mb-10">
             <Link href="/">
               <Image
-                src="/logo.png"
+                src={theme === 'dark' ? '/logo.png' : '/logo-light.png'}
                 alt="Zeelin Academy"
                 width={150}
                 height={54}
-                className="w-auto h-[48px] object-contain mb-10 drop-shadow-sm logo-filter-theme"
+                className="w-auto h-[48px] object-contain mb-10 drop-shadow-sm"
                 priority
               />
             </Link>
