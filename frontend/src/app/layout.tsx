@@ -7,7 +7,7 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'Zeelin Academy | Diploma in Business Analysis',
   description: 'Transform your career with Zeelin Academy - Pioneered by Dr. Franklin Kalu. Structured, practical Business Analysis education.',
-  icons: { icon: '/logo.png', apple: '/logo.png' }
+  icons: { icon: '/favicon.png', apple: '/favicon.png' }
 }
 
 export default function RootLayout({
