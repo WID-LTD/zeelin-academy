@@ -1,155 +1,221 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import SafeImage from '@/components/SafeImage'
-import { Zap, Eye, ShieldCheck, Globe, HeartHandshake, Award } from 'lucide-react'
+import { 
+  Sparkles, 
+  Map, 
+  HeartHandshake, 
+  Award, 
+  BookOpen, 
+  Eye, 
+  Zap, 
+  ArrowRight,
+  ShieldCheck,
+  CheckCircle2,
+  XCircle
+} from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'About Us | Zeelin Academy',
-  description: 'Learn about Zeelin Academy, our mission, our founder Dr. Franklin Kalu, and our commitment to Business Analysis education.',
+  title: 'About Zeelin Academy | Our Story & Mission',
+  description: 'Discover the story, mission, and values behind Zeelin Academy. Founded by Dr. Franklin Kalu to make Business Analysis learning simple, structured, and achievable.',
 }
 
-const timeline = [
-  { year: '2018', title: 'Zeelin Consulting Founded', desc: 'Dr. Franklin Kalu establishes Zeelin Consulting in the UK, providing business transformation and strategic advisory services.' },
-  { year: '2020', title: 'Online Training Launch', desc: 'Zeelin begins offering specialized Business Analysis training programs, quickly gaining recognition for practical, industry-aligned content.' },
-  { year: '2022', title: 'Zeelin Academy Born', desc: 'The Academy is formally launched as a dedicated learning platform, expanding the curriculum to include diploma-level programs.' },
-  { year: '2024', title: 'Global Expansion', desc: 'Zeelin Academy reaches students in over 20 countries, with a 95% satisfaction rate and growing industry partnerships.' },
-  { year: '2026', title: 'AI-Powered Learning', desc: 'The Academy integrates AI-driven tools for personalized learning paths, automated progress tracking, and scalable student support.' },
+const transformations = [
+  { from: 'Confused', to: 'Clear', desc: 'No more guessing. We translate complex jargon into simple, actionable concepts.' },
+  { from: 'Overwhelmed', to: 'Structured', desc: 'Follow a clear step-by-step pathway designed for busy schedules.' },
+  { from: 'Afraid of exams', to: 'Exam-ready', desc: 'Gain confidence with real-world practice questions and mock exam prep.' },
+  { from: 'Theory-only learning', to: 'Practical understanding', desc: 'Connect coursework directly to corporate Business Analysis environments.' },
 ]
 
 const values = [
-  { icon: <ShieldCheck className="w-6 h-6" />, title: 'Practical Excellence', desc: 'We believe in learning by doing. Every concept is reinforced with real-world case studies and hands-on exercises that prepare students for actual BA roles.' },
-  { icon: <Globe className="w-6 h-6" />, title: 'Global Perspective', desc: 'Business Analysis knows no borders. Our curriculum reflects international standards and best practices, preparing students for opportunities worldwide.' },
-  { icon: <HeartHandshake className="w-6 h-6" />, title: 'Community-Driven', desc: 'Learning is better together. We foster a supportive community where students, alumni, and instructors collaborate and grow.' },
-  { icon: <Award className="w-6 h-6" />, title: 'Lifetime Access', desc: 'Education should be a lasting investment. All purchased content comes with lifetime access and free updates to keep your skills current.' },
+  { 
+    icon: <Sparkles className="w-6 h-6 text-[color:var(--brand-gold)]" />, 
+    title: 'Clarity', 
+    desc: 'We explain difficult and complex Business Analysis topics in simple, everyday language.' 
+  },
+  { 
+    icon: <Map className="w-6 h-6 text-[color:var(--brand-gold)]" />, 
+    title: 'Structure', 
+    desc: 'We map out a clear, step-by-step pathway to guide you from start to finish without getting lost.' 
+  },
+  { 
+    icon: <HeartHandshake className="w-6 h-6 text-[color:var(--brand-gold)]" />, 
+    title: 'Support', 
+    desc: 'We do not leave learners to struggle alone. Our ecosystem offers guidance at every step of your study.' 
+  },
+  { 
+    icon: <Award className="w-6 h-6 text-[color:var(--brand-gold)]" />, 
+    title: 'Confidence', 
+    desc: 'We build your belief in yourself so you can confidently pass your exams and excel in your professional role.' 
+  },
+  { 
+    icon: <BookOpen className="w-6 h-6 text-[color:var(--brand-gold)]" />, 
+    title: 'Practical Learning', 
+    desc: 'We connect theory directly to actual business cases, simulations, and real corporate templates.' 
+  },
 ]
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-        <div className="absolute inset-0 bg-hero-glow-blue pointer-events-none" />
+      <section className="py-24 relative overflow-hidden bg-[color:var(--bg-secondary)]">
+        <div className="absolute inset-0 bg-hero-glow-blue pointer-events-none opacity-40" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6 text-[color:var(--brand-gold)] bg-[rgba(223,186,107,0.1)] border border-[rgba(223,186,107,0.2)]">
-              <span className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--brand-gold)' }} />
-              Our Story
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold mb-6 text-[color:var(--brand-gold)] bg-[rgba(223,186,107,0.1)] border border-[rgba(223,186,107,0.2)]">
+              <span className="w-2 h-2 rounded-full bg-[color:var(--brand-gold)]" />
+              About Zeelin Academy
             </div>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-[56px] font-bold leading-tight mb-6 text-[color:var(--text-core)]">
-              Empowering the Next Generation of <span className="gold">Business Analysts</span>
+              Simplifying Business Analysis for <span className="gold">Busy People</span>
             </h1>
-            <p className="text-xl text-secondary leading-relaxed max-w-3xl mx-auto">
-              Zeelin Academy was founded with a single mission: to bridge the gap between aspiring professionals
-              and global career opportunities in Business Analysis through structured, practical, and accessible education.
+            <p className="text-xl text-secondary leading-relaxed max-w-3xl mx-auto font-medium">
+              We understand that many learners are not full-time students. They are parents, workers, career changers, professionals, and beginners trying to study while managing real-life responsibilities.
             </p>
+            <p className="mt-4 text-lg text-muted max-w-2xl mx-auto">
+              That is why our training is designed to be practical, structured, visual, and highly supportive. We fit around your busy schedule to help you achieve your career goals.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Why We Exist */}
+      <section className="py-24 bg-[color:var(--bg-primary)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div className="lg:col-span-5 space-y-6">
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-[color:var(--text-core)]">
+                Why Zeelin Academy <span className="gold">Exists</span>
+              </h2>
+              <p className="text-secondary leading-relaxed text-lg">
+                Many people want to move into Business Analysis, gain certification, or improve their career, but they are often blocked by confusion, fear, lack of time, and overwhelming study materials.
+              </p>
+              <div className="p-6 rounded-2xl bg-[color:var(--bg-secondary)] border border-[color:var(--border)] font-bold text-[color:var(--text-accent)] text-lg">
+                Zeelin Academy exists to remove that confusion and guide you systematically.
+              </div>
+            </div>
+
+            <div className="lg:col-span-7">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {transformations.map((t, idx) => (
+                  <div 
+                    key={idx} 
+                    className="p-6 rounded-2xl border bg-[color:var(--bg-card)] border-[color:var(--border)] hover:border-[color:var(--brand-gold)] transition-all duration-300 shadow-sm hover:shadow-md group"
+                  >
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="text-sm font-bold uppercase tracking-wider text-red-500 line-through opacity-85 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+                        <XCircle className="w-4 h-4 shrink-0" /> {t.from}
+                      </span>
+                      <ArrowRight className="w-4 h-4 text-muted shrink-0" />
+                      <span className="text-sm font-bold uppercase tracking-wider text-green-600 dark:text-green-400 flex items-center gap-1">
+                        <CheckCircle2 className="w-4 h-4 shrink-0" /> {t.to}
+                      </span>
+                    </div>
+                    <p className="text-sm text-secondary leading-relaxed font-semibold">{t.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-24">
+      <section className="py-24 bg-[color:var(--bg-secondary)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="p-10 rounded-2xl border bg-[color:var(--bg-card)] border-[color:var(--border)]">
-              <div className="w-14 h-14 rounded-xl gold-bg flex items-center justify-center mb-6">
-                <Zap className="w-6 h-6" style={{ color: 'var(--brand-gold)' }} />
+            
+            <div className="p-10 rounded-2xl border bg-[color:var(--bg-card)] border-[color:var(--border)] hover:border-[color:var(--brand-gold)] transition-colors duration-300">
+              <div className="w-14 h-14 rounded-xl bg-[rgba(223,186,107,0.1)] border border-[rgba(223,186,107,0.2)] flex items-center justify-center mb-6">
+                <Zap className="w-7 h-7 text-[color:var(--brand-gold)]" />
               </div>
-              <h2 className="font-display text-2xl font-bold mb-4 text-[color:var(--text-core)]">Our <span className="gold">Mission</span></h2>
-              <p className="text-secondary leading-relaxed">
-                To provide world-class Business Analysis education that is practical, accessible, and globally recognized.
-                We equip our students with the skills, confidence, and credentials needed to excel in the international job market.
+              <h2 className="font-display text-2xl sm:text-3xl font-bold mb-4 text-[color:var(--text-core)]">
+                Our <span className="gold">Mission</span>
+              </h2>
+              <p className="text-secondary leading-relaxed text-lg font-medium">
+                Our mission is to make Business Analysis training simple, structured, and achievable for busy learners.
               </p>
             </div>
-            <div className="p-10 rounded-2xl border bg-[color:var(--bg-card)] border-[color:var(--border)]">
-              <div className="w-14 h-14 rounded-xl gold-bg flex items-center justify-center mb-6">
-                <Eye className="w-6 h-6" style={{ color: 'var(--brand-gold)' }} />
+
+            <div className="p-10 rounded-2xl border bg-[color:var(--bg-card)] border-[color:var(--border)] hover:border-[color:var(--brand-gold)] transition-colors duration-300">
+              <div className="w-14 h-14 rounded-xl bg-[rgba(223,186,107,0.1)] border border-[rgba(223,186,107,0.2)] flex items-center justify-center mb-6">
+                <Eye className="w-7 h-7 text-[color:var(--brand-gold)]" />
               </div>
-              <h2 className="font-display text-2xl font-bold mb-4 text-[color:var(--text-core)]">Our <span className="gold">Vision</span></h2>
-              <p className="text-secondary leading-relaxed">
-                To be the leading global platform for Business Analysis education, recognized for producing highly skilled,
-                certification-ready professionals who drive meaningful change in organizations worldwide.
+              <h2 className="font-display text-2xl sm:text-3xl font-bold mb-4 text-[color:var(--text-core)]">
+                Our <span className="gold">Vision</span>
+              </h2>
+              <p className="text-secondary leading-relaxed text-lg font-medium">
+                Our vision is to become a trusted academy for practical Business Analysis education, helping learners gain confidence, certification, and career direction.
               </p>
             </div>
+
           </div>
         </div>
       </section>
 
       {/* Our Values */}
-      <section className="py-24" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+      <section className="py-24 bg-[color:var(--bg-primary)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="font-display text-4xl sm:text-4xl lg:text-[44px] font-bold mb-4 text-[color:var(--text-core)]">
-              Our <span className="gold">Values</span>
+            <h2 className="font-display text-4xl font-bold mb-4 text-[color:var(--text-core)]">
+              Zeelin Academy <span className="gold">Values</span>
             </h2>
-            <p className="text-xl text-secondary max-w-2xl mx-auto">
-              The principles that guide everything we do at Zeelin Academy.
+            <p className="text-xl text-secondary max-w-2xl mx-auto font-medium">
+              The foundational pillars that guide how we support our students.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {values.map((v, i) => (
-              <div key={i} className="p-8 rounded-2xl border bg-[color:var(--bg-card)] border-[color:var(--border)]">
-                <div className="w-12 h-12 rounded-lg gold-bg flex items-center justify-center mb-5">
-                  {v.icon}
+              <div 
+                key={i} 
+                className="p-8 rounded-2xl border bg-[color:var(--bg-card)] border-[color:var(--border)] hover:border-[color:var(--brand-gold)] transition-all duration-300 shadow-sm flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-12 h-12 rounded-lg bg-[rgba(223,186,107,0.1)] border border-[rgba(223,186,107,0.2)] flex items-center justify-center mb-6">
+                    {v.icon}
+                  </div>
+                  <h3 className="font-display text-xl font-bold mb-3 text-[color:var(--text-core)]">{v.title}</h3>
                 </div>
-                <h3 className="font-display text-xl font-bold mb-3 text-[color:var(--text-core)]">{v.title}</h3>
-                <p className="text-sm text-muted leading-relaxed">{v.desc}</p>
+                <p className="text-sm text-muted leading-relaxed font-semibold mt-2">{v.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl sm:text-4xl lg:text-[44px] font-bold mb-4 text-[color:var(--text-core)]">
-              Our <span className="gold">Journey</span>
-            </h2>
-            <p className="text-xl text-secondary">From consulting to global academy — our story so far.</p>
-          </div>
-          <div className="relative">
-            <div className="absolute left-[31px] top-0 bottom-0 w-px bg-[color:var(--border)]" />
-            {timeline.map((item, i) => (
-              <div key={i} className="relative pl-20 pb-12 last:pb-0">
-                <div className="absolute left-0 top-0 w-[62px] h-[62px] rounded-full gold-bg flex items-center justify-center font-bold text-sm text-[color:var(--text-core)]">
-                  {item.year}
-                </div>
-                <div className="p-6 rounded-xl border bg-[color:var(--bg-card)] border-[color:var(--border)]">
-                  <h3 className="font-display text-xl font-bold mb-2 text-[color:var(--text-core)]">{item.title}</h3>
-                  <p className="text-secondary leading-relaxed">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Founder */}
-      <section className="py-24" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+      {/* Founder Story */}
+      <section className="py-24 bg-[color:var(--bg-secondary)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="relative w-[400px] h-[400px] mx-auto rounded-2xl overflow-hidden shadow-xl" style={{ backgroundColor: 'var(--bg-card)' }}>
+            
+            <div className="relative w-full aspect-square max-w-[400px] mx-auto rounded-3xl overflow-hidden shadow-xl" style={{ backgroundColor: 'var(--bg-card)' }}>
               <SafeImage src="/pic.jpg" alt="Dr. Franklin Kalu" fill className="object-cover" />
             </div>
-            <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-4 text-[color:var(--brand-gold)] bg-[rgba(223,186,107,0.1)] border border-[rgba(223,186,107,0.2)]">
-                Founder & Principal Consultant
+
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold text-[color:var(--brand-gold)] bg-[rgba(223,186,107,0.1)] border border-[rgba(223,186,107,0.2)]">
+                Founder & Transformation Leader
               </div>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold mb-4 text-[color:var(--text-core)]">
-                Meet <span className="gold">Dr. Franklin Kalu</span>
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-[color:var(--text-core)]">
+                The Story Behind the <span className="gold">Academy</span>
               </h2>
-              <p className="mb-6 leading-relaxed text-secondary text-lg">
-                Dr. Franklin Kalu is the founder of Zeelin Consulting and Zeelin Academy. He is a UK-based business
-                transformation consultant, strategic advisor, and professional training leader with a passion for
-                developing the next generation of Business Analysis talent.
-              </p>
-              <p className="mb-6 leading-relaxed text-secondary">
-                With a PhD, membership in the British Computer Society (MBCS), and certifications in PRINCE2 and AgilePM,
-                Dr. Kalu brings decades of practical experience to the classroom. His teaching philosophy centers on
-                simplifying complex BA concepts into memorable, actionable knowledge.
-              </p>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-4 text-secondary leading-relaxed text-lg">
+                <p className="font-medium">
+                  Zeelin Academy was founded by <strong>Dr Franklin Kalu</strong>, a business analysis professional, educator, and transformation-focused leader who understands the pressure of learning while balancing work, family, and personal responsibilities.
+                </p>
+                <p>
+                  After using a structured micro-learning method to complete Business Analysis study successfully, Franklin created Zeelin Academy to help other busy learners do the same.
+                </p>
+                <p className="text-base text-muted">
+                  With a PhD, British Computer Society membership (MBCS), and certifications in PRINCE2 and AgilePM, Dr. Kalu bridges theoretical standards and hands-on professional workflows to present concepts in their clearest form.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
                 {[
                   { label: 'PhD', desc: 'Doctorate Degree' },
                   { label: 'MBCS', desc: 'British Computer Society' },
@@ -158,46 +224,28 @@ export default function AboutPage() {
                 ].map((cred) => (
                   <div key={cred.label} className="p-4 rounded-xl border bg-[color:var(--bg-card)] border-[color:var(--border)] text-center">
                     <div className="font-display font-bold text-xl gold">{cred.label}</div>
-                    <div className="text-xs mt-1 text-muted">{cred.desc}</div>
+                    <div className="text-xs mt-1 text-muted font-bold">{cred.desc}</div>
                   </div>
                 ))}
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Stats */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { value: '500+', label: 'Students Trained' },
-              { value: '95%', label: 'Satisfaction Rate' },
-              { value: '20+', label: 'Countries' },
-              { value: '50+', label: 'Case Studies' },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center p-8 rounded-2xl bg-[color:var(--bg-card)] border border-[color:var(--border)]">
-                <div className="font-display text-4xl sm:text-5xl font-bold mb-2 gold">{stat.value}</div>
-                <div className="text-sm font-medium text-muted">{stat.label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-24" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-4xl sm:text-4xl lg:text-[44px] font-bold mb-4 text-[color:var(--text-core)]">
-            Ready to Start Your <span className="gold">Journey</span>?
+      <section className="py-24 bg-[color:var(--bg-primary)]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+          <h2 className="font-display text-4xl sm:text-5xl font-bold text-[color:var(--text-core)]">
+            Ready to Accelerate Your <span className="gold">Career</span>?
           </h2>
-          <p className="text-xl text-secondary mb-8 max-w-2xl mx-auto">
-            Join 500+ students from 20+ countries who have transformed their careers through Zeelin Academy.
+          <p className="text-xl text-secondary max-w-2xl mx-auto font-medium">
+            Join hundreds of busy career changers, parents, and professionals who have transitioned to Business Analysis with Zeelin Academy.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/enroll" className="btn-gold px-10 py-4 text-lg inline-block">Enroll Now</Link>
-            <Link href="/courses/modules" className="btn-outline-gold px-10 py-4 text-lg inline-block">View Modules</Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <Link href="/enroll" className="btn-gold px-10 py-4 text-lg inline-block font-bold">Enroll Now</Link>
+            <Link href="/courses/modules" className="btn-outline-gold px-10 py-4 text-lg inline-block font-bold">View Modules</Link>
           </div>
         </div>
       </section>
