@@ -29,10 +29,10 @@ export default function Header() {
 
           <nav className="hidden md:flex items-center gap-5">
             <Link href="/" className={`nav-link text-[13px] font-medium ${isActive('/') ? 'active' : ''}`}>Home</Link>
-            <Link href="/about" className={`nav-link text-[13px] font-medium ${isActive('/about') ? 'active' : ''}`}>About Zeelin Academy</Link>
-            <Link href="/pathway-finder" className={`nav-link text-[13px] font-medium ${isActive('/pathway-finder') ? 'active' : ''}`}>Diploma Pathway Finder</Link>
+            <Link href="/about" className={`nav-link text-[13px] font-medium ${isActive('/about') ? 'active' : ''}`}>About</Link>
+            <Link href="/pathway-finder" className={`nav-link text-[13px] font-medium ${isActive('/pathway-finder') ? 'active' : ''}`}>Pathway Finder</Link>
             <Link href="/courses" className={`nav-link text-[13px] font-medium ${isActive('/courses') ? 'active' : ''}`}>Courses</Link>
-            <Link href="/bcs-exam-prep" className={`nav-link text-[13px] font-medium ${isActive('/bcs-exam-prep') ? 'active' : ''}`}>BCS Business Analysis Exam Prep</Link>
+            <Link href="/bcs-exam-prep" className={`nav-link text-[13px] font-medium ${isActive('/bcs-exam-prep') ? 'active' : ''}`}>Exam Prep</Link>
             <Link href="/resources" className={`nav-link text-[13px] font-medium ${isActive('/resources') ? 'active' : ''}`}>Resources</Link>
             <Link href="/contact" className={`nav-link text-[13px] font-medium ${isActive('/contact') ? 'active' : ''}`}>Contact</Link>
 
@@ -81,10 +81,10 @@ export default function Header() {
           <div className="md:hidden pb-6 border-t pt-4" style={{ borderColor: 'var(--border)' }}>
             <div className="flex flex-col gap-4">
               <Link href="/" className={`nav-link text-sm font-medium ${isActive('/') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Home</Link>
-              <Link href="/about" className={`nav-link text-sm font-medium ${isActive('/about') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>About Zeelin Academy</Link>
-              <Link href="/pathway-finder" className={`nav-link text-sm font-medium ${isActive('/pathway-finder') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Diploma Pathway Finder</Link>
+              <Link href="/about" className={`nav-link text-sm font-medium ${isActive('/about') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>About</Link>
+              <Link href="/pathway-finder" className={`nav-link text-sm font-medium ${isActive('/pathway-finder') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Pathway Finder</Link>
               <Link href="/courses" className={`nav-link text-sm font-medium ${isActive('/courses') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Courses</Link>
-              <Link href="/bcs-exam-prep" className={`nav-link text-sm font-medium ${isActive('/bcs-exam-prep') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>BCS Business Analysis Exam Prep</Link>
+              <Link href="/bcs-exam-prep" className={`nav-link text-sm font-medium ${isActive('/bcs-exam-prep') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Exam Prep</Link>
               <Link href="/resources" className={`nav-link text-sm font-medium ${isActive('/resources') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Resources</Link>
               <Link href="/contact" className={`nav-link text-sm font-medium ${isActive('/contact') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Contact</Link>
               <Link href="/enroll" className="btn-gold px-5 py-2.5 text-sm text-center" onClick={() => setMenuOpen(false)}>Enroll Now</Link>

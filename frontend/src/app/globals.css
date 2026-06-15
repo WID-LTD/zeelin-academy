@@ -23,6 +23,8 @@
   --text-muted: #718096;
   --border: #e2e8f0;
   --border-hover: var(--brand-gold);
+  --text-nav: #000000;
+  --btn-gold-text: #ffffff;
 }
 
 .dark {
@@ -35,6 +37,8 @@
   --text-muted: #6b7280;
   --border: #2d3748;
   --border-hover: var(--brand-gold);
+  --text-nav: #ffffff;
+  --btn-gold-text: #000000;
 }
 
 * {
@@ -110,7 +114,7 @@ body {
 
 .btn-gold {
   background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-dark) 100%);
-  color: var(--black);
+  color: var(--btn-gold-text);
   font-weight: 600;
   border-radius: 0.5rem;
   transition: all 0.3s ease;
@@ -183,7 +187,7 @@ body {
 
 .btn-premium-cta {
   background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-dark) 100%);
-  color: var(--black);
+  color: var(--btn-gold-text);
   font-weight: 700;
   border-radius: 0.5rem;
   transition: all 0.3s ease;
@@ -203,23 +207,23 @@ body {
 }
 
 .btn-free-cta:hover {
-  border-color: var(--brand-blue);
-  color: var(--brand-blue);
+  border-color: var(--brand-gold);
+  color: var(--brand-gold);
 }
 
 .nav-link {
-  color: var(--text-secondary);
+  color: var(--text-nav);
   font-weight: 500;
   font-size: 0.875rem;
   transition: color 0.2s ease;
 }
 
 .nav-link:hover {
-  color: var(--brand-blue);
+  color: var(--brand-gold);
 }
 
 .nav-link.active {
-  color: var(--brand-blue);
+  color: var(--brand-gold);
 }
 
 .footer-link {
@@ -229,7 +233,7 @@ body {
 }
 
 .footer-link:hover {
-  color: var(--brand-blue);
+  color: var(--brand-gold);
 }
 
 ::-webkit-scrollbar {
