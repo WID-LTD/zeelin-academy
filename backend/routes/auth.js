@@ -36,10 +36,8 @@ router.post('/login', async (req, res) => {
     if (!valid) return res.status(401).json({ error: 'Invalid credentials' })
 
     const token = jwt.sign({ id: user.id, email: user.email, role: user.role }, JWT_SECRET, { expiresIn: '7d' })
-    res.cookie('token', token, { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'strict', maxAge: 7 * 24 * 60 * 60 * 1000 })
     res.json({ token, user: { id: user.id, email: user.email, full_name: user.full_name, role: user.role } })
   } catch (err) {
-    console.error('Login error:', err.message)
     res.status(500).json({ error: 'Login failed' })
   }
 })
@@ -71,27 +69,7 @@ router.post('/forgot-password', async (req, res) => {
 
     // Generate reset token
     const resetToken = jwt.sign({ email }, JWT_SECRET, { expiresIn: '1h' })
-    
-    // Send email via Brevo
-    try {
-      await fetch('https://api.brevo.com/v3/smtp/email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'api-key': process.env.BREVO_API_KEY || ''
-        },
-        body: JSON.stringify({
-          sender: { name: 'Zeelin Academy', email: process.env.BREVO_SENDER_EMAIL || 'noreply@zeelinacademy.com' },
-          to: [{ email }],
-          subject: 'Reset your Zeelin Academy Password',
-          htmlContent: `<p>You requested a password reset. Click the link below to reset it:<br/><br/><a href="http://localhost:3000/dashboard/reset-password?token=${resetToken}">Reset Password</a></p>`
-        })
-      })
-    } catch (e) {
-      console.error('Password reset email error:', e)
-    }
-
-    res.json({ message: 'Reset link sent' })
+    res.json({ message: 'Reset link sent', resetToken })
   } catch (err) {
     res.status(500).json({ error: 'Failed' })
   }
@@ -99,10 +77,10 @@ router.post('/forgot-password', async (req, res) => {
 
 // Verify token middleware
 function verifyToken(req, res, next) {
-  const token = req.cookies.token || (req.headers.authorization ? req.headers.authorization.split(' ')[1] : null)
-  if (!token) return res.status(401).json({ error: 'No token' })
+  const header = req.headers.authorization
+  if (!header) return res.status(401).json({ error: 'No token' })
   try {
-    const decoded = jwt.verify(token, JWT_SECRET)
+    const decoded = jwt.verify(header.split(' ')[1], JWT_SECRET)
     req.user = decoded
     next()
   } catch {

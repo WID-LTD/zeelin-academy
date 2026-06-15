@@ -1,11 +1,5 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import CountUp from '@/components/CountUp'
-
-export const metadata: Metadata = {
-  title: 'Course Outline | Zeelin Academy',
-  description: 'A comprehensive 6-week Diploma in Business Analysis program designed for practical learning. Explore our structured curriculum.',
-}
 
 const weeks = [
   { num: 1, title: 'Business Analysis Planning and Monitoring', desc: 'Understanding the BA role, stakeholder mapping, and project approach.' },
@@ -13,7 +7,7 @@ const weeks = [
   { num: 3, title: 'Requirements Life Cycle Management', desc: 'Managing and tracing requirements from inception to completion.' },
   { num: 4, title: 'Strategy Analysis', desc: 'Defining business needs and identifying strategies for organizational change.' },
   { num: 5, title: 'Requirements Analysis and Design Definition', desc: 'Structuring requirements and designing solutions using BPMN and wireframes.' },
-  { num: 6, title: 'Solution Evaluation', desc: 'Assessing the value delivered by the implemented solution.' },
+  { num: 6, title: 'Solution Evaluation', desc: 'Assessing the value delivered by the implemented solution.' }
 ]
 
 export default function CoursesPage() {
@@ -21,8 +15,8 @@ export default function CoursesPage() {
     <div className="min-h-screen py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h1 className="font-display text-3xl sm:text-5xl font-bold mb-4 text-[color:var(--text-core)]">
-            Course <span className="gold">Outline</span>
+          <h1 className="font-display text-3xl sm:text-5xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>
+            Course <span style={{ color: 'var(--brand-gold)' }}>Outline</span>
           </h1>
           <p className="text-lg max-w-2xl mx-auto text-secondary">
             A comprehensive 6-week Diploma in Business Analysis program designed for practical learning
@@ -33,13 +27,13 @@ export default function CoursesPage() {
           {weeks.map((week) => (
             <div key={week.num} className="flex gap-6 pb-10 last:pb-0">
               <div className="flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full gold-bg flex items-center justify-center font-bold text-lg flex-shrink-0 text-[color:var(--text-core)]">
+                <div className="w-12 h-12 rounded-full gold-bg flex items-center justify-center font-bold text-lg flex-shrink-0" style={{ color: 'var(--text-core)' }}>
                   {week.num}
                 </div>
-                {week.num < 6 && <div className="w-px flex-1 mt-2 bg-[color:var(--border)]" />}
+                {week.num < 6 && <div className="w-px flex-1 mt-2" style={{ backgroundColor: 'var(--border)' }} />}
               </div>
               <div className="flex-1 pb-2">
-                <h3 className="font-display text-xl font-bold mb-2 text-[color:var(--text-core)]">
+                <h3 className="font-display text-xl font-bold mb-2" style={{ color: 'var(--text-core)' }}>
                   Week {week.num}: {week.title}
                 </h3>
                 <p className="text-muted">{week.desc}</p>

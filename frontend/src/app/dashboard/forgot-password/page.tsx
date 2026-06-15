@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { publicApi } from '@/lib/api'
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState('')
@@ -16,48 +15,46 @@ export default function ForgotPassword() {
     setError('')
     setMessage('')
     try {
-      await publicApi.post('/api/auth/forgot-password', { email })
-      setMessage('Password reset link has been sent to your email.')
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Connection failed')
+      const res = await fetch('/api/auth/forgot-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      })
+      const data = await res.json()
+      if (res.ok) {
+        setMessage('Password reset link has been sent to your email.')
+      } else {
+        setError(data.error || 'Email not found')
+      }
+    } catch {
+      setError('Connection failed')
     }
     setLoading(false)
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[color:var(--bg-primary)]">
-      <div className="p-8 rounded-xl border w-full max-w-md bg-[color:var(--bg-card)] border-[color:var(--border)]">
+    <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: 'var(--bg-primary)' }}>
+      <div className="p-8 rounded-xl border w-full max-w-md" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
         <div className="text-center mb-8">
-          <h1 className="font-display text-2xl font-bold text-[color:var(--text-core)]">
-            Forgot <span className="gold">Password</span>
-          </h1>
+          <h1 className="font-display text-2xl font-bold" style={{ color: 'var(--text-core)' }}>Forgot <span className="gold">Password</span></h1>
           <p className="text-sm mt-2 text-secondary">Enter your email to receive a reset link</p>
         </div>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-medium mb-2 text-secondary">Email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="w-full rounded-lg px-4 py-3 border focus:outline-none bg-[color:var(--bg-primary)] text-[color:var(--text-core)] border-[color:var(--border)]"
-            />
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required
+              className="w-full rounded-lg px-4 py-3 border focus:outline-none"
+              style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-core)', borderColor: 'var(--border)' }} />
           </div>
           {error && <p className="text-red-500 text-sm">{error}</p>}
           {message && <p className="gold text-sm">{message}</p>}
-          <button
-            type="submit"
-            disabled={loading}
-            className="btn-gold w-full py-3 font-semibold text-[color:var(--text-core)]"
-          >
+          <button type="submit" disabled={loading}
+            className="btn-gold w-full py-3 font-semibold" style={{ color: 'var(--text-core)' }}>
             {loading ? 'Sending...' : 'Send Reset Link'}
           </button>
         </form>
         <div className="text-center mt-4">
-          <Link href="/dashboard/login" className="text-sm footer-link">
-            Back to Login
-          </Link>
+          <Link href="/dashboard/login" className="text-sm footer-link">Back to Login</Link>
         </div>
       </div>
     </div>

@@ -3,130 +3,85 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
-import { Search, Moon, Sun, Menu, X } from 'lucide-react'
 import { useTheme } from './ThemeProvider'
-import { usePathname, useRouter } from 'next/navigation'
-import { useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
   const { theme, toggle } = useTheme()
   const pathname = usePathname()
-  const router = useRouter()
-
-  useEffect(() => {
-    const token = localStorage.getItem('zeelin_token')
-    if (token) setIsLoggedIn(true)
-  }, [])
-
-  const handleSignOut = () => {
-    localStorage.removeItem('zeelin_token')
-    localStorage.removeItem('zeelin_user')
-    setIsLoggedIn(false)
-    router.push('/')
-  }
 
   const isActive = (path: string) => pathname === path
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[color:var(--bg-primary)] border-b border-[color:var(--border)]">
+    <header className="fixed top-0 left-0 right-0 z-50" style={{ backgroundColor: 'var(--bg-primary)', borderBottom: '1px solid var(--border)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center group">
+          <Link href="/" className="flex items-center">
             <Image
               src="/logo.png"
               alt="Zeelin Academy"
-              width={150}
-              height={45}
-              className="object-contain drop-shadow-sm transition-all duration-300 group-hover:scale-105"
-              priority
+              width={40}
+              height={40}
+              className="rounded-full object-cover"
             />
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
-            <Link href="/" className={`nav-link text-base font-medium ${isActive('/') ? 'active' : ''}`}>Home</Link>
-            <Link href="/courses" className={`nav-link text-base font-medium ${isActive('/courses') ? 'active' : ''}`}>Courses</Link>
-            <Link href="/#categories" className="nav-link text-base font-medium">Categories</Link>
-            <Link href="/#instructors" className="nav-link text-base font-medium">Instructors</Link>
-            <Link href="/#pricing" className="nav-link text-base font-medium">Pricing</Link>
-            <Link href="/about" className={`nav-link text-base font-medium ${isActive('/about') ? 'active' : ''}`}>About</Link>
-            <Link href="/contact" className={`nav-link text-base font-medium ${isActive('/contact') ? 'active' : ''}`}>Contact</Link>
-            
-            <button className="p-2 rounded-lg nav-link" aria-label="Search">
-              <Search className="w-5 h-5" style={{ color: 'var(--text-muted)' }} />
-            </button>
+            <Link href="/" className={`nav-link text-sm font-medium ${isActive('/') ? 'active' : ''}`}>Home</Link>
+            <Link href="/courses" className={`nav-link text-sm font-medium ${isActive('/courses') ? 'active' : ''}`}>Courses</Link>
+            <Link href="/courses/modules" className={`nav-link text-sm font-medium ${isActive('/courses/modules') ? 'active' : ''}`}>Modules</Link>
 
             <button onClick={toggle} className="p-2 rounded-lg nav-link" aria-label="Toggle theme">
               {theme === 'light' ? (
-                <Moon className="w-5 h-5" style={{ color: 'var(--text-muted)' }} />
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
               ) : (
-                <Sun className="w-5 h-5" style={{ color: 'var(--brand-gold)' }} />
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
               )}
             </button>
 
-            <div className="flex items-center gap-3 ml-2">
-              {isLoggedIn ? (
-                <>
-                  <Link href="/dashboard" className="px-5 py-2 text-sm font-medium border border-[color:var(--border)] rounded-lg hover:bg-[color:var(--bg-secondary)] transition-colors">
-                    Dashboard
-                  </Link>
-                  <button onClick={handleSignOut} className="btn-gold px-6 py-2 text-sm shadow-md hover:shadow-lg transition-all border border-[rgba(0,0,0,0.1)]">
-                    Sign Out
-                  </button>
-                </>
-              ) : (
-                <>
-                  <Link href="/login" className="px-5 py-2 text-sm font-medium border border-[color:var(--border)] rounded-lg hover:bg-[color:var(--bg-secondary)] transition-colors">
-                    Login
-                  </Link>
-                  <Link href="/enroll" className="btn-gold px-6 py-2 text-sm shadow-md hover:shadow-lg transition-all border border-[rgba(0,0,0,0.1)]">
-                    Enroll Now
-                  </Link>
-                </>
-              )}
-            </div>
+            <Link href="/enroll" className="btn-gold px-5 py-2.5 text-sm">
+              Enroll Now
+            </Link>
           </nav>
 
           <div className="flex items-center gap-2 md:hidden">
             <button onClick={toggle} className="p-2 rounded-lg nav-link" aria-label="Toggle theme">
               {theme === 'light' ? (
-                <Moon className="w-5 h-5" style={{ color: 'var(--text-muted)' }} />
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
               ) : (
-                <Sun className="w-5 h-5" style={{ color: 'var(--brand-gold)' }} />
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
               )}
             </button>
-            <button className="p-2 text-[color:var(--text-core)]" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
-              {menuOpen ? (
-                <X className="w-6 h-6" style={{ color: 'var(--text-core)' }} />
-              ) : (
-                <Menu className="w-6 h-6" style={{ color: 'var(--text-core)' }} />
-              )}
+            <button className="p-2" onClick={() => setMenuOpen(!menuOpen)}>
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: 'var(--text-core)' }}>
+                {menuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
             </button>
           </div>
         </div>
 
         {menuOpen && (
-          <div className="md:hidden pb-6 border-t pt-4 border-[color:var(--border)]">
-            <div className="flex flex-col gap-2">
-              <Link href="/" className={`nav-link text-base font-medium py-2 px-2 ${isActive('/') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Home</Link>
-              <Link href="/courses" className={`nav-link text-base font-medium py-2 px-2 ${isActive('/courses') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Courses</Link>
-              <Link href="/#categories" className="nav-link text-base font-medium py-2 px-2" onClick={() => setMenuOpen(false)}>Categories</Link>
-              <Link href="/#instructors" className="nav-link text-base font-medium py-2 px-2" onClick={() => setMenuOpen(false)}>Instructors</Link>
-              <Link href="/#pricing" className="nav-link text-base font-medium py-2 px-2" onClick={() => setMenuOpen(false)}>Pricing</Link>
-              <Link href="/about" className={`nav-link text-base font-medium py-2 px-2 ${isActive('/about') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>About</Link>
-              <Link href="/contact" className={`nav-link text-base font-medium py-2 px-2 ${isActive('/contact') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Contact</Link>
-              {isLoggedIn ? (
-                <>
-                  <Link href="/dashboard" className={`nav-link text-base font-medium py-2 px-2 mt-2 ${isActive('/dashboard') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Dashboard</Link>
-                  <button onClick={() => { handleSignOut(); setMenuOpen(false); }} className="btn-gold px-6 py-3 mt-2 text-base font-bold text-center shadow-md block">Sign Out</button>
-                </>
-              ) : (
-                <>
-                  <Link href="/login" className={`nav-link text-base font-medium py-2 px-2 mt-2 ${isActive('/login') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Login</Link>
-                  <Link href="/enroll" className="btn-gold px-6 py-3 mt-2 text-base font-bold text-center shadow-md block" onClick={() => setMenuOpen(false)}>Enroll Now</Link>
-                </>
-              )}
+          <div className="md:hidden pb-6 border-t pt-4" style={{ borderColor: 'var(--border)' }}>
+            <div className="flex flex-col gap-4">
+              <Link href="/" className={`nav-link text-sm font-medium ${isActive('/') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Home</Link>
+              <Link href="/courses" className={`nav-link text-sm font-medium ${isActive('/courses') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Courses</Link>
+              <Link href="/courses/modules" className={`nav-link text-sm font-medium ${isActive('/courses/modules') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Modules</Link>
+              <Link href="/enroll" className="btn-gold px-5 py-2.5 text-sm text-center" onClick={() => setMenuOpen(false)}>Enroll Now</Link>
+              <Link href="/dashboard/login" className="nav-link text-sm font-medium" onClick={() => setMenuOpen(false)}>Dashboard</Link>
+              <Link href="/admin/login" className="nav-link text-sm font-medium" onClick={() => setMenuOpen(false)}>Admin</Link>
             </div>
           </div>
         )}

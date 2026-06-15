@@ -33,6 +33,11 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   if (!user) return null
 
+  // Admin route uses its own layout
+  if (pathname.startsWith('/dashboard/admin')) {
+    return <>{children}</>
+  }
+
   return (
     <div className="min-h-screen bg-[color:var(--bg-primary)] flex pt-20">
       {/* File Explorer Sidebar */}
