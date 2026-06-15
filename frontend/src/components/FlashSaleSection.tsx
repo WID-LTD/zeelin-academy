@@ -5,9 +5,12 @@ import Link from 'next/link'
 import { getTimeLeft, COUNTDOWN_DATE } from '@/lib/constants'
 
 export default function FlashSaleSection() {
-  const [timeLeft, setTimeLeft] = useState(getTimeLeft(new Date(COUNTDOWN_DATE)))
+  const [isMounted, setIsMounted] = useState(false)
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
 
   useEffect(() => {
+    setIsMounted(true)
+    setTimeLeft(getTimeLeft(new Date(COUNTDOWN_DATE)))
     const timer = setInterval(() => {
       setTimeLeft(getTimeLeft(new Date(COUNTDOWN_DATE)))
     }, 1000)
@@ -50,7 +53,7 @@ export default function FlashSaleSection() {
               ].map((unit) => (
                 <div key={unit.label} className="text-center">
                   <div className="w-14 h-14 rounded-xl flex items-center justify-center text-xl font-bold shadow-lg" style={{ backgroundColor: 'var(--bg-card)', color: 'var(--brand-gold)', border: '1px solid var(--border)' }}>
-                    {String(unit.value).padStart(2, '0')}
+                    {isMounted ? String(unit.value).padStart(2, '0') : '00'}
                   </div>
                   <div className="text-[0.6rem] mt-1.5 text-muted uppercase tracking-wider">{unit.label}</div>
                 </div>
