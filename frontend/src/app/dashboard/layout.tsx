@@ -33,10 +33,15 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   if (!user) return null
 
+  // Admin route uses its own layout
+  if (pathname.startsWith('/dashboard/admin')) {
+    return <>{children}</>
+  }
+
   return (
     <div className="min-h-screen bg-[color:var(--bg-primary)] flex pt-20">
       {/* File Explorer Sidebar */}
-      <aside className="w-64 sticky top-20 h-[calc(100vh-80px)] border-r border-[color:var(--border)] bg-[color:var(--bg-primary)] overflow-y-auto hidden md:block">
+      <aside className="w-64 fixed h-[calc(100vh-80px)] border-r border-[color:var(--border)] bg-[color:var(--bg-primary)] overflow-y-auto hidden md:block">
         <div className="p-4">
           <h2 className="text-sm font-bold text-[color:var(--text-muted)] mb-4 uppercase tracking-wider">Explorer</h2>
           
@@ -50,7 +55,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <div>
               <button onClick={() => toggleFolder('main')} className="w-full flex items-center gap-1 px-2 py-1.5 text-sm text-[color:var(--text-secondary)] hover:bg-[color:var(--bg-secondary)] rounded-md transition-colors">
                 {expandedFolders['main'] ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
-                {expandedFolders['main'] ? <FolderOpen className="w-4 h-4 gold" /> : <Folder className="w-4 h-4 gold" />}
+                {expandedFolders['main'] ? <FolderOpen className="w-4 h-4 text-yellow-500" /> : <Folder className="w-4 h-4 text-yellow-500" />}
                 <span className="font-semibold text-[color:var(--text-core)]">Main Categories</span>
               </button>
               
@@ -76,7 +81,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <div className="mt-2">
               <button onClick={() => toggleFolder('courses')} className="w-full flex items-center gap-1 px-2 py-1.5 text-sm text-[color:var(--text-secondary)] hover:bg-[color:var(--bg-secondary)] rounded-md transition-colors">
                 {expandedFolders['courses'] ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
-                {expandedFolders['courses'] ? <FolderOpen className="w-4 h-4 gold" /> : <Folder className="w-4 h-4 gold" />}
+                {expandedFolders['courses'] ? <FolderOpen className="w-4 h-4 text-blue-500" /> : <Folder className="w-4 h-4 text-blue-500" />}
                 <span className="font-semibold text-[color:var(--text-core)]">Course Materials</span>
               </button>
               
@@ -101,7 +106,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       </aside>
 
       {/* Main Content Area */}
-      <main className="flex-1 flex flex-col min-h-[calc(100vh-80px)]">
+      <main className="flex-1 md:ml-64 flex flex-col min-h-[calc(100vh-80px)]">
         {/* Breadcrumb Trail */}
         <div className="h-10 border-b border-[color:var(--border)] flex items-center px-6 bg-[color:var(--bg-primary)]">
           <div className="flex items-center text-sm text-[color:var(--text-muted)]">

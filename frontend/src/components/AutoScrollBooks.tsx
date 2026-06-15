@@ -25,7 +25,7 @@ export default function AutoScrollBooks() {
             opacity: i === current ? 1 : 0,
             transform: i === current ? 'scale(1) rotate(0deg)' : 'scale(0.8) rotate(-10deg)',
             width: '70%',
-            height: '80%',
+            height: '80%'
           }}
         >
           <Image src={src} alt={`Book ${i + 1}`} fill className="object-contain" />
@@ -36,13 +36,12 @@ export default function AutoScrollBooks() {
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className="rounded-full transition-all"
+            className="w-2 h-2 rounded-full transition-all"
             style={{
               backgroundColor: i === current ? 'var(--brand-gold)' : 'var(--text-muted)',
               width: i === current ? 8 : 6,
-              height: i === current ? 8 : 6,
+              height: i === current ? 8 : 6
             }}
-            aria-label={`Go to book ${i + 1}`}
           />
         ))}
       </div>

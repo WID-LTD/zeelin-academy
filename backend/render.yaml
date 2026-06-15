@@ -2,12 +2,9 @@ services:
   - type: web
     name: zeelin-academy-backend
     env: node
-    rootDir: backend
     buildCommand: npm install
     startCommand: node index.js
     envVars:
-      - key: DATABASE_URL
-        sync: false
       - key: BACKEND_PORT
         value: 3030
       - key: BREVO_API_KEY

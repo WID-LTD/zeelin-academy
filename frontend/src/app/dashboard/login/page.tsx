@@ -1,15 +1,73 @@
 'use client'
 
-import LoginForm from '@/components/LoginForm'
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 export default function UserLogin() {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
+  const router = useRouter()
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setLoading(true)
+    setError('')
+    try {
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      })
+      const data = await res.json()
+      if (res.ok) {
+        localStorage.setItem('user-token', data.token)
+        localStorage.setItem('user-data', JSON.stringify(data.user))
+        router.push('/dashboard')
+      } else {
+        setError(data.error || 'Invalid credentials')
+      }
+    } catch {
+      setError('Connection failed')
+    }
+    setLoading(false)
+  }
+
   return (
-    <LoginForm
-      title=""
-      tokenKey="user-token"
-      userKey="user-data"
-      redirectTo="/dashboard"
-      showForgotPassword
-    />
+    <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: 'var(--bg-primary)' }}>
+      <div className="p-8 rounded-xl border w-full max-w-md" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+        <div className="text-center mb-8">
+          <div className="w-16 h-16 rounded-full gold-bg flex items-center justify-center font-bold text-2xl mx-auto mb-4" style={{ color: 'var(--text-core)' }}>ZA</div>
+          <h1 className="font-display text-2xl font-bold" style={{ color: 'var(--text-core)' }}>Student <span className="gold">Login</span></h1>
+        </div>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium mb-2 text-secondary">Email</label>
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required
+              className="w-full rounded-lg px-4 py-3 border focus:outline-none"
+              style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-core)', borderColor: 'var(--border)' }} />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-2 text-secondary">Password</label>
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required
+              className="w-full rounded-lg px-4 py-3 border focus:outline-none"
+              style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-core)', borderColor: 'var(--border)' }} />
+          </div>
+          {error && <p className="text-red-500 text-sm">{error}</p>}
+          <button type="submit" disabled={loading}
+            className="btn-gold w-full py-3 font-semibold" style={{ color: 'var(--text-core)' }}>
+            {loading ? 'Signing in...' : 'Sign In'}
+          </button>
+        </form>
+        <div className="text-center mt-4">
+          <Link href="/dashboard/forgot-password" className="text-sm footer-link">Forgot Password?</Link>
+        </div>
+        <div className="text-center mt-2">
+          <Link href="/" className="text-sm footer-link">&larr; Back to Home</Link>
+        </div>
+      </div>
+    </div>
   )
 }
