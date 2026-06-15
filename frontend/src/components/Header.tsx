@@ -18,14 +18,17 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center" aria-label="Zeelin Academy - Go to homepage">
-            <Image
-              src="/logo.png"
-              alt="Zeelin Academy Logo"
-              width={300}
-              height={300}
-              className="max-h-24 w-auto object-contain logo-filter-theme"
-              priority
-            />
+            <div className="relative overflow-hidden w-[196px] h-[50px] flex items-center justify-center">
+              <Image
+                src="/logo.png"
+                alt="Zeelin Academy Logo"
+                width={196}
+                height={196}
+                className="absolute w-full h-auto logo-filter-theme"
+                style={{ top: '50%', transform: 'translateY(-50%)' }}
+                priority
+              />
+            </div>
           </Link>
 
           <nav className="hidden md:flex items-center gap-5">
