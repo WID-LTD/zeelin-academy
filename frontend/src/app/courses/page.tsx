@@ -46,6 +46,13 @@ export default function CoursesPage() {
           <p className="font-display text-lg text-secondary">
             Ready to dive deeper?
           </p>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <span className="text-xl font-bold text-gray-400 line-through">£499</span>
+            <div className="px-2.5 py-0.5 rounded-md text-xs font-bold animate-pulse-gold" style={{ background: 'linear-gradient(135deg, #dc2626, #b91c1c)', color: 'white' }}>
+              Save 40%
+            </div>
+            <span className="text-2xl font-bold" style={{ color: 'var(--brand-gold)' }}>£299</span>
+          </div>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/courses/modules" className="btn-gold px-8 py-4 text-lg inline-block">
               Unlock the Full Curriculum

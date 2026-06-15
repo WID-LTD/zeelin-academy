@@ -1,13 +1,22 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Users, Globe, Check, ChevronDown, PlayCircle, Play, FileText, Monitor, Award, ShieldCheck, Star } from 'lucide-react'
+import { getTimeLeft, COUNTDOWN_DATE } from '@/lib/constants'
 
 export default function CourseDetails({ params }: { params: { id: string } }) {
   const [activeTab, setActiveTab] = useState('overview')
   const [activeModule, setActiveModule] = useState<number | null>(0)
+  const [timeLeft, setTimeLeft] = useState(getTimeLeft(new Date(COUNTDOWN_DATE)))
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(getTimeLeft(new Date(COUNTDOWN_DATE)))
+    }, 1000)
+    return () => clearInterval(timer)
+  }, [])
 
   const curriculum = [
     {
@@ -221,9 +230,37 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
                 </div>
               </div>
               <div className="p-6">
-                <div className="text-3xl font-bold text-[color:var(--text-core)] mb-4">£299</div>
-                <Link href="/enroll" className="block w-full py-3 px-4 text-center rounded-lg bg-blue-600 text-white font-bold hover:bg-blue-700 transition-colors mb-3 shadow-md shadow-blue-500/20">
-                  Enroll Now
+                {/* Discounted Pricing */}
+                <div className="text-center mb-4">
+                  <div className="flex items-center justify-center gap-3 mb-2">
+                    <span className="text-2xl font-bold text-gray-400 line-through">£499</span>
+                    <div className="px-2 py-0.5 rounded-md text-xs font-bold animate-pulse-gold" style={{ background: 'linear-gradient(135deg, #dc2626, #b91c1c)', color: 'white' }}>
+                      Save 40%
+                    </div>
+                  </div>
+                  <div className="text-4xl font-bold" style={{ color: 'var(--brand-gold)' }}>£299</div>
+                  <div className="text-xs mt-1 text-muted">Limited Time Offer</div>
+                </div>
+
+                {/* Countdown Timer */}
+                <div className="flex items-center justify-center gap-3 mb-5">
+                  {[
+                    { label: 'Days', value: timeLeft.days },
+                    { label: 'Hours', value: timeLeft.hours },
+                    { label: 'Mins', value: timeLeft.minutes },
+                    { label: 'Secs', value: timeLeft.seconds },
+                  ].map((unit) => (
+                    <div key={unit.label} className="text-center">
+                      <div className="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold" style={{ backgroundColor: 'var(--bg-secondary)', color: 'var(--brand-gold)' }}>
+                        {String(unit.value).padStart(2, '0')}
+                      </div>
+                      <div className="text-[0.55rem] mt-1 text-muted uppercase">{unit.label}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <Link href="/enroll" className="block w-full py-3 px-4 text-center rounded-lg font-bold transition-all duration-300 hover:-translate-y-0.5 mb-3" style={{ background: 'linear-gradient(135deg, var(--brand-gold), #b5952f)', color: '#0f1115', boxShadow: '0 4px 20px rgba(212,175,55,0.3)' }}>
+                  Enroll Now — £299
                 </Link>
                 <button className="block w-full py-3 px-4 text-center rounded-lg border border-[color:var(--border)] text-[color:var(--text-core)] font-medium hover:bg-[color:var(--bg-secondary)] transition-colors mb-6">
                   Add to Wishlist

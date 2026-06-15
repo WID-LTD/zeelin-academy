@@ -244,3 +244,12 @@ body {
   background: var(--brand-gold);
   border-radius: 4px;
 }
+
+@keyframes pulse-gold {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 2.5s ease-in-out infinite;
+}

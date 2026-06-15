@@ -4,10 +4,14 @@ import AutoTypeText from '@/components/AutoTypeText'
 import CountUp from '@/components/CountUp'
 import AutoScrollBooks from '@/components/AutoScrollBooks'
 import AutoScrollBooksGrid from '@/components/AutoScrollBooksGrid'
+import BannerSection from '@/components/BannerSection'
+import FlashSaleSection from '@/components/FlashSaleSection'
 
 export default function Home() {
   return (
     <div className="overflow-hidden">
+      <BannerSection />
+
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden" style={{ backgroundColor: 'var(--bg-primary)' }}>
         <div className="absolute inset-0 bg-hero-glow-blue pointer-events-none" />
@@ -216,23 +220,7 @@ export default function Home() {
       </section>
 
       {/* Flash Sale Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-2xl overflow-hidden">
-            <div className="relative p-12 md:p-16 text-center" style={{ backgroundColor: 'rgba(223,186,107,0.05)' }}>
-              <h2 className="font-display text-3xl md:text-4xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>
-                Start Your <span style={{ color: 'var(--brand-gold)' }}>Journey</span> Today
-              </h2>
-              <p className="mb-8 max-w-xl mx-auto text-secondary">
-                Join thousands of successful graduates. Enroll now and take the first step toward becoming a certified Business Analyst.
-              </p>
-              <Link href="/enroll" className="btn-gold px-10 py-4 text-lg inline-block">
-                Unlock Your Potential: Enroll Now
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FlashSaleSection />
     </div>
   )
 }

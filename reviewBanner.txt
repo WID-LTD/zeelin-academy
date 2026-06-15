@@ -1,0 +1,9 @@
+Create a premium course showcase banner section positioned directly below the header section with a clean white background. Display five business analysis course books in a perfectly straight horizontal row across the center of the banner. Each book should have a soft shadow, subtle hover lift animation, and slight scale effect on hover.
+
+Do not include any headline, subtitle, description, statistics, badges, or feature text.
+
+Below the books, place a single centered CTA button labeled "View Courses". The button should be large, modern, rounded, and use a black background with yellow accents. Add smooth hover animations and a subtle glow effect.
+
+Include a soft yellow gradient shape behind the books to create depth. Add light reflections beneath the books and maintain generous whitespace throughout the section for a premium academy-style appearance.
+
+The design should feel modern, luxurious, and focused entirely on the course books and the CTA button, seamlessly integrated immediately beneath the website header.
