@@ -81,9 +81,9 @@ const templates: Template[] = [
 ]
 
 const books = [
-  { src: '/book1.jpg', title: 'Business Analytics', author: 'Camm, Cochran, Fry, Ohlmann', desc: 'An excellent guide on data-driven decision making and corporate analytics models.' },
-  { src: '/book2.jpg', title: 'Business Analysis for Practitioners', author: 'PMI', desc: 'A practice guide mapping out critical Business Analysis capabilities across projects.' },
-  { src: '/book3.jpg', title: 'Business Analysis: Fourth Edition', author: 'Debra Paul and James Cadle', desc: 'The official BCS core textbook. Essential reading for all BCS Diploma candidates.' }
+  { src: '/book1.png', title: 'Business Analytics', author: 'Camm, Cochran, Fry, Ohlmann', desc: 'An excellent guide on data-driven decision making and corporate analytics models.' },
+  { src: '/book2.png', title: 'Business Analysis for Practitioners', author: 'PMI', desc: 'A practice guide mapping out critical Business Analysis capabilities across projects.' },
+  { src: '/book3.png', title: 'Business Analysis: Fourth Edition', author: 'Debra Paul and James Cadle', desc: 'The official BCS core textbook. Essential reading for all BCS Diploma candidates.' }
 ]
 
 export default function ResourcesPage() {

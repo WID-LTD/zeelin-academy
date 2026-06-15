@@ -4,9 +4,9 @@ import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 
 const books = [
-  { src: '/book1.jpg', title: 'Business Analytics', author: 'Camm, Cochran, Fry, Ohlmann' },
-  { src: '/book2.jpg', title: 'Business Analysis for Practitioners', author: 'PMI' },
-  { src: '/book3.jpg', title: 'Business Analysis: Fourth Edition', author: 'Debra Paul and James Cadle' }
+  { src: '/book1.png', title: 'Business Analytics', author: 'Camm, Cochran, Fry, Ohlmann' },
+  { src: '/book2.png', title: 'Business Analysis for Practitioners', author: 'PMI' },
+  { src: '/book3.png', title: 'Business Analysis: Fourth Edition', author: 'Debra Paul and James Cadle' }
 ]
 
 export default function AutoScrollBooksGrid() {

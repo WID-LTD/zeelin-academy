@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
-const books = ['/book1.jpg', '/book2.jpg', '/book3.jpg', '/book4.jpg']
+const books = ['/book1.png', '/book2.png', '/book3.png', '/book4.png']
 
 export default function AutoScrollBooks() {
   const [current, setCurrent] = useState(0)
