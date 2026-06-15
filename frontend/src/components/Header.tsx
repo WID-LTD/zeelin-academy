@@ -21,9 +21,9 @@ export default function Header() {
             <Image
               src="/logo.png"
               alt="Zeelin Academy Logo"
-              width={150}
-              height={150}
-              className="max-h-16 w-auto object-contain logo-filter-theme"
+              width={300}
+              height={300}
+              className="max-h-24 w-auto object-contain logo-filter-theme"
               priority
             />
           </Link>
