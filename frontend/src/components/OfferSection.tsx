@@ -139,7 +139,7 @@ export default function OfferSection() {
           style={{ background: 'radial-gradient(circle, #8b5cf6, transparent 70%)' }} />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
           <AnimatedSection delay={100}>

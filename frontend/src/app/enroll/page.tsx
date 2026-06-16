@@ -205,7 +205,7 @@ export default function EnrollPage() {
   return (
     <Suspense fallback={<div className="text-center py-20" style={{ color: 'var(--text-muted)' }}>Loading...</div>}>
       <div className="min-h-screen">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
           <EnrollForm />
         </div>
       </div>
