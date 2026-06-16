@@ -25,11 +25,6 @@ export default function FlashSaleSection() {
             background: 'radial-gradient(ellipse at 50% 50%, rgba(212,175,55,0.12), transparent 70%)'
           }} />
           <div className="relative p-12 md:p-16 text-center" style={{ backgroundColor: 'rgba(223,186,107,0.05)' }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6 animate-pulse-gold" style={{ backgroundColor: 'rgba(220,38,38,0.1)', color: '#dc2626', border: '1px solid rgba(220,38,38,0.2)' }}>
-              <span className="w-2 h-2 rounded-full bg-red-600" />
-              Limited Time Offer
-            </div>
-
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>
               Start Your <span style={{ color: 'var(--brand-gold)' }}>Journey</span> Today
             </h2>

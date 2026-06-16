@@ -102,10 +102,6 @@ export default function ResourcesPage() {
 
         {/* Hero Section */}
         <div className="text-center max-w-4xl mx-auto mb-16 animate-in fade-in duration-700">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6 text-[color:var(--brand-gold)] bg-[rgba(223,186,107,0.1)] border border-[rgba(223,186,107,0.2)]">
-            <BookOpen className="w-4 h-4" />
-            Zeelin Academy Resource Hub
-          </div>
           <h1 className="font-display text-4xl sm:text-5xl font-bold leading-tight mb-6 text-[color:var(--text-core)]">
             Business Analysis <span className="gold">Resources</span>
           </h1>

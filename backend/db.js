@@ -42,6 +42,16 @@ async function initDB() {
         verified_at TIMESTAMP DEFAULT NOW()
       )
     `)
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS pathway_finder (
+        id SERIAL PRIMARY KEY,
+        name TEXT, email TEXT, phone TEXT, role TEXT, enrolled TEXT,
+        q1 TEXT, q2 TEXT, q3 TEXT, q4 TEXT,
+        q5 TEXT, q6 TEXT, q7 TEXT, q8 TEXT, q9 TEXT,
+        pathway_result TEXT,
+        created_at TIMESTAMP DEFAULT NOW()
+      )
+    `)
     console.log('Database tables initialized')
   } catch (err) {
     console.error('DB init error:', err.message)

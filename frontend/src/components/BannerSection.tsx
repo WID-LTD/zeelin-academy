@@ -172,28 +172,23 @@ export default function BannerSection() {
             <div className="absolute top-0 bottom-0 right-0 w-12 pointer-events-none bg-gradient-to-l from-[var(--bg-primary)] to-transparent" />
           </div>
 
-          {/* Bottom Right: CTA Button */}
-          <div className="w-full flex justify-end z-10">
-            <Link
-              href="/courses"
-              className="inline-flex items-center gap-1 sm:gap-2 px-4 sm:px-10 py-3 sm:py-5 text-sm sm:text-lg font-semibold rounded-xl sm:rounded-2xl transition-all duration-300 hover:-translate-y-1 whitespace-nowrap"
-              style={{
-                backgroundColor: '#0f1115',
-                color: 'var(--brand-gold)',
-                boxShadow: '0 8px 24px rgba(0,0,0,0.2)'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = '0 12px 35px rgba(212,175,55,0.4)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.2)'
-              }}
-            >
-              View Courses
-              <svg className="w-5 h-5 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </Link>
+          {/* Recent Update - text only, no images, no animations */}
+          <div className="w-full text-center pt-10 border-t" style={{ borderColor: 'var(--border)' }}>
+            <h3 className="font-display text-2xl md:text-3xl font-bold mb-3" style={{ color: 'var(--text-core)' }}>
+              Business Analysis Training Made Simple for{' '}
+              <span style={{ color: 'var(--brand-gold)' }}>Busy Learners</span>
+            </h3>
+            <p className="text-sm md:text-base max-w-2xl mx-auto mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              Learn Business Analysis step by step, even if you work full-time, have a family, or feel overwhelmed by exams.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/courses" className="btn-gold px-8 py-3 text-sm font-bold inline-block text-center">
+                View Courses
+              </Link>
+              <Link href="/bcs-exam-prep" className="btn-outline-gold px-8 py-3 text-sm font-bold inline-block text-center">
+                Start with BCS Foundation
+              </Link>
+            </div>
           </div>
 
         </div>
