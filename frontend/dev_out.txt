@@ -1,0 +1,33 @@
+◇ injected env (10) from ..\.env.local // tip: ◈ secrets for agents [www.dotenvx.com]
+◇ injected env (0) from ..\.env.local // tip: ◈ secrets for agents [www.dotenvx.com]
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 3.1s
+ ○ Compiling /courses ...
+ ✓ Compiled /courses in 3.8s (538 modules)
+ GET /courses 200 in 4217ms
+ ✓ Compiled /_not-found in 410ms (541 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 646ms
+ ✓ Compiled /courses/core-pathway in 335ms (543 modules)
+ GET /courses 200 in 177ms
+ GET /courses 200 in 48ms
+ GET /courses 200 in 77ms
+ GET /courses 200 in 54ms
+ ✓ Compiled in 2.5s (555 modules)
+ ✓ Compiled in 369ms (555 modules)
+ ○ Compiling /courses/foundation-pathway ...
+ ✓ Compiled /courses/foundation-pathway in 510ms (557 modules)
+ ✓ Compiled /_not-found in 134ms (277 modules)
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 1896ms (779 modules)
+ GET /_next/static/css/app/layout.css?v=1781635422686 500 in 4355ms
+ GET /_next/static/css/app/layout.css?v=1781635427207 500 in 43ms
+ GET /courses/foundation-pathway 200 in 150ms
+ GET /_next/static/css/app/layout.css?v=1781635438140 500 in 57ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 54ms
+ GET /_next/static/chunks/main-app.js?v=1781635438140 500 in 57ms
+ GET /courses 500 in 71ms
+ GET /courses 500 in 44ms
+[?25h

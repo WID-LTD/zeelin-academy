@@ -1,61 +1,111 @@
 import Link from 'next/link'
-import CountUp from '@/components/CountUp'
+import type { Metadata } from 'next'
+import AnimatedSection from '@/components/AnimatedSection'
+import SafeImage from '@/components/SafeImage'
+import { categories } from '@/lib/courseData'
 
-const weeks = [
-  { num: 1, title: 'Business Analysis Planning and Monitoring', desc: 'Understanding the BA role, stakeholder mapping, and project approach.' },
-  { num: 2, title: 'Elicitation and Collaboration', desc: 'Gathering information directly from stakeholders through interviews, workshops, and surveys.' },
-  { num: 3, title: 'Requirements Life Cycle Management', desc: 'Managing and tracing requirements from inception to completion.' },
-  { num: 4, title: 'Strategy Analysis', desc: 'Defining business needs and identifying strategies for organizational change.' },
-  { num: 5, title: 'Requirements Analysis and Design Definition', desc: 'Structuring requirements and designing solutions using BPMN and wireframes.' },
-  { num: 6, title: 'Solution Evaluation', desc: 'Assessing the value delivered by the implemented solution.' }
-]
+export const metadata: Metadata = {
+  title: 'Our Training Programmes | Zeelin Academy',
+  description: 'Explore our BCS Diploma pathways: Foundation, Core, Practitioner, and Oral Exam preparation. Find the right course for your Business Analysis career.',
+}
 
 export default function CoursesPage() {
   return (
-    <div className="min-h-screen py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="font-display text-3xl sm:text-5xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>
-            Course <span style={{ color: 'var(--brand-gold)' }}>Outline</span>
-          </h1>
-          <p className="text-lg max-w-2xl mx-auto text-secondary">
-            A comprehensive 6-week Diploma in Business Analysis program designed for practical learning
-          </p>
+    <div className="min-h-screen">
+      {/* Section 1 — Standalone Title */}
+      <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+        <div className="absolute inset-0 bg-hero-glow-blue pointer-events-none opacity-40" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedSection delay={0}>
+            <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl uppercase tracking-wide leading-none">
+              <span style={{ color: '#ffffff' }}>Our Training </span>
+              <span style={{ color: 'var(--brand-gold)' }}>Programmes</span>
+            </h1>
+          </AnimatedSection>
+          <AnimatedSection delay={100}>
+            <p className="text-lg sm:text-xl mt-6 max-w-2xl mx-auto font-medium" style={{ color: 'var(--text-secondary)' }}>
+              Choose your BCS Diploma pathway and start learning today
+            </p>
+          </AnimatedSection>
         </div>
+      </section>
 
-        <div className="max-w-4xl mx-auto">
-          {weeks.map((week) => (
-            <div key={week.num} className="flex gap-6 pb-10 last:pb-0">
-              <div className="flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full gold-bg flex items-center justify-center font-bold text-lg flex-shrink-0" style={{ color: 'var(--text-core)' }}>
-                  {week.num}
+      {/* Section 2 — Category Cards */}
+      <section className="py-24" style={{ backgroundColor: 'var(--bg-primary)' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {categories.map((cat, idx) => (
+              <AnimatedSection key={cat.slug} delay={idx * 100} duration={600}>
+                <div
+                  className="p-8 rounded-2xl border transition-all duration-300 shadow-sm hover:shadow-md h-full flex flex-col"
+                  style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}
+                >
+                  <h2 className="font-display text-3xl font-black mb-4" style={{ color: 'var(--text-core)' }}>
+                    {cat.name}
+                  </h2>
+
+                  <p className="text-sm font-medium mb-4" style={{ color: 'var(--text-muted)' }}>
+                    {cat.tagline}
+                  </p>
+                  <p className="text-sm mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                    {cat.description}
+                  </p>
+
+                  {/* Course Preview Thumbnails */}
+                  <div className="flex gap-3 mb-6 flex-wrap">
+                    {cat.courses.slice(0, 3).map((course) => (
+                      <div key={course.id} className="flex flex-col items-center gap-1">
+                        <div
+                          className="relative w-16 h-20 rounded-lg overflow-hidden shadow-sm"
+                          style={{ backgroundColor: 'var(--bg-secondary)' }}
+                        >
+                          {course.isVideo ? (
+                            <video
+                              src={course.media}
+                              className="w-full h-full object-cover"
+                              muted
+                              loop
+                              playsInline
+                              autoPlay
+                            />
+                          ) : (
+                            <SafeImage
+                              src={course.media}
+                              alt={course.title}
+                              fill
+                              className="object-cover"
+                            />
+                          )}
+                        </div>
+                        <span className="text-[0.6rem] text-center leading-tight font-medium max-w-[72px]" style={{ color: 'var(--text-muted)' }}>
+                          {course.title.length > 20 ? course.title.slice(0, 18) + '...' : course.title}
+                        </span>
+                      </div>
+                    ))}
+                    {cat.courses.length > 3 && (
+                      <div
+                        className="relative w-16 h-20 rounded-lg flex items-center justify-center text-xs font-bold shadow-sm"
+                        style={{ backgroundColor: 'var(--bg-secondary)', color: 'var(--text-muted)' }}
+                      >
+                        +{cat.courses.length - 3}
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="mt-auto">
+                    <Link
+                      href={`/courses/${cat.slug}`}
+                      className="btn-gold px-6 py-3 text-sm font-bold inline-block text-center w-full"
+                    >
+                      View Full Pathway
+                    </Link>
+                  </div>
                 </div>
-                {week.num < 6 && <div className="w-px flex-1 mt-2" style={{ backgroundColor: 'var(--border)' }} />}
-              </div>
-              <div className="flex-1 pb-2">
-                <h3 className="font-display text-xl font-bold mb-2" style={{ color: 'var(--text-core)' }}>
-                  Week {week.num}: {week.title}
-                </h3>
-                <p className="text-muted">{week.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="text-center mt-12 space-y-4">
-          <p className="font-display text-lg text-secondary">
-            Ready to dive deeper?
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/courses/modules" className="btn-gold px-8 py-4 text-lg inline-block">
-              Unlock the Full Curriculum
-            </Link>
-            <Link href="/enroll" className="btn-outline-gold px-8 py-4 text-lg inline-block">
-              Join the <CountUp end={500} suffix="+" /> Students
-            </Link>
+              </AnimatedSection>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
     </div>
   )
 }

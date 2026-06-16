@@ -71,7 +71,7 @@ export default function CertificatePage() {
             <div className="w-24 h-1 gold-bg mx-auto mb-8 rounded-full" />
 
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt="Zeelin Academy" className="h-12 mx-auto mb-6" />
+            <img src="/logo-light.png" alt="Zeelin Academy" className="h-12 mx-auto mb-6" />
 
             <p className="text-sm uppercase tracking-[0.2em] text-gray-500 mb-4">Certificate of Completion</p>
 

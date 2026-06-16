@@ -108,10 +108,6 @@ export default function BcsExamPrepPage() {
         
         {/* Hero Section */}
         <div className="text-center max-w-4xl mx-auto mb-16 animate-in fade-in duration-700">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6 text-[color:var(--brand-gold)] bg-[rgba(223,186,107,0.1)] border border-[rgba(223,186,107,0.2)]">
-            <Award className="w-4 h-4" />
-            BCS International Diploma Preparation
-          </div>
           <h1 className="font-display text-4xl sm:text-5xl font-bold leading-tight mb-6 text-[color:var(--text-core)]">
             BCS Business Analysis <span className="gold">Exam Prep</span>
           </h1>
@@ -182,7 +178,7 @@ export default function BcsExamPrepPage() {
                 </div>
 
                 {isAnswered && (
-                  <div className="p-4 rounded-xl bg-[color:var(--bg-secondary)] border border-[color:var(--border)] mb-6 animate-in fade-in duration-300">
+                  <div className="p-4 rounded-xl bg-[color:var(--bg-secondary)] border border-[color:var(--border)] mb-6 animate-in fade-in duration-300" aria-live="polite">
                     <h4 className="text-sm font-bold text-[color:var(--text-core)] mb-1">Explanation:</h4>
                     <p className="text-sm text-secondary leading-relaxed">
                       {quizQuestions[currentQuestion].explanation}

@@ -17,13 +17,14 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50" style={{ backgroundColor: 'var(--bg-primary)', borderBottom: '1px solid var(--border)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center" aria-label="Zeelin Academy - Go to homepage">
             <Image
-              src="/logo.png"
-              alt="Zeelin Academy"
-              width={40}
-              height={40}
-              className="rounded-full object-cover"
+              src={theme === 'dark' ? '/logo.png' : '/logo-light.png'}
+              alt="Zeelin Academy Logo"
+              width={166}
+              height={60}
+              className="w-auto h-[48px] md:h-[54px] object-contain"
+              priority
             />
           </Link>
 

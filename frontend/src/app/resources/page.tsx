@@ -81,9 +81,9 @@ const templates: Template[] = [
 ]
 
 const books = [
-  { src: '/book1.jpg', title: 'Business Analytics', author: 'Camm, Cochran, Fry, Ohlmann', desc: 'An excellent guide on data-driven decision making and corporate analytics models.' },
-  { src: '/book2.jpg', title: 'Business Analysis for Practitioners', author: 'PMI', desc: 'A practice guide mapping out critical Business Analysis capabilities across projects.' },
-  { src: '/book3.jpg', title: 'Business Analysis: Fourth Edition', author: 'Debra Paul and James Cadle', desc: 'The official BCS core textbook. Essential reading for all BCS Diploma candidates.' }
+  { src: '/book1.png', title: 'Business Analytics', author: 'Camm, Cochran, Fry, Ohlmann', desc: 'An excellent guide on data-driven decision making and corporate analytics models.' },
+  { src: '/book2.png', title: 'Business Analysis for Practitioners', author: 'PMI', desc: 'A practice guide mapping out critical Business Analysis capabilities across projects.' },
+  { src: '/book3.png', title: 'Business Analysis: Fourth Edition', author: 'Debra Paul and James Cadle', desc: 'The official BCS core textbook. Essential reading for all BCS Diploma candidates.' }
 ]
 
 export default function ResourcesPage() {
@@ -102,10 +102,6 @@ export default function ResourcesPage() {
 
         {/* Hero Section */}
         <div className="text-center max-w-4xl mx-auto mb-16 animate-in fade-in duration-700">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6 text-[color:var(--brand-gold)] bg-[rgba(223,186,107,0.1)] border border-[rgba(223,186,107,0.2)]">
-            <BookOpen className="w-4 h-4" />
-            Zeelin Academy Resource Hub
-          </div>
           <h1 className="font-display text-4xl sm:text-5xl font-bold leading-tight mb-6 text-[color:var(--text-core)]">
             Business Analysis <span className="gold">Resources</span>
           </h1>
@@ -172,8 +168,17 @@ export default function ResourcesPage() {
               {templates.map((temp) => (
                 <div 
                   key={temp.id} 
-                  className={`p-6 rounded-2xl border bg-[color:var(--bg-card)] transition-all cursor-pointer flex flex-col justify-between ${selectedTemplate?.id === temp.id ? 'border-[color:var(--brand-gold)] shadow-lg' : 'border-[color:var(--border)] hover:border-[color:var(--brand-gold)]/50'}`}
+                  role="button"
+                  tabIndex={0}
+                  aria-pressed={selectedTemplate?.id === temp.id}
+                  className={`p-6 rounded-2xl border bg-[color:var(--bg-card)] transition-all cursor-pointer flex flex-col justify-between focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-gold)] ${selectedTemplate?.id === temp.id ? 'border-[color:var(--brand-gold)] shadow-lg' : 'border-[color:var(--border)] hover:border-[color:var(--brand-gold)]/50'}`}
                   onClick={() => setSelectedTemplate(temp)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      setSelectedTemplate(temp)
+                    }
+                  }}
                 >
                   <div>
                     <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4 bg-[rgba(223,186,107,0.08)]">
@@ -195,7 +200,7 @@ export default function ResourcesPage() {
           </div>
 
           {/* Template Detail Viewer - 5 columns */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5" aria-live="polite">
             {selectedTemplate ? (
               <div className="p-8 rounded-2xl border bg-[color:var(--bg-card)] border-[color:var(--border)] shadow-xl relative overflow-hidden animate-in fade-in duration-300">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-[rgba(212,175,55,0.02)] rounded-bl-full pointer-events-none"></div>

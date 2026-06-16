@@ -24,6 +24,7 @@ app.post('/api/enroll', require('./routes/enroll'))
 app.post('/api/verify-code', require('./routes/verify-code'))
 app.post('/api/send-email', require('./routes/send-email'))
 app.post('/api/send-whatsapp', require('./routes/send-whatsapp'))
+app.post('/api/pathway-finder', require('./routes/pathway-finder'))
 
 // Init DB then seed admin, then start
 initDB().then(() => {
