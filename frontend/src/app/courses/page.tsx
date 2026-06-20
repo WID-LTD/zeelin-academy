@@ -77,7 +77,7 @@ export default function CoursesPage() {
                             />
                           )}
                         </div>
-                        <span className="text-[0.6rem] text-center leading-tight font-medium max-w-[72px]" style={{ color: 'var(--text-muted)' }}>
+                        <span className="text-[0.6rem] text-center leading-tight font-medium max-w-[4.5rem]" style={{ color: 'var(--text-muted)' }}>
                           {course.title.length > 20 ? course.title.slice(0, 18) + '...' : course.title}
                         </span>
                       </div>

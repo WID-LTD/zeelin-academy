@@ -133,7 +133,7 @@ export default function AboutPage() {
             </div>
 
             <AnimatedSection direction="right" delay={150} duration={700}>
-              <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-xl"
+              <div className="relative h-[18.75rem] md:h-[25rem] rounded-2xl overflow-hidden shadow-xl"
                 style={{ backgroundColor: 'var(--bg-card)' }}>
                 <SafeImage
                   src="/learning_experience.png"
@@ -190,7 +190,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left - Image */}
             <AnimatedSection direction="right" delay={0} duration={700}>
-              <div className="relative w-full aspect-square max-w-[400px] mx-auto rounded-3xl overflow-hidden shadow-xl"
+              <div className="relative w-full aspect-square max-w-[25rem] mx-auto rounded-3xl overflow-hidden shadow-xl"
                 style={{ backgroundColor: 'var(--bg-card)' }}>
                 <SafeImage src="/pic.jpg" alt="Dr. Franklin Kalu" fill className="object-cover" />
               </div>
@@ -346,7 +346,7 @@ export default function AboutPage() {
 
             {/* Right - Image */}
             <AnimatedSection direction="right" delay={100} duration={700}>
-              <div className="relative h-[350px] md:h-[450px] rounded-2xl overflow-hidden shadow-xl"
+              <div className="relative h-[21.875rem] md:h-[28.125rem] rounded-2xl overflow-hidden shadow-xl"
                 style={{ backgroundColor: 'var(--bg-card)' }}>
                 <SafeImage
                   src="/achievement_business_analysts.png"
@@ -411,7 +411,7 @@ export default function AboutPage() {
             style={{ background: 'radial-gradient(circle, #3b82f6, transparent 70%)' }} />
           <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full opacity-[0.05]"
             style={{ background: 'radial-gradient(circle, #8b5cf6, transparent 70%)' }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full opacity-[0.03]"
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[31.25rem] h-[31.25rem] rounded-full opacity-[0.03]"
             style={{ background: 'radial-gradient(circle, var(--brand-gold), transparent 70%)' }} />
         </div>
 

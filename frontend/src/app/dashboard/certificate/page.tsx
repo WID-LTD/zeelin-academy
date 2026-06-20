@@ -95,12 +95,12 @@ export default function CertificatePage() {
               <div className="text-center">
                 <div className="w-24 h-0.5 bg-gray-300 mx-auto mb-2" />
                 <p className="text-xs text-gray-500">Dr. Franklin Kalu</p>
-                <p className="text-[10px] text-gray-400">Founder, Zeelin Academy</p>
+                <p className="text-[0.625rem] text-gray-400">Founder, Zeelin Academy</p>
               </div>
               <div className="text-center">
                 <div className="w-24 h-0.5 bg-gray-300 mx-auto mb-2" />
                 <p className="text-xs text-gray-500">Certificate ID</p>
-                <p className="text-[10px] text-gray-400">ZEL-{date.replace(/\//g, '')}-{user.full_name.substring(0, 3).toUpperCase()}</p>
+                <p className="text-[0.625rem] text-gray-400">ZEL-{date.replace(/\//g, '')}-{user.full_name.substring(0, 3).toUpperCase()}</p>
               </div>
             </div>
 

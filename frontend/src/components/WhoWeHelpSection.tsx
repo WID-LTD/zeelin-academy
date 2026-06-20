@@ -57,7 +57,7 @@ export default function WhoWeHelpSection() {
 
           {/* Right Column - Photo Grid */}
           <AnimatedSection direction="right" delay={200} duration={700} className="w-full">
-            <div className="grid grid-cols-2 gap-4 h-[400px] sm:h-[500px] md:h-[600px]">
+            <div className="grid grid-cols-2 gap-4 h-[25rem] sm:h-[31.25rem] md:h-[37.5rem]">
               {photos.map((img, i) => (
                 <div key={img.src}
                   className={`relative rounded-2xl overflow-hidden shadow-xl transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl ${i === 0 ? 'row-span-2' : ''}`}

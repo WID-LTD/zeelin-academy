@@ -111,7 +111,7 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
             </div>
 
             {/* Tab Content */}
-            <div className="min-h-[400px]">
+            <div className="min-h-[25rem]">
               {activeTab === 'overview' && (
                 <div className="space-y-8 animate-fade-in text-[color:var(--text-core)]">
                   <div>

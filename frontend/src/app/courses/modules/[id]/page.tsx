@@ -483,7 +483,7 @@ export default function ModuleDetailPage() {
                 <div className="w-7 h-7 rounded-full gold-bg flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Check className="w-5 h-5" style={{ color: 'var(--brand-gold)' }} />
                 </div>
-                <span className="text-[17px] font-medium text-[color:var(--text-core)]">{obj}</span>
+                <span className="text-[1.0625rem] font-medium text-[color:var(--text-core)]">{obj}</span>
               </div>
             ))}
           </div>
@@ -515,7 +515,7 @@ export default function ModuleDetailPage() {
                     {week.topics.map((topic, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <ChevronRight className="w-4 h-4" style={{ color: 'var(--text-secondary)' }} />
-                        <span className="text-[15px] text-secondary">{topic}</span>
+                        <span className="text-[0.9375rem] text-secondary">{topic}</span>
                       </li>
                     ))}
                   </ul>
@@ -532,7 +532,7 @@ export default function ModuleDetailPage() {
                         <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center flex-shrink-0 mt-0.5">
                           <Plus className="w-4 h-4" style={{ color: 'var(--brand-gold)' }} />
                         </div>
-                        <span className="text-[15px] text-secondary">{ex}</span>
+                        <span className="text-[0.9375rem] text-secondary">{ex}</span>
                       </li>
                     ))}
                   </ul>
@@ -553,7 +553,7 @@ export default function ModuleDetailPage() {
                 <div className="w-8 h-8 rounded-full bg-[rgba(223,186,107,0.1)] flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Check className="w-5 h-5" style={{ color: 'var(--brand-gold)' }} />
                 </div>
-                <span className="text-[17px] font-medium text-[color:var(--text-core)]">{outcome}</span>
+                <span className="text-[1.0625rem] font-medium text-[color:var(--text-core)]">{outcome}</span>
               </div>
             ))}
           </div>

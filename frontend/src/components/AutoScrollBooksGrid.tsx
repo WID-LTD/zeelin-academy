@@ -31,7 +31,7 @@ export default function AutoScrollBooksGrid() {
   return (
     <div ref={scrollRef} className="flex gap-6 overflow-x-hidden">
       {[...books, ...books].map((book, i) => (
-        <div key={i} className="group cursor-pointer flex-shrink-0 w-[200px]">
+        <div key={i} className="group cursor-pointer flex-shrink-0 w-[12.5rem]">
           <div className="relative aspect-[3/4] rounded-xl overflow-hidden mb-3 border" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
             <Image
               src={book.src}

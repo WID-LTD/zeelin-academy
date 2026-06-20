@@ -23,19 +23,19 @@ export default function Header() {
               alt="Zeelin Academy Logo"
               width={166}
               height={60}
-              className="w-auto h-[48px] md:h-[54px] object-contain"
+              className="w-auto h-[3rem] md:h-[3.375rem] object-contain"
               priority
             />
           </Link>
 
           <nav className="hidden md:flex items-center gap-5">
-            <Link href="/" className={`nav-link text-[13px] font-medium ${isActive('/') ? 'active' : ''}`}>Home</Link>
-            <Link href="/about" className={`nav-link text-[13px] font-medium ${isActive('/about') ? 'active' : ''}`}>About</Link>
-            <Link href="/pathway-finder" className={`nav-link text-[13px] font-medium ${isActive('/pathway-finder') ? 'active' : ''}`}>Pathway Finder</Link>
-            <Link href="/courses" className={`nav-link text-[13px] font-medium ${isActive('/courses') ? 'active' : ''}`}>Courses</Link>
-            <Link href="/bcs-exam-prep" className={`nav-link text-[13px] font-medium ${isActive('/bcs-exam-prep') ? 'active' : ''}`}>Exam Prep</Link>
-            <Link href="/resources" className={`nav-link text-[13px] font-medium ${isActive('/resources') ? 'active' : ''}`}>Resources</Link>
-            <Link href="/contact" className={`nav-link text-[13px] font-medium ${isActive('/contact') ? 'active' : ''}`}>Contact</Link>
+            <Link href="/" className={`nav-link text-[0.8125rem] font-medium ${isActive('/') ? 'active' : ''}`}>Home</Link>
+            <Link href="/about" className={`nav-link text-[0.8125rem] font-medium ${isActive('/about') ? 'active' : ''}`}>About</Link>
+            <Link href="/pathway-finder" className={`nav-link text-[0.8125rem] font-medium ${isActive('/pathway-finder') ? 'active' : ''}`}>Pathway Finder</Link>
+            <Link href="/courses" className={`nav-link text-[0.8125rem] font-medium ${isActive('/courses') ? 'active' : ''}`}>Courses</Link>
+            <Link href="/bcs-exam-prep" className={`nav-link text-[0.8125rem] font-medium ${isActive('/bcs-exam-prep') ? 'active' : ''}`}>Exam Prep</Link>
+            <Link href="/resources" className={`nav-link text-[0.8125rem] font-medium ${isActive('/resources') ? 'active' : ''}`}>Resources</Link>
+            <Link href="/contact" className={`nav-link text-[0.8125rem] font-medium ${isActive('/contact') ? 'active' : ''}`}>Contact</Link>
 
             <button onClick={toggle} className="p-2 rounded-lg nav-link" aria-label="Toggle theme">
               {theme === 'light' ? (

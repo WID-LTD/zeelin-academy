@@ -29,7 +29,7 @@ export default function ConversionSection() {
           <div className="space-y-8">
             {/* Headline */}
             <AnimatedSection delay={100}>
-              <h2 className="font-display text-[38px] md:text-[56px] font-bold leading-[1.1] tracking-tight"
+              <h2 className="font-display text-[2.375rem] md:text-[3.5rem] font-bold leading-[1.1] tracking-tight"
                 style={{ color: 'var(--text-core)' }}>
                 Business Analysis Training Made Simple for{' '}
                 <span style={{ color: 'var(--brand-gold)' }}>Busy Learners</span>
@@ -112,7 +112,7 @@ export default function ConversionSection() {
           </div>
 
           {/* Right Column - Composite Illustration */}
-          <div className="relative h-[420px] sm:h-[500px] md:h-[580px] w-full hidden md:block">
+          <div className="relative h-[26.25rem] sm:h-[31.25rem] md:h-[36.25rem] w-full hidden md:block">
             {/* Background gradient orbs */}
             <div className="absolute top-8 right-8 w-72 h-72 rounded-full opacity-[0.07] pointer-events-none"
               style={{ background: 'radial-gradient(circle, #3b82f6, transparent 70%)' }} />
@@ -136,7 +136,7 @@ export default function ConversionSection() {
 
             {/* Book 3 - furthest back */}
             <AnimatedSection delay={300} duration={800}>
-              <div className="absolute bottom-6 right-2 w-[120px] md:w-[140px] h-[160px] md:h-[185px] rotate-[16deg] z-[1] transition-all duration-500 hover:-translate-y-2 hover:rotate-[12deg]">
+              <div className="absolute bottom-6 right-2 w-[7.5rem] md:w-[8.75rem] h-[10rem] md:h-[11.5625rem] rotate-[16deg] z-[1] transition-all duration-500 hover:-translate-y-2 hover:rotate-[12deg]">
                 <div className="w-full h-full relative rounded-lg overflow-hidden shadow-xl"
                   style={{ backgroundColor: 'var(--bg-card)' }}>
                   <SafeImage src="/book3.png" alt="Business Analysis Book" fill className="object-cover" />
@@ -146,7 +146,7 @@ export default function ConversionSection() {
 
             {/* Book 2 - middle back */}
             <AnimatedSection delay={200} duration={800}>
-              <div className="absolute bottom-12 right-[130px] md:right-[160px] w-[135px] md:w-[150px] h-[180px] md:h-[200px] rotate-[8deg] z-[2] transition-all duration-500 hover:-translate-y-2 hover:rotate-[5deg]">
+              <div className="absolute bottom-12 right-[130px] md:right-[160px] w-[8.4375rem] md:w-[9.375rem] h-[11.25rem] md:h-[12.5rem] rotate-[8deg] z-[2] transition-all duration-500 hover:-translate-y-2 hover:rotate-[5deg]">
                 <div className="w-full h-full relative rounded-lg overflow-hidden shadow-xl"
                   style={{ backgroundColor: 'var(--bg-card)' }}>
                   <SafeImage src="/book2.png" alt="Business Analysis Book" fill className="object-cover" />
@@ -156,7 +156,7 @@ export default function ConversionSection() {
 
             {/* Book 1 - middle front */}
             <AnimatedSection delay={100} duration={800}>
-              <div className="absolute bottom-16 right-[80px] md:right-[100px] w-[140px] md:w-[160px] h-[185px] md:h-[210px] rotate-[3deg] z-[3] transition-all duration-500 hover:-translate-y-2 hover:rotate-[1deg]">
+              <div className="absolute bottom-16 right-[80px] md:right-[100px] w-[8.75rem] md:w-[10rem] h-[11.5625rem] md:h-[13.125rem] rotate-[3deg] z-[3] transition-all duration-500 hover:-translate-y-2 hover:rotate-[1deg]">
                 <div className="w-full h-full relative rounded-lg overflow-hidden shadow-xl"
                   style={{ backgroundColor: 'var(--bg-card)' }}>
                   <SafeImage src="/book1.png" alt="Business Analysis Book" fill className="object-cover" />
@@ -166,7 +166,7 @@ export default function ConversionSection() {
 
             {/* Laptop/tablet mockup */}
             <AnimatedSection direction="right" delay={0} duration={700}>
-              <div className="absolute bottom-24 left-1/2 -translate-x-1/2 w-[270px] md:w-[330px] z-[4]">
+              <div className="absolute bottom-24 left-1/2 -translate-x-1/2 w-[16.875rem] md:w-[20.625rem] z-[4]">
                 <div className="transition-all duration-500 hover:-translate-y-2">
                   <div className="rounded-xl overflow-hidden shadow-2xl border"
                     style={{ borderColor: 'var(--border)' }}>
@@ -197,12 +197,12 @@ export default function ConversionSection() {
 
             {/* Main book - front and center */}
             <AnimatedSection delay={50} duration={600}>
-              <div className="absolute -bottom-1 right-6 md:right-10 w-[175px] md:w-[200px] h-[230px] md:h-[265px] rotate-[-5deg] z-[5] transition-all duration-500 hover:-translate-y-3 hover:rotate-[-3deg]">
+              <div className="absolute -bottom-1 right-6 md:right-10 w-[10.9375rem] md:w-[12.5rem] h-[14.375rem] md:h-[16.5625rem] rotate-[-5deg] z-[5] transition-all duration-500 hover:-translate-y-3 hover:rotate-[-3deg]">
                 <div className="w-full h-full relative rounded-lg overflow-hidden shadow-2xl"
                   style={{ backgroundColor: 'var(--bg-card)' }}>
                   <SafeImage src="/book-main.png" alt="BCS Foundation Course" fill className="object-cover" />
                   {/* BCS badge on book */}
-                  <div className="absolute top-2 right-2 text-[10px] font-bold px-2 py-0.5 rounded shadow-lg"
+                  <div className="absolute top-2 right-2 text-[0.625rem] font-bold px-2 py-0.5 rounded shadow-lg"
                     style={{ backgroundColor: 'var(--brand-gold)', color: '#0f1115' }}>
                     BCS
                   </div>
@@ -227,8 +227,8 @@ export default function ConversionSection() {
                       </svg>
                     </div>
                     <div>
-                      <div className="text-[10px] font-bold" style={{ color: 'var(--text-core)' }}>Certification</div>
-                      <div className="text-[9px]" style={{ color: 'var(--text-muted)' }}>BCS Accredited</div>
+                      <div className="text-[0.625rem] font-bold" style={{ color: 'var(--text-core)' }}>Certification</div>
+                      <div className="text-[0.5625rem]" style={{ color: 'var(--text-muted)' }}>BCS Accredited</div>
                     </div>
                   </div>
                 </div>

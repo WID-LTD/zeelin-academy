@@ -12,7 +12,7 @@ export default function CallToActionSection() {
           style={{ background: 'radial-gradient(circle, #3b82f6, transparent 70%)' }} />
         <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full opacity-[0.05]"
           style={{ background: 'radial-gradient(circle, #8b5cf6, transparent 70%)' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full opacity-[0.03]"
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[31.25rem] h-[31.25rem] rounded-full opacity-[0.03]"
           style={{ background: 'radial-gradient(circle, var(--brand-gold), transparent 70%)' }} />
       </div>
 

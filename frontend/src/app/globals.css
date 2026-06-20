@@ -47,6 +47,10 @@
   --logo-border: 2px solid var(--brand-gold);
 }
 
+html {
+  font-size: clamp(14px, 0.5rem + 0.6vw, 22px);
+}
+
 * {
   margin: 0;
   padding: 0;

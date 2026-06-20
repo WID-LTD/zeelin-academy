@@ -69,7 +69,7 @@ Unique{' '}
 
           {/* Right Column - Enhanced Visual */}
           <AnimatedSection direction="right" delay={150} duration={700} className="w-full">
-            <div className="relative h-[400px] md:h-[520px] rounded-2xl overflow-hidden"
+            <div className="relative h-[25rem] md:h-[32.5rem] rounded-2xl overflow-hidden"
               style={{ backgroundColor: 'var(--bg-card)' }}>
               {/* Gradient orbs behind */}
               <div className="absolute -top-10 -right-10 w-64 h-64 rounded-full opacity-[0.08] pointer-events-none"
@@ -99,7 +99,7 @@ Unique{' '}
                     </div>
                     <div>
                       <div className="text-xs font-bold" style={{ color: 'var(--text-core)' }}>Micro-Lessons</div>
-                      <div className="text-[10px]" style={{ color: 'var(--text-muted)' }}>10-15 min each</div>
+                      <div className="text-[0.625rem]" style={{ color: 'var(--text-muted)' }}>10-15 min each</div>
                     </div>
                   </div>
                 </div>
@@ -119,7 +119,7 @@ Unique{' '}
                     </div>
                     <div>
                       <div className="text-xs font-bold" style={{ color: 'var(--text-core)' }}>Exam Ready</div>
-                      <div className="text-[10px]" style={{ color: 'var(--text-muted)' }}>BCS Aligned</div>
+                      <div className="text-[0.625rem]" style={{ color: 'var(--text-muted)' }}>BCS Aligned</div>
                     </div>
                   </div>
                 </div>

@@ -26,7 +26,7 @@ export default function SyllabusPage() {
           {weeks.map((week) => (
             <div key={week.num} className="relative pl-12 pb-12 last:pb-0">
               <div className="absolute left-[23px] top-0 bottom-0 w-px last:hidden" style={{ backgroundColor: 'var(--border)' }} />
-              <div className="absolute left-0 top-0 w-[46px] h-[46px] rounded-full gold-bg flex items-center justify-center font-bold" style={{ color: 'var(--text-core)' }}>
+              <div className="absolute left-0 top-0 w-[2.875rem] h-[2.875rem] rounded-full gold-bg flex items-center justify-center font-bold" style={{ color: 'var(--text-core)' }}>
                 {week.num}
               </div>
               <div className="ml-4 p-6 rounded-xl border" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
