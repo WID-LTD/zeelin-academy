@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import AnimatedSection from '@/components/AnimatedSection'
 
 function calcPercentOff(oldPrice: string, newPrice: string): string {
   const old = parseFloat(oldPrice.replace('€', ''))
@@ -99,7 +100,7 @@ export default function BannerSection() {
 
   return (
     <section className="relative overflow-hidden w-full py-16 bg-transparent">
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-6 w-full">
           
           {/* Top: Interactive Scrollable Book Grid */}
@@ -172,24 +173,29 @@ export default function BannerSection() {
             <div className="absolute top-0 bottom-0 right-0 w-12 pointer-events-none bg-gradient-to-l from-[var(--bg-primary)] to-transparent" />
           </div>
 
-          {/* Recent Update - text only, no images, no animations */}
-          <div className="w-full text-center pt-10 border-t" style={{ borderColor: 'var(--border)' }}>
-            <h3 className="font-display text-2xl md:text-3xl font-bold mb-3" style={{ color: 'var(--text-core)' }}>
-              Business Analysis Training Made Simple for{' '}
-              <span style={{ color: 'var(--brand-gold)' }}>Busy Learners</span>
-            </h3>
-            <p className="text-sm md:text-base max-w-2xl mx-auto mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              Learn Business Analysis step by step, even if you work full-time, have a family, or feel overwhelmed by exams.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/courses" className="btn-gold px-8 py-3 text-sm font-bold inline-block text-center">
-                View Courses
-              </Link>
-              <Link href="/bcs-exam-prep" className="btn-outline-gold px-8 py-3 text-sm font-bold inline-block text-center">
-                Start with BCS Foundation
-              </Link>
+          {/* Get the Strategy Guide */}
+          <AnimatedSection delay={200}>
+            <div className="w-full text-center pt-10 border-t" style={{ borderColor: 'var(--border)' }}>
+              <div className="max-w-3xl mx-auto">
+                <h3 className="font-display text-3xl md:text-4xl lg:text-5xl font-black mb-4 leading-tight" style={{ color: 'var(--text-core)' }}>
+                  Get the{' '}
+                  <span style={{ color: 'var(--brand-gold)' }}>Business Analysis Strategy Guide</span>
+                </h3>
+                <p className="text-base md:text-lg max-w-2xl mx-auto mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                  A free, step-by-step roadmap designed for busy professionals preparing for BCS certification.
+                  Know exactly what to study, when, and how — so you pass with confidence.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link href="/contact" className="btn-gold px-10 py-4 text-base font-bold inline-block text-center hover:scale-105 transition-transform">
+                    Download Free Guide
+                  </Link>
+                  <Link href="/courses" className="btn-outline-gold px-10 py-4 text-base font-bold inline-block text-center hover:scale-105 transition-transform">
+                    Explore Courses
+                  </Link>
+                </div>
+              </div>
             </div>
-          </div>
+          </AnimatedSection>
 
         </div>
       </div>

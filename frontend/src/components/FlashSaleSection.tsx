@@ -19,7 +19,7 @@ export default function FlashSaleSection() {
 
   return (
     <section className="py-20">
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-2xl overflow-hidden">
           <div className="absolute inset-0 pointer-events-none" style={{
             background: 'radial-gradient(ellipse at 50% 50%, rgba(212,175,55,0.12), transparent 70%)'

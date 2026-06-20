@@ -2,6 +2,10 @@ import Link from 'next/link'
 import CountUp from '@/components/CountUp'
 import BannerSection from '@/components/BannerSection'
 import WhoWeHelpSection from '@/components/WhoWeHelpSection'
+import PartnershipSection from '@/components/PartnershipSection'
+import WhyChooseSection from '@/components/WhyChooseSection'
+import HomeCoursesSection from '@/components/HomeCoursesSection'
+import RatingsSection from '@/components/RatingsSection'
 import TeachingMethodSection from '@/components/TeachingMethodSection'
 import OfferSection from '@/components/OfferSection'
 import FlashSaleSection from '@/components/FlashSaleSection'
@@ -14,13 +18,15 @@ export default function Home() {
 
       <WhoWeHelpSection />
 
-      <TeachingMethodSection />
+      <PartnershipSection />
 
-      <OfferSection />
+      <WhyChooseSection />
+
+      <HomeCoursesSection />
 
       {/* Stats Section */}
       <section className="py-16" style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
-        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { value: 6, suffix: '', label: 'Week Program' },
@@ -39,7 +45,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Flash Sale Section */}
+      <RatingsSection />
+
+      <TeachingMethodSection />
+
+      <OfferSection />
+
       <FlashSaleSection />
 
       <CallToActionSection />

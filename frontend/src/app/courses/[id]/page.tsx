@@ -41,7 +41,7 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
     <div className="min-h-screen bg-[color:var(--bg-primary)] pt-20">
       {/* Hero Section */}
       <div className="bg-gray-900 text-white py-16 md:py-24">
-        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
             <div className="lg:col-span-2">
               <div className="flex items-center gap-2 text-sm text-blue-400 font-medium mb-4">
@@ -88,7 +88,7 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
         </div>
       </div>
 
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
+      <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           
           {/* Main Content */}

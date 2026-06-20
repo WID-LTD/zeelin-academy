@@ -15,29 +15,37 @@ const audiences = [
   'Professionals who want practical BA confidence',
 ]
 
+const photos = [
+  { src: '/IMG-20260605-WA0031.jpg', alt: 'BA professional at work' },
+  { src: '/IMG-20260605-WA0032.jpg', alt: 'Business analysis team collaboration' },
+  { src: '/IMG-20260605-WA0035.jpg', alt: 'Student success at Zeelin Academy' },
+  { src: '/IMG-20260605-WA0036.jpg', alt: 'Professional learning environment' },
+]
+
 export default function WhoWeHelpSection() {
   return (
-    <section className="relative overflow-hidden py-16 md:py-20" style={{ backgroundColor: 'var(--bg-primary)' }}>
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section className="relative overflow-hidden py-20 md:py-28" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+      <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Left Column - Content */}
-          <div className="space-y-6">
+          <div className="space-y-8">
             <AnimatedSection delay={100}>
-              <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight" style={{ color: 'var(--text-core)' }}>
-                Who Zeelin Academy <span style={{ color: 'var(--brand-gold)' }}>helps</span>
+              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-black leading-tight" style={{ color: 'var(--text-core)' }}>
+                Who Zeelin Academy{' '}
+                <span style={{ color: 'var(--brand-gold)' }}>helps</span>
               </h2>
             </AnimatedSection>
 
             <AnimatedSection delay={200}>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {audiences.map((item, i) => (
                   <AnimatedSection key={item} delay={200 + i * 60}>
-                    <li className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                    <li className="flex items-start gap-4">
+                      <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
                         style={{ backgroundColor: 'rgba(223,186,107,0.15)' }}>
-                        <Check className="w-3.5 h-3.5" style={{ color: 'var(--brand-gold)' }} />
+                        <Check className="w-4 h-4" style={{ color: 'var(--brand-gold)' }} />
                       </div>
-                      <span className="text-base md:text-lg" style={{ color: 'var(--text-secondary)' }}>
+                      <span className="text-lg md:text-xl font-medium" style={{ color: 'var(--text-secondary)' }}>
                         {item}
                       </span>
                     </li>
@@ -47,17 +55,12 @@ export default function WhoWeHelpSection() {
             </AnimatedSection>
           </div>
 
-          {/* Right Column - 2x2 Image Grid */}
+          {/* Right Column - Photo Grid */}
           <AnimatedSection direction="right" delay={200} duration={700} className="w-full">
-            <div className="grid grid-cols-2 gap-3 h-[300px] sm:h-[400px] md:h-[480px]">
-              {[
-                { src: '/learning_experience.png', alt: 'Learning journey at Zeelin Academy' },
-                { src: '/business_analysis_course.png', alt: 'Business Analysis course' },
-                { src: '/achievement_business_analysts.png', alt: 'BA professional achievement' },
-                { src: '/diverse-student-group.jpg', alt: 'Diverse group of learners' },
-              ].map((img, i) => (
+            <div className="grid grid-cols-2 gap-4 h-[400px] sm:h-[500px] md:h-[600px]">
+              {photos.map((img, i) => (
                 <div key={img.src}
-                  className="relative rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+                  className={`relative rounded-2xl overflow-hidden shadow-xl transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl ${i === 0 ? 'row-span-2' : ''}`}
                   style={{ backgroundColor: 'var(--bg-card)' }}>
                   <SafeImage src={img.src} alt={img.alt} fill className="object-cover" />
                 </div>

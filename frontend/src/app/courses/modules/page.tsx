@@ -31,7 +31,7 @@ export default function ModulesPage() {
 
   return (
     <div className="min-h-screen py-20">
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="font-display text-3xl sm:text-5xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>
             Course <span style={{ color: 'var(--brand-gold)' }}>Modules</span>
@@ -91,7 +91,7 @@ export default function ModulesPage() {
         {/* Paid Modules */}
         <div>
           <h2 className="font-display text-2xl font-bold mb-8 text-center gold">Full Program</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1240px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[2560px] mx-auto">
             {paidModules.map((mod) => (
               <div
                 key={mod.id}

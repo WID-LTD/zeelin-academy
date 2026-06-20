@@ -95,7 +95,7 @@ export default function AdminDashboard() {
 
   return (
     <div className="min-h-screen py-20">
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-10">
           <div>
             <h1 className="font-display text-3xl font-bold" style={{ color: 'var(--text-core)' }}>Admin <span className="gold">Dashboard</span></h1>

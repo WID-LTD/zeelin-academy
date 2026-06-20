@@ -98,7 +98,7 @@ export default function ResourcesPage() {
 
   return (
     <div className="min-h-screen pt-32 pb-20 bg-[color:var(--bg-primary)]">
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Hero Section */}
         <div className="text-center max-w-4xl mx-auto mb-16 animate-in fade-in duration-700">

@@ -6,8 +6,9 @@ interface AnimatedSectionProps {
   children: React.ReactNode
   className?: string
   delay?: number
-  direction?: 'up' | 'right'
+  direction?: 'up' | 'down' | 'right' | 'left' | 'scale' | 'fadeIn'
   duration?: number
+  threshold?: number
 }
 
 export default function AnimatedSection({
@@ -16,6 +17,7 @@ export default function AnimatedSection({
   delay = 0,
   direction = 'up',
   duration = 600,
+  threshold = 0.1,
 }: AnimatedSectionProps) {
   const ref = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
@@ -31,15 +33,28 @@ export default function AnimatedSection({
           observer.unobserve(el)
         }
       },
-      { threshold: 0.1 }
+      { threshold }
     )
 
     observer.observe(el)
     return () => observer.disconnect()
-  }, [])
+  }, [threshold])
 
-  const initialTransform =
-    direction === 'up' ? 'translateY(30px)' : 'translateX(60px)'
+  const getTransform = () => {
+    switch (direction) {
+      case 'up': return 'translateY(40px)'
+      case 'down': return 'translateY(-40px)'
+      case 'right': return 'translateX(60px)'
+      case 'left': return 'translateX(-60px)'
+      case 'scale': return 'scale(0.9)'
+      case 'fadeIn': return 'none'
+      default: return 'translateY(40px)'
+    }
+  }
+
+  const getFinalTransform = () => {
+    return direction === 'fadeIn' ? 'none' : 'translateY(0) translateX(0) scale(1)'
+  }
 
   return (
     <div
@@ -47,7 +62,7 @@ export default function AnimatedSection({
       className={className}
       style={{
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0) translateX(0)' : initialTransform,
+        transform: isVisible ? getFinalTransform() : getTransform(),
         transition: `opacity ${duration}ms cubic-bezier(0.16, 1, 0.3, 1), transform ${duration}ms cubic-bezier(0.16, 1, 0.3, 1)`,
         transitionDelay: `${delay}ms`,
       }}

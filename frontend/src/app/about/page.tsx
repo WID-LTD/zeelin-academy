@@ -62,7 +62,7 @@ export default function AboutPage() {
       {/* Section 1 – About Zeelin Academy */}
       <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
         <div className="absolute inset-0 bg-hero-glow-blue pointer-events-none opacity-40" />
-        <div className="relative max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <AnimatedSection delay={0}>
               <h1 className="font-display font-black text-6xl sm:text-7xl lg:text-8xl uppercase tracking-wide leading-none">
@@ -76,7 +76,7 @@ export default function AboutPage() {
 
       {/* Section A – Why Zeelin Academy Exists */}
       <section className="py-24" style={{ backgroundColor: 'var(--bg-primary)' }}>
-        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Top — heading + text */}
           <div className="max-w-4xl mx-auto space-y-6 mb-16">
             <AnimatedSection delay={0}>
@@ -186,7 +186,7 @@ export default function AboutPage() {
 
       {/* Section B – Founder Story */}
       <section className="py-24" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left - Image */}
             <AnimatedSection direction="right" delay={0} duration={700}>
@@ -312,7 +312,7 @@ export default function AboutPage() {
 
       {/* Section D – Vision Statement */}
       <section className="py-24" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left - Content */}
             <div className="space-y-6">
@@ -362,7 +362,7 @@ export default function AboutPage() {
 
       {/* Section E – Our Values */}
       <section className="py-24" style={{ backgroundColor: 'var(--bg-primary)' }}>
-        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <AnimatedSection delay={100}>
               <h2 className="font-display text-3xl sm:text-4xl font-bold" style={{ color: 'var(--text-core)' }}>
