@@ -146,7 +146,7 @@ export default function ConversionSection() {
 
             {/* Book 2 - middle back */}
             <AnimatedSection delay={200} duration={800}>
-              <div className="absolute bottom-12 right-[130px] md:right-[160px] w-[8.4375rem] md:w-[9.375rem] h-[11.25rem] md:h-[12.5rem] rotate-[8deg] z-[2] transition-all duration-500 hover:-translate-y-2 hover:rotate-[5deg]">
+              <div className="absolute bottom-12 right-[8.125rem] md:right-[10rem] w-[8.4375rem] md:w-[9.375rem] h-[11.25rem] md:h-[12.5rem] rotate-[8deg] z-[2] transition-all duration-500 hover:-translate-y-2 hover:rotate-[5deg]">
                 <div className="w-full h-full relative rounded-lg overflow-hidden shadow-xl"
                   style={{ backgroundColor: 'var(--bg-card)' }}>
                   <SafeImage src="/book2.png" alt="Business Analysis Book" fill className="object-cover" />
@@ -156,7 +156,7 @@ export default function ConversionSection() {
 
             {/* Book 1 - middle front */}
             <AnimatedSection delay={100} duration={800}>
-              <div className="absolute bottom-16 right-[80px] md:right-[100px] w-[8.75rem] md:w-[10rem] h-[11.5625rem] md:h-[13.125rem] rotate-[3deg] z-[3] transition-all duration-500 hover:-translate-y-2 hover:rotate-[1deg]">
+              <div className="absolute bottom-16 right-[5rem] md:right-[6.25rem] w-[8.75rem] md:w-[10rem] h-[11.5625rem] md:h-[13.125rem] rotate-[3deg] z-[3] transition-all duration-500 hover:-translate-y-2 hover:rotate-[1deg]">
                 <div className="w-full h-full relative rounded-lg overflow-hidden shadow-xl"
                   style={{ backgroundColor: 'var(--bg-card)' }}>
                   <SafeImage src="/book1.png" alt="Business Analysis Book" fill className="object-cover" />
