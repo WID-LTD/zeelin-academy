@@ -19,6 +19,9 @@ app.use(express.json())
 // In-memory store for verification codes
 globalThis.__verificationStore = {}
 
+// Health check / wakeup
+app.get('/api/health', (req, res) => res.json({ status: 'ok', timestamp: Date.now() }))
+
 // Routes
 app.post('/api/enroll', require('./routes/enroll'))
 app.post('/api/verify-code', require('./routes/verify-code'))

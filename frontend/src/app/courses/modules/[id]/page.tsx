@@ -459,7 +459,7 @@ export default function ModuleDetailPage() {
 
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-4">
-            <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${mod.type === 'free' ? 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300' : 'bg-[rgba(223,186,107,0.15)] text-[#D4AF37]'}`}>
+            <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${mod.type === 'free' ? 'bg-[rgba(223,186,107,0.15)] text-[#D4AF37]' : 'bg-[rgba(223,186,107,0.15)] text-[#D4AF37]'}`}>
               {mod.type === 'free' ? 'Free Access' : 'Premium Module'}
             </span>
             <span className="text-sm text-muted">{mod.duration}</span>
@@ -529,7 +529,7 @@ export default function ModuleDetailPage() {
                   <ul className="space-y-3">
                     {week.exercises.map((ex, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: 'rgba(223,186,107,0.12)' }}>
                           <Plus className="w-4 h-4" style={{ color: 'var(--brand-gold)' }} />
                         </div>
                         <span className="text-[0.9375rem] text-secondary">{ex}</span>

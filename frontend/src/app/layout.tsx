@@ -3,6 +3,7 @@ import './globals.css'
 import ThemeProvider from '@/components/ThemeProvider'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Wakeup from '@/components/Wakeup'
 
 export const metadata: Metadata = {
   title: 'Zeelin Academy | Diploma in Business Analysis',
@@ -22,6 +23,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen antialiased" suppressHydrationWarning>
         <ThemeProvider>
+          <Wakeup />
           <Header />
           <main className="pt-20">
             {children}
