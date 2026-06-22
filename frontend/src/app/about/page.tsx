@@ -61,8 +61,8 @@ export default function AboutPage() {
     <div className="min-h-screen">
       {/* Section 1 – About Zeelin Academy */}
       <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-        <div className="absolute inset-0 bg-hero-glow-blue pointer-events-none opacity-40" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 bg-hero-glow pointer-events-none opacity-40" />
+        <div className="relative max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <AnimatedSection delay={0}>
               <h1 className="font-display font-black text-6xl sm:text-7xl lg:text-8xl uppercase tracking-wide leading-none">
@@ -76,7 +76,7 @@ export default function AboutPage() {
 
       {/* Section A – Why Zeelin Academy Exists */}
       <section className="py-24" style={{ backgroundColor: 'var(--bg-primary)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Top — heading + text */}
           <div className="max-w-4xl mx-auto space-y-6 mb-16">
             <AnimatedSection delay={0}>
@@ -133,7 +133,7 @@ export default function AboutPage() {
             </div>
 
             <AnimatedSection direction="right" delay={150} duration={700}>
-              <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-xl"
+              <div className="relative h-[18.75rem] md:h-[25rem] rounded-2xl overflow-hidden shadow-xl"
                 style={{ backgroundColor: 'var(--bg-card)' }}>
                 <SafeImage
                   src="/learning_experience.png"
@@ -186,11 +186,11 @@ export default function AboutPage() {
 
       {/* Section B – Founder Story */}
       <section className="py-24" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left - Image */}
             <AnimatedSection direction="right" delay={0} duration={700}>
-              <div className="relative w-full aspect-square max-w-[400px] mx-auto rounded-3xl overflow-hidden shadow-xl"
+              <div className="relative w-full aspect-square max-w-[25rem] mx-auto rounded-3xl overflow-hidden shadow-xl"
                 style={{ backgroundColor: 'var(--bg-card)' }}>
                 <SafeImage src="/pic.jpg" alt="Dr. Franklin Kalu" fill className="object-cover" />
               </div>
@@ -312,7 +312,7 @@ export default function AboutPage() {
 
       {/* Section D – Vision Statement */}
       <section className="py-24" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left - Content */}
             <div className="space-y-6">
@@ -346,7 +346,7 @@ export default function AboutPage() {
 
             {/* Right - Image */}
             <AnimatedSection direction="right" delay={100} duration={700}>
-              <div className="relative h-[350px] md:h-[450px] rounded-2xl overflow-hidden shadow-xl"
+              <div className="relative h-[21.875rem] md:h-[28.125rem] rounded-2xl overflow-hidden shadow-xl"
                 style={{ backgroundColor: 'var(--bg-card)' }}>
                 <SafeImage
                   src="/achievement_business_analysts.png"
@@ -362,7 +362,7 @@ export default function AboutPage() {
 
       {/* Section E – Our Values */}
       <section className="py-24" style={{ backgroundColor: 'var(--bg-primary)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <AnimatedSection delay={100}>
               <h2 className="font-display text-3xl sm:text-4xl font-bold" style={{ color: 'var(--text-core)' }}>
@@ -408,10 +408,10 @@ export default function AboutPage() {
       <section className="relative overflow-hidden py-24 md:py-32" style={{ backgroundColor: 'var(--black)' }}>
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full opacity-[0.06]"
-            style={{ background: 'radial-gradient(circle, #3b82f6, transparent 70%)' }} />
+            style={{ background: 'radial-gradient(circle, #D4AF37, transparent 70%)' }} />
           <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full opacity-[0.05]"
-            style={{ background: 'radial-gradient(circle, #8b5cf6, transparent 70%)' }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full opacity-[0.03]"
+            style={{ background: 'radial-gradient(circle, #B5952F, transparent 70%)' }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[31.25rem] h-[31.25rem] rounded-full opacity-[0.03]"
             style={{ background: 'radial-gradient(circle, var(--brand-gold), transparent 70%)' }} />
         </div>
 

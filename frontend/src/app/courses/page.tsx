@@ -14,8 +14,8 @@ export default function CoursesPage() {
     <div className="min-h-screen">
       {/* Section 1 — Standalone Title */}
       <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-        <div className="absolute inset-0 bg-hero-glow-blue pointer-events-none opacity-40" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="absolute inset-0 bg-hero-glow pointer-events-none opacity-40" />
+        <div className="relative max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection delay={0}>
             <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl uppercase tracking-wide leading-none">
               <span style={{ color: '#ffffff' }}>Our Training </span>
@@ -32,7 +32,7 @@ export default function CoursesPage() {
 
       {/* Section 2 — Category Cards */}
       <section className="py-24" style={{ backgroundColor: 'var(--bg-primary)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {categories.map((cat, idx) => (
               <AnimatedSection key={cat.slug} delay={idx * 100} duration={600}>
@@ -77,7 +77,7 @@ export default function CoursesPage() {
                             />
                           )}
                         </div>
-                        <span className="text-[0.6rem] text-center leading-tight font-medium max-w-[72px]" style={{ color: 'var(--text-muted)' }}>
+                        <span className="text-[0.6rem] text-center leading-tight font-medium max-w-[4.5rem]" style={{ color: 'var(--text-muted)' }}>
                           {course.title.length > 20 ? course.title.slice(0, 18) + '...' : course.title}
                         </span>
                       </div>

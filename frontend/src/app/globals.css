@@ -9,8 +9,7 @@
   --brand-gold: #D4AF37;
   --brand-gold-dark: #B5952F;
   --brand-gold-light: #F0C94F;
-  --brand-blue: #3b82f6;
-  --brand-blue-dark: #2563eb;
+
 }
 
 .light {
@@ -47,6 +46,10 @@
   --logo-border: 2px solid var(--brand-gold);
 }
 
+html {
+  font-size: clamp(14px, -0.9rem + 2vw, 36px);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -58,6 +61,19 @@ body {
   color: var(--text-core);
   font-family: 'Inter', system-ui, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 60px 60px;
+}
+
+.light body,
+body.light {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.dark body,
+body.dark {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 ::selection {
@@ -71,10 +87,6 @@ body {
 
 .gold {
   color: var(--brand-gold);
-}
-
-.blue {
-  color: var(--brand-blue);
 }
 
 .text-secondary {
@@ -93,16 +105,8 @@ body {
   border-color: var(--brand-gold);
 }
 
-.blue-border {
-  border-color: var(--brand-blue);
-}
-
 .glow-gold {
   box-shadow: 0 0 30px rgba(223, 186, 107, 0.15);
-}
-
-.glow-blue {
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
 }
 
 .card-hover {
@@ -141,32 +145,6 @@ body {
 
 .btn-outline-gold:hover {
   background: rgba(223, 186, 107, 0.1);
-}
-
-.btn-blue {
-  background: var(--brand-blue);
-  color: #ffffff;
-  font-weight: 600;
-  border-radius: 0.5rem;
-  transition: all 0.3s ease;
-}
-
-.btn-blue:hover {
-  background: var(--brand-blue-dark);
-  transform: scale(1.02);
-  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.35);
-}
-
-.btn-outline-blue {
-  border: 1.5px solid var(--brand-blue);
-  color: var(--brand-blue);
-  font-weight: 600;
-  border-radius: 0.5rem;
-  transition: all 0.3s ease;
-}
-
-.btn-outline-blue:hover {
-  background: rgba(59, 130, 246, 0.1);
 }
 
 .card-premium {

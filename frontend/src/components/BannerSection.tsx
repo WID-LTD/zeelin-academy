@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import AnimatedSection from '@/components/AnimatedSection'
 
 function calcPercentOff(oldPrice: string, newPrice: string): string {
   const old = parseFloat(oldPrice.replace('€', ''))
@@ -90,6 +91,27 @@ export default function BannerSection() {
     scrollRef.current.scrollLeft = scrollLeft - walk
   }
 
+  // Touch event handlers for mobile drag-to-scroll
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (!scrollRef.current) return
+    setIsDragging(true)
+    isPausedRef.current = true
+    setStartX(e.touches[0].pageX - scrollRef.current.offsetLeft)
+    setScrollLeft(scrollRef.current.scrollLeft)
+  }
+
+  const handleTouchEnd = () => {
+    setIsDragging(false)
+    isPausedRef.current = false
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging || !scrollRef.current) return
+    const x = e.touches[0].pageX - scrollRef.current.offsetLeft
+    const walk = (x - startX) * 2
+    scrollRef.current.scrollLeft = scrollLeft - walk
+  }
+
   // Navigation Arrow Handlers
   const scrollBy = (amount: number) => {
     if (scrollRef.current) {
@@ -99,7 +121,7 @@ export default function BannerSection() {
 
   return (
     <section className="relative overflow-hidden w-full py-16 bg-transparent">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-6 w-full">
           
           {/* Top: Interactive Scrollable Book Grid */}
@@ -111,7 +133,7 @@ export default function BannerSection() {
             {/* Left Nav Arrow */}
             <button 
               onClick={() => scrollBy(-300)}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 m-2 rounded-full bg-[var(--bg-card)] border border-[var(--border)] shadow-lg text-[var(--text-core)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:text-[var(--brand-gold)]"
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-3 m-2 rounded-full bg-[var(--bg-card)] border border-[var(--border)] shadow-lg text-[var(--text-core)] opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 hover:text-[var(--brand-gold)]"
               aria-label="Scroll left"
             >
               <ChevronLeft className="w-6 h-6" />
@@ -125,12 +147,15 @@ export default function BannerSection() {
               onMouseLeave={handleMouseLeave}
               onMouseUp={handleMouseUp}
               onMouseMove={handleMouseMove}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+              onTouchMove={handleTouchMove}
               style={{ scrollBehavior: isDragging ? 'auto' : 'auto' }}
             >
               {books.map((book, i) => (
                 <div key={`${book.src}-${i}`} className="flex-shrink-0 flex flex-col items-center group/book">
                   <div
-                    className="relative w-[140px] sm:w-[160px] md:w-[190px] aspect-[3/4] rounded-xl overflow-hidden transition-all duration-300 pointer-events-none group-hover/book:scale-[1.02]"
+                    className="relative w-[8.75rem] sm:w-[10rem] md:w-[11.875rem] aspect-[3/4] rounded-xl overflow-hidden transition-all duration-300 pointer-events-none group-hover/book:scale-[1.02]"
                     style={{
                       boxShadow: '0 8px 30px rgba(0,0,0,0.12)',
                       backgroundColor: 'var(--bg-card)'
@@ -151,7 +176,7 @@ export default function BannerSection() {
                     </div>
                   </div>
                   {/* Book Title */}
-                  <div className="mt-4 w-[140px] sm:w-[160px] md:w-[190px] text-center px-1">
+                  <div className="mt-4 w-[8.75rem] sm:w-[10rem] md:w-[11.875rem] text-center px-1">
                     <p className="text-sm md:text-base font-semibold text-[color:var(--text-core)] leading-snug">{book.title}</p>
                   </div>
                 </div>
@@ -161,7 +186,7 @@ export default function BannerSection() {
             {/* Right Nav Arrow */}
             <button 
               onClick={() => scrollBy(300)}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 m-2 rounded-full bg-[var(--bg-card)] border border-[var(--border)] shadow-lg text-[var(--text-core)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:text-[var(--brand-gold)]"
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-3 m-2 rounded-full bg-[var(--bg-card)] border border-[var(--border)] shadow-lg text-[var(--text-core)] opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 hover:text-[var(--brand-gold)]"
               aria-label="Scroll right"
             >
               <ChevronRight className="w-6 h-6" />
@@ -172,24 +197,29 @@ export default function BannerSection() {
             <div className="absolute top-0 bottom-0 right-0 w-12 pointer-events-none bg-gradient-to-l from-[var(--bg-primary)] to-transparent" />
           </div>
 
-          {/* Recent Update - text only, no images, no animations */}
-          <div className="w-full text-center pt-10 border-t" style={{ borderColor: 'var(--border)' }}>
-            <h3 className="font-display text-2xl md:text-3xl font-bold mb-3" style={{ color: 'var(--text-core)' }}>
-              Business Analysis Training Made Simple for{' '}
-              <span style={{ color: 'var(--brand-gold)' }}>Busy Learners</span>
-            </h3>
-            <p className="text-sm md:text-base max-w-2xl mx-auto mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              Learn Business Analysis step by step, even if you work full-time, have a family, or feel overwhelmed by exams.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/courses" className="btn-gold px-8 py-3 text-sm font-bold inline-block text-center">
-                View Courses
-              </Link>
-              <Link href="/bcs-exam-prep" className="btn-outline-gold px-8 py-3 text-sm font-bold inline-block text-center">
-                Start with BCS Foundation
-              </Link>
+          {/* Get the Strategy Guide */}
+          <AnimatedSection delay={200}>
+            <div className="w-full text-center pt-10 border-t" style={{ borderColor: 'var(--border)' }}>
+              <div className="max-w-3xl mx-auto">
+                <h3 className="font-display text-3xl md:text-4xl lg:text-5xl font-black mb-4 leading-tight" style={{ color: 'var(--text-core)' }}>
+                  Get the{' '}
+                  <span style={{ color: 'var(--brand-gold)' }}>Business Analysis Strategy Guide</span>
+                </h3>
+                <p className="text-base md:text-lg max-w-2xl mx-auto mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                  A free, step-by-step roadmap designed for busy professionals preparing for BCS certification.
+                  Know exactly what to study, when, and how — so you pass with confidence.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link href="/contact" className="btn-gold px-10 py-4 text-base font-bold inline-block text-center hover:scale-105 transition-transform">
+                    Download Free Guide
+                  </Link>
+                  <Link href="/courses" className="btn-outline-gold px-10 py-4 text-base font-bold inline-block text-center hover:scale-105 transition-transform">
+                    Explore Courses
+                  </Link>
+                </div>
+              </div>
             </div>
-          </div>
+          </AnimatedSection>
 
         </div>
       </div>

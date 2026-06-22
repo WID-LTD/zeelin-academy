@@ -277,6 +277,9 @@ export default function AdminDashboard() {
               {t.icon}{t.label}
             </button>
           ))}
+          <button onClick={handleLogout} className="px-3 py-2 rounded-lg text-xs font-medium flex items-center gap-1 text-red-500 bg-[color:var(--bg-card)] border border-red-200">
+            <LogOut className="w-4 h-4" /> Sign Out
+          </button>
         </div>
 
         {/* Header bar */}

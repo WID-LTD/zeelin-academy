@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import AnimatedSection from '@/components/AnimatedSection'
 import {
@@ -109,132 +109,101 @@ const offers = [
   },
 ]
 
+const initialCount = 9
+
 export default function OfferSection() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null)
-  const [isDesktop, setIsDesktop] = useState(false)
-
-  useEffect(() => {
-    const mq = window.matchMedia('(min-width: 768px)')
-    setIsDesktop(mq.matches)
-    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches)
-    mq.addEventListener('change', handler)
-    return () => mq.removeEventListener('change', handler)
-  }, [])
-
-  const handleToggle = (i: number) => {
-    if (!isDesktop) {
-      setActiveIndex(activeIndex === i ? null : i)
-    }
-  }
-
-  const isOpen = (i: number) => (isDesktop ? false : activeIndex === i)
+  const [showAll, setShowAll] = useState(false)
+  const visible = showAll ? offers : offers.slice(0, initialCount)
 
   return (
-    <section className="relative overflow-hidden py-16 md:py-24" style={{ backgroundColor: 'var(--bg-primary)' }}>
-      {/* Gradient orbs */}
+    <section className="relative overflow-hidden py-16 md:py-28" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="absolute top-0 right-0 w-full h-full pointer-events-none overflow-hidden">
         <div className="absolute -top-32 -right-32 w-80 h-80 rounded-full opacity-[0.05]"
-          style={{ background: 'radial-gradient(circle, #3b82f6, transparent 70%)' }} />
+          style={{ background: 'radial-gradient(circle, #D4AF37, transparent 70%)' }} />
         <div className="absolute -bottom-32 -left-32 w-80 h-80 rounded-full opacity-[0.04]"
-          style={{ background: 'radial-gradient(circle, #8b5cf6, transparent 70%)' }} />
+          style={{ background: 'radial-gradient(circle, #B5952F, transparent 70%)' }} />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-          <AnimatedSection delay={100}>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4"
+      <div className="relative max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+        <AnimatedSection delay={100}>
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-4"
               style={{ color: 'var(--text-core)' }}>
               What Zeelin Academy{' '}
               <span style={{ color: 'var(--brand-gold)' }}>Offers</span>
             </h2>
-          </AnimatedSection>
-
-          <AnimatedSection delay={150}>
-            <p className="text-base md:text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              Zeelin Academy provides a complete Business Analysis success system designed to guide you from
-              enrollment to exam readiness, certification success, and long-term career growth.
+            <p className="text-lg md:text-xl" style={{ color: 'var(--text-secondary)' }}>
+              A complete Business Analysis success system designed to guide you from enrollment to exam readiness
             </p>
-          </AnimatedSection>
-        </div>
-
-        {/* FAQ-style Accordion List */}
-        <AnimatedSection delay={200}>
-          <div className="max-w-4xl mx-auto space-y-3">
-            {offers.map((offer, i) => {
-              const Icon = offer.icon
-              const open = isOpen(i)
-
-              return (
-                <AnimatedSection key={offer.title} delay={200 + i * 60} className="w-full">
-                  <div
-                    className={`group rounded-xl border transition-all duration-300 ${
-                      open
-                        ? 'border-[rgba(223,186,107,0.4)] shadow-lg'
-                        : 'border-[var(--border)] hover:shadow-md'
-                    }`}
-                    style={{ backgroundColor: 'var(--bg-card)' }}
-                    onClick={() => handleToggle(i)}
-                    onKeyDown={(e) => {
-                      if (!isDesktop && (e.key === 'Enter' || e.key === ' ')) {
-                        e.preventDefault()
-                        handleToggle(i)
-                      }
-                    }}
-                    role={isDesktop ? undefined : 'button'}
-                    tabIndex={isDesktop ? undefined : 0}
-                    aria-expanded={isDesktop ? undefined : open}
-                  >
-                    {/* Header Row */}
-                    <div className="flex items-center gap-3 md:gap-4 p-4 md:p-5">
-                      <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                        style={{ backgroundColor: 'rgba(223,186,107,0.12)' }}>
-                        <Icon className="w-5 h-5" style={{ color: 'var(--brand-gold)' }} />
-                      </div>
-
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-sm font-bold leading-snug" style={{ color: 'var(--text-core)' }}>
-                          {offer.title}
-                        </h3>
-                        <p className="text-xs mt-0.5 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-                          {offer.label}
-                        </p>
-                      </div>
-
-                      <ChevronDown
-                        className={`w-4 h-4 flex-shrink-0 transition-transform duration-300 ${
-                          isDesktop ? 'group-hover:rotate-180' : (open ? 'rotate-180' : '')
-                        }`}
-                        style={{ color: 'var(--brand-gold)' }}
-                      />
-                    </div>
-
-                    {/* Description Accordion */}
-                    <div
-                      className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                        isDesktop
-                          ? 'max-h-0 group-hover:max-h-[500px]'
-                          : (open ? 'max-h-[500px]' : 'max-h-0')
-                      }`}
-                    >
-                      <div className="px-4 pb-4 md:px-5 md:pb-5">
-                        <div className="pt-3 border-t" style={{ borderColor: 'var(--border)' }}>
-                          <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                            {offer.description}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </AnimatedSection>
-              )
-            })}
           </div>
         </AnimatedSection>
 
-        {/* Trust Banner */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {visible.map((offer, idx) => {
+            const Icon = offer.icon
+            return (
+              <AnimatedSection key={offer.title} delay={100 + idx * 60} duration={600}>
+                <div
+                  className="p-6 rounded-2xl border transition-all duration-300 shadow-sm hover:shadow-xl h-full flex flex-col hover:border-[rgba(212,175,55,0.3)]"
+                  style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
+                      style={{ backgroundColor: 'rgba(212,175,55,0.1)' }}>
+                      <Icon className="w-5 h-5" style={{ color: 'var(--brand-gold)' }} />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-base font-bold leading-snug" style={{ color: 'var(--text-core)' }}>
+                        {offer.title}
+                      </h3>
+                      <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>
+                        {offer.label}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-sm leading-relaxed flex-1" style={{ color: 'var(--text-secondary)' }}>
+                    {offer.description}
+                  </p>
+                </div>
+              </AnimatedSection>
+            )
+          })}
+
+          {!showAll && offers.length > initialCount && (
+            <AnimatedSection delay={100 + initialCount * 60} duration={600}>
+              <button
+                onClick={() => setShowAll(true)}
+                className="p-6 rounded-2xl border-2 border-dashed w-full h-full flex items-center justify-center transition-all duration-300 hover:shadow-lg hover:border-[var(--brand-gold)] cursor-pointer"
+                style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}
+              >
+                <div className="text-center">
+                  <span className="block text-3xl font-black mb-1" style={{ color: 'var(--brand-gold)' }}>
+                    +{offers.length - initialCount}
+                  </span>
+                  <span className="text-sm font-medium" style={{ color: 'var(--text-muted)' }}>
+                    More Features
+                  </span>
+                  <ChevronDown className="w-5 h-5 mx-auto mt-2" style={{ color: 'var(--brand-gold)' }} />
+                </div>
+              </button>
+            </AnimatedSection>
+          )}
+
+          {showAll && offers.length > initialCount && (
+            <AnimatedSection delay={100 + initialCount * 60} duration={600} className="md:col-span-2 lg:col-span-3">
+              <button
+                onClick={() => setShowAll(false)}
+                className="w-full py-3 rounded-xl border text-sm font-bold transition-all duration-300 hover:shadow-md"
+                style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)', color: 'var(--text-muted)' }}
+              >
+                Show Less
+              </button>
+            </AnimatedSection>
+          )}
+        </div>
+
         <AnimatedSection delay={400}>
-          <div className="relative mt-16 rounded-2xl overflow-hidden text-center p-10 md:p-14 border"
+          <div className="relative mt-16 rounded-2xl overflow-hidden text-center p-6 sm:p-10 md:p-14 border"
             style={{
               backgroundColor: 'var(--bg-secondary)',
               borderColor: 'var(--border)',
@@ -256,7 +225,7 @@ export default function OfferSection() {
                 remain consistent, and achieve exam success.
               </p>
 
-              <Link href="/courses" className="btn-gold px-10 py-4 text-base font-bold inline-block hover:scale-105 transition-transform">
+              <Link href="/courses" className="btn-gold px-6 sm:px-10 py-4 text-sm sm:text-base font-bold inline-block hover:scale-105 transition-transform">
                 Explore Our Courses
               </Link>
             </div>

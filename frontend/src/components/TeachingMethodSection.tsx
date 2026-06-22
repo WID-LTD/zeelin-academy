@@ -18,7 +18,7 @@ const methods = [
 export default function TeachingMethodSection() {
   return (
     <section className="relative overflow-hidden py-16 md:py-20" style={{ backgroundColor: 'var(--bg-primary)' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column - Content */}
           <div className="space-y-6">
@@ -40,7 +40,7 @@ Unique{' '}
 
             {/* Method Cards */}
             <AnimatedSection delay={300}>
-              <div className="grid grid-cols-2 gap-3 pt-2">
+              <div className="grid grid-cols-2 xl:grid-cols-3 gap-3 pt-2">
                 {methods.map((method, i) => {
                   const Icon = method.icon
                   return (
@@ -69,11 +69,11 @@ Unique{' '}
 
           {/* Right Column - Enhanced Visual */}
           <AnimatedSection direction="right" delay={150} duration={700} className="w-full">
-            <div className="relative h-[400px] md:h-[520px] rounded-2xl overflow-hidden"
+            <div className="relative h-[25rem] md:h-[32.5rem] rounded-2xl overflow-hidden"
               style={{ backgroundColor: 'var(--bg-card)' }}>
               {/* Gradient orbs behind */}
               <div className="absolute -top-10 -right-10 w-64 h-64 rounded-full opacity-[0.08] pointer-events-none"
-                style={{ background: 'radial-gradient(circle, #3b82f6, transparent 70%)' }} />
+                style={{ background: 'radial-gradient(circle, #D4AF37, transparent 70%)' }} />
               <div className="absolute -bottom-10 -left-10 w-56 h-56 rounded-full opacity-[0.06] pointer-events-none"
                 style={{ background: 'radial-gradient(circle, #8b5cf6, transparent 70%)' }} />
 
@@ -99,7 +99,7 @@ Unique{' '}
                     </div>
                     <div>
                       <div className="text-xs font-bold" style={{ color: 'var(--text-core)' }}>Micro-Lessons</div>
-                      <div className="text-[10px]" style={{ color: 'var(--text-muted)' }}>10-15 min each</div>
+                      <div className="text-[0.625rem]" style={{ color: 'var(--text-muted)' }}>10-15 min each</div>
                     </div>
                   </div>
                 </div>
@@ -114,12 +114,12 @@ Unique{' '}
                   }}>
                   <div className="flex items-center gap-2.5">
                     <div className="w-8 h-8 rounded-lg flex items-center justify-center"
-                      style={{ backgroundColor: 'rgba(59,130,246,0.1)' }}>
-                      <Award className="w-4 h-4" style={{ color: '#3b82f6' }} />
+                      style={{ backgroundColor: 'rgba(223,186,107,0.12)' }}>
+                      <Award className="w-4 h-4" style={{ color: 'var(--brand-gold)' }} />
                     </div>
                     <div>
                       <div className="text-xs font-bold" style={{ color: 'var(--text-core)' }}>Exam Ready</div>
-                      <div className="text-[10px]" style={{ color: 'var(--text-muted)' }}>BCS Aligned</div>
+                      <div className="text-[0.625rem]" style={{ color: 'var(--text-muted)' }}>BCS Aligned</div>
                     </div>
                   </div>
                 </div>

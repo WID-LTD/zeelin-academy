@@ -94,7 +94,7 @@ export default function PathwayFinder() {
   const handleSubmit = async () => {
     setSubmitting(true)
     try {
-      const res = await fetch('http://localhost:3030/api/pathway-finder', {
+      const res = await fetch('/api/pathway-finder', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -467,7 +467,7 @@ export default function PathwayFinder() {
         <textarea
           value={formData.q9}
           onChange={e => update('q9', e.target.value)}
-          className="w-full border rounded-xl p-4 outline-none transition-colors min-h-[120px]"
+          className="w-full border rounded-xl p-4 outline-none transition-colors min-h-[7.5rem]"
           style={{
             backgroundColor: 'var(--bg-primary)',
             color: 'var(--text-core)',
@@ -518,7 +518,7 @@ export default function PathwayFinder() {
           <h3 className="text-2xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>
             {result.path}
           </h3>
-          <p className="text-lg font-medium mb-6 pb-6" style={{ color: 'var(--brand-blue)', borderBottom: '1px solid var(--border)' }}>
+          <p className="text-lg font-medium mb-6 pb-6 gold" style={{ borderBottom: '1px solid var(--border)' }}>
             {result.recommend}
           </p>
           <p className="leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
@@ -577,7 +577,7 @@ export default function PathwayFinder() {
             {[...books, ...books].map((book, i) => (
               <div key={i} className="flex-shrink-0 flex flex-col items-center group/book">
                 <div
-                  className="relative w-[140px] sm:w-[160px] md:w-[190px] aspect-[3/4] rounded-xl overflow-hidden transition-all duration-300 pointer-events-none group-hover/book:scale-[1.02]"
+                  className="relative w-[8.75rem] sm:w-[10rem] md:w-[11.875rem] aspect-[3/4] rounded-xl overflow-hidden transition-all duration-300 pointer-events-none group-hover/book:scale-[1.02]"
                   style={{ boxShadow: 'rgba(0,0,0,0.12) 0px 8px 30px', backgroundColor: 'var(--bg-card)' }}
                 >
                   <SafeImage src={book.src} alt={book.title} fill className="object-cover" />
@@ -589,7 +589,7 @@ export default function PathwayFinder() {
                     <span className="text-sm leading-none">{book.salePrice}</span>
                   </div>
                 </div>
-                <div className="mt-4 w-[140px] sm:w-[160px] md:w-[190px] text-center px-1">
+                <div className="mt-4 w-[8.75rem] sm:w-[10rem] md:w-[11.875rem] text-center px-1">
                   <p className="text-sm md:text-base font-semibold leading-snug" style={{ color: 'var(--text-core)' }}>
                     {book.title}
                   </p>
@@ -602,8 +602,8 @@ export default function PathwayFinder() {
 
       {/* Section 2 — Standalone Title */}
       <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-        <div className="absolute inset-0 bg-hero-glow-blue pointer-events-none opacity-40" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="absolute inset-0 bg-hero-glow pointer-events-none opacity-40" />
+        <div className="relative max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection delay={0}>
             <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl uppercase tracking-wide leading-none">
               <span style={{ color: '#ffffff' }}>Zeelin Diploma </span>
@@ -625,7 +625,7 @@ export default function PathwayFinder() {
 
       {/* Section 3 — Multi-Step Form */}
       <section ref={formRef} className="py-24" style={{ backgroundColor: 'var(--bg-primary)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
           {step > 1 && step < 7 && renderProgress()}
           {renderCurrentStep()}
         </div>

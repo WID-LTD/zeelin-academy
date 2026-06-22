@@ -144,7 +144,7 @@ export default function ProfilePage() {
                 className="w-full rounded-lg px-4 py-3 border focus:outline-none bg-[color:var(--bg-primary)] text-[color:var(--text-core)] border-[color:var(--border)]" />
               <p className="text-xs text-muted mt-1">At least 6 characters</p>
             </div>
-            <button type="submit" disabled={changingPw} className="btn-blue px-8 py-3 text-sm font-bold disabled:opacity-50">
+            <button type="submit" disabled={changingPw} className="btn-gold px-8 py-3 text-sm font-bold disabled:opacity-50">
               {changingPw ? 'Changing...' : 'Change Password'}
             </button>
           </form>

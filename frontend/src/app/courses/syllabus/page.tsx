@@ -12,7 +12,7 @@ const weeks = [
 export default function SyllabusPage() {
   return (
     <div className="min-h-screen py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="font-display text-3xl sm:text-5xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>
             Weekly <span className="gold">Syllabus</span>
@@ -25,8 +25,8 @@ export default function SyllabusPage() {
         <div className="max-w-4xl mx-auto">
           {weeks.map((week) => (
             <div key={week.num} className="relative pl-12 pb-12 last:pb-0">
-              <div className="absolute left-[23px] top-0 bottom-0 w-px last:hidden" style={{ backgroundColor: 'var(--border)' }} />
-              <div className="absolute left-0 top-0 w-[46px] h-[46px] rounded-full gold-bg flex items-center justify-center font-bold" style={{ color: 'var(--text-core)' }}>
+              <div className="absolute left-[1.4375rem] top-0 bottom-0 w-px last:hidden" style={{ backgroundColor: 'var(--border)' }} />
+              <div className="absolute left-0 top-0 w-[2.875rem] h-[2.875rem] rounded-full gold-bg flex items-center justify-center font-bold" style={{ color: 'var(--text-core)' }}>
                 {week.num}
               </div>
               <div className="ml-4 p-6 rounded-xl border" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>

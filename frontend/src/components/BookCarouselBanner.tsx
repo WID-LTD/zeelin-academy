@@ -30,7 +30,7 @@ export default function BookCarouselBanner() {
           {[...books, ...books].map((book, i) => (
             <div key={i} className="flex-shrink-0 flex flex-col items-center group/book">
               <div
-                className="relative w-[140px] sm:w-[160px] md:w-[190px] aspect-[3/4] rounded-xl overflow-hidden transition-all duration-300 pointer-events-none group-hover/book:scale-[1.02]"
+                className="relative w-[8.75rem] sm:w-[10rem] md:w-[11.875rem] aspect-[3/4] rounded-xl overflow-hidden transition-all duration-300 pointer-events-none group-hover/book:scale-[1.02]"
                 style={{ boxShadow: 'rgba(0,0,0,0.12) 0px 8px 30px', backgroundColor: 'var(--bg-card)' }}
               >
                 <SafeImage
@@ -47,7 +47,7 @@ export default function BookCarouselBanner() {
                   <span className="text-sm leading-none">{book.salePrice}</span>
                 </div>
               </div>
-              <div className="mt-4 w-[140px] sm:w-[160px] md:w-[190px] text-center px-1">
+              <div className="mt-4 w-[8.75rem] sm:w-[10rem] md:w-[11.875rem] text-center px-1">
                 <p className="text-sm md:text-base font-semibold leading-snug" style={{ color: 'var(--text-core)' }}>
                   {book.title}
                 </p>

@@ -65,7 +65,7 @@ export default function LoginForm({
                 alt="Zeelin Academy"
                 width={150}
                 height={54}
-                className="w-auto h-[48px] object-contain mb-10 drop-shadow-sm"
+                className="w-auto h-[3rem] object-contain mb-10 drop-shadow-sm"
                 priority
               />
             </Link>

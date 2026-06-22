@@ -41,10 +41,10 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
     <div className="min-h-screen bg-[color:var(--bg-primary)] pt-20">
       {/* Hero Section */}
       <div className="bg-gray-900 text-white py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
             <div className="lg:col-span-2">
-              <div className="flex items-center gap-2 text-sm text-blue-400 font-medium mb-4">
+              <div className="flex items-center gap-2 text-sm gold font-medium mb-4">
                 <span>Business Analysis</span>
                 <span>•</span>
                 <span>Beginner to Advanced</span>
@@ -73,7 +73,7 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
                 </div>
               </div>
               <div className="mt-8 flex items-center gap-4">
-                <img src="/instructor_1.png" alt="Dr. Franklin Kalu" className="w-12 h-12 rounded-full border-2 border-blue-500 object-cover" />
+                <img src="/instructor_1.png" alt="Dr. Franklin Kalu" className="w-12 h-12 rounded-full border-2 gold-border object-cover" />
                 <div>
                   <p className="text-sm text-gray-400">Created by</p>
                   <p className="font-medium text-white">Dr. Franklin Kalu</p>
@@ -88,7 +88,7 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
+      <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           
           {/* Main Content */}
@@ -101,7 +101,7 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
                   onClick={() => setActiveTab(tab)}
                   className={`px-6 py-4 font-medium text-sm capitalize whitespace-nowrap border-b-2 transition-colors ${
                     activeTab === tab
-                      ? 'border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-400'
+                      ? 'border-[var(--brand-gold)] text-[var(--brand-gold)]'
                       : 'border-transparent text-[color:var(--text-secondary)] hover:text-[color:var(--text-core)] hover:border-[color:var(--border)]'
                   }`}
                 >
@@ -111,7 +111,7 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
             </div>
 
             {/* Tab Content */}
-            <div className="min-h-[400px]">
+            <div className="min-h-[25rem]">
               {activeTab === 'overview' && (
                 <div className="space-y-8 animate-fade-in text-[color:var(--text-core)]">
                   <div>
@@ -181,7 +181,7 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
                     {[1, 2, 3].map((r) => (
                       <div key={r} className="p-6 rounded-xl border border-[color:var(--border)] bg-[color:var(--bg-card)]">
                         <div className="flex items-center gap-4 mb-4">
-                          <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold">
+                          <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold" style={{ backgroundColor: 'var(--bg-secondary)', color: 'var(--brand-gold)' }}>
                             User
                           </div>
                           <div>
@@ -207,7 +207,7 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
                     <img src="/instructor_1.png" alt="Dr. Franklin Kalu" className="w-32 h-32 rounded-xl object-cover" />
                     <div>
                       <h3 className="text-xl font-bold">Dr. Franklin Kalu</h3>
-                      <p className="text-blue-600 dark:text-blue-400 text-sm font-medium mb-4">Senior Business Analyst & Educator</p>
+                      <p className="text-sm font-medium mb-4 gold">Senior Business Analyst & Educator</p>
                       <p className="text-[color:var(--text-secondary)] text-sm leading-relaxed mb-4">
                         Dr. Franklin Kalu is a seasoned Business Analyst with over 15 years of experience in the industry. He has worked with top Fortune 500 companies and has helped numerous organizations streamline their processes and achieve their strategic goals. His passion for teaching led him to found Zeelin Academy, where he shares his knowledge and expertise with aspiring professionals worldwide.
                       </p>
@@ -224,7 +224,7 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
               {/* Course Preview Image */}
               <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 relative">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <button className="w-16 h-16 rounded-full bg-white/90 text-blue-600 flex items-center justify-center shadow-lg hover:scale-105 transition-transform">
+                  <button className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg hover:scale-105 transition-transform" style={{ color: 'var(--brand-gold)' }}>
                     <Play className="w-12 h-12" style={{ color: 'white' }} />
                   </button>
                 </div>

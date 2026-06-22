@@ -169,7 +169,7 @@ export default function LessonPlayerPage() {
                       {isComplete ? (
                         <Check className="w-5 h-5" style={{ color: 'var(--brand-gold)' }} />
                       ) : (
-                        <span className={`text-[10px] font-bold ${isActive ? 'text-[#D4AF37]' : 'text-muted'}`}>{i + 1}</span>
+                        <span className={`text-[0.625rem] font-bold ${isActive ? 'text-[#D4AF37]' : 'text-muted'}`}>{i + 1}</span>
                       )}
                     </div>
                     <div className="flex-1 min-w-0">
