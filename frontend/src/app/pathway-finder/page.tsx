@@ -94,7 +94,7 @@ export default function PathwayFinder() {
   const handleSubmit = async () => {
     setSubmitting(true)
     try {
-      const res = await fetch('http://localhost:3030/api/pathway-finder', {
+      const res = await fetch('/api/pathway-finder', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -518,7 +518,7 @@ export default function PathwayFinder() {
           <h3 className="text-2xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>
             {result.path}
           </h3>
-          <p className="text-lg font-medium mb-6 pb-6" style={{ color: 'var(--brand-blue)', borderBottom: '1px solid var(--border)' }}>
+          <p className="text-lg font-medium mb-6 pb-6 gold" style={{ borderBottom: '1px solid var(--border)' }}>
             {result.recommend}
           </p>
           <p className="leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
@@ -602,7 +602,7 @@ export default function PathwayFinder() {
 
       {/* Section 2 — Standalone Title */}
       <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-        <div className="absolute inset-0 bg-hero-glow-blue pointer-events-none opacity-40" />
+        <div className="absolute inset-0 bg-hero-glow pointer-events-none opacity-40" />
         <div className="relative max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection delay={0}>
             <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl uppercase tracking-wide leading-none">

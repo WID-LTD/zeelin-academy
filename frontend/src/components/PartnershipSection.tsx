@@ -30,10 +30,10 @@ export default function PartnershipSection() {
             {partners.map((name) => (
               <div
                 key={name}
-                className="rounded-2xl border p-8 flex items-center justify-center h-28 transition-all duration-300 grayscale hover:grayscale-0 hover:shadow-lg hover:border-[var(--brand-gold)]"
+                className="rounded-2xl border p-6 md:p-8 flex items-center justify-center min-h-[7rem] transition-all duration-300 grayscale hover:grayscale-0 hover:shadow-lg hover:border-[var(--brand-gold)]"
                 style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}
               >
-                <span className="font-display text-lg font-bold text-center" style={{ color: 'var(--text-muted)' }}>
+                <span className="font-display text-sm md:text-lg font-bold text-center break-words" style={{ color: 'var(--text-muted)' }}>
                   {name}
                 </span>
               </div>

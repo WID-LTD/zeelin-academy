@@ -77,7 +77,7 @@ function EnrollForm() {
   if (verified) {
     return (
       <div className="max-w-xl mx-auto text-center py-20">
-        <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6" style={{ backgroundColor: 'rgba(56,189,248,0.1)' }}>
+        <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6" style={{ backgroundColor: 'rgba(223,186,107,0.1)' }}>
           <svg className="w-10 h-10 gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
@@ -86,7 +86,7 @@ function EnrollForm() {
         <p style={{ color: 'var(--text-muted)' }} className="mb-8">
           Your enrollment has been verified. Welcome to Zeelin Academy! Check your email for further instructions.
         </p>
-        <Link href="/" className="btn-blue px-8 py-3 inline-block">Back to Home</Link>
+        <Link href="/" className="btn-gold px-8 py-3 inline-block">Back to Home</Link>
       </div>
     )
   }
@@ -112,7 +112,7 @@ function EnrollForm() {
               required
             />
           </div>
-          <button type="submit" className="btn-blue w-full py-3 text-lg font-semibold">Verify & Confirm</button>
+          <button type="submit" className="btn-gold w-full py-3 text-lg font-semibold">Verify & Confirm</button>
         </form>
       </div>
     )
@@ -193,7 +193,7 @@ function EnrollForm() {
             placeholder="Tell us about your career goals..." />
         </div>
         <button type="submit" disabled={submitting}
-          className="btn-blue w-full py-4 text-lg font-semibold disabled:opacity-50">
+          className="btn-gold w-full py-4 text-lg font-semibold disabled:opacity-50">
           {submitting ? 'Submitting...' : 'Submit Enrollment'}
         </button>
       </form>

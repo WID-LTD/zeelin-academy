@@ -116,17 +116,17 @@ export default function OfferSection() {
   const visible = showAll ? offers : offers.slice(0, initialCount)
 
   return (
-    <section className="relative overflow-hidden py-20 md:py-28" style={{ backgroundColor: 'var(--bg-primary)' }}>
+    <section className="relative overflow-hidden py-16 md:py-28" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="absolute top-0 right-0 w-full h-full pointer-events-none overflow-hidden">
         <div className="absolute -top-32 -right-32 w-80 h-80 rounded-full opacity-[0.05]"
-          style={{ background: 'radial-gradient(circle, #3b82f6, transparent 70%)' }} />
+          style={{ background: 'radial-gradient(circle, #D4AF37, transparent 70%)' }} />
         <div className="absolute -bottom-32 -left-32 w-80 h-80 rounded-full opacity-[0.04]"
-          style={{ background: 'radial-gradient(circle, #8b5cf6, transparent 70%)' }} />
+          style={{ background: 'radial-gradient(circle, #B5952F, transparent 70%)' }} />
       </div>
 
       <div className="relative max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection delay={100}>
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-4"
               style={{ color: 'var(--text-core)' }}>
               What Zeelin Academy{' '}
@@ -138,7 +138,7 @@ export default function OfferSection() {
           </div>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {visible.map((offer, idx) => {
             const Icon = offer.icon
             return (
@@ -190,7 +190,7 @@ export default function OfferSection() {
           )}
 
           {showAll && offers.length > initialCount && (
-            <AnimatedSection delay={100 + initialCount * 60} duration={600} className="lg:col-span-3">
+            <AnimatedSection delay={100 + initialCount * 60} duration={600} className="md:col-span-2 lg:col-span-3">
               <button
                 onClick={() => setShowAll(false)}
                 className="w-full py-3 rounded-xl border text-sm font-bold transition-all duration-300 hover:shadow-md"
@@ -203,7 +203,7 @@ export default function OfferSection() {
         </div>
 
         <AnimatedSection delay={400}>
-          <div className="relative mt-16 rounded-2xl overflow-hidden text-center p-10 md:p-14 border"
+          <div className="relative mt-16 rounded-2xl overflow-hidden text-center p-6 sm:p-10 md:p-14 border"
             style={{
               backgroundColor: 'var(--bg-secondary)',
               borderColor: 'var(--border)',
@@ -225,7 +225,7 @@ export default function OfferSection() {
                 remain consistent, and achieve exam success.
               </p>
 
-              <Link href="/courses" className="btn-gold px-10 py-4 text-base font-bold inline-block hover:scale-105 transition-transform">
+              <Link href="/courses" className="btn-gold px-6 sm:px-10 py-4 text-sm sm:text-base font-bold inline-block hover:scale-105 transition-transform">
                 Explore Our Courses
               </Link>
             </div>

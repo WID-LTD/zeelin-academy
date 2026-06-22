@@ -255,9 +255,9 @@ export default function BcsExamPrepPage() {
               </div>
             </div>
 
-            <div className="p-6 rounded-2xl border border-[rgba(59,130,246,0.2)] bg-[rgba(59,130,246,0.02)]">
+            <div className="p-6 rounded-2xl border border-[rgba(223,186,107,0.2)]" style={{ backgroundColor: 'rgba(223,186,107,0.02)' }}>
               <div className="flex items-center gap-3 mb-2">
-                <ShieldCheck className="w-5 h-5 text-blue-500" />
+                <ShieldCheck className="w-5 h-5" style={{ color: 'var(--brand-gold)' }} />
                 <h4 className="text-sm font-bold text-[color:var(--text-core)]">Why Prep with Zeelin Academy?</h4>
               </div>
               <ul className="text-xs text-secondary space-y-2 pl-8 list-disc">
@@ -312,7 +312,7 @@ export default function BcsExamPrepPage() {
 
         {/* Oral Exam Prep CTA */}
         <div className="mt-20 p-10 rounded-2xl border text-center relative overflow-hidden bg-[rgba(212,175,55,0.03)] border-[rgba(212,175,55,0.2)]">
-          <div className="absolute inset-0 bg-hero-glow-blue pointer-events-none opacity-50" />
+          <div className="absolute inset-0 bg-hero-glow pointer-events-none opacity-50" />
           <h2 className="font-display text-3xl font-bold mb-4 text-[color:var(--text-core)]">
             Ready to pass your BCS Oral Board?
           </h2>

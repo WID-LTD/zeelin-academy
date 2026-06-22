@@ -13,7 +13,7 @@ import CallToActionSection from '@/components/CallToActionSection'
 
 export default function Home() {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-x-hidden">
       <BannerSection />
 
       <WhoWeHelpSection />
@@ -27,7 +27,7 @@ export default function Home() {
       {/* Stats Section */}
       <section className="py-16" style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
         <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-[1280px] mx-auto">
             {[
               { value: 6, suffix: '', label: 'Week Program' },
               { value: 8, suffix: '', label: 'Course Modules' },

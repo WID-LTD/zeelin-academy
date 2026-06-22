@@ -38,10 +38,10 @@ const benefits = [
 
 export default function WhyChooseSection() {
   return (
-    <section className="relative overflow-hidden py-20 md:py-28" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+    <section className="relative overflow-hidden py-16 md:py-28" style={{ backgroundColor: 'var(--bg-secondary)' }}>
       <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection delay={100}>
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-4" style={{ color: 'var(--text-core)' }}>
               Why Choose{' '}
               <span style={{ color: 'var(--brand-gold)' }}>Zeelin Academy</span>
@@ -52,7 +52,7 @@ export default function WhyChooseSection() {
           </div>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1152px] mx-auto">
           {benefits.map((benefit, idx) => {
             const Icon = benefit.icon
             return (

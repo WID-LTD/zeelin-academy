@@ -20,18 +20,6 @@ const config: Config = {
           800: '#7A5E24',
           900: '#523E16'
         },
-        blue: {
-          50: '#EFF6FF',
-          100: '#DBEAFE',
-          200: '#BFDBFE',
-          300: '#93C5FD',
-          400: '#60A5FA',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1D4ED8',
-          800: '#1E40AF',
-          900: '#1E3A8A'
-        },
         zeelin: {
           black: '#080808',
           dark: '#0c0c0c',
@@ -47,7 +35,6 @@ const config: Config = {
       },
       backgroundImage: {
         'gold-gradient': 'linear-gradient(135deg, #DFBA6B 0%, #C29C47 100%)',
-        'blue-gradient': 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
         'hero-glow': 'radial-gradient(ellipse at center, rgba(223,186,107,0.08) 0%, transparent 70%)',
         'hero-glow-blue': 'radial-gradient(ellipse at center, rgba(59,130,246,0.08) 0%, transparent 70%)'
       }

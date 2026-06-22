@@ -61,7 +61,7 @@ export default function AboutPage() {
     <div className="min-h-screen">
       {/* Section 1 – About Zeelin Academy */}
       <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-        <div className="absolute inset-0 bg-hero-glow-blue pointer-events-none opacity-40" />
+        <div className="absolute inset-0 bg-hero-glow pointer-events-none opacity-40" />
         <div className="relative max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <AnimatedSection delay={0}>
@@ -408,9 +408,9 @@ export default function AboutPage() {
       <section className="relative overflow-hidden py-24 md:py-32" style={{ backgroundColor: 'var(--black)' }}>
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full opacity-[0.06]"
-            style={{ background: 'radial-gradient(circle, #3b82f6, transparent 70%)' }} />
+            style={{ background: 'radial-gradient(circle, #D4AF37, transparent 70%)' }} />
           <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full opacity-[0.05]"
-            style={{ background: 'radial-gradient(circle, #8b5cf6, transparent 70%)' }} />
+            style={{ background: 'radial-gradient(circle, #B5952F, transparent 70%)' }} />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[31.25rem] h-[31.25rem] rounded-full opacity-[0.03]"
             style={{ background: 'radial-gradient(circle, var(--brand-gold), transparent 70%)' }} />
         </div>

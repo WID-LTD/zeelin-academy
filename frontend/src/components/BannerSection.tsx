@@ -91,6 +91,27 @@ export default function BannerSection() {
     scrollRef.current.scrollLeft = scrollLeft - walk
   }
 
+  // Touch event handlers for mobile drag-to-scroll
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (!scrollRef.current) return
+    setIsDragging(true)
+    isPausedRef.current = true
+    setStartX(e.touches[0].pageX - scrollRef.current.offsetLeft)
+    setScrollLeft(scrollRef.current.scrollLeft)
+  }
+
+  const handleTouchEnd = () => {
+    setIsDragging(false)
+    isPausedRef.current = false
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging || !scrollRef.current) return
+    const x = e.touches[0].pageX - scrollRef.current.offsetLeft
+    const walk = (x - startX) * 2
+    scrollRef.current.scrollLeft = scrollLeft - walk
+  }
+
   // Navigation Arrow Handlers
   const scrollBy = (amount: number) => {
     if (scrollRef.current) {
@@ -112,7 +133,7 @@ export default function BannerSection() {
             {/* Left Nav Arrow */}
             <button 
               onClick={() => scrollBy(-300)}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 m-2 rounded-full bg-[var(--bg-card)] border border-[var(--border)] shadow-lg text-[var(--text-core)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:text-[var(--brand-gold)]"
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-3 m-2 rounded-full bg-[var(--bg-card)] border border-[var(--border)] shadow-lg text-[var(--text-core)] opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 hover:text-[var(--brand-gold)]"
               aria-label="Scroll left"
             >
               <ChevronLeft className="w-6 h-6" />
@@ -126,6 +147,9 @@ export default function BannerSection() {
               onMouseLeave={handleMouseLeave}
               onMouseUp={handleMouseUp}
               onMouseMove={handleMouseMove}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+              onTouchMove={handleTouchMove}
               style={{ scrollBehavior: isDragging ? 'auto' : 'auto' }}
             >
               {books.map((book, i) => (
@@ -162,7 +186,7 @@ export default function BannerSection() {
             {/* Right Nav Arrow */}
             <button 
               onClick={() => scrollBy(300)}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 m-2 rounded-full bg-[var(--bg-card)] border border-[var(--border)] shadow-lg text-[var(--text-core)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:text-[var(--brand-gold)]"
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-3 m-2 rounded-full bg-[var(--bg-card)] border border-[var(--border)] shadow-lg text-[var(--text-core)] opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 hover:text-[var(--brand-gold)]"
               aria-label="Scroll right"
             >
               <ChevronRight className="w-6 h-6" />

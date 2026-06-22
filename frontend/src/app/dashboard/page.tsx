@@ -55,7 +55,7 @@ export default function UserDashboard() {
         <p className="text-secondary">Your dashboard</p>
       </div>
 
-      <div className="p-12 rounded-2xl border text-center max-w-lg w-full mx-4" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--premium-border)', boxShadow: 'var(--premium-shadow)' }}>
+      <div className="p-6 sm:p-12 rounded-2xl border text-center max-w-lg w-full mx-4" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--premium-border)', boxShadow: 'var(--premium-shadow)' }}>
         <div className="mb-6">
           <div className="w-20 h-20 rounded-full gold-bg flex items-center justify-center mx-auto mb-4" style={{ color: 'var(--text-core)' }}>
             <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -66,16 +66,16 @@ export default function UserDashboard() {
           <p className="text-sm text-secondary">September 7, 2026</p>
         </div>
 
-        <div className="grid grid-cols-4 gap-4 mb-6">
+        <div className="grid grid-cols-4 gap-2 sm:gap-4 mb-6">
           {[
             { value: timeLeft.days, label: 'Days' },
             { value: timeLeft.hours, label: 'Hours' },
             { value: timeLeft.minutes, label: 'Minutes' },
             { value: timeLeft.seconds, label: 'Seconds' }
           ].map((item) => (
-            <div key={item.label} className="p-4 rounded-xl" style={{ backgroundColor: 'var(--bg-primary)' }}>
-              <div className="font-display text-3xl sm:text-4xl font-bold gold">{String(item.value).padStart(2, '0')}</div>
-              <div className="text-xs mt-1 text-muted">{item.label}</div>
+            <div key={item.label} className="p-2 sm:p-4 rounded-xl" style={{ backgroundColor: 'var(--bg-primary)' }}>
+              <div className="font-display text-xl sm:text-4xl font-bold gold">{String(item.value).padStart(2, '0')}</div>
+              <div className="text-[0.6rem] sm:text-xs mt-1 text-muted">{item.label}</div>
             </div>
           ))}
         </div>

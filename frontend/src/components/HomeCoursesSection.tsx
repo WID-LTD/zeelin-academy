@@ -9,10 +9,10 @@ const allCourses = categories.flatMap((cat) => cat.courses)
 
 export default function HomeCoursesSection() {
   return (
-    <section className="relative overflow-hidden py-20 md:py-28" style={{ backgroundColor: 'var(--bg-primary)' }}>
+    <section className="relative overflow-hidden py-16 md:py-28" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection delay={100}>
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-4" style={{ color: 'var(--text-core)' }}>
               Our{' '}
               <span style={{ color: 'var(--brand-gold)' }}>Courses</span>
@@ -23,7 +23,7 @@ export default function HomeCoursesSection() {
           </div>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1280px] mx-auto">
           {allCourses.slice(0, 9).map((course, idx) => (
             <AnimatedSection key={course.id} delay={100 + idx * 60} duration={600}>
               <div

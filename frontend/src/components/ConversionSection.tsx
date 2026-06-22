@@ -18,9 +18,9 @@ export default function ConversionSection() {
       {/* Gradient accents */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
         <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full opacity-[0.04]"
-          style={{ background: 'radial-gradient(circle, #3b82f6, transparent)' }} />
+          style={{ background: 'radial-gradient(circle, #D4AF37, transparent)' }} />
         <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full opacity-[0.03]"
-          style={{ background: 'radial-gradient(circle, #8b5cf6, transparent)' }} />
+          style={{ background: 'radial-gradient(circle, #B5952F, transparent)' }} />
       </div>
 
       <div className="relative max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -112,12 +112,12 @@ export default function ConversionSection() {
           </div>
 
           {/* Right Column - Composite Illustration */}
-          <div className="relative h-[26.25rem] sm:h-[31.25rem] md:h-[36.25rem] w-full hidden md:block">
+          <div className="relative h-[26.25rem] sm:h-[31.25rem] md:h-[36.25rem] w-full">
             {/* Background gradient orbs */}
             <div className="absolute top-8 right-8 w-72 h-72 rounded-full opacity-[0.07] pointer-events-none"
-              style={{ background: 'radial-gradient(circle, #3b82f6, transparent 70%)' }} />
+              style={{ background: 'radial-gradient(circle, #D4AF37, transparent 70%)' }} />
             <div className="absolute bottom-12 left-4 w-56 h-56 rounded-full opacity-[0.05] pointer-events-none"
-              style={{ background: 'radial-gradient(circle, #8b5cf6, transparent 70%)' }} />
+              style={{ background: 'radial-gradient(circle, #B5952F, transparent 70%)' }} />
 
             {/* Floating badge - top right */}
             <AnimatedSection direction="right" delay={200} duration={700}>
@@ -216,12 +216,12 @@ export default function ConversionSection() {
                 <div className="backdrop-blur-md rounded-xl px-3 py-2 shadow-lg border"
                   style={{
                     backgroundColor: 'rgba(255,255,255,0.85)',
-                    borderColor: 'rgba(59,130,246,0.2)',
+                    borderColor: 'rgba(223,186,107,0.2)',
                   }}>
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 rounded-full flex items-center justify-center"
-                      style={{ backgroundColor: 'rgba(59,130,246,0.1)' }}>
-                      <svg className="w-4 h-4" fill="none" stroke="#3b82f6" viewBox="0 0 24 24">
+                      style={{ backgroundColor: 'rgba(223,186,107,0.1)' }}>
+                      <svg className="w-4 h-4" fill="none" stroke="var(--brand-gold)" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                           d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                       </svg>

@@ -40,7 +40,7 @@ Unique{' '}
 
             {/* Method Cards */}
             <AnimatedSection delay={300}>
-              <div className="grid grid-cols-2 gap-3 pt-2">
+              <div className="grid grid-cols-2 xl:grid-cols-3 gap-3 pt-2">
                 {methods.map((method, i) => {
                   const Icon = method.icon
                   return (
@@ -73,7 +73,7 @@ Unique{' '}
               style={{ backgroundColor: 'var(--bg-card)' }}>
               {/* Gradient orbs behind */}
               <div className="absolute -top-10 -right-10 w-64 h-64 rounded-full opacity-[0.08] pointer-events-none"
-                style={{ background: 'radial-gradient(circle, #3b82f6, transparent 70%)' }} />
+                style={{ background: 'radial-gradient(circle, #D4AF37, transparent 70%)' }} />
               <div className="absolute -bottom-10 -left-10 w-56 h-56 rounded-full opacity-[0.06] pointer-events-none"
                 style={{ background: 'radial-gradient(circle, #8b5cf6, transparent 70%)' }} />
 
@@ -114,8 +114,8 @@ Unique{' '}
                   }}>
                   <div className="flex items-center gap-2.5">
                     <div className="w-8 h-8 rounded-lg flex items-center justify-center"
-                      style={{ backgroundColor: 'rgba(59,130,246,0.1)' }}>
-                      <Award className="w-4 h-4" style={{ color: '#3b82f6' }} />
+                      style={{ backgroundColor: 'rgba(223,186,107,0.12)' }}>
+                      <Award className="w-4 h-4" style={{ color: 'var(--brand-gold)' }} />
                     </div>
                     <div>
                       <div className="text-xs font-bold" style={{ color: 'var(--text-core)' }}>Exam Ready</div>
