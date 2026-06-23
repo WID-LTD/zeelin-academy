@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Download, BookOpen, Copy, Check, ExternalLink, FileText, Layout, FileSpreadsheet, ArrowRight, HelpCircle } from 'lucide-react'
+import BundleSection from '@/components/BundleSection'
 
 interface Template {
   id: string
@@ -97,7 +98,16 @@ export default function ResourcesPage() {
   }
 
   return (
-    <div className="min-h-screen pt-32 pb-20 bg-[color:var(--bg-primary)]">
+    <div className="min-h-screen pt-32 pb-20 bg-[color:var(--bg-primary)] relative">
+      {/* Resources backdrop */}
+      <div className="fixed inset-0 -z-10 pointer-events-none"
+        style={{
+          backgroundImage: 'url("/LIBRARY.jpg")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+          opacity: 0.06,
+        }} />
       <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Hero Section */}
@@ -109,6 +119,8 @@ export default function ResourcesPage() {
             Enhance your study and work processes with our curated selection of textbooks, free templates, and learning frameworks.
           </p>
         </div>
+
+        <BundleSection />
 
         {/* Textbooks Section */}
         <div className="mb-20">

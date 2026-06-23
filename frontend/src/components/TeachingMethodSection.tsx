@@ -79,8 +79,8 @@ Unique{' '}
 
               {/* Main image */}
               <SafeImage
-                src="/learning_experience.png"
-                alt="Students learning with Zeelin Academy"
+                src="/unique_teaching_method.png"
+                alt="Unique teaching method at Zeelin Academy"
                 fill
                 className="object-cover"
               />

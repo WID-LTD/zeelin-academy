@@ -20,6 +20,7 @@ const photos = [
   { src: '/career_changers.jpg', alt: 'Career changers' },
   { src: '/busy_9–5_profession.jpg', alt: 'Busy 9–5 professionals' },
   { src: '/overwhelmed_by_big_textbooks.jpg', alt: 'Feeling overwhelmed by big textbooks' },
+  { src: '/professional_bcs_practitioner.png', alt: 'Professional BCS Practitioner', isPractitioner: true },
 ]
 
 export default function WhoWeHelpSection() {
@@ -57,12 +58,15 @@ export default function WhoWeHelpSection() {
 
           {/* Right Column - Photo Grid */}
           <AnimatedSection direction="right" delay={200} duration={700} className="w-full">
-            <div className="grid grid-cols-2 gap-4 h-[25rem] sm:h-[31.25rem] md:h-[37.5rem] 2xl:max-h-[45rem]">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 h-[25rem] sm:h-[31.25rem] md:h-[37.5rem] 2xl:max-h-[45rem]">
               {photos.map((img, i) => (
                 <div key={img.src}
-                  className={`relative rounded-2xl overflow-hidden shadow-xl transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl ${i === 0 ? 'row-span-2' : ''}`}
-                  style={{ backgroundColor: 'var(--bg-card)' }}>
+                  className={`relative rounded-2xl overflow-hidden shadow-xl transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl ${i === 0 ? 'row-span-2 col-span-1' : ''}`}
+                  style={{ backgroundColor: img.isPractitioner ? 'rgba(212,175,55,0.15)' : 'var(--bg-card)' }}>
                   <SafeImage src={img.src} alt={img.alt} fill className="object-cover" />
+                  {img.isPractitioner && (
+                    <div className="absolute inset-0 rounded-2xl border-2 pointer-events-none" style={{ borderColor: 'rgba(212,175,55,0.3)' }} />
+                  )}
                 </div>
               ))}
             </div>

@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Check, MapPin, Mail, Phone } from 'lucide-react'
+import { Check, MapPin, Mail, Phone, FileText } from 'lucide-react'
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
@@ -37,7 +37,16 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen py-20">
+    <div className="min-h-screen py-20 relative">
+      {/* Contact backdrop */}
+      <div className="fixed inset-0 -z-10 pointer-events-none"
+        style={{
+          backgroundImage: 'url("/consultation.png")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+          opacity: 0.06,
+        }} />
       <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="font-display text-4xl sm:text-5xl font-bold mb-4 text-[color:var(--text-core)]">
@@ -97,32 +106,35 @@ export default function ContactPage() {
           <div className="space-y-8">
             <div className="p-8 rounded-2xl border bg-[color:var(--bg-card)] border-[color:var(--border)]">
               <h2 className="font-display text-2xl font-bold mb-6 text-[color:var(--text-core)]">Contact <span className="gold">Information</span></h2>
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl gold-bg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-5 h-5" style={{ color: 'var(--brand-gold)' }} />
+              <div className="space-y-8">
+                <div className="flex items-start gap-5 group">
+                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg"
+                    style={{ backgroundColor: 'rgba(212,175,55,0.12)' }}>
+                    <MapPin className="w-7 h-7" style={{ color: 'var(--brand-gold)' }} />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-[color:var(--text-core)]">Address</h3>
-                    <p className="text-muted mt-1">London, United Kingdom</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl gold-bg flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-5 h-5" style={{ color: 'var(--brand-gold)' }} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-[color:var(--text-core)]">Email</h3>
-                    <a href="mailto:contact@zeelinacademy.com" className="text-muted mt-1 block hover:gold transition-colors">contact@zeelinacademy.com</a>
+                  <div className="pt-2">
+                    <h3 className="font-bold text-lg" style={{ color: 'var(--text-core)' }}>Address</h3>
+                    <p className="mt-1.5" style={{ color: 'var(--text-muted)' }}>London, United Kingdom</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl gold-bg flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-5 h-5" style={{ color: 'var(--brand-gold)' }} />
+                <div className="flex items-start gap-5 group">
+                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg"
+                    style={{ backgroundColor: 'rgba(212,175,55,0.12)' }}>
+                    <Mail className="w-7 h-7" style={{ color: 'var(--brand-gold)' }} />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-[color:var(--text-core)]">Phone</h3>
-                    <a href="tel:+441234567890" className="text-muted mt-1 block hover:gold transition-colors">+44 123 456 7890</a>
+                  <div className="pt-2">
+                    <h3 className="font-bold text-lg" style={{ color: 'var(--text-core)' }}>Email</h3>
+                    <a href="mailto:contact@zeelinacademy.com" className="mt-1.5 block transition-colors" style={{ color: 'var(--text-muted)' }} onMouseOver={e => e.currentTarget.style.color = 'var(--brand-gold)'} onMouseOut={e => e.currentTarget.style.color = 'var(--text-muted)'}>contact@zeelinacademy.com</a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-5 group">
+                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg"
+                    style={{ backgroundColor: 'rgba(212,175,55,0.12)' }}>
+                    <Phone className="w-7 h-7" style={{ color: 'var(--brand-gold)' }} />
+                  </div>
+                  <div className="pt-2">
+                    <h3 className="font-bold text-lg" style={{ color: 'var(--text-core)' }}>Phone</h3>
+                    <a href="tel:+441234567890" className="mt-1.5 block transition-colors" style={{ color: 'var(--text-muted)' }} onMouseOver={e => e.currentTarget.style.color = 'var(--brand-gold)'} onMouseOut={e => e.currentTarget.style.color = 'var(--text-muted)'}>+44 123 456 7890</a>
                   </div>
                 </div>
               </div>
@@ -136,6 +148,19 @@ export default function ContactPage() {
                 <div className="flex justify-between"><span>Sunday</span><span className="font-medium text-[color:var(--text-core)]">Closed</span></div>
               </div>
               <p className="text-sm text-muted mt-6">Response time: Within 24 hours on business days.</p>
+            </div>
+
+            <div className="p-8 rounded-2xl border bg-[color:var(--bg-card)] border-[color:var(--border)]">
+              <h2 className="font-display text-2xl font-bold mb-4 text-[color:var(--text-core)]">Legal <span className="gold">Information</span></h2>
+              <p className="text-sm text-muted mb-4 leading-relaxed">
+                By using our services, you agree to our Terms &amp; Conditions and Privacy Policy. 
+                Please review them carefully before enrolling in any program.
+              </p>
+              <div className="flex flex-col gap-3">
+                <Link href="/terms" className="text-sm font-semibold transition-colors inline-flex items-center gap-2" style={{ color: 'var(--brand-gold)' }} onMouseOver={e => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={e => e.currentTarget.style.textDecoration = 'none'}>
+                  <FileText className="w-4 h-4" /> Read Full Terms &amp; Conditions
+                </Link>
+              </div>
             </div>
           </div>
         </div>

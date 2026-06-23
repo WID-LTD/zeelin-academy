@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import SafeImage from '@/components/SafeImage'
 import AnimatedSection from '@/components/AnimatedSection'
+import BundleSection from '@/components/BundleSection'
 import {
   Sparkles,
   Map,
@@ -9,10 +10,7 @@ import {
   Award,
   BookOpen,
   ArrowRight,
-  CheckCircle2,
-  XCircle,
   Eye,
-  Zap,
 } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -58,7 +56,16 @@ const values = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      {/* About page backdrop */}
+      <div className="fixed inset-0 -z-10 pointer-events-none"
+        style={{
+          backgroundImage: 'url("/classroom.jpg")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+          opacity: 0.1,
+        }} />
       {/* Section 1 – About Zeelin Academy */}
       <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
         <div className="absolute inset-0 bg-hero-glow pointer-events-none opacity-40" />
@@ -73,6 +80,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <BundleSection />
 
       {/* Section A – Why Zeelin Academy Exists */}
       <section className="py-24" style={{ backgroundColor: 'var(--bg-primary)' }}>
@@ -136,7 +145,7 @@ export default function AboutPage() {
               <div className="relative h-[18.75rem] md:h-[25rem] rounded-2xl overflow-hidden shadow-xl"
                 style={{ backgroundColor: 'var(--bg-card)' }}>
                 <SafeImage
-                  src="/learning_experience.png"
+                  src="/learner.jpg"
                   alt="Business Analysis learning at Zeelin Academy"
                   fill
                   className="object-cover"
@@ -145,36 +154,40 @@ export default function AboutPage() {
             </AnimatedSection>
           </div>
 
-          {/* Bottom — transformation cards */}
+          {/* Bottom — testimonial-style quotes */}
           <div>
             <AnimatedSection delay={50}>
-              <p className="text-center font-display text-2xl font-bold mb-10" style={{ color: 'var(--text-core)' }}>
+              <p className="text-center font-display text-3xl font-bold mb-14" style={{ color: 'var(--text-core)' }}>
                 We help learners move from:
               </p>
             </AnimatedSection>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {transformations.map((t, idx) => (
                 <AnimatedSection key={idx} delay={200 + idx * 80}>
                   <div
-                    className="p-6 rounded-2xl border transition-all duration-300 shadow-sm hover:shadow-md group"
+                    className="relative p-8 rounded-2xl border shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
                     style={{
                       backgroundColor: 'var(--bg-card)',
                       borderColor: 'var(--border)',
                     }}
                   >
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="text-sm font-bold uppercase tracking-wider flex items-center gap-1 opacity-85"
-                        style={{ color: '#ef4444' }}>
-                        <XCircle className="w-4 h-4 shrink-0" /> {t.from}
+                    <span className="font-display text-5xl leading-none absolute -top-2 left-4 opacity-20"
+                      style={{ color: 'var(--brand-gold)' }}>
+                      &ldquo;
+                    </span>
+                    <div className="flex items-center gap-3 mb-4 relative z-10">
+                      <span className="text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full"
+                        style={{ backgroundColor: 'rgba(239,68,68,0.1)', color: '#ef4444' }}>
+                        {t.from}
                       </span>
                       <ArrowRight className="w-4 h-4 shrink-0" style={{ color: 'var(--text-muted)' }} />
-                      <span className="text-sm font-bold uppercase tracking-wider flex items-center gap-1"
-                        style={{ color: '#22c55e' }}>
-                        <CheckCircle2 className="w-4 h-4 shrink-0" /> {t.to}
+                      <span className="text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full"
+                        style={{ backgroundColor: 'rgba(34,197,94,0.1)', color: '#22c55e' }}>
+                        {t.to}
                       </span>
                     </div>
-                    <p className="text-sm leading-relaxed font-semibold" style={{ color: 'var(--text-muted)' }}>
-                      {t.desc}
+                    <p className="text-base leading-relaxed italic relative z-10" style={{ color: 'var(--text-secondary)' }}>
+                      &ldquo;{t.desc}&rdquo;
                     </p>
                   </div>
                 </AnimatedSection>
@@ -295,12 +308,9 @@ export default function AboutPage() {
                 backgroundColor: 'var(--bg-card)',
                 borderColor: 'var(--border)',
               }}>
-              <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-6"
-                style={{
-                  backgroundColor: 'rgba(223,186,107,0.1)',
-                  border: '1px solid rgba(223,186,107,0.2)',
-                }}>
-                <Zap className="w-7 h-7" style={{ color: 'var(--brand-gold)' }} />
+              <div className="relative w-20 h-20 rounded-xl overflow-hidden mx-auto mb-6 border-2"
+                style={{ borderColor: 'rgba(223,186,107,0.3)' }}>
+                <SafeImage src="/success.jpeg" alt="Success" fill className="object-cover" />
               </div>
               <p className="text-xl md:text-2xl font-medium leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 Our mission is to make Business Analysis training simple, structured, and achievable for busy learners.
@@ -349,8 +359,8 @@ export default function AboutPage() {
               <div className="relative h-[21.875rem] md:h-[28.125rem] rounded-2xl overflow-hidden shadow-xl"
                 style={{ backgroundColor: 'var(--bg-card)' }}>
                 <SafeImage
-                  src="/achievement_business_analysts.png"
-                  alt="Business Analysis career achievement"
+                  src="/confident.jpg"
+                  alt="Building Confident Business Analysis Professionals"
                   fill
                   className="object-cover"
                 />

@@ -144,13 +144,13 @@ export default function OfferSection() {
             return (
               <AnimatedSection key={offer.title} delay={100 + idx * 60} duration={600}>
                 <div
-                  className="p-6 rounded-2xl border transition-all duration-300 shadow-sm hover:shadow-xl h-full flex flex-col hover:border-[rgba(212,175,55,0.3)]"
+                  className="p-6 rounded-2xl border transition-all duration-300 shadow-sm hover:shadow-xl h-full flex flex-col hover:border-[rgba(212,175,55,0.3)] group"
                   style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}
                 >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg"
                       style={{ backgroundColor: 'rgba(212,175,55,0.1)' }}>
-                      <Icon className="w-5 h-5" style={{ color: 'var(--brand-gold)' }} />
+                      <Icon className="w-7 h-7" style={{ color: 'var(--brand-gold)' }} />
                     </div>
                     <div>
                       <h3 className="font-display text-base font-bold leading-snug" style={{ color: 'var(--text-core)' }}>

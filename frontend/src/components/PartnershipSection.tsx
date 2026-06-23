@@ -12,6 +12,8 @@ const partners = [
 ]
 
 export default function PartnershipSection() {
+  const allPartners = [...partners, ...partners, ...partners, ...partners]
+
   return (
     <section className="relative overflow-hidden py-16 md:py-20" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,23 +30,32 @@ export default function PartnershipSection() {
         </AnimatedSection>
 
         <AnimatedSection delay={200}>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
-            {partners.map((partner) => (
-              <div
-                key={partner.name}
-                className="rounded-2xl border p-6 md:p-8 flex items-center justify-center min-h-[7rem] transition-all duration-300 grayscale hover:grayscale-0 hover:shadow-lg hover:border-[var(--brand-gold)]"
-                style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}
-              >
-                <div className="relative w-full h-16">
-                  <SafeImage
-                    src={partner.logo}
-                    alt={partner.name}
-                    fill
-                    className="object-contain"
-                  />
+          <div className="overflow-hidden relative"
+            style={{
+              maskImage: 'linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)',
+              WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)',
+            }}>
+            <div className="flex gap-8 animate-marquee-right hover:[animation-play-state:paused]">
+              {allPartners.map((partner, i) => (
+                <div
+                  key={`${partner.name}-${i}`}
+                  className="flex-shrink-0 w-56 rounded-2xl border p-6 flex flex-col items-center justify-center gap-3 transition-all duration-300 grayscale hover:grayscale-0 hover:shadow-lg hover:border-[var(--brand-gold)]"
+                  style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}
+                >
+                  <div className="relative w-full h-24">
+                    <SafeImage
+                      src={partner.logo}
+                      alt={partner.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <span className="text-xs font-bold text-center leading-tight" style={{ color: 'var(--text-muted)' }}>
+                    {partner.name}
+                  </span>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </AnimatedSection>
       </div>

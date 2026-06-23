@@ -2,6 +2,8 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import AnimatedSection from '@/components/AnimatedSection'
 import SafeImage from '@/components/SafeImage'
+import BundleSection from '@/components/BundleSection'
+import CoursesHero from '@/components/CoursesHero'
 import { categories } from '@/lib/courseData'
 
 export const metadata: Metadata = {
@@ -12,26 +14,19 @@ export const metadata: Metadata = {
 export default function CoursesPage() {
   return (
     <div className="min-h-screen">
-      {/* Section 1 — Standalone Title */}
-      <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-        <div className="absolute inset-0 bg-hero-glow pointer-events-none opacity-40" />
-        <div className="relative max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <AnimatedSection delay={0}>
-            <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl uppercase tracking-wide leading-none">
-              <span style={{ color: '#ffffff' }}>Our Training </span>
-              <span style={{ color: 'var(--brand-gold)' }}>Programmes</span>
-            </h1>
-          </AnimatedSection>
-          <AnimatedSection delay={100}>
-            <p className="text-lg sm:text-xl mt-6 max-w-2xl mx-auto font-medium" style={{ color: 'var(--text-secondary)' }}>
-              Choose your BCS Diploma pathway and start learning today
-            </p>
-          </AnimatedSection>
-        </div>
-      </section>
+      {/* Section 1 — Animated Avatar Hero */}
+      <CoursesHero />
+
+      <BundleSection />
 
       {/* Section 2 — Category Cards */}
-      <section className="py-24" style={{ backgroundColor: 'var(--bg-primary)' }}>
+      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: 'var(--bg-primary)' }}>
+        <div className="absolute inset-0 pointer-events-none opacity-10"
+          style={{
+            backgroundImage: 'url("/group.png")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }} />
         <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {categories.map((cat, idx) => (

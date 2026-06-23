@@ -12,10 +12,20 @@
 
 }
 
+@keyframes marquee-right {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-25%); }
+}
+
+.animate-marquee-right {
+  animation: marquee-right 40s linear infinite;
+  will-change: transform;
+}
+
 .light {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --bg-card: #ffffff;
+  --bg-primary: rgba(255, 255, 255, 0.88);
+  --bg-secondary: rgba(248, 249, 250, 0.88);
+  --bg-card: rgba(255, 255, 255, 0.85);
   --bg-card-hover: #f1f3f5;
   --text-core: #0f1115;
   --text-secondary: #2d3748;

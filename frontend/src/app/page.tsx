@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import CountUp from '@/components/CountUp'
 import BannerSection from '@/components/BannerSection'
+import BundleSection from '@/components/BundleSection'
 import WhoWeHelpSection from '@/components/WhoWeHelpSection'
 import PartnershipSection from '@/components/PartnershipSection'
 import WhyChooseSection from '@/components/WhyChooseSection'
@@ -15,6 +16,8 @@ export default function Home() {
   return (
     <div className="overflow-x-hidden">
       <BannerSection />
+
+      <BundleSection />
 
       <WhoWeHelpSection />
 
