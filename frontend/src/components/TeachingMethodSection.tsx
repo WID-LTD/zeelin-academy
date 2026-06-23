@@ -75,7 +75,7 @@ Unique{' '}
               <div className="absolute -top-10 -right-10 w-64 h-64 rounded-full opacity-[0.08] pointer-events-none"
                 style={{ background: 'radial-gradient(circle, #D4AF37, transparent 70%)' }} />
               <div className="absolute -bottom-10 -left-10 w-56 h-56 rounded-full opacity-[0.06] pointer-events-none"
-                style={{ background: 'radial-gradient(circle, #8b5cf6, transparent 70%)' }} />
+                style={{ background: 'radial-gradient(circle, #B5952F, transparent 70%)' }} />
 
               {/* Main image */}
               <SafeImage

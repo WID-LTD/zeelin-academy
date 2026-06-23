@@ -96,7 +96,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <div className="mt-2">
               <button onClick={() => toggleFolder('courses')} className="w-full flex items-center gap-1 px-2 py-1.5 text-sm text-[color:var(--text-secondary)] hover:bg-[color:var(--bg-secondary)] rounded-md transition-colors">
                 {expandedFolders['courses'] ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
-                {expandedFolders['courses'] ? <FolderOpen className="w-4 h-4 text-blue-500" /> : <Folder className="w-4 h-4 text-blue-500" />}
+                {expandedFolders['courses'] ? <FolderOpen className="w-4 h-4" style={{ color: 'var(--brand-gold)' }} /> : <Folder className="w-4 h-4" style={{ color: 'var(--brand-gold)' }} />}
                 <span className="font-semibold text-[color:var(--text-core)]">Course Materials</span>
               </button>
               
@@ -163,7 +163,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 <div className="mt-2">
                   <button onClick={() => toggleFolder('courses')} className="w-full flex items-center gap-1 px-2 py-2.5 text-sm text-[color:var(--text-secondary)] hover:bg-[color:var(--bg-secondary)] rounded-md transition-colors">
                     {expandedFolders['courses'] ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
-                    {expandedFolders['courses'] ? <FolderOpen className="w-4 h-4 text-blue-500" /> : <Folder className="w-4 h-4 text-blue-500" />}
+                    {expandedFolders['courses'] ? <FolderOpen className="w-4 h-4" style={{ color: 'var(--brand-gold)' }} /> : <Folder className="w-4 h-4" style={{ color: 'var(--brand-gold)' }} />}
                     <span className="font-semibold text-[color:var(--text-core)]">Course Materials</span>
                   </button>
                   {expandedFolders['courses'] && (
