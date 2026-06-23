@@ -28,7 +28,7 @@ export default function RootLayout({
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed',
-            opacity: 0.04,
+            opacity: 0.5,
           }} />
         <ThemeProvider>
           <Wakeup />

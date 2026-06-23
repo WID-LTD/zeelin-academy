@@ -1,12 +1,14 @@
 'use client'
 
+import SafeImage from '@/components/SafeImage'
 import AnimatedSection from '@/components/AnimatedSection'
 
 const partners = [
-  'BCS',
-  'The Chartered Institute for IT',
-  'APMG International',
-  'IIBA',
+  { name: 'BCS', logo: '/bcs.png' },
+  { name: 'APMG International', logo: '/apmg.png' },
+  { name: 'IIBA', logo: '/iiba.jpg' },
+  { name: 'WID LTD', logo: '/wid-ltd.png' },
+  { name: 'Career Code', logo: '/careercode.jpg' },
 ]
 
 export default function PartnershipSection() {
@@ -26,16 +28,21 @@ export default function PartnershipSection() {
         </AnimatedSection>
 
         <AnimatedSection delay={200}>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            {partners.map((name) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
+            {partners.map((partner) => (
               <div
-                key={name}
+                key={partner.name}
                 className="rounded-2xl border p-6 md:p-8 flex items-center justify-center min-h-[7rem] transition-all duration-300 grayscale hover:grayscale-0 hover:shadow-lg hover:border-[var(--brand-gold)]"
                 style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}
               >
-                <span className="font-display text-sm md:text-lg font-bold text-center break-words" style={{ color: 'var(--text-muted)' }}>
-                  {name}
-                </span>
+                <div className="relative w-full h-16">
+                  <SafeImage
+                    src={partner.logo}
+                    alt={partner.name}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </div>
             ))}
           </div>
