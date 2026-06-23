@@ -16,10 +16,10 @@ const audiences = [
 ]
 
 const photos = [
-  { src: '/IMG-20260605-WA0031.jpg', alt: 'BA professional at work' },
-  { src: '/IMG-20260605-WA0032.jpg', alt: 'Business analysis team collaboration' },
-  { src: '/IMG-20260605-WA0035.jpg', alt: 'Student success at Zeelin Academy' },
-  { src: '/IMG-20260605-WA0036.jpg', alt: 'Professional learning environment' },
+  { src: '/complete_beginner.jpg', alt: 'Complete beginners' },
+  { src: '/career_changers.jpg', alt: 'Career changers' },
+  { src: '/busy_9–5_profession.jpg', alt: 'Busy 9–5 professionals' },
+  { src: '/overwhelmed_by_big_textbooks.jpg', alt: 'Feeling overwhelmed by big textbooks' },
 ]
 
 export default function WhoWeHelpSection() {
