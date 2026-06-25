@@ -7,19 +7,19 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
 
 function calcPercentOff(oldPrice: string, newPrice: string): string {
-  const old = parseFloat(oldPrice.replace('€', ''))
-  const curr = parseFloat(newPrice.replace('€', ''))
+  const old = parseFloat(oldPrice.replace('£', ''))
+  const curr = parseFloat(newPrice.replace('£', ''))
   const off = Math.round(((old - curr) / old) * 100)
   return `-${off}%`
 }
 
 // Original books list with pricing data
 const originalBooks = [
-  { src: '/book1.png', price: '€49.99', oldPrice: '€89.99', title: 'Business Analytics' },
-  { src: '/book2.png', price: '€39.99', oldPrice: '€69.99', title: 'Business Analysis Fourth Edition' },
-  { src: '/book3.png', price: '€59.99', oldPrice: '€109.99', title: 'Business Analysis Lifetime Access' },
-  { src: '/book4.png', price: '€29.99', oldPrice: '€49.99', title: 'Business Analysis Yearly Access' },
-  { src: '/book5.png', price: '€79.99', oldPrice: '€129.99', title: 'Foundation to Business Analysis' }
+  { src: '/book1.png', price: '£100.00', oldPrice: '£129.99', title: 'Business Analytics' },
+  { src: '/book2.png', price: '£100.00', oldPrice: '£129.99', title: 'Business Analysis Fourth Edition' },
+  { src: '/book3.png', price: '£100.00', oldPrice: '£149.99', title: 'Business Analysis Lifetime Access' },
+  { src: '/book4.png', price: '£100.00', oldPrice: '£129.99', title: 'Business Analysis Yearly Access' },
+  { src: '/book5.png', price: '£100.00', oldPrice: '£149.99', title: 'Foundation to Business Analysis' }
 ].map(b => ({ ...b, percentOff: calcPercentOff(b.oldPrice, b.price) }))
 // Tripled for infinite smooth scroll buffer
 const books = [...originalBooks, ...originalBooks, ...originalBooks]
@@ -199,24 +199,46 @@ export default function BannerSection() {
 
           {/* Get the Strategy Guide */}
           <AnimatedSection delay={200}>
-            <div className="w-full text-center pt-10 border-t" style={{ borderColor: 'var(--border)' }}>
-              <div className="max-w-3xl mx-auto">
-                <h3 className="font-display text-3xl md:text-4xl lg:text-5xl font-black mb-4 leading-tight" style={{ color: 'var(--text-core)' }}>
-                  Get the{' '}
-                  <span style={{ color: 'var(--brand-gold)' }}>Business Analysis Strategy Guide</span>
-                </h3>
-                <p className="text-base md:text-lg max-w-2xl mx-auto mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                  A free, step-by-step roadmap designed for busy professionals preparing for BCS certification.
-                  Know exactly what to study, when, and how — so you pass with confidence.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href="/contact" className="btn-gold px-10 py-4 text-base font-bold inline-block text-center hover:scale-105 transition-transform">
-                    Download Free Guide
-                  </Link>
-                  <Link href="/courses" className="btn-outline-gold px-10 py-4 text-base font-bold inline-block text-center hover:scale-105 transition-transform">
-                    Explore Courses
-                  </Link>
+            <div className="w-full pt-10 border-t" style={{ borderColor: 'var(--border)' }}>
+              <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                {/* Text Content */}
+                <div className="text-center lg:text-left">
+                  <h3 className="font-display text-3xl md:text-4xl lg:text-5xl font-black mb-4 leading-tight" style={{ color: 'var(--text-core)' }}>
+                    Get the{' '}
+                    <span style={{ color: 'var(--brand-gold)' }}>Business Analysis Strategy Guide</span>
+                  </h3>
+                  <p className="text-base md:text-lg max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                    A free, step-by-step roadmap designed for busy professionals preparing for BCS certification.
+                    Know exactly what to study, when, and how — so you pass with confidence.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <Link href="/contact" className="btn-gold px-10 py-4 text-base font-bold inline-block text-center hover:scale-105 transition-transform">
+                      Download Free Guide
+                    </Link>
+                    <Link href="/courses" className="btn-outline-gold px-10 py-4 text-base font-bold inline-block text-center hover:scale-105 transition-transform">
+                      Explore Courses
+                    </Link>
+                  </div>
                 </div>
+
+                {/* Video Content */}
+                <div 
+                  className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-[1.02]" 
+                  style={{ border: '1px solid var(--border)', backgroundColor: 'var(--bg-card)' }}
+                >
+                  <iframe
+                    className="w-full h-full object-cover pointer-events-none scale-150"
+                    src="https://www.youtube.com/embed/U1-tNfr9P8k?autoplay=1&mute=1&loop=1&playlist=U1-tNfr9P8k&controls=0&showinfo=0&rel=0&modestbranding=1"
+                    title="Business Analytics Video"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                  {/* Overlay to ensure it acts as a background and maintains styling */}
+                  <div className="absolute inset-0 bg-black/10 pointer-events-none mix-blend-overlay"></div>
+                </div>
+
               </div>
             </div>
           </AnimatedSection>

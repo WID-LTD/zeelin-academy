@@ -3,11 +3,11 @@
 import SafeImage from './SafeImage'
 
 const books = [
-  { src: '/book1.png', title: 'Business Analytics', oldPrice: '€89.99', salePrice: '€49.99' },
-  { src: '/book2.png', title: 'Business Analysis Fourth Edition', oldPrice: '€69.99', salePrice: '€39.99' },
-  { src: '/book3.png', title: 'Business Analysis Lifetime Access', oldPrice: '€109.99', salePrice: '€59.99' },
-  { src: '/book4.png', title: 'Business Analysis Yearly Access', oldPrice: '€49.99', salePrice: '€29.99' },
-  { src: '/book5.png', title: 'Foundation to Business Analysis', oldPrice: '€129.99', salePrice: '€79.99' },
+  { src: '/book1.png', title: 'Business Analytics', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/book2.png', title: 'Business Analysis Fourth Edition', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/book3.png', title: 'Business Analysis Lifetime Access', oldPrice: '£149.99', salePrice: '£100.00' },
+  { src: '/book4.png', title: 'Business Analysis Yearly Access', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/book5.png', title: 'Foundation to Business Analysis', oldPrice: '£149.99', salePrice: '£100.00' },
 ]
 
 export default function BookCarouselBanner() {

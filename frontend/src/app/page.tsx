@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import CountUp from '@/components/CountUp'
 import BannerSection from '@/components/BannerSection'
 import BundleSection from '@/components/BundleSection'
 import WhoWeHelpSection from '@/components/WhoWeHelpSection'
@@ -15,6 +14,19 @@ import CallToActionSection from '@/components/CallToActionSection'
 export default function Home() {
   return (
     <div className="overflow-x-hidden">
+      {/* Static Text Section */}
+      <section className="pt-16 pb-8 px-4 text-center max-w-[1280px] mx-auto">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-black font-display leading-tight">
+          <span style={{ color: 'var(--text-core)' }}>Master </span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--brand-gold)] to-[var(--brand-gold-dark)]">
+            Business Analysis
+          </span>
+        </h1>
+        <p className="mt-6 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+          Expert-led courses, lifetime access, and everything you need to prepare for your BCS certification and accelerate your career.
+        </p>
+      </section>
+
       <BannerSection />
 
       <BundleSection />
@@ -27,26 +39,6 @@ export default function Home() {
 
       <HomeCoursesSection />
 
-      {/* Stats Section */}
-      <section className="py-16" style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
-        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-[1280px] mx-auto">
-            {[
-              { value: 6, suffix: '', label: 'Week Program' },
-              { value: 8, suffix: '', label: 'Course Modules' },
-              { value: 1, suffix: '', label: 'Main Certificate' },
-              { value: 500, suffix: '+', label: 'Students' }
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="font-display text-3xl sm:text-4xl font-bold" style={{ color: 'var(--brand-gold)' }}>
-                  <CountUp end={stat.value} suffix={stat.suffix} />
-                </div>
-                <div className="text-sm mt-1 text-muted">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <RatingsSection />
 
