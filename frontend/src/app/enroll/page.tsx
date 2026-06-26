@@ -162,9 +162,21 @@ function EnrollForm() {
     <div className="max-w-3xl mx-auto py-20">
       <div className="text-center mb-12">
         <h1 className="font-display text-3xl sm:text-5xl font-bold mb-4">
-          Enroll in <span className="gold">Zeelin Academy</span>
+          {preselectedType === 'bundle' ? (
+            <>Complete Diploma <span className="gold">Exam Prep Bundle</span></>
+          ) : preselectedType === 'fast-track' ? (
+            <>Fast-Track Diploma <span className="gold">Exam Prep</span></>
+          ) : (
+            <>Enroll in <span className="gold">Zeelin Academy</span></>
+          )}
         </h1>
-        <p style={{ color: 'var(--text-muted)' }}>Fill out the form below to begin your Business Analysis journey.</p>
+        <p style={{ color: 'var(--text-muted)' }}>
+          {preselectedType === 'bundle'
+            ? 'Follow a structured full Diploma preparation route without rushing. Fill out the form below to get started.'
+            : preselectedType === 'fast-track'
+              ? 'Move faster with an intensive preparation route for experienced or highly committed learners. Fill out the form below to get started.'
+              : 'Fill out the form below to begin your Business Analysis journey.'}
+        </p>
       </div>
 
       {/* Why Choose This Course */}
@@ -241,6 +253,8 @@ function EnrollForm() {
               style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-core)', borderColor: 'var(--border)' }}>
               <option value="free">Free - Basic Access</option>
               <option value="paid">Paid - Full Program</option>
+              <option value="bundle">Complete Diploma Exam Prep Bundle</option>
+              <option value="fast-track">Fast-Track Diploma Exam Prep</option>
             </select>
           </div>
         </div>

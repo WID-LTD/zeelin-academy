@@ -15,11 +15,17 @@ function calcPercentOff(oldPrice: string, newPrice: string): string {
 
 // Original books list with pricing data
 const originalBooks = [
-  { src: '/book1.png', price: '£100.00', oldPrice: '£129.99', title: 'Business Analytics' },
-  { src: '/book2.png', price: '£100.00', oldPrice: '£129.99', title: 'Business Analysis Fourth Edition' },
-  { src: '/book3.png', price: '£100.00', oldPrice: '£149.99', title: 'Business Analysis Lifetime Access' },
-  { src: '/book4.png', price: '£100.00', oldPrice: '£129.99', title: 'Business Analysis Yearly Access' },
-  { src: '/book5.png', price: '£100.00', oldPrice: '£149.99', title: 'Foundation to Business Analysis' }
+  { src: '/exam_focus_foundation.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Foundation in Business Analysis', subtitle: 'A Zeelin Academy Companion Guide' },
+  { src: '/exam_focus_business_change.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Business Change', subtitle: 'A Zeelin Academy Companion Guide' },
+  { src: '/exam_focus_is_project_mgmt.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: IS Project Management', subtitle: 'A Zeelin Academy Companion Guide' },
+  { src: '/exam_focus_org_behaviour.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Organisational Behaviour', subtitle: 'A Zeelin Academy Companion Guide' },
+  { src: '/exam_focus_ba_practice.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Business Analysis Practice', subtitle: 'A Zeelin Academy Companion Guide' },
+  { src: '/exam_focus_requirements_eng.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Requirements Engineering', subtitle: 'A Zeelin Academy Companion Guide' },
+  { src: '/exam_focus_modelling_processes.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Modelling Business Processes', subtitle: 'A Zeelin Academy Companion Guide' },
+  { src: '/exam_focus_systems_modelling.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Systems Modelling Techniques', subtitle: 'A Zeelin Academy Companion Guide' },
+  { src: '/exam_focus_systems_development.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Systems Development Essentials', subtitle: 'A Zeelin Academy Companion Guide' },
+  { src: '/exam_focus_data_management.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Data Management Essentials', subtitle: 'A Zeelin Academy Companion Guide' },
+  { src: '/exam_focus_benefits_mgmt.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Benefits Management and Business Acceptance', subtitle: 'A Zeelin Academy Companion Guide' },
 ].map(b => ({ ...b, percentOff: calcPercentOff(b.oldPrice, b.price) }))
 // Tripled for infinite smooth scroll buffer
 const books = [...originalBooks, ...originalBooks, ...originalBooks]
@@ -112,17 +118,6 @@ export default function BannerSection() {
     scrollRef.current.scrollLeft = scrollLeft - walk
   }
 
-  // Email capture form state
-  const [email, setEmail] = useState('')
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleEmailSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (email) {
-      setSubmitted(true)
-    }
-  }
-
   // Navigation Arrow Handlers
   const scrollBy = (amount: number) => {
     if (scrollRef.current) {
@@ -131,7 +126,7 @@ export default function BannerSection() {
   }
 
   return (
-    <section className="relative overflow-hidden w-full py-10 lg:py-12 bg-transparent">
+    <section className="relative overflow-hidden w-full py-16 bg-transparent">
       <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-6 w-full">
           
@@ -188,7 +183,8 @@ export default function BannerSection() {
                   </div>
                   {/* Book Title */}
                   <div className="mt-4 w-[8.75rem] sm:w-[10rem] md:w-[11.875rem] text-center px-1">
-                    <p className="text-sm md:text-base font-semibold text-[color:var(--text-core)] leading-snug">{book.title}</p>
+                    <p className="text-sm md:text-base font-semibold leading-snug px-2 py-1 rounded border" style={{ color: 'var(--text-core)', borderColor: 'var(--border)', backgroundColor: 'var(--bg-card)' }}>{book.title}</p>
+                    <p className="text-[0.6rem] md:text-xs leading-tight px-2 mt-1" style={{ color: 'var(--text-muted)' }}>{book.subtitle}</p>
                   </div>
                 </div>
               ))}
@@ -217,43 +213,12 @@ export default function BannerSection() {
                 <div className="text-center lg:text-left">
                   <h3 className="font-display text-3xl md:text-4xl lg:text-5xl font-black mb-4 leading-tight" style={{ color: 'var(--text-core)' }}>
                     Get the{' '}
-                    <span style={{ color: 'var(--brand-gold)' }}>Business Analysis Strategy Guide</span>
+                    <span style={{ color: 'var(--brand-gold)' }}>Business Analysis Strategy Guide to Business Analysis Exam Prep, Made Clear</span>
                   </h3>
-                   <p className="text-base md:text-lg max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                     A free, step-by-step roadmap designed for busy professionals preparing for BCS certification.
-                     Know exactly what to study, when, and how — so you pass with confidence.
-                   </p>
-                   {!submitted ? (
-                     <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-3 mb-8 justify-center lg:justify-start">
-                       <label htmlFor="email-input" className="sr-only">Enter your email</label>
-                       <input
-                         id="email-input"
-                         type="email"
-                         placeholder="Enter your email"
-                         value={email}
-                         onChange={(e) => setEmail(e.target.value)}
-                         required
-                         className="px-5 py-4 text-base rounded-lg sm:rounded-l-lg sm:rounded-r-none w-full sm:w-auto min-w-[260px] border outline-none focus:ring-2 focus:ring-[var(--brand-gold)]"
-                         style={{
-                           backgroundColor: 'var(--bg-primary)',
-                           borderColor: 'var(--border)',
-                           color: 'var(--text-core)',
-                         }}
-                       />
-                       <button
-                         type="submit"
-                         className="px-8 py-4 text-base font-bold rounded-lg sm:rounded-r-lg sm:rounded-l-none hover:opacity-90 transition-opacity"
-                         style={{ backgroundColor: 'var(--brand-gold)', color: '#fff' }}
-                       >
-                         Get Free Guide
-                       </button>
-                     </form>
-                   ) : (
-                     <p className="text-base font-semibold mb-8 text-center lg:text-left" style={{ color: 'var(--brand-gold)' }}>
-                       Thanks! Check your inbox for the guide.
-                     </p>
-                   )}
-                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <p className="text-base md:text-lg max-w-full mx-auto lg:mx-0 mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                    Zeelin Academy helps busy learners prepare for business analysis exams through structured teaching — guided study plans, mock quizzes, visual summaries, and exam-readiness support.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <Link href="/contact" className="btn-gold px-10 py-4 text-base font-bold inline-block text-center hover:scale-105 transition-transform">
                       Download Free Guide
                     </Link>
