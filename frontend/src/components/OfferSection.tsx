@@ -116,7 +116,7 @@ export default function OfferSection() {
   const visible = showAll ? offers : offers.slice(0, initialCount)
 
   return (
-    <section className="relative overflow-hidden py-16 md:py-28" style={{ backgroundColor: 'var(--bg-primary)' }}>
+    <section className="relative overflow-hidden py-10 lg:py-12" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="absolute top-0 right-0 w-full h-full pointer-events-none overflow-hidden">
         <div className="absolute -top-32 -right-32 w-80 h-80 rounded-full opacity-[0.05]"
           style={{ background: 'radial-gradient(circle, #D4AF37, transparent 70%)' }} />

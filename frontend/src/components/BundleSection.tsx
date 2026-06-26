@@ -5,7 +5,7 @@ import AnimatedSection from '@/components/AnimatedSection'
 
 export default function BundleSection() {
   return (
-    <section className="relative overflow-hidden py-16 md:py-24" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+    <section className="relative overflow-hidden py-10 lg:py-12" style={{ backgroundColor: 'var(--bg-secondary)' }}>
       <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20">
           {/* 3D Book Bundle */}

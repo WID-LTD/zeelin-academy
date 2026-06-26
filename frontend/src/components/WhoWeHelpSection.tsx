@@ -25,7 +25,7 @@ const photos = [
 
 export default function WhoWeHelpSection() {
   return (
-    <section className="relative overflow-hidden py-20 md:py-28" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+    <section className="relative overflow-hidden py-10 lg:py-12" style={{ backgroundColor: 'var(--bg-secondary)' }}>
       <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Left Column - Content */}

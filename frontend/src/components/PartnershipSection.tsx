@@ -15,7 +15,7 @@ export default function PartnershipSection() {
   const allPartners = [...partners, ...partners, ...partners, ...partners]
 
   return (
-    <section className="relative overflow-hidden py-16 md:py-20" style={{ backgroundColor: 'var(--bg-primary)' }}>
+    <section className="relative overflow-hidden py-10 lg:py-12" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection delay={100}>
           <div className="text-center mb-12">

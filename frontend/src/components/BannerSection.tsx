@@ -120,7 +120,7 @@ export default function BannerSection() {
   }
 
   return (
-    <section className="relative overflow-hidden w-full py-16 bg-transparent">
+    <section className="relative overflow-hidden w-full py-10 lg:py-12 bg-transparent">
       <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-6 w-full">
           
