@@ -33,6 +33,8 @@ export default function Home() {
 
       <WhoWeHelpSection />
 
+      <OfferSection />
+
       <PartnershipSection />
 
       <WhyChooseSection />
@@ -44,7 +46,7 @@ export default function Home() {
 
       <TeachingMethodSection />
 
-      <OfferSection />
+
 
       <FlashSaleSection />
 
