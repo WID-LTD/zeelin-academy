@@ -1,21 +1,35 @@
 'use client'
 
+import { useState } from 'react'
 import SafeImage from '@/components/SafeImage'
 import AnimatedSection from '@/components/AnimatedSection'
-import { Zap, BookOpen, Eye, Monitor, ClipboardList, FileQuestion, Award, RefreshCw } from 'lucide-react'
+import { ChevronDown, Zap, BookOpen, Eye, Monitor, ClipboardList, FileQuestion, Award, RefreshCw } from 'lucide-react'
 
 const methods = [
-  { label: 'Micro-Learning', icon: Zap },
-  { label: 'Simple Explanations', icon: BookOpen },
-  { label: 'Visual Examples', icon: Eye },
-  { label: 'Live Training', icon: Monitor },
-  { label: 'Guided Study', icon: ClipboardList },
-  { label: 'Mock Quiz', icon: FileQuestion },
-  { label: 'Zeelin Exam Readiness', icon: Award },
-  { label: 'Accountability', icon: RefreshCw },
+  { label: 'Micro-Learning', icon: Zap, description: 'Bite-sized 10-15 minute lessons designed to fit into your busy schedule. Learn during your commute, lunch break, or any spare moment without feeling overwhelmed.' },
+  { label: 'Simple Explanations', icon: BookOpen, description: 'Complex Business Analysis concepts broken down into plain English. No jargon, no confusion — just clear, step-by-step explanations you can actually understand.' },
+  { label: 'Visual Examples', icon: Eye, description: 'Diagrams, flowcharts, and real-world case studies that bring theory to life. See how each concept applies in actual business analysis scenarios.' },
+  { label: 'Live Training', icon: Monitor, description: 'Weekly interactive sessions with experienced BCS-certified instructors. Get your questions answered in real-time and learn alongside fellow students.' },
+  { label: 'Guided Study', icon: ClipboardList, description: 'A clear 6-week study plan that tells you exactly what to learn each week. No guesswork, no wasted time — just a direct path to certification.' },
+  { label: 'Mock Quiz', icon: FileQuestion, description: 'BCS-style practice questions with detailed feedback and explanations. Track your progress and identify areas that need more focus before the real exam.' },
+  { label: 'Zeelin Exam Readiness', icon: Award, description: '' },
+  { label: 'Accountability', icon: RefreshCw, description: '' },
 ]
 
 export default function TeachingMethodSection() {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
+
+  const toggleCard = (index: number) => {
+    setExpandedIndex(prev => prev === index ? null : index)
+  }
+
+  const handleKeyDown = (index: number) => (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      toggleCard(index)
+    }
+  }
+
   return (
     <section className="relative overflow-hidden py-10 lg:py-12" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,22 +57,47 @@ Unique{' '}
               <div className="grid grid-cols-2 xl:grid-cols-3 gap-3 pt-2">
                 {methods.map((method, i) => {
                   const Icon = method.icon
+                  const isExpanded = expandedIndex === i
                   return (
                     <AnimatedSection key={method.label} delay={300 + i * 60}>
                       <div
-                        className="flex items-center gap-3 px-4 py-3.5 rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
+                        className="flex flex-col px-4 py-3.5 rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
                         style={{
                           backgroundColor: 'var(--bg-secondary)',
                           border: '1px solid var(--border)',
                         }}
                       >
-                        <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-                          style={{ backgroundColor: 'rgba(223,186,107,0.12)' }}>
-                          <Icon className="w-4.5 h-4.5" style={{ color: 'var(--brand-gold)' }} />
+                        <div className="flex items-center gap-3">
+                          <div
+                            className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 cursor-pointer"
+                            style={{ backgroundColor: 'rgba(223,186,107,0.12)' }}
+                            onClick={() => toggleCard(i)}
+                            role="button"
+                            tabIndex={0}
+                            onKeyDown={handleKeyDown(i)}
+                            aria-expanded={isExpanded}
+                          >
+                            <Icon className="w-4.5 h-4.5" style={{ color: 'var(--brand-gold)' }} />
+                          </div>
+                          <span className="text-sm font-semibold leading-snug" style={{ color: 'var(--text-core)' }}>
+                            {method.label}
+                          </span>
                         </div>
-                        <span className="text-sm font-semibold leading-snug" style={{ color: 'var(--text-core)' }}>
-                          {method.label}
-                        </span>
+                        {method.description && (
+                          <div
+                            className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                          >
+                            <div className="pt-3 mt-3 border-t flex items-start gap-2" style={{ borderColor: 'var(--border)' }}>
+                              <ChevronDown
+                                className={`w-3.5 h-3.5 mt-0.5 flex-shrink-0 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
+                                style={{ color: 'var(--brand-gold)' }}
+                              />
+                              <p className="text-xs leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                                {method.description}
+                              </p>
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </AnimatedSection>
                   )

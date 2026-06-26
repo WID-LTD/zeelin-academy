@@ -2,7 +2,7 @@
 
 import { useState, useRef } from 'react'
 import Link from 'next/link'
-import { ChevronRight, CheckCircle2, Phone } from 'lucide-react'
+import { ChevronRight, CheckCircle2, Phone, Search, Compass, BarChart3, Users, Star, ArrowRight, BookOpen, MessageCircle, Target, ClipboardList, Sparkles, GraduationCap, CheckCircle, Award, Clock, ShieldCheck, TrendingUp } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
 import SafeImage from '@/components/SafeImage'
 
@@ -527,6 +527,30 @@ export default function PathwayFinder() {
         </div>
       )}
 
+      {/* Next Steps — Recommended Courses */}
+      <div className="mt-8 text-left max-w-2xl mx-auto">
+        <h3 className="font-bold text-lg mb-4 text-center" style={{ color: 'var(--text-core)' }}>
+          Recommended <span style={{ color: 'var(--brand-gold)' }}>Next Steps</span>
+        </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {[
+            { href: '/courses/core-pathway', title: 'Core Pathway', desc: 'Build on your BA foundation with structured learning.' },
+            { href: '/courses/foundation-pathway', title: 'Foundation Pathway', desc: 'Start your BA journey with essential concepts.' },
+            { href: '/courses/oral-examination', title: 'Oral Exam Prep', desc: 'Prepare for your BCS Oral Examination.' },
+          ].slice(0, result?.path?.toLowerCase().includes('foundation') ? 2 : 2).map((rec, i) => (
+            <Link key={i} href={rec.href}
+              className="flex items-center justify-between p-5 rounded-xl border transition-all hover:shadow-md group"
+              style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+              <div>
+                <div className="font-bold text-sm" style={{ color: 'var(--text-core)' }}>{rec.title}</div>
+                <div className="text-xs mt-0.5" style={{ color: 'var(--text-secondary)' }}>{rec.desc}</div>
+              </div>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" style={{ color: 'var(--brand-gold)' }} />
+            </Link>
+          ))}
+        </div>
+      </div>
+
       <p className="text-sm mt-8 max-w-xl mx-auto" style={{ color: 'var(--text-muted)' }}>
         Our recommendation is guidance only. You remain free to choose your own modules based on your goals, employer requirements, personal preference, or official BCS guidance. Zeelin Academy will also review your answers and may reach out to discuss further.
       </p>
@@ -609,7 +633,37 @@ export default function PathwayFinder() {
         </div>
       </section>
 
-      {/* Section 2 — Standalone Title */}
+      {/* Section 2 — Why Take This Assessment */}
+      <section className="py-20" style={{ backgroundColor: 'var(--bg-primary)' }}>
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <h2 className="font-display text-3xl sm:text-4xl font-black text-center mb-4" style={{ color: 'var(--text-core)' }}>
+              Why Take This <span style={{ color: 'var(--brand-gold)' }}>Assessment?</span>
+            </h2>
+            <p className="text-center max-w-2xl mx-auto mb-12 text-lg" style={{ color: 'var(--text-secondary)' }}>
+              Choosing the right BCS Diploma pathway is a critical career decision. Let us help you make an informed choice.
+            </p>
+          </AnimatedSection>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: Compass, title: 'Personalised Guidance', desc: 'Get a tailored pathway recommendation based on your background, skills, and career aspirations.' },
+              { icon: BarChart3, title: 'Data-Driven Matching', desc: 'Our algorithm analyses your responses against proven career progression data to find your best fit.' },
+              { icon: Clock, title: 'Takes Only 5 Minutes', desc: 'Answer 8 simple questions and receive your personalised pathway recommendation instantly.' },
+              { icon: ShieldCheck, title: 'No Commitment Required', desc: 'Your results are guidance only. You remain free to choose the pathway that feels right for you.' },
+            ].map((ben, i) => (
+              <AnimatedSection key={i} delay={i * 80}>
+                <div className="p-6 rounded-2xl border h-full text-center" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                  <ben.icon className="w-10 h-10 mx-auto mb-4" style={{ color: 'var(--brand-gold)' }} />
+                  <h3 className="font-bold text-lg mb-2" style={{ color: 'var(--text-core)' }}>{ben.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{ben.desc}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3 — Standalone Title */}
       <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
         <div className="absolute inset-0 bg-hero-glow pointer-events-none opacity-40" />
         <div className="relative max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -632,10 +686,107 @@ export default function PathwayFinder() {
         </div>
       </section>
 
-      {/* Section 3 — Multi-Step Form */}
+      {/* Section 4 — How It Works */}
+      <section className="py-20" style={{ backgroundColor: 'var(--bg-primary)' }}>
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <h2 className="font-display text-3xl sm:text-4xl font-black text-center mb-4" style={{ color: 'var(--text-core)' }}>
+              How It <span style={{ color: 'var(--brand-gold)' }}>Works</span>
+            </h2>
+            <p className="text-center max-w-2xl mx-auto mb-12 text-lg" style={{ color: 'var(--text-secondary)' }}>
+              Four simple steps to discover your ideal BCS Diploma pathway.
+            </p>
+          </AnimatedSection>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+            {[
+              { icon: ClipboardList, step: '01', title: 'Tell Us About You', desc: 'Share your background, experience level, and current role so we can understand where you are starting from.' },
+              { icon: Search, step: '02', title: 'Define Your Goals', desc: 'Select your career direction, preferred job titles, and the type of BA work that excites you most.' },
+              { icon: Sparkles, step: '03', title: 'Set Your Preferences', desc: 'Choose your preferred technical level, learning goals, and diploma pathway preferences.' },
+              { icon: GraduationCap, step: '04', title: 'Get Your Recommendation', desc: 'Receive a personalised pathway recommendation with a detailed explanation of why it fits your profile.' },
+            ].map((item, i) => (
+              <AnimatedSection key={i} delay={i * 100}>
+                <div className="text-center">
+                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 relative" style={{ backgroundColor: 'rgba(212,175,55,0.1)' }}>
+                    <item.icon className="w-8 h-8" style={{ color: 'var(--brand-gold)' }} />
+                    <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full flex items-center justify-center text-[0.65rem] font-bold" style={{ backgroundColor: 'var(--brand-gold)', color: '#0f1115' }}>
+                      {item.step}
+                    </div>
+                  </div>
+                  <h3 className="font-bold text-lg mb-2" style={{ color: 'var(--text-core)' }}>{item.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{item.desc}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5 — Start Assessment CTA with Trust Signals */}
+      <section className="py-16" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedSection>
+            <h2 className="font-display text-3xl sm:text-4xl font-black mb-4" style={{ color: 'var(--text-core)' }}>
+              Ready to Find Your <span style={{ color: 'var(--brand-gold)' }}>Pathway?</span>
+            </h2>
+            <p className="text-lg max-w-2xl mx-auto mb-10" style={{ color: 'var(--text-secondary)' }}>
+              Join thousands of professionals who have used our pathway finder to make confident diploma decisions.
+            </p>
+          </AnimatedSection>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto mb-10">
+            {[
+              { icon: Users, value: '3,500+', label: 'Assessments Completed' },
+              { icon: Star, value: '4.9/5', label: 'Satisfaction Rating' },
+              { icon: Award, value: '95%', label: 'Found It Helpful' },
+              { icon: TrendingUp, value: '82%', label: 'Chose Recommended Path' },
+            ].map((stat, i) => (
+              <AnimatedSection key={i} delay={i * 80}>
+                <div className="text-center">
+                  <stat.icon className="w-7 h-7 mx-auto mb-2" style={{ color: 'var(--brand-gold)' }} />
+                  <div className="text-2xl font-black font-display" style={{ color: 'var(--text-core)' }}>{stat.value}</div>
+                  <div className="text-xs font-medium" style={{ color: 'var(--text-secondary)' }}>{stat.label}</div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+          <AnimatedSection delay={200}>
+            <button onClick={scrollToForm} className="btn-gold px-10 py-4 text-lg font-bold inline-flex items-center gap-3">
+              <ClipboardList className="w-5 h-5" />
+              Start My Assessment
+            </button>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Section 6 — Multi-Step Form */}
       <section ref={formRef} className="py-24" style={{ backgroundColor: 'var(--bg-primary)' }}>
         <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
-          {step > 1 && step < 7 && renderProgress()}
+          {/* Enhanced Progress Indicator */}
+          {step > 1 && step < 7 && (
+            <div className="mb-8">
+              <div className="flex items-center justify-center gap-4 mb-6">
+                {[2,3,4,5,6].map((s, i) => (
+                  <div key={s} className="flex items-center gap-4">
+                    <div className="flex items-center gap-2">
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all ${
+                        step === s ? 'shadow-[0_0_0_2px_var(--brand-gold)]' : ''
+                      }`} style={{
+                        backgroundColor: step > s ? 'var(--brand-gold)' : step === s ? 'var(--brand-gold)' : 'var(--border)',
+                        color: step >= s ? '#0f1115' : 'var(--text-secondary)'
+                      }}>
+                        {step > s ? <CheckCircle className="w-4 h-4" /> : i + 1}
+                      </div>
+                      <span className={`text-xs hidden sm:inline font-medium ${step >= s ? '' : 'text-muted'}`}
+                        style={{ color: step >= s ? 'var(--brand-gold)' : 'var(--text-secondary)' }}>
+                        {['About You', 'Background', 'Career', 'Preferences', 'Final'][i]}
+                      </span>
+                    </div>
+                    {i < 4 && <div className="w-8 h-px" style={{ backgroundColor: step > s ? 'var(--brand-gold)' : 'var(--border)' }} />}
+                  </div>
+                ))}
+              </div>
+              {renderProgress()}
+            </div>
+          )}
           {renderCurrentStep()}
         </div>
       </section>

@@ -3,8 +3,9 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Download, BookOpen, Copy, Check, ExternalLink, FileText, Layout, FileSpreadsheet, ArrowRight, HelpCircle } from 'lucide-react'
+import { Download, BookOpen, Copy, Check, ExternalLink, FileText, Layout, FileSpreadsheet, ArrowRight, HelpCircle, Search, Star, Badge, Zap, MessageCircle } from 'lucide-react'
 import BundleSection from '@/components/BundleSection'
+import AnimatedSection from '@/components/AnimatedSection'
 
 interface Template {
   id: string
@@ -53,12 +54,12 @@ const templates: Template[] = [
   },
   {
     id: 'baccm',
-    title: 'BACCM™ Framework Guide',
+    title: 'BACCM\u2122 Framework Guide',
     format: 'PDF Quick Guide',
     category: 'BA Foundations',
     description: 'A pocket-sized reference guide to the Business Analysis Core Concept Model: Change, Need, Solution, Stakeholder, Value, Context.',
     icon: <FileText className="w-5 h-5 text-[color:var(--brand-gold)]" />,
-    outline: `### BACCM™ Core Concepts
+    outline: `### BACCM\u2122 Core Concepts
 1. **Change:** The act of transformation in response to a need.
 2. **Need:** A problem or opportunity to be addressed.
 3. **Solution:** A specific way of satisfying one or more needs in a context.
@@ -90,6 +91,8 @@ const books = [
 export default function ResourcesPage() {
   const [copiedId, setCopiedId] = useState<string | null>(null)
   const [selectedTemplate, setSelectedTemplate] = useState<Template | null>(null)
+  const [searchQuery, setSearchQuery] = useState('')
+  const [activeFilter, setActiveFilter] = useState('All')
 
   const handleCopyText = (text: string, id: string) => {
     navigator.clipboard.writeText(text)
@@ -120,7 +123,56 @@ export default function ResourcesPage() {
           </p>
         </div>
 
+        {/* Search Bar */}
+        <div className="max-w-2xl mx-auto mb-6">
+          <div className="relative">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search resources by title, category, or keyword..."
+              className="w-full pl-12 pr-4 py-3.5 rounded-xl border bg-[color:var(--bg-card)] border-[color:var(--border)] text-[color:var(--text-core)] placeholder-muted focus:outline-none focus:border-[color:var(--brand-gold)] transition-all"
+            />
+          </div>
+        </div>
+
+        {/* Resource Categories Filter */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {['All', 'Books', 'Templates', 'Guides', 'Cheat Sheets'].map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveFilter(cat)}
+              className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-all border ${
+                activeFilter === cat
+                  ? 'bg-[color:var(--brand-gold)] text-black border-[color:var(--brand-gold)]'
+                  : 'bg-[color:var(--bg-card)] text-secondary border-[color:var(--border)] hover:border-[color:var(--brand-gold)]/50'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
         <BundleSection />
+
+        {/* Download Stats */}
+        <AnimatedSection direction="up" className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+          {[
+            { label: 'Total Downloads', value: '12,500+', icon: <Download className="w-5 h-5" /> },
+            { label: 'Templates Available', value: '45+', icon: <FileText className="w-5 h-5" /> },
+            { label: 'Guides & Cheat Sheets', value: '18+', icon: <BookOpen className="w-5 h-5" /> },
+            { label: 'Active Learners', value: '3,200+', icon: <Star className="w-5 h-5" /> },
+          ].map((stat, i) => (
+            <div key={i} className="p-6 rounded-2xl border bg-[color:var(--bg-card)] border-[color:var(--border)] text-center card-hover">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-3 bg-[rgba(223,186,107,0.08)]">
+                <span className="text-[color:var(--brand-gold)]">{stat.icon}</span>
+              </div>
+              <p className="text-2xl font-bold text-[color:var(--text-core)]">{stat.value}</p>
+              <p className="text-sm text-secondary mt-1">{stat.label}</p>
+            </div>
+          ))}
+        </AnimatedSection>
 
         {/* Textbooks Section */}
         <div className="mb-20">
@@ -135,6 +187,11 @@ export default function ResourcesPage() {
               <div key={i} className="p-6 rounded-2xl border bg-[color:var(--bg-card)] border-[color:var(--border)] card-hover flex flex-col justify-between">
                 <div>
                   <div className="relative aspect-[3/4] w-40 mx-auto rounded-lg overflow-hidden border mb-6 shadow-md" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border)' }}>
+                    {i === 0 && (
+                      <div className="absolute top-2 right-2 z-10 px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-[color:var(--brand-gold)] text-black">
+                        Recently Added
+                      </div>
+                    )}
                     <Image
                       src={book.src}
                       alt={book.title}
@@ -161,6 +218,46 @@ export default function ResourcesPage() {
             ))}
           </div>
         </div>
+
+        {/* Popular Resources */}
+        <AnimatedSection direction="up" className="mb-20 border-t border-[color:var(--border)] pt-16">
+          <h2 className="font-display text-2xl sm:text-3xl font-bold text-center mb-12 text-[color:var(--text-core)]">
+            Popular <span className="gold">Resources</span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="md:col-span-2 p-8 rounded-2xl border bg-[color:var(--bg-card)] border-[color:var(--border)] card-hover relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-[rgba(212,175,55,0.03)] rounded-bl-full pointer-events-none" />
+              <div className="flex items-start gap-2 mb-3">
+                <Badge className="w-4 h-4 text-[color:var(--brand-gold)]" />
+                <span className="text-xs font-bold uppercase tracking-wider text-[color:var(--brand-gold)]">Most Downloaded</span>
+              </div>
+              <h3 className="font-display text-xl font-bold text-[color:var(--text-core)] mb-3">BCS Diploma Complete Study Kit</h3>
+              <p className="text-sm text-secondary mb-4 leading-relaxed">
+                Everything you need to pass the BCS International Diploma in Business Analysis. Includes all module guides, practice exams, template packs, and oral prep materials.
+              </p>
+              <div className="flex flex-wrap items-center gap-4 text-xs text-muted mb-6">
+                <span className="flex items-center gap-1"><Download className="w-3.5 h-3.5" /> 3,400+ downloads</span>
+                <span className="flex items-center gap-1"><Star className="w-3.5 h-3.5" /> 4.8/5 rating</span>
+              </div>
+              <Link href="/enroll" className="btn-gold px-6 py-2.5 text-sm font-semibold inline-block">Access Now</Link>
+            </div>
+            <div className="p-8 rounded-2xl border bg-[color:var(--bg-card)] border-[color:var(--border)] card-hover">
+              <div className="flex items-start gap-2 mb-3">
+                <Zap className="w-4 h-4 text-[color:var(--brand-gold)]" />
+                <span className="text-xs font-bold uppercase tracking-wider text-[color:var(--brand-gold)]">Popular</span>
+              </div>
+              <h3 className="font-display text-xl font-bold text-[color:var(--text-core)] mb-3">SWOT Analysis Template Pack</h3>
+              <p className="text-sm text-secondary mb-4 leading-relaxed">
+                Professional SWOT analysis templates with guided prompts, examples, and strategic alignment matrices for real-world business analysis.
+              </p>
+              <div className="flex flex-wrap items-center gap-4 text-xs text-muted mb-6">
+                <span className="flex items-center gap-1"><Download className="w-3.5 h-3.5" /> 2,100+ downloads</span>
+                <span className="flex items-center gap-1"><Star className="w-3.5 h-3.5" /> 4.9/5 rating</span>
+              </div>
+              <button onClick={() => setSelectedTemplate(templates[0])} className="btn-outline-gold px-6 py-2.5 text-sm font-semibold inline-block">View Template</button>
+            </div>
+          </div>
+        </AnimatedSection>
 
         {/* Templates Directory Section */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20 border-t border-[color:var(--border)] pt-16">
@@ -276,6 +373,18 @@ export default function ResourcesPage() {
               {
                 q: "Who can I speak to if I need a custom template?",
                 a: "Academy members can request custom templates or schedule walkthroughs during our weekly group mentoring sessions with Dr. Franklin Kalu."
+              },
+              {
+                q: "Are the resources accessible after my course ends?",
+                a: "Yes, enrolled students retain lifetime access to all course materials, including templates, guides, and recorded sessions. You can download them at any time from your student dashboard."
+              },
+              {
+                q: "Can I contribute my own templates or resources?",
+                a: "We welcome community contributions! If you have a BA template or resource you would like to share, please reach out to our team. Contributors receive recognition and complimentary access to premium content."
+              },
+              {
+                q: "What file formats are the templates available in?",
+                a: "Our templates are provided in multiple formats including Word, Excel, PDF, and CSV. This ensures compatibility across different operating systems and software versions."
               }
             ].map((faq, i) => (
               <div key={i} className="flex gap-4">
@@ -288,6 +397,22 @@ export default function ResourcesPage() {
             ))}
           </div>
         </div>
+
+        {/* Resource Request CTA */}
+        <AnimatedSection direction="up" className="mt-16 p-10 rounded-2xl border text-center relative overflow-hidden bg-[rgba(212,175,55,0.03)] border-[rgba(212,175,55,0.2)]">
+          <div className="absolute inset-0 bg-hero-glow pointer-events-none opacity-50" />
+          <MessageCircle className="w-12 h-12 text-[color:var(--brand-gold)] mx-auto mb-4" />
+          <h2 className="font-display text-2xl sm:text-3xl font-bold mb-3 text-[color:var(--text-core)]">
+            Can&apos;t Find What You Need?
+          </h2>
+          <p className="text-secondary max-w-xl mx-auto mb-6">
+            We are constantly expanding our resource library. Let us know what you are looking for and we will try to add it.
+          </p>
+          <Link href="/contact" className="btn-gold px-8 py-3 text-sm font-semibold inline-flex items-center gap-2">
+            <MessageCircle className="w-4 h-4" />
+            Request a Resource
+          </Link>
+        </AnimatedSection>
 
       </div>
     </div>

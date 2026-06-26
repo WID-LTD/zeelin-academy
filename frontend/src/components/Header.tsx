@@ -46,7 +46,7 @@ export default function Header() {
             />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-5">
+          <nav role="navigation" aria-label="Main navigation" className="hidden md:flex items-center gap-5">
             <Link href="/" className={`nav-link text-[0.8125rem] font-medium ${isActive('/') ? 'active' : ''}`}>Home</Link>
             <Link href="/about" className={`nav-link text-[0.8125rem] font-medium ${isActive('/about') ? 'active' : ''}`}>About</Link>
             <Link href="/pathway-finder" className={`nav-link text-[0.8125rem] font-medium ${isActive('/pathway-finder') ? 'active' : ''}`}>Pathway Finder</Link>
@@ -84,7 +84,7 @@ export default function Header() {
                 </svg>
               )}
             </button>
-            <button className="p-3 flex items-center justify-center" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-controls="mobile-menu" style={{ minWidth: '44px', minHeight: '44px' }}>
+            <button className="p-3 flex items-center justify-center" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-controls="mobile-menu" aria-label="Toggle menu" style={{ minWidth: '44px', minHeight: '44px' }}>
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: 'var(--text-core)' }}>
                 {menuOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

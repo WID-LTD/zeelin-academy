@@ -57,7 +57,7 @@
 }
 
 html {
-  font-size: clamp(14px, -0.9rem + 2vw, 36px);
+  font-size: clamp(16px, -0.9rem + 2vw, 36px);
 }
 
 * {

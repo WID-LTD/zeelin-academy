@@ -33,10 +33,14 @@ const config: Config = {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         display: ['Playfair Display', 'Georgia', 'serif']
       },
+      gridTemplateColumns: {
+        '12': 'repeat(12, 1fr)',
+        '8': 'repeat(8, 1fr)',
+        '4': 'repeat(4, 1fr)'
+      },
       backgroundImage: {
         'gold-gradient': 'linear-gradient(135deg, #DFBA6B 0%, #C29C47 100%)',
-        'hero-glow': 'radial-gradient(ellipse at center, rgba(223,186,107,0.08) 0%, transparent 70%)',
-        'hero-glow-blue': 'radial-gradient(ellipse at center, rgba(59,130,246,0.08) 0%, transparent 70%)'
+        'hero-glow': 'radial-gradient(ellipse at center, rgba(223,186,107,0.08) 0%, transparent 70%)'
       }
     }
   },

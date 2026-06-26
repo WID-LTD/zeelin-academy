@@ -96,7 +96,7 @@ export default function ProfilePage() {
         <div className="p-8 rounded-2xl border bg-[color:var(--bg-card)] border-[color:var(--border)] mb-8">
           <h2 className="font-display text-xl font-bold mb-6 text-[color:var(--text-core)]">Personal Information</h2>
           {saveMsg && (
-            <div className={`p-3 rounded-lg text-sm mb-6 ${saveMsg.includes('success') ? 'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300' : 'bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300'}`}>
+            <div role="alert" className={`p-3 rounded-lg text-sm mb-6 ${saveMsg.includes('success') ? 'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300' : 'bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300'}`}>
               {saveMsg}
             </div>
           )}
@@ -128,7 +128,7 @@ export default function ProfilePage() {
         <div className="p-8 rounded-2xl border bg-[color:var(--bg-card)] border-[color:var(--border)]">
           <h2 className="font-display text-xl font-bold mb-6 text-[color:var(--text-core)]">Change <span className="gold">Password</span></h2>
           {pwMsg && (
-            <div className={`p-3 rounded-lg text-sm mb-6 ${pwMsg.includes('success') ? 'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300' : 'bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300'}`}>
+            <div role="alert" className={`p-3 rounded-lg text-sm mb-6 ${pwMsg.includes('success') ? 'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300' : 'bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300'}`}>
               {pwMsg}
             </div>
           )}

@@ -3,6 +3,8 @@
 import { useSearchParams } from 'next/navigation'
 import { useState, Suspense } from 'react'
 import Link from 'next/link'
+import { CheckCircle, Award, ShieldCheck, Clock, Star, MessageCircle, CreditCard, ChevronRight } from 'lucide-react'
+import AnimatedSection from '@/components/AnimatedSection'
 
 const moduleNames: Record<string, string> = {
   'ba-foundations': 'Business Analysis Foundations',
@@ -114,6 +116,44 @@ function EnrollForm() {
           </div>
           <button type="submit" className="btn-gold w-full py-3 text-lg font-semibold">Verify & Confirm</button>
         </form>
+
+        {/* Payment Options */}
+        <AnimatedSection direction="up" className="mt-8 p-6 rounded-xl border bg-[color:var(--bg-card)] border-[color:var(--border)]">
+          <h3 className="font-bold text-lg text-[color:var(--text-core)] mb-4">Payment <span className="gold">Options</span></h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="p-4 rounded-xl border border-[color:var(--border)] text-center card-hover">
+              <CreditCard className="w-8 h-8 mx-auto mb-2 text-[color:var(--brand-gold)]" />
+              <p className="text-sm font-bold text-[color:var(--text-core)]">Full Payment</p>
+              <p className="text-xs text-muted">One-time payment</p>
+              <p className="text-xs text-secondary mt-1">Best value option</p>
+            </div>
+            <div className="p-4 rounded-xl border border-[color:var(--border)] text-center card-hover">
+              <Clock className="w-8 h-8 mx-auto mb-2 text-[color:var(--brand-gold)]" />
+              <p className="text-sm font-bold text-[color:var(--text-core)]">Monthly Plan</p>
+              <p className="text-xs text-muted">Spread the cost</p>
+              <p className="text-xs text-secondary mt-1">3 or 6 month plans</p>
+            </div>
+            <div className="p-4 rounded-xl border border-[color:var(--border)] text-center card-hover">
+              <ShieldCheck className="w-8 h-8 mx-auto mb-2 text-[color:var(--brand-gold)]" />
+              <p className="text-sm font-bold text-[color:var(--text-core)]">Sponsorship</p>
+              <p className="text-xs text-muted">Employer-funded</p>
+              <p className="text-xs text-secondary mt-1">Invoice available</p>
+            </div>
+          </div>
+          <p className="text-xs text-muted text-center mt-4">We accept Visa, Mastercard, American Express, PayPal, and bank transfers.</p>
+        </AnimatedSection>
+
+        {/* Still Have Questions */}
+        <AnimatedSection direction="up" className="mt-8 p-8 rounded-xl border text-center bg-[rgba(212,175,55,0.03)] border-[rgba(212,175,55,0.2)]">
+          <MessageCircle className="w-10 h-10 mx-auto mb-3 text-[color:var(--brand-gold)]" />
+          <h3 className="font-bold text-xl text-[color:var(--text-core)] mb-2">Still Have Questions?</h3>
+          <p className="text-sm text-secondary mb-6 max-w-md mx-auto">
+            Not sure which module is right for you? Contact our team for a free consultation.
+          </p>
+          <Link href="/contact" className="btn-gold px-8 py-3 text-sm font-semibold inline-flex items-center gap-2">
+            Contact Us <ChevronRight className="w-4 h-4" />
+          </Link>
+        </AnimatedSection>
       </div>
     )
   }
@@ -126,6 +166,48 @@ function EnrollForm() {
         </h1>
         <p style={{ color: 'var(--text-muted)' }}>Fill out the form below to begin your Business Analysis journey.</p>
       </div>
+
+      {/* Why Choose This Course */}
+      <AnimatedSection direction="up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        {[
+          { icon: <Award className="w-5 h-5" />, title: 'BCS-Aligned Curriculum', desc: 'Mapped to the official BCS syllabus' },
+          { icon: <Star className="w-5 h-5" />, title: 'Expert Mentors', desc: 'Learn from Dr. Franklin Kalu (MBCS)' },
+          { icon: <Clock className="w-5 h-5" />, title: 'Flexible Learning', desc: 'Self-paced with live support sessions' },
+          { icon: <ShieldCheck className="w-5 h-5" />, title: 'Pass Guarantee', desc: '95%+ first-attempt pass rate' },
+        ].map((item, i) => (
+          <div key={i} className="p-4 rounded-xl border bg-[color:var(--bg-card)] border-[color:var(--border)] flex items-center gap-3">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 bg-[rgba(223,186,107,0.08)]">
+              <span className="text-[color:var(--brand-gold)]">{item.icon}</span>
+            </div>
+            <div>
+              <p className="text-sm font-bold text-[color:var(--text-core)]">{item.title}</p>
+              <p className="text-xs text-muted">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </AnimatedSection>
+
+      {/* What's Included */}
+      <AnimatedSection direction="up" className="p-6 rounded-xl border bg-[color:var(--bg-card)] border-[color:var(--border)] mb-8">
+        <h3 className="font-bold text-lg text-[color:var(--text-core)] mb-4">What&apos;s <span className="gold">Included</span></h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {[
+            'Full course materials & video lectures',
+            'Mock exams & practice questions (500+)',
+            'Personalized mentor feedback',
+            'Oral exam simulation sessions',
+            'Downloadable templates & guides',
+            'Lifetime access & updates',
+            'Certificate of completion',
+            'Community forum access',
+          ].map((item, i) => (
+            <div key={i} className="flex items-center gap-2 text-sm">
+              <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+              <span className="text-secondary">{item}</span>
+            </div>
+          ))}
+        </div>
+      </AnimatedSection>
 
       <form onSubmit={handleSubmit} className="p-8 rounded-xl border space-y-6" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

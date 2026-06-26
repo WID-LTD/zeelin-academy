@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import AnimatedSection from '@/components/AnimatedSection'
 import SafeImage from '@/components/SafeImage'
+import { ChevronRight, CheckCircle, Target, Zap, Brain, BookOpen, Star, Quote, GraduationCap, Award, Clock, Users, FileCheck, MessageCircle } from 'lucide-react'
 import { categories } from '@/lib/courseData'
 
 export const metadata: Metadata = {
@@ -28,6 +29,142 @@ export default function PractitionerPathwayPage() {
               {cat.description}
             </p>
           </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Breadcrumb */}
+      <section className="py-4 border-b" style={{ backgroundColor: 'var(--bg-primary)', borderColor: 'var(--border)' }}>
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+          <nav className="flex items-center gap-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
+            <Link href="/" className="hover:gold transition-colors">Home</Link>
+            <ChevronRight className="w-4 h-4" />
+            <Link href="/courses" className="hover:gold transition-colors">Courses</Link>
+            <ChevronRight className="w-4 h-4" />
+            <span style={{ color: 'var(--brand-gold)' }}>Practitioner Pathway</span>
+          </nav>
+        </div>
+      </section>
+
+      {/* Prerequisites */}
+      <section className="py-20" style={{ backgroundColor: 'var(--bg-primary)' }}>
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <h2 className="font-display text-3xl sm:text-4xl font-black text-center mb-4" style={{ color: 'var(--text-core)' }}>
+              <span style={{ color: 'var(--brand-gold)' }}>Prerequisites</span>
+            </h2>
+            <p className="text-center max-w-2xl mx-auto mb-12 text-lg" style={{ color: 'var(--text-secondary)' }}>
+              Before enrolling in the Practitioner Pathway, ensure you meet the following requirements.
+            </p>
+          </AnimatedSection>
+          <div className="max-w-2xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              { icon: CheckCircle, label: 'BCS Foundation Certificate or equivalent knowledge' },
+              { icon: CheckCircle, label: 'At least 6 months of BA or related work experience' },
+              { icon: CheckCircle, label: 'Familiarity with requirements documentation' },
+              { icon: CheckCircle, label: 'Understanding of stakeholder management basics' },
+              { icon: CheckCircle, label: 'Comfortable with business process concepts' },
+              { icon: CheckCircle, label: 'Commitment to 8-10 hours study per week' },
+            ].map((item, i) => (
+              <AnimatedSection key={i} delay={i * 80}>
+                <div className="flex items-start gap-3 p-4 rounded-xl border" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                  <item.icon className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: 'var(--brand-gold)' }} />
+                  <span className="text-sm font-medium" style={{ color: 'var(--text-core)' }}>{item.label}</span>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What Makes Practitioner Different */}
+      <section className="py-20" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <h2 className="font-display text-3xl sm:text-4xl font-black text-center mb-4" style={{ color: 'var(--text-core)' }}>
+              What Makes Practitioner <span style={{ color: 'var(--brand-gold)' }}>Different</span>
+            </h2>
+            <p className="text-center max-w-2xl mx-auto mb-12 text-lg" style={{ color: 'var(--text-secondary)' }}>
+              Go deeper, think critically, and apply advanced techniques in real-world scenarios.
+            </p>
+          </AnimatedSection>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { icon: Brain, title: 'Advanced Analysis', desc: 'Dive into complex problem-solving with root cause analysis, system thinking, and advanced modeling techniques.' },
+              { icon: Target, title: 'Scenario-Based Learning', desc: 'Tackle real-world business cases that simulate the challenges senior BAs face in industry.' },
+              { icon: Zap, title: 'Exam-Focused Preparation', desc: 'Structured preparation for the BCS Practitioner exam with scenario-based questions and mock oral assessments.' },
+            ].map((item, i) => (
+              <AnimatedSection key={i} delay={i * 100}>
+                <div className="p-8 rounded-2xl border h-full" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                  <item.icon className="w-12 h-12 mb-5" style={{ color: 'var(--brand-gold)' }} />
+                  <h3 className="font-bold text-xl mb-3" style={{ color: 'var(--text-core)' }}>{item.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{item.desc}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Exam Preparation Tips */}
+      <section className="py-20" style={{ backgroundColor: 'var(--bg-primary)' }}>
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <h2 className="font-display text-3xl sm:text-4xl font-black text-center mb-4" style={{ color: 'var(--text-core)' }}>
+              Exam Preparation <span style={{ color: 'var(--brand-gold)' }}>Tips</span>
+            </h2>
+            <p className="text-center max-w-2xl mx-auto mb-12 text-lg" style={{ color: 'var(--text-secondary)' }}>
+              Proven strategies to help you ace the BCS Practitioner exam.
+            </p>
+          </AnimatedSection>
+          <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {[
+              { icon: BookOpen, title: 'Study the Syllabus', desc: 'Familiarise yourself with the BCS Practitioner syllabus and weightings so you can prioritise high-value topics.' },
+              { icon: FileCheck, title: 'Practice Scenarios', desc: 'Work through as many scenario-based questions as possible. Focus on applying concepts, not just memorising them.' },
+              { icon: Clock, title: 'Time Management', desc: 'Allocate time per question during the exam. Practice under timed conditions to build speed and accuracy.' },
+              { icon: MessageCircle, title: 'Join Study Groups', desc: 'Discuss concepts with peers. Teaching others is one of the most effective ways to reinforce your understanding.' },
+            ].map((tip, i) => (
+              <AnimatedSection key={i} delay={i * 80}>
+                <div className="flex items-start gap-4 p-6 rounded-2xl border" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                  <tip.icon className="w-8 h-8 mt-1 flex-shrink-0" style={{ color: 'var(--brand-gold)' }} />
+                  <div>
+                    <h3 className="font-bold mb-1" style={{ color: 'var(--text-core)' }}>{tip.title}</h3>
+                    <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{tip.desc}</p>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Success Story */}
+      <section className="py-20" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <h2 className="font-display text-3xl sm:text-4xl font-black text-center mb-12" style={{ color: 'var(--text-core)' }}>
+              Success <span style={{ color: 'var(--brand-gold)' }}>Story</span>
+            </h2>
+          </AnimatedSection>
+          <div className="max-w-3xl mx-auto">
+            <AnimatedSection delay={100}>
+              <div className="p-8 rounded-2xl border relative" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                <Quote className="w-10 h-10 mb-4" style={{ color: 'var(--brand-gold)' }} />
+                <blockquote className="text-lg leading-relaxed mb-6 italic" style={{ color: 'var(--text-core)' }}>
+                  &ldquo;The Practitioner Pathway transformed the way I approach Business Analysis. The scenario-based learning and mock exams gave me the confidence to pass the BCS Practitioner exam on my first attempt. Within three months, I was promoted to Senior Business Analyst.&rdquo;
+                </blockquote>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg" style={{ backgroundColor: 'var(--bg-secondary)', color: 'var(--brand-gold)' }}>SK</div>
+                  <div>
+                    <div className="font-bold" style={{ color: 'var(--text-core)' }}>Sarah K.</div>
+                    <div className="text-sm" style={{ color: 'var(--text-secondary)' }}>Senior Business Analyst, London</div>
+                    <div className="flex items-center gap-1 mt-1">
+                      {Array.from({length: 5}).map((_, i) => <Star key={i} className="w-4 h-4 fill-current" style={{ color: 'var(--brand-gold)' }} />)}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
         </div>
       </section>
 

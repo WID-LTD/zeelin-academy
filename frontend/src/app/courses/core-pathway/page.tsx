@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import AnimatedSection from '@/components/AnimatedSection'
 import SafeImage from '@/components/SafeImage'
+import { ChevronRight, BookOpen, Target, Lightbulb, BarChart3, Users, Award, Clock, MessageCircle, FileCheck, Monitor, RefreshCw, Star, CheckCircle, GraduationCap } from 'lucide-react'
 import { categories } from '@/lib/courseData'
 
 export const metadata: Metadata = {
@@ -28,6 +29,133 @@ export default function CorePathwayPage() {
               {cat.description}
             </p>
           </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Breadcrumb */}
+      <section className="py-4 border-b" style={{ backgroundColor: 'var(--bg-primary)', borderColor: 'var(--border)' }}>
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+          <nav className="flex items-center gap-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
+            <Link href="/" className="hover:gold transition-colors">Home</Link>
+            <ChevronRight className="w-4 h-4" />
+            <Link href="/courses" className="hover:gold transition-colors">Courses</Link>
+            <ChevronRight className="w-4 h-4" />
+            <span style={{ color: 'var(--brand-gold)' }}>Core Pathway</span>
+          </nav>
+        </div>
+      </section>
+
+      {/* Stats Row */}
+      <section className="py-16" style={{ backgroundColor: 'var(--bg-primary)' }}>
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { icon: Award, label: 'Pass Rate', value: '92%' },
+              { icon: Clock, label: 'Avg. Completion', value: '12 Weeks' },
+              { icon: Users, label: 'Students', value: '3,200+' },
+              { icon: Star, label: 'Rating', value: '4.8/5.0' },
+            ].map((stat, i) => (
+              <AnimatedSection key={i} delay={i * 100}>
+                <div className="text-center p-6 rounded-2xl border" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                  <stat.icon className="w-8 h-8 mx-auto mb-3" style={{ color: 'var(--brand-gold)' }} />
+                  <div className="text-3xl font-black font-display mb-1" style={{ color: 'var(--text-core)' }}>{stat.value}</div>
+                  <div className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>{stat.label}</div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What You'll Learn */}
+      <section className="py-20" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <h2 className="font-display text-3xl sm:text-4xl font-black text-center mb-4" style={{ color: 'var(--text-core)' }}>
+              What You&apos;ll <span style={{ color: 'var(--brand-gold)' }}>Learn</span>
+            </h2>
+            <p className="text-center max-w-2xl mx-auto mb-12 text-lg" style={{ color: 'var(--text-secondary)' }}>
+              Core Pathway equips you with practical Business Analysis skills that you can apply immediately.
+            </p>
+          </AnimatedSection>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: BookOpen, title: 'BA Fundamentals', desc: 'Master the BACCM™ model, stakeholder identification, and the core BA toolkit.' },
+              { icon: Target, title: 'Requirements Engineering', desc: 'Elicit, analyse, validate, and manage requirements through the full life cycle.' },
+              { icon: Lightbulb, title: 'Strategic Thinking', desc: 'Apply SWOT, PESTLE, root cause analysis, and business case development.' },
+              { icon: BarChart3, title: 'Data-Driven Decisions', desc: 'Use metrics, KPIs, and performance analysis to guide solution evaluation.' },
+              { icon: Users, title: 'Stakeholder Management', desc: 'Build rapport, facilitate workshops, and manage expectations effectively.' },
+              { icon: Award, title: 'Certification Readiness', desc: 'Prepare confidently for BCS intermediate-level certification exams.' },
+              { icon: RefreshCw, title: 'Agile & Waterfall', desc: 'Navigate both traditional and agile delivery frameworks with ease.' },
+              { icon: MessageCircle, title: 'Communication Skills', desc: 'Present findings, write reports, and influence decision-makers.' },
+            ].map((skill, i) => (
+              <AnimatedSection key={i} delay={i * 80}>
+                <div className="p-6 rounded-2xl border h-full" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                  <skill.icon className="w-10 h-10 mb-4" style={{ color: 'var(--brand-gold)' }} />
+                  <h3 className="font-bold text-lg mb-2" style={{ color: 'var(--text-core)' }}>{skill.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{skill.desc}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Course Includes */}
+      <section className="py-20" style={{ backgroundColor: 'var(--bg-primary)' }}>
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <h2 className="font-display text-3xl sm:text-4xl font-black text-center mb-4" style={{ color: 'var(--text-core)' }}>
+              Course <span style={{ color: 'var(--brand-gold)' }}>Includes</span>
+            </h2>
+            <p className="text-center max-w-2xl mx-auto mb-12 text-lg" style={{ color: 'var(--text-secondary)' }}>
+              Everything you need to succeed, all in one place.
+            </p>
+          </AnimatedSection>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {[
+              { icon: Award, label: 'Certificate of Completion' },
+              { icon: Clock, label: 'Lifetime Access' },
+              { icon: MessageCircle, label: 'Mentor Support' },
+              { icon: FileCheck, label: 'Practice Quizzes' },
+              { icon: Monitor, label: 'Mobile & TV Access' },
+              { icon: RefreshCw, label: 'Free Updates' },
+            ].map((item, i) => (
+              <AnimatedSection key={i} delay={i * 80}>
+                <div className="p-5 rounded-xl border text-center" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                  <item.icon className="w-7 h-7 mx-auto mb-3" style={{ color: 'var(--brand-gold)' }} />
+                  <span className="text-xs font-semibold" style={{ color: 'var(--text-core)' }}>{item.label}</span>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Instructor */}
+      <section className="py-20" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <h2 className="font-display text-3xl sm:text-4xl font-black text-center mb-12" style={{ color: 'var(--text-core)' }}>
+              Meet Your <span style={{ color: 'var(--brand-gold)' }}>Instructor</span>
+            </h2>
+          </AnimatedSection>
+          <div className="max-w-3xl mx-auto">
+            <AnimatedSection delay={100}>
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8 p-8 rounded-2xl border" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                <div className="w-28 h-28 rounded-full flex-shrink-0 flex items-center justify-center text-4xl font-bold" style={{ backgroundColor: 'var(--bg-secondary)', color: 'var(--brand-gold)' }}>
+                  <GraduationCap className="w-14 h-14" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-1" style={{ color: 'var(--text-core)' }}>Dr. Franklin Kalu</h3>
+                  <p className="text-sm font-semibold mb-4" style={{ color: 'var(--brand-gold)' }}>Senior Business Analyst & Educator</p>
+                  <p className="leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                    With over 15 years of experience in Business Analysis across Fortune 500 companies, Dr. Franklin Kalu brings real-world insights to every lesson. He is passionate about helping aspiring BAs build successful careers and has trained over 3,000 professionals globally. His teaching approach blends theory with hands-on practice, ensuring you develop skills that matter in the workplace.
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
         </div>
       </section>
 

@@ -73,19 +73,38 @@ export default function TermsPage() {
           <section>
             <h2 className="font-display text-2xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>6. Intellectual Property Rights</h2>
             <p>All Content provided by Zeelin Academy, including but not limited to course materials, video recordings, presentations, text, graphics, logos, images, audio clips, digital downloads, data compilations, and software, is the exclusive intellectual property of Zeelin Academy or its licensors and is protected by applicable copyright, trademark, patent, and other intellectual property laws of the United Kingdom and international treaties. The Zeelin Academy name, logo, and all related names, logos, product and service names, designs, and slogans are trademarks of Zeelin Academy or its affiliates.</p>
-            <p className="mt-4">Upon enrolment and payment of applicable Fees, Zeelin Academy grants you a limited, non-exclusive, non-transferable, revocable licence to access and use the Content solely for your personal, non-commercial educational purposes. You may not, under any circumstances:</p>
+
+            <h3 className="font-semibold text-lg mt-6 mb-3" style={{ color: 'var(--text-core)' }}>6.1 Licence Grant</h3>
+            <p>Upon enrolment and payment of applicable Fees, Zeelin Academy grants you a limited, non-exclusive, non-transferable, revocable licence to access and use the Content solely for your personal, non-commercial educational purposes. This licence is strictly personal to you and does not extend to any third party. You may access the Content through the Platform on a streaming-only basis, and any offline access must be through the official Zeelin Academy mobile or desktop application.</p>
+
+            <h3 className="font-semibold text-lg mt-6 mb-3" style={{ color: 'var(--text-core)' }}>6.2 Prohibited Uses</h3>
+            <p>You may not, under any circumstances:</p>
             <ul className="list-disc pl-6 space-y-2 mt-4">
               <li>Reproduce, distribute, modify, adapt, translate, create derivative works from, publicly perform, publicly display, or otherwise exploit any Content, in whole or in part, without the prior written consent of Zeelin Academy;</li>
               <li>Download, record, capture, store, archive, or copy any Content except as expressly permitted by Zeelin Academy for offline viewing within the Platform;</li>
               <li>Share, transfer, sublicense, sell, rent, lease, lend, barter, or otherwise make available your account access or any Content to any third party;</li>
               <li>Remove, alter, obscure, or circumvent any copyright, trademark, or other proprietary rights notices appearing on or in connection with any Content;</li>
-              <li>Use any Content for commercial purposes, including but not limited to training, consulting, or providing educational services to third parties.</li>
+              <li>Use any Content for commercial purposes, including but not limited to training, consulting, or providing educational services to third parties;</li>
+              <li>Use any Content to train artificial intelligence models, machine learning algorithms, or similar technologies without explicit written permission.</li>
             </ul>
-            <p className="mt-4">Any unauthorised use of the Content shall constitute a material breach of these Terms and may result in immediate termination of your access, legal action, and claims for damages. Zeelin Academy reserves the right to pursue all available legal remedies, including injunctive relief, without the requirement of posting a bond.</p>
+
+            <h3 className="font-semibold text-lg mt-6 mb-3" style={{ color: 'var(--text-core)' }}>6.3 Trademarks and Branding</h3>
+            <p>The Zeelin Academy name, logo, course names, and all related branding elements are registered and unregistered trademarks of Zeelin Academy. Nothing in these Terms grants you any right to use any of our trademarks, logos, or branding elements without our prior written consent. You agree not to use our trademarks in any manner that could cause confusion, dilution, or damage to our brand reputation.</p>
+
+            <h3 className="font-semibold text-lg mt-6 mb-3" style={{ color: 'var(--text-core)' }}>6.4 Enforcement</h3>
+            <p>Any unauthorised use of the Content shall constitute a material breach of these Terms and may result in immediate termination of your access, legal action, and claims for damages. Zeelin Academy reserves the right to pursue all available legal remedies, including injunctive relief, without the requirement of posting a bond. You agree to pay all reasonable legal fees and costs incurred by Zeelin Academy in enforcing its intellectual property rights.</p>
           </section>
 
           <section>
-            <h2 className="font-display text-2xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>7. User Conduct and Prohibited Activities</h2>
+            <h2 className="font-display text-2xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>7. User Obligations and Conduct</h2>
+
+            <h3 className="font-semibold text-lg mb-3" style={{ color: 'var(--text-core)' }}>7.1 Account Responsibility</h3>
+            <p>You are solely responsible for all activities that occur under your account. You must maintain the confidentiality of your login credentials and immediately notify Zeelin Academy of any unauthorised use. You agree not to create multiple accounts, use another person&apos;s account, or allow any third party to access your account. You are liable for all actions taken through your account, whether authorised by you or not.</p>
+
+            <h3 className="font-semibold text-lg mt-6 mb-3" style={{ color: 'var(--text-core)' }}>7.2 Accurate Information</h3>
+            <p>You agree to provide accurate, current, and complete information during registration and enrolment. You must promptly update any changes to your personal information, including but not limited to your name, email address, phone number, and billing details. Providing false or misleading information may result in immediate termination of your access without refund.</p>
+
+            <h3 className="font-semibold text-lg mt-6 mb-3" style={{ color: 'var(--text-core)' }}>7.3 Prohibited Activities</h3>
             <p>You agree to use the Services in a manner consistent with all applicable laws, regulations, and these Terms. You shall not, and shall not permit any third party to:</p>
             <ul className="list-disc pl-6 space-y-2 mt-4">
               <li>Use the Services for any unlawful, fraudulent, or unauthorised purpose;</li>
@@ -96,9 +115,12 @@ export default function TermsPage() {
               <li>Harvest, collect, or store personal data about other users without their express consent;</li>
               <li>Post, transmit, or share any content that is defamatory, obscene, offensive, harassing, discriminatory, or otherwise objectionable;</li>
               <li>Use any automated means, including bots, scrapers, or crawlers, to access, monitor, or copy any Content or data from the Platform;</li>
-              <li>Attempt to circumvent any technological protection measures, access restrictions, or usage limitations implemented by Zeelin Academy.</li>
+              <li>Attempt to circumvent any technological protection measures, access restrictions, or usage limitations implemented by Zeelin Academy;</li>
+              <li>Share, distribute, or disseminate any examination questions, answers, or materials in violation of examination integrity policies.</li>
             </ul>
-            <p className="mt-4">Zeelin Academy reserves the right, but has no obligation, to monitor your use of the Services and to investigate any suspected violation of these Terms. We may disclose information about your use of the Services to third parties if we believe in good faith that such disclosure is necessary to comply with a legal obligation, protect our rights or property, or protect the safety of our users or the public.</p>
+
+            <h3 className="font-semibold text-lg mt-6 mb-3" style={{ color: 'var(--text-core)' }}>7.4 Monitoring and Enforcement</h3>
+            <p>Zeelin Academy reserves the right, but has no obligation, to monitor your use of the Services and to investigate any suspected violation of these Terms. We may disclose information about your use of the Services to third parties if we believe in good faith that such disclosure is necessary to comply with a legal obligation, protect our rights or property, or protect the safety of our users or the public. Failure to comply with these obligations may result in immediate suspension or termination of your access, forfeiture of Fees paid, and legal action where appropriate.</p>
           </section>
 
           <section>
@@ -110,9 +132,21 @@ export default function TermsPage() {
 
           <section>
             <h2 className="font-display text-2xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>9. Limitation of Liability</h2>
+
+            <h3 className="font-semibold text-lg mb-3" style={{ color: 'var(--text-core)' }}>9.1 Exclusion of Damages</h3>
             <p>To the maximum extent permitted by applicable law, Zeelin Academy, its officers, directors, employees, agents, instructors, affiliates, and licensors shall not be liable for any direct, indirect, incidental, special, consequential, exemplary, or punitive damages arising out of or in connection with your use of or inability to use the Services, including but not limited to damages for loss of profits, goodwill, use, data, or other intangible losses, even if Zeelin Academy has been advised of the possibility of such damages. This limitation of liability applies regardless of the theory of liability, whether based on contract, tort (including negligence), strict liability, warranty, or any other legal theory.</p>
-            <p className="mt-4">Notwithstanding the foregoing, if Zeelin Academy is found to be liable for any damages arising out of or in connection with these Terms or the Services, such liability shall be limited to the total amount of Fees paid by you to Zeelin Academy in the twelve (12) months immediately preceding the event giving rise to the claim. This limitation represents the entire liability of Zeelin Academy and your exclusive remedy for any claim arising under or in connection with these Terms.</p>
-            <p className="mt-4">Nothing in these Terms shall exclude or limit liability for death or personal injury caused by negligence, fraud or fraudulent misrepresentation, or any other liability that cannot be excluded or limited under applicable law.</p>
+
+            <h3 className="font-semibold text-lg mt-6 mb-3" style={{ color: 'var(--text-core)' }}>9.2 Cap on Liability</h3>
+            <p>Notwithstanding the foregoing, if Zeelin Academy is found to be liable for any damages arising out of or in connection with these Terms or the Services, such liability shall be limited to the total amount of Fees paid by you to Zeelin Academy in the twelve (12) months immediately preceding the event giving rise to the claim. This limitation represents the entire liability of Zeelin Academy and your exclusive remedy for any claim arising under or in connection with these Terms. Multiple claims or actions brought by the same user shall not increase this cap.</p>
+
+            <h3 className="font-semibold text-lg mt-6 mb-3" style={{ color: 'var(--text-core)' }}>9.3 No Liability for Third-Party Services</h3>
+            <p>Zeelin Academy shall have no liability for any damages, losses, or costs arising from the use of third-party services, including but not limited to payment processors, examination bodies (including BCS), hosting providers, or any other third-party platforms or services used in connection with the delivery of our Services.</p>
+
+            <h3 className="font-semibold text-lg mt-6 mb-3" style={{ color: 'var(--text-core)' }}>9.4 No Liability for Examination Outcomes</h3>
+            <p>Zeelin Academy expressly disclaims any liability for examination outcomes, including but not limited to failure to pass any BCS or other certification examination. Our educational services are provided as preparation only, and individual results depend on numerous factors beyond our control.</p>
+
+            <h3 className="font-semibold text-lg mt-6 mb-3" style={{ color: 'var(--text-core)' }}>9.5 Exceptions</h3>
+            <p>Nothing in these Terms shall exclude or limit liability for death or personal injury caused by negligence, fraud or fraudulent misrepresentation, or any other liability that cannot be excluded or limited under applicable law.</p>
           </section>
 
           <section>
@@ -128,7 +162,15 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-2xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>11. Indemnification</h2>
+            <h2 className="font-display text-2xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>11. Privacy and Data Protection</h2>
+            <p>Zeelin Academy is committed to protecting your privacy and personal data. Our collection, use, and processing of personal data is governed by our Privacy Policy, which is incorporated into these Terms by reference. By using the Services, you consent to the collection and use of your personal data as described in the Privacy Policy.</p>
+            <p className="mt-4">We implement appropriate technical and organisational measures to protect your personal data against unauthorised access, loss, destruction, or alteration. However, no method of transmission over the internet or electronic storage is completely secure, and we cannot guarantee absolute security.</p>
+            <p className="mt-4">If you are based in the European Economic Area (EEA) or the United Kingdom, you have certain rights under the General Data Protection Regulation (GDPR), including the right to access, rectify, erase, restrict processing, and port your personal data. To exercise these rights, please contact us at contact@zeelinacademy.com.</p>
+            <p className="mt-4">We retain your personal data only for as long as necessary to fulfil the purposes for which it was collected, including for the purposes of satisfying any legal, accounting, or reporting requirements. You may request deletion of your account and associated data at any time, subject to our legal obligations to retain certain information.</p>
+          </section>
+
+          <section>
+            <h2 className="font-display text-2xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>12. Indemnification</h2>
             <p>You agree to indemnify, defend, and hold harmless Zeelin Academy, its officers, directors, employees, agents, instructors, affiliates, and licensors from and against any and all claims, liabilities, damages, losses, costs, expenses, and fees (including reasonable legal fees and costs) arising out of or in connection with:</p>
             <ul className="list-disc pl-6 space-y-2 mt-4">
               <li>Your use of the Services in violation of these Terms;</li>
@@ -141,19 +183,32 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-2xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>12. Termination</h2>
+            <h2 className="font-display text-2xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>13. Termination</h2>
             <p>Zeelin Academy reserves the right to suspend, terminate, or restrict your access to the Services at any time, with or without cause, and with or without notice, including but not limited to cases where we reasonably believe that you have violated these Terms or engaged in conduct that may harm Zeelin Academy, its users, or third parties. Upon termination, your right to access and use the Services shall immediately cease, and you must destroy any copies of Content in your possession or control.</p>
-            <p className="mt-4">Sections 5 (Refund and Cancellation Policy), 6 (Intellectual Property Rights), 9 (Limitation of Liability), 10 (Disclaimer of Warranties), 11 (Indemnification), 13 (Governing Law and Dispute Resolution), and 14 (Miscellaneous) shall survive any termination of these Terms.</p>
+            <p className="mt-4">Sections 5 (Refund and Cancellation Policy), 6 (Intellectual Property Rights), 9 (Limitation of Liability), 10 (Disclaimer of Warranties), 12 (Indemnification), 14 (Governing Law and Dispute Resolution), and 15 (Miscellaneous) shall survive any termination of these Terms.</p>
           </section>
 
           <section>
-            <h2 className="font-display text-2xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>13. Governing Law and Dispute Resolution</h2>
-            <p>These Terms shall be governed by and construed in accordance with the laws of England and Wales, without regard to its conflict of laws principles. Any dispute, controversy, or claim arising out of or relating to these Terms or the Services shall be resolved through binding arbitration administered by the London Court of International Arbitration (LCIA) in accordance with its rules then in effect. The arbitration shall be conducted in London, England, and the language of the arbitration shall be English. The decision of the arbitrator shall be final and binding on the parties, and judgment upon the award may be entered in any court having jurisdiction thereof.</p>
-            <p className="mt-4">Notwithstanding the foregoing, Zeelin Academy may seek injunctive or other equitable relief in any court of competent jurisdiction to protect its intellectual property rights or to enforce compliance with these Terms. You consent to the exclusive jurisdiction and venue of the courts of London, England, for any such action.</p>
+            <h2 className="font-display text-2xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>14. Governing Law and Dispute Resolution</h2>
+
+            <h3 className="font-semibold text-lg mb-3" style={{ color: 'var(--text-core)' }}>13.1 Governing Law</h3>
+            <p>These Terms shall be governed by and construed in accordance with the laws of England and Wales, without regard to its conflict of laws principles. The United Nations Convention on Contracts for the International Sale of Goods shall not apply to these Terms or any transaction arising under them.</p>
+
+            <h3 className="font-semibold text-lg mt-6 mb-3" style={{ color: 'var(--text-core)' }}>14.2 Informal Resolution</h3>
+            <p>Before initiating any formal dispute resolution proceedings, you agree to first contact Zeelin Academy at contact@zeelinacademy.com and attempt to resolve the dispute informally for a period of thirty (30) days. Both parties shall negotiate in good faith to resolve the matter amicably.</p>
+
+            <h3 className="font-semibold text-lg mt-6 mb-3" style={{ color: 'var(--text-core)' }}>13.3 Binding Arbitration</h3>
+            <p>Any dispute, controversy, or claim arising out of or relating to these Terms or the Services that cannot be resolved informally shall be resolved through binding arbitration administered by the London Court of International Arbitration (LCIA) in accordance with its rules then in effect. The arbitration shall be conducted in London, England, and the language of the arbitration shall be English. The decision of the arbitrator shall be final and binding on the parties, and judgment upon the award may be entered in any court having jurisdiction thereof.</p>
+
+            <h3 className="font-semibold text-lg mt-6 mb-3" style={{ color: 'var(--text-core)' }}>13.4 Injunctive Relief</h3>
+            <p>Notwithstanding the foregoing, Zeelin Academy may seek injunctive or other equitable relief in any court of competent jurisdiction to protect its intellectual property rights or to enforce compliance with these Terms. You consent to the exclusive jurisdiction and venue of the courts of London, England, for any such action.</p>
+
+            <h3 className="font-semibold text-lg mt-6 mb-3" style={{ color: 'var(--text-core)' }}>13.5 Class Action Waiver</h3>
+            <p>You agree that any dispute resolution proceedings shall be conducted on an individual basis and not as a class, consolidated, or representative action. You waive any right to participate in a class action lawsuit or class-wide arbitration against Zeelin Academy.</p>
           </section>
 
           <section>
-            <h2 className="font-display text-2xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>14. Miscellaneous Provisions</h2>
+            <h2 className="font-display text-2xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>15. Miscellaneous Provisions</h2>
             <p><strong>Entire Agreement:</strong> These Terms constitute the entire agreement between you and Zeelin Academy regarding your use of the Services and supersede all prior and contemporaneous understandings, agreements, representations, and warranties, whether written or oral.</p>
             <p className="mt-4"><strong>Waiver:</strong> No failure or delay by Zeelin Academy in exercising any right, power, or privilege under these Terms shall operate as a waiver thereof, nor shall any single or partial exercise of any such right, power, or privilege preclude any other or further exercise thereof.</p>
             <p className="mt-4"><strong>Severability:</strong> If any provision of these Terms is held to be invalid, illegal, or unenforceable by a court of competent jurisdiction, such provision shall be modified to the minimum extent necessary to make it valid and enforceable, and the remaining provisions shall continue in full force and effect.</p>
@@ -164,13 +219,30 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-2xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>15. Contact Information</h2>
-            <p>If you have any questions, concerns, or requests regarding these Terms, please contact us:</p>
-            <ul className="list-disc pl-6 space-y-2 mt-4">
+            <h2 className="font-display text-2xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>16. Contact Information</h2>
+            <p>If you have any questions, concerns, or requests regarding these Terms, please contact us through any of the following channels:</p>
+
+            <h3 className="font-semibold text-lg mt-6 mb-3" style={{ color: 'var(--text-core)' }}>16.1 General Inquiries</h3>
+            <ul className="list-disc pl-6 space-y-2 mt-2">
               <li>By email: contact@zeelinacademy.com</li>
               <li>By mail: Zeelin Academy, London, United Kingdom</li>
               <li>Through our website: https://zeelin-academy.vercel.app/contact</li>
             </ul>
+
+            <h3 className="font-semibold text-lg mt-6 mb-3" style={{ color: 'var(--text-core)' }}>16.2 Legal and Compliance</h3>
+            <p>For legal inquiries, including requests for permission to use copyrighted materials, licensing questions, or formal legal notices, please direct your correspondence to:</p>
+            <ul className="list-disc pl-6 space-y-2 mt-4">
+              <li>By email: legal@zeelinacademy.com</li>
+              <li>By mail: Legal Department, Zeelin Academy, London, United Kingdom</li>
+            </ul>
+
+            <h3 className="font-semibold text-lg mt-6 mb-3" style={{ color: 'var(--text-core)' }}>16.3 Data Protection Officer</h3>
+            <p>For privacy-related inquiries or to exercise your data protection rights under the GDPR or other applicable privacy laws, please contact our Data Protection Officer:</p>
+            <ul className="list-disc pl-6 space-y-2 mt-4">
+              <li>By email: privacy@zeelinacademy.com</li>
+              <li>By mail: Data Protection Officer, Zeelin Academy, London, United Kingdom</li>
+            </ul>
+
             <p className="mt-8">We encourage you to read these Terms carefully and to contact us if you have any questions. By using our Services, you acknowledge that you have had the opportunity to review these Terms and that you understand and agree to be bound by them.</p>
           </section>
         </div>

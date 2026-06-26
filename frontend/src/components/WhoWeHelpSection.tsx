@@ -15,6 +15,33 @@ const audiences = [
   'Professionals who want practical BA confidence',
 ]
 
+const personaStories = [
+  {
+    name: 'Sarah — The Complete Beginner',
+    story: 'Sarah had never studied Business Analysis before and felt intimidated by the terminology. Zeelin Academy\'s visual summaries and step-by-step roadmap helped her build confidence from day one. She passed her BCS Foundation exam in just 6 weeks.',
+  },
+  {
+    name: 'James — The Career Changer',
+    story: 'After 8 years in retail management, James wanted to transition into Business Analysis. Zeelin\'s structured pathway and live coaching calls gave him the practical skills and certification he needed to land his first BA role within 3 months.',
+  },
+  {
+    name: 'Aisha — The Busy Professional',
+    story: 'Working 9–5 as a project coordinator, Aisha struggled to find study time. Zeelin\'s flexible self-paced programme and micro-learning format allowed her to study during her commute and lunch breaks, completing her certification without sacrificing work.',
+  },
+  {
+    name: 'David — The Parent with Limited Time',
+    story: 'With two young children at home, David needed a programme that respected his limited availability. The weekly check-ins and accountability system kept him on track without overwhelming his schedule, and he passed his Practitioner exam on the first attempt.',
+  },
+  {
+    name: 'Priya — The BCS Exam Candidate',
+    story: 'Priya had already tried studying with traditional textbooks but felt overwhelmed by the volume of information. Zeelin\'s mock quizzes and exam readiness system helped her identify gaps and approach her BCS Practitioner exam with genuine confidence.',
+  },
+  {
+    name: 'Michael — The Visual Learner',
+    story: 'Michael always struggled with dense reading materials and lengthy textbooks. Zeelin\'s structured visual summaries and diagram-based explanations transformed complex BA concepts into clear, memorable visuals that finally clicked for him.',
+  },
+]
+
 const photos = [
   { src: '/complete_beginner.jpg', alt: 'Complete beginners' },
   { src: '/career_changers.jpg', alt: 'Career changers' },
@@ -53,6 +80,33 @@ export default function WhoWeHelpSection() {
                   </AnimatedSection>
                 ))}
               </ul>
+            </AnimatedSection>
+
+            {/* Persona Stories */}
+            <AnimatedSection delay={400}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                {personaStories.map((persona, i) => (
+                  <AnimatedSection key={persona.name} delay={400 + i * 60}>
+                    <div
+                      className="p-5 rounded-2xl border transition-all duration-300 hover:shadow-lg hover:border-[rgba(212,175,55,0.3)] h-full"
+                      style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}
+                    >
+                      <div
+                        className="w-8 h-8 rounded-full flex items-center justify-center mb-3"
+                        style={{ backgroundColor: 'rgba(212,175,55,0.15)' }}
+                      >
+                        <Check className="w-4 h-4" style={{ color: 'var(--brand-gold)' }} />
+                      </div>
+                      <h4 className="font-display text-base font-bold mb-2" style={{ color: 'var(--text-core)' }}>
+                        {persona.name}
+                      </h4>
+                      <p className="text-xs leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                        &ldquo;{persona.story}&rdquo;
+                      </p>
+                    </div>
+                  </AnimatedSection>
+                ))}
+              </div>
             </AnimatedSection>
           </div>
 

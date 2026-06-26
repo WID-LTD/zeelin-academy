@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Users, Globe, Check, ChevronDown, PlayCircle, Play, FileText, Monitor, Award, ShieldCheck, Star } from 'lucide-react'
+import { Users, Globe, Check, ChevronDown, PlayCircle, Play, FileText, Monitor, Award, ShieldCheck, Star, Clock, BookOpen, ArrowRight, ChevronRight } from 'lucide-react'
 import { getTimeLeft, COUNTDOWN_DATE } from '@/lib/constants'
 
 export default function CourseDetails({ params }: { params: { id: string } }) {
@@ -21,18 +21,22 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
   const curriculum = [
     {
       title: 'Module 1: Introduction to Business Analysis',
+      duration: '6 hours',
       lessons: ['What is Business Analysis?', 'Role of a Business Analyst', 'Business Analysis Core Concept Model (BACCM)', 'Career Paths in Business Analysis']
     },
     {
       title: 'Module 2: Strategy Analysis',
+      duration: '8 hours',
       lessons: ['Enterprise Analysis', 'Analyze Current State', 'Define Future State', 'Assess Risks', 'Define Change Strategy']
     },
     {
       title: 'Module 3: Requirements Analysis and Design Definition',
+      duration: '10 hours',
       lessons: ['Specify and Model Requirements', 'Verify and Validate Requirements', 'Requirements Architecture', 'Define Design Options']
     },
     {
       title: 'Module 4: Agile Frameworks',
+      duration: '6 hours',
       lessons: ['Agile Mindset', 'Scrum Methodology', 'Kanban Basics', 'User Stories and Acceptance Criteria']
     }
   ]
@@ -94,10 +98,14 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
           {/* Main Content */}
           <div className="lg:col-span-2">
             {/* Tabs */}
-            <div className="flex overflow-x-auto border-b border-[color:var(--border)] mb-8 hide-scrollbar">
+            <div role="tablist" aria-label="Course sections" className="flex overflow-x-auto border-b border-[color:var(--border)] mb-8 hide-scrollbar">
               {['overview', 'curriculum', 'reviews', 'instructor'].map((tab) => (
                 <button
                   key={tab}
+                  role="tab"
+                  id={`tab-${tab}`}
+                  aria-selected={activeTab === tab}
+                  aria-controls={`tabpanel-${tab}`}
                   onClick={() => setActiveTab(tab)}
                   className={`px-6 py-4 font-medium text-sm capitalize whitespace-nowrap border-b-2 transition-colors ${
                     activeTab === tab
@@ -113,7 +121,7 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
             {/* Tab Content */}
             <div className="min-h-[25rem]">
               {activeTab === 'overview' && (
-                <div className="space-y-8 animate-fade-in text-[color:var(--text-core)]">
+                <div role="tabpanel" id="tabpanel-overview" aria-labelledby="tab-overview" className="space-y-8 animate-fade-in text-[color:var(--text-core)]">
                   <div>
                     <h2 className="text-2xl font-bold mb-4">Course Overview</h2>
                     <p className="text-[color:var(--text-secondary)] leading-relaxed">
@@ -144,7 +152,7 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
               )}
 
               {activeTab === 'curriculum' && (
-                <div className="animate-fade-in text-[color:var(--text-core)]">
+                <div role="tabpanel" id="tabpanel-curriculum" aria-labelledby="tab-curriculum" className="animate-fade-in text-[color:var(--text-core)]">
                   <h2 className="text-2xl font-bold mb-6">Course Curriculum</h2>
                   <div className="space-y-4">
                     {curriculum.map((module, i) => (
@@ -154,7 +162,12 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
                           className="w-full flex items-center justify-between p-5 text-left hover:bg-[color:var(--bg-secondary)] transition-colors"
                         >
                           <span className="font-bold text-[color:var(--text-core)]">{module.title}</span>
-                          <ChevronDown className={`w-5 h-5 text-[color:var(--text-secondary)] transform transition-transform ${activeModule === i ? 'rotate-180' : ''}`} />
+                          <div className="flex items-center gap-3">
+                            <span className="text-xs flex items-center gap-1" style={{ color: 'var(--text-secondary)' }}>
+                              <Clock className="w-4 h-4" /> {module.duration}
+                            </span>
+                            <ChevronDown className={`w-5 h-5 text-[color:var(--text-secondary)] transform transition-transform ${activeModule === i ? 'rotate-180' : ''}`} />
+                          </div>
                         </button>
                         {activeModule === i && (
                           <div className="p-5 border-t border-[color:var(--border)] bg-[color:var(--bg-primary)]">
@@ -175,7 +188,7 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
               )}
 
               {activeTab === 'reviews' && (
-                <div className="animate-fade-in text-[color:var(--text-core)]">
+                <div role="tabpanel" id="tabpanel-reviews" aria-labelledby="tab-reviews" className="animate-fade-in text-[color:var(--text-core)]">
                   <h2 className="text-2xl font-bold mb-6">Student Reviews</h2>
                   <div className="space-y-6">
                     {[1, 2, 3].map((r) => (
@@ -201,7 +214,7 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
               )}
 
               {activeTab === 'instructor' && (
-                <div className="animate-fade-in text-[color:var(--text-core)]">
+                <div role="tabpanel" id="tabpanel-instructor" aria-labelledby="tab-instructor" className="animate-fade-in text-[color:var(--text-core)]">
                   <h2 className="text-2xl font-bold mb-6">About the Instructor</h2>
                   <div className="flex flex-col sm:flex-row gap-6 items-start">
                     <img src="/instructor_1.png" alt="Dr. Franklin Kalu" className="w-32 h-32 rounded-xl object-cover" />
@@ -224,7 +237,7 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
               {/* Course Preview Image */}
               <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 relative">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <button className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg hover:scale-105 transition-transform" style={{ color: 'var(--brand-gold)' }}>
+                  <button className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg hover:scale-105 transition-transform" style={{ color: 'var(--brand-gold)' }} aria-label="Play course preview video">
                     <Play className="w-12 h-12" style={{ color: 'white' }} />
                   </button>
                 </div>
@@ -262,7 +275,7 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
                 <Link href="/enroll" className="block w-full py-3 px-4 text-center rounded-lg font-bold transition-all duration-300 hover:-translate-y-0.5 mb-3" style={{ background: 'linear-gradient(135deg, var(--brand-gold), #b5952f)', color: '#0f1115', boxShadow: '0 4px 20px rgba(212,175,55,0.3)' }}>
                   Enroll Now — £299
                 </Link>
-                <button className="block w-full py-3 px-4 text-center rounded-lg border border-[color:var(--border)] text-[color:var(--text-core)] font-medium hover:bg-[color:var(--bg-secondary)] transition-colors mb-6">
+                <button className="block w-full py-3 px-4 text-center rounded-lg border border-[color:var(--border)] text-[color:var(--text-core)] font-medium hover:bg-[color:var(--bg-secondary)] transition-colors mb-6" aria-label="Add this course to your wishlist">
                   Add to Wishlist
                 </button>
 
@@ -293,6 +306,63 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Courses */}
+      <section className="py-20" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold mb-8 text-center" style={{ color: 'var(--text-core)' }}>
+            Related <span style={{ color: 'var(--brand-gold)' }}>Courses</span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {[
+              { title: 'Business Analysis Foundations', students: '8,200+', rating: '4.7', href: '/courses/modules/ba-foundations' },
+              { title: 'Elicitation & Collaboration', students: '6,100+', rating: '4.8', href: '/courses/modules/elicitation' },
+              { title: 'Requirements Life Cycle Mgmt', students: '5,400+', rating: '4.6', href: '/courses/modules/requirements-mgmt' },
+            ].map((course, i) => (
+              <Link key={i} href={course.href}
+                className="p-6 rounded-2xl border transition-all hover:shadow-md group"
+                style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                <h3 className="font-bold text-lg mb-3 group-hover:gold transition-colors" style={{ color: 'var(--text-core)' }}>{course.title}</h3>
+                <div className="flex items-center gap-4 text-sm mb-4" style={{ color: 'var(--text-secondary)' }}>
+                  <span className="flex items-center gap-1">
+                    <Users className="w-4 h-4" style={{ color: 'var(--brand-gold)' }} /> {course.students}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <Star className="w-4 h-4" style={{ color: 'var(--brand-gold)' }} /> {course.rating}
+                  </span>
+                </div>
+                <span className="text-sm font-semibold inline-flex items-center gap-2" style={{ color: 'var(--brand-gold)' }}>
+                  View Course <ArrowRight className="w-4 h-4" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Sticky Enrollment CTA Bar */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 border-t backdrop-blur-lg" style={{ backgroundColor: 'rgba(15,17,21,0.95)', borderColor: 'var(--border)' }}>
+        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+          <div className="hidden sm:block">
+            <div className="text-sm font-bold" style={{ color: 'var(--text-core)' }}>Master International Business Analysis</div>
+            <div className="flex items-center gap-2 text-xs mt-0.5" style={{ color: 'var(--text-secondary)' }}>
+              <Star className="w-3 h-3" style={{ color: 'var(--brand-gold)' }} /> 4.9 &middot; 14,500+ students
+            </div>
+          </div>
+          <div className="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end">
+            <div className="text-right">
+              <div className="flex items-center gap-2">
+                <span className="text-sm line-through" style={{ color: 'var(--text-secondary)' }}>£499</span>
+                <span className="text-xl font-black" style={{ color: 'var(--brand-gold)' }}>£299</span>
+              </div>
+              <div className="text-[0.6rem] uppercase font-bold" style={{ color: '#22c55e' }}>Limited time offer</div>
+            </div>
+            <Link href="/enroll" className="btn-gold px-6 py-2.5 text-sm font-bold whitespace-nowrap">
+              Enroll Now
+            </Link>
           </div>
         </div>
       </div>

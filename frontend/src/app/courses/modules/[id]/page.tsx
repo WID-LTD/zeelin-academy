@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
-import { ChevronLeft, Check, FileText, ChevronRight, Edit3, Plus } from 'lucide-react'
+import { ChevronLeft, Check, FileText, ChevronRight, Edit3, Plus, Clock, BookOpen, ArrowRight, BarChart3, Target, Award, Sparkles } from 'lucide-react'
 
 const moduleDetails: Record<string, {
   title: string
@@ -457,6 +457,25 @@ export default function ModuleDetailPage() {
           </Link>
         </div>
 
+        {/* Progress Bar & Study Time Badge */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 p-4 rounded-xl border" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+          <div className="flex-1 w-full sm:w-auto">
+            <div className="flex justify-between text-xs font-medium mb-1">
+              <span style={{ color: 'var(--text-core)' }}>Module Progress</span>
+              <span style={{ color: 'var(--brand-gold)' }}>0%</span>
+            </div>
+            <div className="w-full h-2 rounded-full overflow-hidden" style={{ backgroundColor: 'var(--border)' }}>
+              <div className="h-full rounded-full" style={{ width: '0%', backgroundColor: 'var(--brand-gold)' }} />
+            </div>
+          </div>
+          <div className="flex items-center gap-4 text-sm">
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full" style={{ backgroundColor: 'rgba(212,175,55,0.1)' }}>
+              <Clock className="w-4 h-4" style={{ color: 'var(--brand-gold)' }} />
+              <span className="font-medium" style={{ color: 'var(--brand-gold)' }}>Study Time: ~{mod.duration}</span>
+            </div>
+          </div>
+        </div>
+
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-4">
             <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${mod.type === 'free' ? 'bg-[rgba(223,186,107,0.15)] text-[#D4AF37]' : 'bg-[rgba(223,186,107,0.15)] text-[#D4AF37]'}`}>
@@ -484,6 +503,26 @@ export default function ModuleDetailPage() {
                   <Check className="w-5 h-5" style={{ color: 'var(--brand-gold)' }} />
                 </div>
                 <span className="text-[1.0625rem] font-medium text-[color:var(--text-core)]">{obj}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Key Topics */}
+        <div className="p-8 rounded-2xl border bg-[color:var(--bg-card)] border-[color:var(--border)] mb-12">
+          <h2 className="font-display text-2xl font-bold mb-6 text-[color:var(--text-core)]">
+            <span className="gold">Key</span> Topics
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { icon: Target, label: 'Core Concepts' },
+              { icon: BarChart3, label: 'Analysis Techniques' },
+              { icon: BookOpen, label: 'Industry Standards' },
+              { icon: Award, label: 'Certification Prep' },
+            ].map((topic, i) => (
+              <div key={i} className="p-4 rounded-xl border text-center" style={{ borderColor: 'var(--border)' }}>
+                <topic.icon className="w-6 h-6 mx-auto mb-2" style={{ color: 'var(--brand-gold)' }} />
+                <span className="text-sm font-medium" style={{ color: 'var(--text-core)' }}>{topic.label}</span>
               </div>
             ))}
           </div>
@@ -581,6 +620,30 @@ export default function ModuleDetailPage() {
                 Get Full Program Access
               </Link>
             )}
+          </div>
+        </div>
+
+        {/* Next Steps */}
+        <div className="mt-12 p-8 rounded-2xl border" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border)' }}>
+          <h2 className="font-display text-2xl font-bold mb-6 text-[color:var(--text-core)]">
+            Next <span className="gold">Steps</span>
+          </h2>
+          <p className="mb-8 text-secondary text-sm max-w-2xl">
+            Continue your learning journey with these related modules.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              { id: 'ba-foundations', title: 'Business Analysis Foundations' },
+              { id: 'elicitation', title: 'Elicitation & Collaboration' },
+              { id: 'requirements-mgmt', title: 'Requirements Life Cycle Mgmt' },
+            ].filter(r => r.id !== id).slice(0, 2).map((rel, i) => (
+              <Link key={i} href={`/courses/modules/${rel.id}`}
+                className="flex items-center justify-between p-4 rounded-xl border transition-all hover:shadow-md group"
+                style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                <span className="font-medium text-sm" style={{ color: 'var(--text-core)' }}>{rel.title}</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" style={{ color: 'var(--brand-gold)' }} />
+              </Link>
+            ))}
           </div>
         </div>
       </div>

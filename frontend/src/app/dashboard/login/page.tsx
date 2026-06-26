@@ -55,7 +55,7 @@ export default function UserLogin() {
               className="w-full rounded-lg px-4 py-3 border focus:outline-none"
               style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-core)', borderColor: 'var(--border)' }} />
           </div>
-          {error && <p className="text-red-500 text-sm">{error}</p>}
+          {error && <p role="alert" className="text-red-500 text-sm">{error}</p>}
           <button type="submit" disabled={loading}
             className="btn-gold w-full py-3 font-semibold" style={{ color: 'var(--text-core)' }}>
             {loading ? 'Signing in...' : 'Sign In'}

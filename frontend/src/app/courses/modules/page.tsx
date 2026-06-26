@@ -2,6 +2,8 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import { Search, Layers, CheckCircle, BarChart3, Filter, ChevronRight, ArrowRight, BookOpen, Monitor, Clock, Award } from 'lucide-react'
+import AnimatedSection from '@/components/AnimatedSection'
 
 const videoMap: Record<string, string> = {
   'ba-foundations': '/VID-20260605-WA0123.mp4',
@@ -28,22 +30,93 @@ const paidModules = modules.filter(m => m.type === 'paid')
 
 export default function ModulesPage() {
   const [hoveredId, setHoveredId] = useState<string | null>(null)
+  const [filter, setFilter] = useState<string>('all')
+
+  const filteredPaid = filter === 'all' ? paidModules : paidModules.filter(m => {
+    if (filter === 'analysis') return ['strategy-analysis', 'requirements-design', 'solution-evaluation'].includes(m.id)
+    if (filter === 'management') return ['requirements-mgmt', 'elicitation'].includes(m.id)
+    if (filter === 'agile') return ['agile-ba'].includes(m.id)
+    if (filter === 'capstone') return ['capstone'].includes(m.id)
+    return true
+  })
 
   return (
     <div className="min-h-screen py-20">
       <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="font-display text-3xl sm:text-5xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>
-            Course <span style={{ color: 'var(--brand-gold)' }}>Modules</span>
-          </h1>
-          <p className="text-lg max-w-2xl mx-auto text-secondary">
-            Start free, unlock the full program when ready. Each module includes hands-on video walkthroughs.
+        <AnimatedSection>
+          <div className="text-center mb-16">
+            <h1 className="font-display text-3xl sm:text-5xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>
+              Course <span style={{ color: 'var(--brand-gold)' }}>Modules</span>
+            </h1>
+            <p className="text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
+              Start free, unlock the full program when ready. Each module includes hands-on video walkthroughs.
+            </p>
+          </div>
+        </AnimatedSection>
+
+        {/* How It Works */}
+        <section className="mb-20">
+          <AnimatedSection>
+            <h2 className="font-display text-2xl font-bold mb-12 text-center" style={{ color: 'var(--text-core)' }}>
+              How It <span style={{ color: 'var(--brand-gold)' }}>Works</span>
+            </h2>
+          </AnimatedSection>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {[
+              { icon: BookOpen, step: '01', title: 'Start Free', desc: 'Begin with two free modules to build your foundation before committing to the full program.' },
+              { icon: Monitor, step: '02', title: 'Learn by Doing', desc: 'Watch video walkthroughs, complete exercises, and apply concepts through real-world scenarios.' },
+              { icon: Award, step: '03', title: 'Track Progress', desc: 'Monitor your completion rate, revisit lessons, and measure your understanding with quizzes.' },
+              { icon: Clock, step: '04', title: 'Get Certified', desc: 'Complete all modules, pass the assessments, and earn your certificate of completion.' },
+            ].map((item, i) => (
+              <AnimatedSection key={i} delay={i * 100}>
+                <div className="text-center p-6">
+                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'rgba(212,175,55,0.1)' }}>
+                    <item.icon className="w-8 h-8" style={{ color: 'var(--brand-gold)' }} />
+                  </div>
+                  <div className="text-xs font-bold mb-2" style={{ color: 'var(--brand-gold)' }}>Step {item.step}</div>
+                  <h3 className="font-bold text-lg mb-2" style={{ color: 'var(--text-core)' }}>{item.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{item.desc}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </section>
+
+        {/* Progress Preview */}
+        <section className="mb-20 p-8 rounded-2xl border max-w-3xl mx-auto" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+          <AnimatedSection>
+            <div className="flex items-center gap-4 mb-6">
+              <BarChart3 className="w-8 h-8" style={{ color: 'var(--brand-gold)' }} />
+              <div>
+                <h3 className="font-bold text-lg" style={{ color: 'var(--text-core)' }}>Your Learning Progress</h3>
+                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Track your module completion at a glance.</p>
+              </div>
+            </div>
+          </AnimatedSection>
+          <div className="space-y-4">
+            {[
+              { label: 'Free Modules', pct: 0 },
+              { label: 'Full Program', pct: 0 },
+            ].map((prog, i) => (
+              <div key={i}>
+                <div className="flex justify-between text-sm mb-1">
+                  <span style={{ color: 'var(--text-core)' }}>{prog.label}</span>
+                  <span style={{ color: 'var(--brand-gold)' }}>{prog.pct}%</span>
+                </div>
+                <div className="w-full h-2.5 rounded-full overflow-hidden" style={{ backgroundColor: 'var(--border)' }}>
+                  <div className="h-full rounded-full transition-all duration-500" style={{ width: `${prog.pct}%`, backgroundColor: 'var(--brand-gold)' }} />
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs mt-4 text-center" style={{ color: 'var(--text-secondary)' }}>
+            Start a free module to begin tracking your progress.
           </p>
-        </div>
+        </section>
 
         {/* Free Modules */}
         <div className="mb-20">
-          <h2 className="font-display text-2xl font-bold mb-8 text-center gold">Free Access</h2>
+          <h2 className="font-display text-2xl font-bold mb-8 text-center" style={{ color: 'var(--brand-gold)' }}>Free Access</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {freeModules.map((mod) => (
               <div
@@ -88,11 +161,41 @@ export default function ModulesPage() {
           </div>
         </div>
 
+        {/* Module Categories Filter */}
+        <div className="mb-8">
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Filter className="w-4 h-4" style={{ color: 'var(--brand-gold)' }} />
+            {[
+              { id: 'all', label: 'All Modules' },
+              { id: 'analysis', label: 'Analysis & Design' },
+              { id: 'management', label: 'Requirements Mgmt' },
+              { id: 'agile', label: 'Agile' },
+              { id: 'capstone', label: 'Capstone' },
+            ].map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => setFilter(cat.id)}
+                className="px-4 py-2 rounded-full text-xs font-bold transition-all"
+                style={{
+                  backgroundColor: filter === cat.id ? 'var(--brand-gold)' : 'var(--bg-card)',
+                  color: filter === cat.id ? '#0f1115' : 'var(--text-secondary)',
+                  border: filter === cat.id ? 'none' : '1px solid var(--border)',
+                }}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
         {/* Paid Modules */}
         <div>
-          <h2 className="font-display text-2xl font-bold mb-8 text-center gold">Full Program</h2>
+          <h2 className="font-display text-2xl font-bold mb-8 text-center" style={{ color: 'var(--brand-gold)' }}>Full Program</h2>
+          {filteredPaid.length === 0 ? (
+            <p className="text-center py-12" style={{ color: 'var(--text-secondary)' }}>No modules match this category.</p>
+          ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[2560px] mx-auto">
-            {paidModules.map((mod) => (
+            {filteredPaid.map((mod) => (
               <div
                 key={mod.id}
                 className="card-premium"
@@ -133,6 +236,7 @@ export default function ModulesPage() {
               </div>
             ))}
           </div>
+          )}
         </div>
       </div>
     </div>

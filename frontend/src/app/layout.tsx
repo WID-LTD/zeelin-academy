@@ -4,6 +4,8 @@ import ThemeProvider from '@/components/ThemeProvider'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Wakeup from '@/components/Wakeup'
+import MobileNav from '@/components/MobileNav'
+import CookieConsent from '@/components/CookieConsent'
 
 export const metadata: Metadata = {
   title: 'Zeelin Academy | Diploma in Business Analysis',
@@ -33,10 +35,12 @@ export default function RootLayout({
         <ThemeProvider>
           <Wakeup />
           <Header />
-          <main className="pt-20">
+          <main className="pt-20 pb-16 md:pb-0">
             {children}
           </main>
           <Footer />
+          <MobileNav />
+          <CookieConsent />
         </ThemeProvider>
       </body>
     </html>

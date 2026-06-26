@@ -112,6 +112,17 @@ export default function BannerSection() {
     scrollRef.current.scrollLeft = scrollLeft - walk
   }
 
+  // Email capture form state
+  const [email, setEmail] = useState('')
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (email) {
+      setSubmitted(true)
+    }
+  }
+
   // Navigation Arrow Handlers
   const scrollBy = (amount: number) => {
     if (scrollRef.current) {
@@ -208,11 +219,41 @@ export default function BannerSection() {
                     Get the{' '}
                     <span style={{ color: 'var(--brand-gold)' }}>Business Analysis Strategy Guide</span>
                   </h3>
-                  <p className="text-base md:text-lg max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                    A free, step-by-step roadmap designed for busy professionals preparing for BCS certification.
-                    Know exactly what to study, when, and how — so you pass with confidence.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                   <p className="text-base md:text-lg max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                     A free, step-by-step roadmap designed for busy professionals preparing for BCS certification.
+                     Know exactly what to study, when, and how — so you pass with confidence.
+                   </p>
+                   {!submitted ? (
+                     <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-3 mb-8 justify-center lg:justify-start">
+                       <label htmlFor="email-input" className="sr-only">Enter your email</label>
+                       <input
+                         id="email-input"
+                         type="email"
+                         placeholder="Enter your email"
+                         value={email}
+                         onChange={(e) => setEmail(e.target.value)}
+                         required
+                         className="px-5 py-4 text-base rounded-lg sm:rounded-l-lg sm:rounded-r-none w-full sm:w-auto min-w-[260px] border outline-none focus:ring-2 focus:ring-[var(--brand-gold)]"
+                         style={{
+                           backgroundColor: 'var(--bg-primary)',
+                           borderColor: 'var(--border)',
+                           color: 'var(--text-core)',
+                         }}
+                       />
+                       <button
+                         type="submit"
+                         className="px-8 py-4 text-base font-bold rounded-lg sm:rounded-r-lg sm:rounded-l-none hover:opacity-90 transition-opacity"
+                         style={{ backgroundColor: 'var(--brand-gold)', color: '#fff' }}
+                       >
+                         Get Free Guide
+                       </button>
+                     </form>
+                   ) : (
+                     <p className="text-base font-semibold mb-8 text-center lg:text-left" style={{ color: 'var(--brand-gold)' }}>
+                       Thanks! Check your inbox for the guide.
+                     </p>
+                   )}
+                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <Link href="/contact" className="btn-gold px-10 py-4 text-base font-bold inline-block text-center hover:scale-105 transition-transform">
                       Download Free Guide
                     </Link>
