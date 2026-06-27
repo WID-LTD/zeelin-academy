@@ -2,16 +2,22 @@
 
 import { useState, useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ChevronRight, CheckCircle2, Phone, Search, Compass, BarChart3, Users, Star, ArrowRight, BookOpen, MessageCircle, Target, ClipboardList, Sparkles, GraduationCap, CheckCircle, Award, Clock, ShieldCheck, TrendingUp } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
-import SafeImage from '@/components/SafeImage'
 
-const books = [
-  { src: '/book1.png', title: 'Business Analytics', oldPrice: '€89.99', salePrice: '€49.99' },
-  { src: '/book2.png', title: 'Business Analysis Fourth Edition', oldPrice: '€69.99', salePrice: '€39.99' },
-  { src: '/book3.png', title: 'Business Analysis Lifetime Access', oldPrice: '€109.99', salePrice: '€59.99' },
-  { src: '/book4.png', title: 'Business Analysis Yearly Access', oldPrice: '€49.99', salePrice: '€29.99' },
-  { src: '/book5.png', title: 'Foundation to Business Analysis', oldPrice: '€129.99', salePrice: '€79.99' },
+const examFocusBooks = [
+  { src: '/exam_focus_foundation.png', title: 'Exam Focus: Foundation in Business Analysis', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/exam_focus_business_change.png', title: 'Exam Focus: Business Change', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/exam_focus_is_project_mgmt.png', title: 'Exam Focus: IS Project Management', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/exam_focus_org_behaviour.png', title: 'Exam Focus: Organisational Behaviour', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/exam_focus_ba_practice.png', title: 'Exam Focus: Business Analysis Practice', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/exam_focus_requirements_eng.png', title: 'Exam Focus: Requirements Engineering', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/exam_focus_modelling_processes.png', title: 'Exam Focus: Modelling Business Processes', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/exam_focus_systems_modelling.png', title: 'Exam Focus: Systems Modelling Techniques', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/exam_focus_systems_development.png', title: 'Exam Focus: Systems Development Essentials', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/exam_focus_data_management.png', title: 'Exam Focus: Data Management Essentials', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/exam_focus_benefits_mgmt.png', title: 'Exam Focus: Benefits Management and Business Acceptance', oldPrice: '£129.99', salePrice: '£100.00' },
 ]
 
 const q3Options = [
@@ -584,43 +590,36 @@ export default function PathwayFinder() {
     <div className="min-h-screen relative">
       {/* Section 1 — Book Carousel */}
       <section className="pt-24 overflow-hidden" style={{ backgroundColor: 'var(--bg-primary)' }}>
-        <style>{`
-          @keyframes scroll-books {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-          .scroll-track {
-            animation: scroll-books 60s linear infinite;
-          }
-          .scroll-track:hover {
-            animation-play-state: paused;
-          }
-        `}</style>
-        <div className="overflow-x-hidden select-none cursor-grab">
-          <div className="flex gap-6 scroll-track" style={{ width: 'fit-content' }}>
-            {[...books, ...books].map((book, i) => (
-              <div key={i} className="flex-shrink-0 flex flex-col items-center group/book">
+        <div className="flex gap-6 overflow-x-hidden py-6 select-none cursor-grab" style={{ scrollBehavior: 'auto' }}>
+          {[...examFocusBooks, ...examFocusBooks].map((book, i) => (
+            <div key={i} className="flex-shrink-0 flex flex-col items-center group/book">
+              <div
+                className="relative w-[8.75rem] sm:w-[10rem] md:w-[11.875rem] aspect-[3/4] rounded-xl overflow-hidden transition-all duration-300 pointer-events-none group-hover/book:scale-[1.02]"
+                style={{ boxShadow: 'rgba(0,0,0,0.12) 0px 8px 30px', backgroundColor: 'var(--bg-card)' }}
+              >
+                <Image
+                  src={book.src}
+                  alt={book.title}
+                  fill
+                  className="object-cover"
+                  draggable={false}
+                  sizes="(max-width: 640px) 140px, (max-width: 768px) 160px, 190px"
+                />
                 <div
-                  className="relative w-[8.75rem] sm:w-[10rem] md:w-[11.875rem] aspect-[3/4] rounded-xl overflow-hidden transition-all duration-300 pointer-events-none group-hover/book:scale-[1.02]"
-                  style={{ boxShadow: 'rgba(0,0,0,0.12) 0px 8px 30px', backgroundColor: 'var(--bg-card)' }}
+                  className="absolute top-3 right-3 text-white font-bold px-2 py-1 rounded-lg shadow-xl z-10 flex flex-col items-center border"
+                  style={{ backgroundColor: 'rgba(220,38,38,0.9)', borderColor: 'rgba(220,38,38,0.5)' }}
                 >
-                  <SafeImage src={book.src} alt={book.title} fill className="object-cover" />
-                  <div
-                    className="absolute top-3 right-3 text-white font-bold px-2 py-1 rounded-lg shadow-xl z-10 flex flex-col items-center border"
-                    style={{ backgroundColor: 'rgba(220,38,38,0.9)', borderColor: 'rgba(220,38,38,0.5)' }}
-                  >
-                    <span className="line-through text-[0.65rem] leading-none opacity-80 mb-0.5">{book.oldPrice}</span>
-                    <span className="text-sm leading-none">{book.salePrice}</span>
-                  </div>
-                </div>
-                <div className="mt-4 w-[8.75rem] sm:w-[10rem] md:w-[11.875rem] text-center px-1">
-                  <p className="text-sm md:text-base font-semibold leading-snug" style={{ color: 'var(--text-core)' }}>
-                    {book.title}
-                  </p>
+                  <span className="line-through text-[0.65rem] leading-none opacity-80 mb-0.5">{book.oldPrice}</span>
+                  <span className="text-sm leading-none">{book.salePrice}</span>
                 </div>
               </div>
-            ))}
-          </div>
+              <div className="mt-4 w-[8.75rem] sm:w-[10rem] md:w-[11.875rem] text-center px-1">
+                <p className="text-sm md:text-base font-semibold leading-snug px-2 py-1 rounded border" style={{ color: 'var(--text-core)', borderColor: 'var(--border)', backgroundColor: 'var(--bg-card)' }}>
+                  {book.title}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

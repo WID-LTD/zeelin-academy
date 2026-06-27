@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import SafeImage from '@/components/SafeImage'
 import AnimatedSection from '@/components/AnimatedSection'
-import BundleSection from '@/components/BundleSection'
 import {
   Sparkles,
   Map,
@@ -150,8 +149,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      <BundleSection />
 
       {/* Section A – Why Zeelin Academy Exists */}
       <section className="py-24" style={{ backgroundColor: 'var(--bg-primary)' }}>

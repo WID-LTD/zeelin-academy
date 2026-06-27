@@ -2,7 +2,6 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import AnimatedSection from '@/components/AnimatedSection'
 import SafeImage from '@/components/SafeImage'
-import BundleSection from '@/components/BundleSection'
 import CoursesHero from '@/components/CoursesHero'
 import { categories } from '@/lib/courseData'
 
@@ -16,8 +15,6 @@ export default function CoursesPage() {
     <div className="min-h-screen">
       {/* Section 1 — Animated Avatar Hero */}
       <CoursesHero />
-
-      <BundleSection />
 
       {/* Section 2 — Category Cards */}
       <section className="py-24 relative overflow-hidden" style={{ backgroundColor: 'var(--bg-primary)' }}>

@@ -2,9 +2,8 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+import SafeImage from '@/components/SafeImage'
 import { Download, BookOpen, Copy, Check, ExternalLink, FileText, Layout, FileSpreadsheet, ArrowRight, HelpCircle, Search, Star, Badge, Zap, MessageCircle } from 'lucide-react'
-import BundleSection from '@/components/BundleSection'
 import AnimatedSection from '@/components/AnimatedSection'
 
 interface Template {
@@ -83,9 +82,9 @@ const templates: Template[] = [
 ]
 
 const books = [
-  { src: '/book1.png', title: 'Business Analytics', author: 'Camm, Cochran, Fry, Ohlmann', desc: 'An excellent guide on data-driven decision making and corporate analytics models.' },
-  { src: '/book2.png', title: 'Business Analysis for Practitioners', author: 'PMI', desc: 'A practice guide mapping out critical Business Analysis capabilities across projects.' },
-  { src: '/book3.png', title: 'Business Analysis: Fourth Edition', author: 'Debra Paul and James Cadle', desc: 'The official BCS core textbook. Essential reading for all BCS Diploma candidates.' }
+  { src: '/exam_focus_foundation.png', title: 'Exam Focus: Foundation in Business Analysis', author: 'Zeelin Academy', desc: 'Targeted exam preparation for the BCS Foundation Certificate in Business Analysis.' },
+  { src: '/exam_focus_business_change.png', title: 'Exam Focus: Business Change', author: 'Zeelin Academy', desc: 'Focused revision guide for the Business Change Certificate in Business Analysis exam.' },
+  { src: '/exam_focus_ba_practice.png', title: 'Exam Focus: Business Analysis Practice', author: 'Zeelin Academy', desc: 'Essential exam prep for the BCS Business Analysis Practice certificate.' },
 ]
 
 export default function ResourcesPage() {
@@ -145,8 +144,6 @@ export default function ResourcesPage() {
           ))}
         </div>
 
-        <BundleSection />
-
         {/* Download Stats */}
         <AnimatedSection direction="up" className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
           {[
@@ -183,7 +180,7 @@ export default function ResourcesPage() {
                         Recently Added
                       </div>
                     )}
-                    <Image
+                    <SafeImage
                       src={book.src}
                       alt={book.title}
                       fill
