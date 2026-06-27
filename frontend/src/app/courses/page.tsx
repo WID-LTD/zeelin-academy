@@ -21,12 +21,6 @@ export default function CoursesPage() {
 
       {/* Section 2 — Category Cards */}
       <section className="py-24 relative overflow-hidden" style={{ backgroundColor: 'var(--bg-primary)' }}>
-        <div className="absolute inset-0 pointer-events-none opacity-10"
-          style={{
-            backgroundImage: 'url("/group.png")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }} />
         <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {categories.map((cat, idx) => (

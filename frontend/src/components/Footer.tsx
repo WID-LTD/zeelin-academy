@@ -89,7 +89,7 @@ export default function Footer() {
                 <button
                   type="submit"
                   className="px-3 py-2 rounded-lg text-xs font-bold transition-all duration-300 hover:scale-105 flex items-center gap-1"
-                  style={{ backgroundColor: 'var(--brand-gold)', color: '#000' }}
+                  style={{ backgroundColor: 'var(--brand-gold)', color: 'var(--btn-gold-text)' }}
                 >
                   <FaArrowRight className="w-3 h-3" />
                 </button>

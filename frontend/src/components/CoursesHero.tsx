@@ -69,12 +69,6 @@ export default function CoursesHero() {
   return (
     <section ref={sectionRef} className="py-24 md:py-32 relative overflow-hidden min-h-[60vh] flex items-center"
       style={{ backgroundColor: 'var(--bg-secondary)' }}>
-      <div className="absolute inset-0 pointer-events-none opacity-15"
-        style={{
-          backgroundImage: 'url("/group.png")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }} />
       <div className="absolute inset-0 bg-hero-glow pointer-events-none opacity-40" />
       <div className="relative max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex items-center justify-center gap-8 md:gap-16 lg:gap-24">
@@ -96,7 +90,7 @@ export default function CoursesHero() {
                   <img src={avatar.src} alt={avatar.word} className="w-full h-full object-cover" />
                 </div>
                 <span className="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-7xl uppercase tracking-wide leading-none"
-                  style={{ color: '#ffffff' }}>
+                  style={{ color: 'var(--text-core)' }}>
                   {avatar.word}
                 </span>
               </div>

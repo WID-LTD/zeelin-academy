@@ -102,15 +102,6 @@ export default function ResourcesPage() {
 
   return (
     <div className="min-h-screen pt-32 pb-20 bg-[color:var(--bg-primary)] relative">
-      {/* Resources backdrop */}
-      <div className="fixed inset-0 -z-10 pointer-events-none"
-        style={{
-          backgroundImage: 'url("/LIBRARY.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-          opacity: 0.06,
-        }} />
       <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Hero Section */}

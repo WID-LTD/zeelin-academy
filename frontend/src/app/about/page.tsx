@@ -97,15 +97,6 @@ const values = [
 export default function AboutPage() {
   return (
     <div className="min-h-screen relative">
-      {/* About page backdrop */}
-      <div className="fixed inset-0 -z-10 pointer-events-none"
-        style={{
-          backgroundImage: 'url("/classroom.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-          opacity: 0.1,
-        }} />
       {/* Section 1 – About Zeelin Academy */}
       <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
         <div className="absolute inset-0 bg-hero-glow pointer-events-none opacity-40" />

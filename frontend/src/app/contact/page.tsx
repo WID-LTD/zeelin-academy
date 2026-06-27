@@ -40,15 +40,6 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen py-20 relative">
-      {/* Contact backdrop */}
-      <div className="fixed inset-0 -z-10 pointer-events-none"
-        style={{
-          backgroundImage: 'url("/consultation.png")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-          opacity: 0.06,
-        }} />
       <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="font-display text-4xl sm:text-5xl font-bold mb-4 text-[color:var(--text-core)]">

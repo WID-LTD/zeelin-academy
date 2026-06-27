@@ -582,15 +582,6 @@ export default function PathwayFinder() {
 
   return (
     <div className="min-h-screen relative">
-      {/* Pathway Finder backdrop */}
-      <div className="fixed inset-0 -z-10 pointer-events-none"
-        style={{
-          backgroundImage: 'url("/guide.png")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-          opacity: 0.08,
-        }} />
       {/* Section 1 — Book Carousel */}
       <section className="pt-24 overflow-hidden" style={{ backgroundColor: 'var(--bg-primary)' }}>
         <style>{`

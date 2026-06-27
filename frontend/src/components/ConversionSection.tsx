@@ -92,8 +92,8 @@ export default function ConversionSection() {
                   <AnimatedSection key={feature} delay={500 + i * 80}>
                     <div className="flex items-center gap-2.5 px-4 py-3 rounded-xl backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5"
                       style={{
-                        backgroundColor: 'rgba(255,255,255,0.6)',
-                        border: '1px solid rgba(255,255,255,0.3)',
+                        backgroundColor: 'var(--bg-card)',
+                        border: '1px solid var(--border)',
                         boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
                       }}
                     >
@@ -124,7 +124,7 @@ export default function ConversionSection() {
               <div className="absolute top-0 right-4 z-30">
                 <div className="backdrop-blur-md rounded-full px-5 py-2.5 shadow-lg border"
                   style={{
-                    backgroundColor: 'rgba(255,255,255,0.85)',
+                    backgroundColor: 'var(--bg-card)',
                     borderColor: 'rgba(223,186,107,0.3)',
                   }}>
                   <span className="text-xs font-bold" style={{ color: 'var(--brand-gold)' }}>
@@ -215,7 +215,7 @@ export default function ConversionSection() {
               <div className="absolute top-32 -left-2 z-[6]">
                 <div className="backdrop-blur-md rounded-xl px-3 py-2 shadow-lg border"
                   style={{
-                    backgroundColor: 'rgba(255,255,255,0.85)',
+                    backgroundColor: 'var(--bg-card)',
                     borderColor: 'rgba(223,186,107,0.2)',
                   }}>
                   <div className="flex items-center gap-2">

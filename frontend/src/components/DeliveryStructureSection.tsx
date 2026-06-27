@@ -85,7 +85,7 @@ export default function DeliveryStructureSection() {
               <div className="absolute top-4 right-4 z-10">
                 <div className="backdrop-blur-md rounded-xl px-4 py-3 shadow-lg border"
                   style={{
-                    backgroundColor: 'rgba(255,255,255,0.9)',
+                    backgroundColor: 'var(--bg-card)',
                     borderColor: 'rgba(223,186,107,0.25)',
                   }}>
                   <div className="flex items-center gap-2.5">
@@ -105,8 +105,8 @@ export default function DeliveryStructureSection() {
               <div className="absolute bottom-6 left-4 z-10">
                 <div className="backdrop-blur-md rounded-xl px-4 py-3 shadow-lg border"
                   style={{
-                    backgroundColor: 'rgba(255,255,255,0.9)',
-                    borderColor: 'rgba(59,130,246,0.2)',
+                    backgroundColor: 'var(--bg-card)',
+                    borderColor: 'rgba(223,186,107,0.25)',
                   }}>
                   <div className="flex items-center gap-2.5">
                     <div className="w-8 h-8 rounded-lg flex items-center justify-center"
