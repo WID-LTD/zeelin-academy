@@ -29,9 +29,6 @@ const config: Config = {
           cream: '#F5F5F0'
         }
       },
-      screens: {
-        '3xl': '1920px',
-      },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         display: ['Playfair Display', 'Georgia', 'serif']

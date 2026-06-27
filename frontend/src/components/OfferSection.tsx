@@ -39,7 +39,7 @@ const routes = [
 
 export default function OfferSection() {
   return (
-    <section className="relative overflow-hidden pb-16 md:pb-28 pt-0 3xl:pb-32" style={{ backgroundColor: 'var(--bg-primary)' }}>
+    <section className="relative overflow-hidden pb-16 md:pb-28 pt-0" style={{ backgroundColor: 'var(--bg-primary)' }}>
       {/* Decorative glow */}
       <div className="absolute top-0 right-0 w-full h-full pointer-events-none overflow-hidden">
         <div className="absolute -top-32 -right-32 w-80 h-80 rounded-full opacity-[0.05]"
@@ -51,21 +51,21 @@ export default function OfferSection() {
       <div className="relative max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection delay={100}>
           <div className="text-center max-w-4xl mx-auto mb-12 md:mb-16">
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl 3xl:text-7xl font-black leading-tight mb-4"
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-4"
               style={{ color: 'var(--text-core)' }}>
               What Zeelin Academy{' '}
               <span style={{ color: 'var(--brand-gold)' }}>Offers</span>
             </h2>
-            <p className="text-lg md:text-xl 3xl:text-2xl mb-6" style={{ color: 'var(--text-secondary)' }}>
+            <p className="text-lg md:text-xl mb-6" style={{ color: 'var(--text-secondary)' }}>
               Prepare for the BCS International Diploma in Business Analysis with structured teaching, guided study, mock quizzes, visual summaries, and exam-readiness support.
             </p>
-            <p className="text-base md:text-lg 3xl:text-xl font-semibold" style={{ color: 'var(--text-core)' }}>
+            <p className="text-base md:text-lg font-semibold" style={{ color: 'var(--text-core)' }}>
               Choose the route that fits your goal:
             </p>
           </div>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 3xl:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {routes.map((route, idx) => {
             const Icon = route.icon
             return (
@@ -79,7 +79,7 @@ export default function OfferSection() {
                       style={{ backgroundColor: 'rgba(212,175,55,0.1)' }}>
                       <Icon className="w-7 h-7" style={{ color: 'var(--brand-gold)' }} />
                     </div>
-                    <h3 className="font-display text-lg 3xl:text-xl font-black leading-snug" style={{ color: 'var(--text-core)' }}>
+                    <h3 className="font-display text-lg font-black leading-snug" style={{ color: 'var(--text-core)' }}>
                       {route.title}
                     </h3>
                   </div>
@@ -129,11 +129,11 @@ export default function OfferSection() {
                 </div>
               </div>
 
-              <h3 className="font-display text-2xl md:text-3xl 3xl:text-4xl font-bold mb-2" style={{ color: 'var(--text-core)' }}>
+              <h3 className="font-display text-2xl md:text-3xl font-bold mb-2" style={{ color: 'var(--text-core)' }}>
                 Not sure which route is right for you?
               </h3>
 
-              <p className="text-base md:text-lg 3xl:text-xl max-w-2xl mx-auto mb-8 leading-relaxed"
+              <p className="text-base md:text-lg max-w-2xl mx-auto mb-8 leading-relaxed"
                 style={{ color: 'var(--text-secondary)' }}>
                 Use our Diploma Pathway Finder to choose with clarity.
               </p>

@@ -12,8 +12,8 @@ export default function Home() {
   return (
     <div className="overflow-x-hidden">
       {/* Static Text Section */}
-      <section className="pt-1 pb-4 px-4 text-center max-w-[1280px] 3xl:max-w-[1800px] mx-auto">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl 3xl:text-7xl font-black font-display leading-tight">
+      <section className="pt-1 pb-4 px-4 text-center max-w-[1280px] mx-auto">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-black font-display leading-tight">
           <span style={{ color: 'var(--text-core)' }}>Stop Guessing. Start Preparing for your </span>
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--brand-gold)] to-[var(--brand-gold-dark)]">
             Business Analysis Exam with clarity.

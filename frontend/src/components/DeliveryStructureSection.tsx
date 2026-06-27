@@ -17,20 +17,20 @@ const methods = [
 
 export default function DeliveryStructureSection() {
   return (
-    <section className="relative overflow-hidden py-16 md:py-20 3xl:py-24" style={{ backgroundColor: 'var(--bg-primary)' }}>
+    <section className="relative overflow-hidden py-16 md:py-20" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 3xl:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column - Content */}
           <div className="space-y-6">
             <AnimatedSection delay={100}>
-              <h2 className="font-display text-3xl md:text-4xl 3xl:text-5xl font-bold leading-tight" style={{ color: 'var(--text-core)' }}>
+              <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight" style={{ color: 'var(--text-core)' }}>
                 Course{' '}
                 <span style={{ color: 'var(--brand-gold)' }}>Delivery Structure</span>
               </h2>
             </AnimatedSection>
 
             <AnimatedSection delay={200}>
-              <p className="text-base md:text-lg 3xl:text-xl leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              <p className="text-base md:text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 We break complex Business Analysis topics into small, clear, practical lessons that can be studied during a lunch break, commute, or evening study session. At Zeelin Academy our courses are delivered through structured Cohort and guided self-pace route. Our teaching method is built around the following:
               </p>
             </AnimatedSection>
@@ -43,17 +43,17 @@ export default function DeliveryStructureSection() {
                   return (
                     <AnimatedSection key={method.label} delay={300 + i * 60}>
                       <div
-                        className="flex items-center gap-3 3xl:gap-4 px-4 py-3.5 3xl:px-5 3xl:py-4 rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
+                        className="flex items-center gap-3 px-4 py-3.5 rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
                         style={{
                           backgroundColor: 'var(--bg-secondary)',
                           border: '1px solid var(--border)',
                         }}
                       >
-                        <div className="w-9 h-9 3xl:w-10 3xl:h-10 rounded-lg flex items-center justify-center flex-shrink-0"
+                        <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
                           style={{ backgroundColor: 'rgba(223,186,107,0.12)' }}>
-                          <Icon className="w-4.5 h-4.5 3xl:w-5 3xl:h-5" style={{ color: 'var(--brand-gold)' }} />
+                          <Icon className="w-4.5 h-4.5" style={{ color: 'var(--brand-gold)' }} />
                         </div>
-                        <span className="text-sm 3xl:text-base font-semibold leading-snug" style={{ color: 'var(--text-core)' }}>
+                        <span className="text-sm font-semibold leading-snug" style={{ color: 'var(--text-core)' }}>
                           {method.label}
                         </span>
                       </div>
@@ -66,7 +66,7 @@ export default function DeliveryStructureSection() {
 
           {/* Right Column - Visual */}
           <AnimatedSection direction="right" delay={150} duration={700} className="w-full">
-            <div className="relative h-[25rem] md:h-[32.5rem] 3xl:h-[40rem] rounded-2xl overflow-hidden"
+            <div className="relative h-[25rem] md:h-[32.5rem] rounded-2xl overflow-hidden"
               style={{ backgroundColor: 'var(--bg-card)' }}>
               {/* Gradient orbs */}
               <div className="absolute -top-10 -right-10 w-64 h-64 rounded-full opacity-[0.08] pointer-events-none"
