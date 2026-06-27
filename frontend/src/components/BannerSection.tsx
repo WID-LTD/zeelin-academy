@@ -63,16 +63,16 @@ export default function BannerSection() {
       <AnimatedSection delay={200}>
         <div className="w-full pt-10 pb-16" style={{ borderTop: '1px solid var(--border)' }}>
           <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 3xl:gap-16 items-center">
               {/* Text Content */}
               <div className="text-center lg:text-left">
-                <h3 className="font-display text-3xl md:text-4xl lg:text-5xl font-black mb-4 leading-tight" style={{ color: 'var(--text-core)' }}>
+                <h3 className="font-display text-3xl md:text-4xl lg:text-5xl 3xl:text-6xl font-black mb-4 leading-tight" style={{ color: 'var(--text-core)' }}>
                   <span style={{ color: 'var(--brand-gold)' }}>Business Analysis Exam Prep, Made Clear</span>
                 </h3>
-                <p className="text-base md:text-lg max-w-full mx-auto lg:mx-0 mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                <p className="text-base md:text-lg 3xl:text-xl max-w-full mx-auto lg:mx-0 mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                   Zeelin Academy helps busy learners prepare for business analysis exams through structured teaching — guided study plans, mock quizzes, visual summaries, and exam-readiness support.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <div className="flex flex-col sm:flex-row gap-4 3xl:gap-6 justify-center lg:justify-start">
                   <Link href="/contact" className="btn-gold px-10 py-4 text-base font-bold inline-block text-center hover:scale-105 transition-transform">
                     Download Free Guide
                   </Link>

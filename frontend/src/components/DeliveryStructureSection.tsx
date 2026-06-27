@@ -17,20 +17,20 @@ const methods = [
 
 export default function DeliveryStructureSection() {
   return (
-    <section className="relative overflow-hidden py-16 md:py-20" style={{ backgroundColor: 'var(--bg-primary)' }}>
+    <section className="relative overflow-hidden py-16 md:py-20 3xl:py-24" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 3xl:gap-20 items-center">
           {/* Left Column - Content */}
           <div className="space-y-6">
             <AnimatedSection delay={100}>
-              <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight" style={{ color: 'var(--text-core)' }}>
+              <h2 className="font-display text-3xl md:text-4xl 3xl:text-5xl font-bold leading-tight" style={{ color: 'var(--text-core)' }}>
                 Course{' '}
                 <span style={{ color: 'var(--brand-gold)' }}>Delivery Structure</span>
               </h2>
             </AnimatedSection>
 
             <AnimatedSection delay={200}>
-              <p className="text-base md:text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              <p className="text-base md:text-lg 3xl:text-xl leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 We break complex Business Analysis topics into small, clear, practical lessons that can be studied during a lunch break, commute, or evening study session. At Zeelin Academy our courses are delivered through structured Cohort and guided self-pace route. Our teaching method is built around the following:
               </p>
             </AnimatedSection>

@@ -49,18 +49,18 @@ function StarRating() {
 
 export default function TestimonialSection() {
   return (
-    <section className="relative overflow-hidden py-16 md:py-24" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+    <section className="relative overflow-hidden py-16 md:py-24 3xl:py-28" style={{ backgroundColor: 'var(--bg-secondary)' }}>
       <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection delay={100}>
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-black leading-tight" style={{ color: 'var(--text-core)' }}>
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl 3xl:text-7xl font-black leading-tight" style={{ color: 'var(--text-core)' }}>
               What Our{' '}
               <span style={{ color: 'var(--brand-gold)' }}>Students Say</span>
             </h2>
           </div>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[1200px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 3xl:gap-8 max-w-[1200px] mx-auto">
           {testimonials.map((item, idx) => (
             <AnimatedSection key={item.name} delay={100 + idx * 80} duration={600}>
               <div

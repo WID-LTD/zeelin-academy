@@ -5,7 +5,7 @@ import AnimatedSection from '@/components/AnimatedSection'
 
 export default function CallToActionSection() {
   return (
-    <section className="relative overflow-hidden py-12 lg:py-16" style={{ backgroundColor: 'var(--black)' }}>
+    <section className="relative overflow-hidden py-12 lg:py-16 3xl:py-20" style={{ backgroundColor: 'var(--black)' }}>
       {/* Gradient orbs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full opacity-[0.06]"

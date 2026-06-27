@@ -108,7 +108,7 @@ const courses = [
 
 export default function CourseHighlightSection() {
   return (
-    <section className="relative overflow-hidden py-16 md:py-28" style={{ backgroundColor: 'var(--bg-primary)' }}>
+    <section className="relative overflow-hidden py-16 md:py-28 3xl:py-32" style={{ backgroundColor: 'var(--bg-primary)' }}>
       {/* Decorative glow */}
       <div className="absolute top-0 right-0 w-full h-full pointer-events-none overflow-hidden">
         <div className="absolute -top-32 -right-32 w-80 h-80 rounded-full opacity-[0.05]"
@@ -120,7 +120,7 @@ export default function CourseHighlightSection() {
       <div className="relative max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection delay={100}>
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-4" style={{ color: 'var(--text-core)' }}>
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl 3xl:text-7xl font-black leading-tight mb-4" style={{ color: 'var(--text-core)' }}>
               All the Courses{' '}
               <span style={{ color: 'var(--brand-gold)' }}>We Offer</span>
             </h2>
