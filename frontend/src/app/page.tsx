@@ -19,9 +19,6 @@ export default function Home() {
             Business Analysis Exam with clarity.
           </span>
         </h1>
-        <p className="mt-6 text-lg md:text-xl max-w-full mx-auto leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-          Expert-led courses, guided study plans, mock quizzes, visual summaries, and exam-readiness support — everything you need to prepare for your BCS certification with confidence and accelerate your career, all designed for busy professionals like you.
-        </p>
       </section>
 
       <BannerSection />

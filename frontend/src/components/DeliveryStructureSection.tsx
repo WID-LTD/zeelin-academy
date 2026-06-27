@@ -37,7 +37,7 @@ export default function DeliveryStructureSection() {
 
             {/* Method Cards */}
             <AnimatedSection delay={300}>
-              <div className="grid grid-cols-2 xl:grid-cols-3 gap-3 pt-2">
+              <div className="grid grid-cols-2 gap-3 pt-2">
                 {methods.map((method, i) => {
                   const Icon = method.icon
                   return (

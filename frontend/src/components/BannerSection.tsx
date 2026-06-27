@@ -67,8 +67,7 @@ export default function BannerSection() {
               {/* Text Content */}
               <div className="text-center lg:text-left">
                 <h3 className="font-display text-3xl md:text-4xl lg:text-5xl font-black mb-4 leading-tight" style={{ color: 'var(--text-core)' }}>
-                  Get the{' '}
-                  <span style={{ color: 'var(--brand-gold)' }}>Business Analysis Strategy Guide to Business Analysis Exam Prep, Made Clear</span>
+                  <span style={{ color: 'var(--brand-gold)' }}>Business Analysis Exam Prep, Made Clear</span>
                 </h3>
                 <p className="text-base md:text-lg max-w-full mx-auto lg:mx-0 mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                   Zeelin Academy helps busy learners prepare for business analysis exams through structured teaching — guided study plans, mock quizzes, visual summaries, and exam-readiness support.
