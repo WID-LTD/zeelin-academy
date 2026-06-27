@@ -130,7 +130,7 @@ export default function CourseHighlightSection() {
           </div>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1600px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1600px] 3xl:max-w-[2400px] mx-auto">
           {courses.map((course, idx) => {
             const Icon = course.icon
             return (

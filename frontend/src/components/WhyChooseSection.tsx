@@ -101,7 +101,7 @@ export default function WhyChooseSection() {
           </div>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1280px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1280px] 3xl:max-w-[2240px] mx-auto">
           {features.map((feature, idx) => {
             const Icon = feature.icon
             return (

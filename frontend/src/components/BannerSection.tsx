@@ -63,7 +63,7 @@ export default function BannerSection() {
       <AnimatedSection delay={200}>
         <div className="w-full pt-10 pb-16" style={{ borderTop: '1px solid var(--border)' }}>
           <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Text Content */}
               <div className="text-center lg:text-left">
                 <h3 className="font-display text-3xl md:text-4xl lg:text-5xl font-black mb-4 leading-tight" style={{ color: 'var(--text-core)' }}>
