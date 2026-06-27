@@ -43,17 +43,17 @@ export default function DeliveryStructureSection() {
                   return (
                     <AnimatedSection key={method.label} delay={300 + i * 60}>
                       <div
-                        className="flex items-center gap-3 px-4 py-3.5 rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
+                        className="flex items-center gap-3 3xl:gap-4 px-4 py-3.5 3xl:px-5 3xl:py-4 rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
                         style={{
                           backgroundColor: 'var(--bg-secondary)',
                           border: '1px solid var(--border)',
                         }}
                       >
-                        <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+                        <div className="w-9 h-9 3xl:w-10 3xl:h-10 rounded-lg flex items-center justify-center flex-shrink-0"
                           style={{ backgroundColor: 'rgba(223,186,107,0.12)' }}>
-                          <Icon className="w-4.5 h-4.5" style={{ color: 'var(--brand-gold)' }} />
+                          <Icon className="w-4.5 h-4.5 3xl:w-5 3xl:h-5" style={{ color: 'var(--brand-gold)' }} />
                         </div>
-                        <span className="text-sm font-semibold leading-snug" style={{ color: 'var(--text-core)' }}>
+                        <span className="text-sm 3xl:text-base font-semibold leading-snug" style={{ color: 'var(--text-core)' }}>
                           {method.label}
                         </span>
                       </div>
@@ -66,7 +66,7 @@ export default function DeliveryStructureSection() {
 
           {/* Right Column - Visual */}
           <AnimatedSection direction="right" delay={150} duration={700} className="w-full">
-            <div className="relative h-[25rem] md:h-[32.5rem] rounded-2xl overflow-hidden"
+            <div className="relative h-[25rem] md:h-[32.5rem] 3xl:h-[40rem] rounded-2xl overflow-hidden"
               style={{ backgroundColor: 'var(--bg-card)' }}>
               {/* Gradient orbs */}
               <div className="absolute -top-10 -right-10 w-64 h-64 rounded-full opacity-[0.08] pointer-events-none"

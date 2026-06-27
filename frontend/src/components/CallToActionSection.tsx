@@ -16,10 +16,10 @@ export default function CallToActionSection() {
           style={{ background: 'radial-gradient(circle, var(--brand-gold), transparent 70%)' }} />
       </div>
 
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative max-w-4xl 3xl:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Headline */}
         <AnimatedSection delay={100}>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6"
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl 3xl:text-6xl font-bold leading-tight mb-6"
             style={{ color: '#ffffff' }}>
             Ready to start your Business Analysis{' '}
             <span style={{ color: 'var(--brand-gold)' }}>Certification journey</span>?
@@ -28,7 +28,7 @@ export default function CallToActionSection() {
 
         {/* Description */}
         <AnimatedSection delay={200}>
-          <p className="text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed" style={{ color: '#9ca3af' }}>
+          <p className="text-base md:text-lg 3xl:text-xl max-w-2xl mx-auto mb-10 leading-relaxed" style={{ color: '#9ca3af' }}>
             Whether you are new to Business Analysis or preparing for your first certification,
             Zeelin Academy will guide you step by step.
           </p>

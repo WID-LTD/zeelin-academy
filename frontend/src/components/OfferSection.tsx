@@ -129,11 +129,11 @@ export default function OfferSection() {
                 </div>
               </div>
 
-              <h3 className="font-display text-2xl md:text-3xl font-bold mb-2" style={{ color: 'var(--text-core)' }}>
+              <h3 className="font-display text-2xl md:text-3xl 3xl:text-4xl font-bold mb-2" style={{ color: 'var(--text-core)' }}>
                 Not sure which route is right for you?
               </h3>
 
-              <p className="text-base md:text-lg max-w-2xl mx-auto mb-8 leading-relaxed"
+              <p className="text-base md:text-lg 3xl:text-xl max-w-2xl mx-auto mb-8 leading-relaxed"
                 style={{ color: 'var(--text-secondary)' }}>
                 Use our Diploma Pathway Finder to choose with clarity.
               </p>

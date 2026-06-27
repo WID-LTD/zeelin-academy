@@ -119,7 +119,7 @@ export default function CourseHighlightSection() {
 
       <div className="relative max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection delay={100}>
-          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+          <div className="text-center max-w-3xl 3xl:max-w-4xl mx-auto mb-12 md:mb-16">
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl 3xl:text-7xl font-black leading-tight mb-4" style={{ color: 'var(--text-core)' }}>
               All the Courses{' '}
               <span style={{ color: 'var(--brand-gold)' }}>We Offer</span>
@@ -130,35 +130,35 @@ export default function CourseHighlightSection() {
           </div>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1600px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 3xl:gap-10 max-w-[1600px] 3xl:max-w-[2000px] mx-auto">
           {courses.map((course, idx) => {
             const Icon = course.icon
             return (
               <AnimatedSection key={course.id} delay={100 + idx * 60} duration={600}>
                 <div
-                  className="p-6 rounded-2xl border transition-all duration-300 shadow-sm hover:shadow-xl h-full flex flex-col hover:border-[rgba(212,175,55,0.3)] group"
+                  className="p-6 3xl:p-8 rounded-2xl border transition-all duration-300 shadow-sm hover:shadow-xl h-full flex flex-col hover:border-[rgba(212,175,55,0.3)] group"
                   style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}
                 >
                   {/* Header with icon */}
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110"
+                    <div className="w-12 h-12 3xl:w-14 3xl:h-14 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110"
                       style={{ backgroundColor: 'rgba(212,175,55,0.1)' }}>
-                      <Icon className="w-6 h-6" style={{ color: 'var(--brand-gold)' }} />
+                      <Icon className="w-6 h-6 3xl:w-7 3xl:h-7" style={{ color: 'var(--brand-gold)' }} />
                     </div>
-                    <h3 className="font-display text-base font-black leading-snug" style={{ color: 'var(--text-core)' }}>
+                    <h3 className="font-display text-base 3xl:text-lg font-black leading-snug" style={{ color: 'var(--text-core)' }}>
                       {course.title}
                     </h3>
                   </div>
 
                   {/* For */}
                   <div className="mb-3">
-                    <span className="text-xs font-bold uppercase tracking-wide" style={{ color: 'var(--brand-gold)' }}>For:</span>
-                    <p className="text-xs leading-relaxed mt-0.5" style={{ color: 'var(--text-secondary)' }}>{course.for}</p>
+                    <span className="text-xs 3xl:text-sm font-bold uppercase tracking-wide" style={{ color: 'var(--brand-gold)' }}>For:</span>
+                    <p className="text-xs 3xl:text-sm leading-relaxed mt-0.5" style={{ color: 'var(--text-secondary)' }}>{course.for}</p>
                   </div>
 
                   {/* Duration badge */}
                   <div className="mb-3">
-                    <span className="text-xs font-bold px-3 py-1 rounded-full border inline-block"
+                    <span className="text-xs 3xl:text-sm font-bold px-3 py-1 rounded-full border inline-block"
                       style={{ color: 'var(--brand-gold)', borderColor: 'rgba(212,175,55,0.3)', backgroundColor: 'rgba(212,175,55,0.08)' }}>
                       {course.duration}
                     </span>
@@ -166,14 +166,14 @@ export default function CourseHighlightSection() {
 
                   {/* Includes */}
                   <div className="mb-3">
-                    <span className="text-xs font-bold uppercase tracking-wide" style={{ color: 'var(--brand-gold)' }}>Includes:</span>
-                    <p className="text-xs leading-relaxed mt-0.5" style={{ color: 'var(--text-secondary)' }}>{course.includes}</p>
+                    <span className="text-xs 3xl:text-sm font-bold uppercase tracking-wide" style={{ color: 'var(--brand-gold)' }}>Includes:</span>
+                    <p className="text-xs 3xl:text-sm leading-relaxed mt-0.5" style={{ color: 'var(--text-secondary)' }}>{course.includes}</p>
                   </div>
 
                   {/* Outcome */}
                   <div className="mb-5 flex-1">
-                    <span className="text-xs font-bold uppercase tracking-wide" style={{ color: 'var(--brand-gold)' }}>Outcome:</span>
-                    <p className="text-xs leading-relaxed mt-0.5" style={{ color: 'var(--text-secondary)' }}>{course.outcome}</p>
+                    <span className="text-xs 3xl:text-sm font-bold uppercase tracking-wide" style={{ color: 'var(--brand-gold)' }}>Outcome:</span>
+                    <p className="text-xs 3xl:text-sm leading-relaxed mt-0.5" style={{ color: 'var(--text-secondary)' }}>{course.outcome}</p>
                   </div>
 
                   {/* Button */}
