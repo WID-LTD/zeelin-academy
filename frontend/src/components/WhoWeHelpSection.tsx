@@ -112,14 +112,14 @@ export default function WhoWeHelpSection() {
 
           {/* Right Column - Photo Grid */}
           <AnimatedSection direction="right" delay={200} duration={700} className="w-full h-full">
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 h-full">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 h-full auto-rows-fr">
               {photos.map((img, i) => (
                 <div key={img.src}
-                  className={`relative rounded-2xl overflow-hidden shadow-xl transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl ${i === 0 ? 'row-span-2 col-span-1' : ''}`}
+                  className={`relative overflow-hidden shadow-xl transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl ${i === 0 ? 'row-span-2 col-span-1' : ''} ${i === 0 ? 'min-h-[416px]' : 'min-h-[200px]'}`}
                   style={{ backgroundColor: img.isPractitioner ? 'rgba(212,175,55,0.15)' : 'var(--bg-card)' }}>
                   <SafeImage src={img.src} alt={img.alt} fill className="object-cover" />
                   {img.isPractitioner && (
-                    <div className="absolute inset-0 rounded-2xl border-2 pointer-events-none" style={{ borderColor: 'rgba(212,175,55,0.3)' }} />
+                    <div className="absolute inset-0 border-2 pointer-events-none" style={{ borderColor: 'rgba(212,175,55,0.3)' }} />
                   )}
                 </div>
               ))}

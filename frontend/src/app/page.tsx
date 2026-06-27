@@ -1,12 +1,12 @@
 import BannerSection from '@/components/BannerSection'
 import WhoWeHelpSection from '@/components/WhoWeHelpSection'
-import PartnershipSection from '@/components/PartnershipSection'
 import WhyChooseSection from '@/components/WhyChooseSection'
 import DeliveryStructureSection from '@/components/DeliveryStructureSection'
 import CourseHighlightSection from '@/components/CourseHighlightSection'
 import OfferSection from '@/components/OfferSection'
 import FlashSaleSection from '@/components/FlashSaleSection'
 import CallToActionSection from '@/components/CallToActionSection'
+import TestimonialSection from '@/components/TestimonialSection'
 
 export default function Home() {
   return (
@@ -25,7 +25,7 @@ export default function Home() {
 
       <WhoWeHelpSection />
 
-      <PartnershipSection />
+      <OfferSection />
 
       <WhyChooseSection />
 
@@ -33,7 +33,7 @@ export default function Home() {
 
       <CourseHighlightSection />
 
-      <OfferSection />
+      <TestimonialSection />
 
       <FlashSaleSection />
 
