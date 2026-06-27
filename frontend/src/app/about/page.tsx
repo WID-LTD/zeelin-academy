@@ -12,19 +12,10 @@ import {
   Eye,
   Target,
   Users,
-  TrendingUp,
   Star,
-  Globe,
-  GraduationCap,
-  Trophy,
   Shield,
   CheckCircle,
-  Clock,
   Calendar,
-  Play,
-  Briefcase,
-  Zap,
-  BarChart3,
 } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -97,7 +88,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen relative">
       {/* Section 1 – About Zeelin Academy */}
-      <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+      <section className="pt-16 pb-6 relative overflow-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
         <div className="absolute inset-0 bg-hero-glow pointer-events-none opacity-40" />
         <div className="relative max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -112,191 +103,11 @@ export default function AboutPage() {
                 <span style={{ color: 'var(--brand-gold)' }}>Zeelin Academy</span>
               </h1>
             </AnimatedSection>
-
-            <AnimatedSection delay={150}>
-              <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
-                {[
-                  { icon: <Clock className="w-5 h-5" />, number: '10+', label: 'Years Experience' },
-                  { icon: <Users className="w-5 h-5" />, number: '5000+', label: 'Students Trained' },
-                  { icon: <Trophy className="w-5 h-5" />, number: '92%', label: 'Pass Rate' },
-                  { icon: <Shield className="w-5 h-5" />, number: 'BCS', label: 'Accredited Partner' },
-                ].map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="p-5 rounded-xl border shadow-sm transition-all duration-300 hover:-translate-y-1"
-                    style={{
-                      backgroundColor: 'var(--bg-card)',
-                      borderColor: 'var(--border)',
-                    }}
-                  >
-                    <div className="w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-3"
-                      style={{
-                        backgroundColor: 'rgba(223,186,107,0.1)',
-                        border: '1px solid rgba(223,186,107,0.2)',
-                      }}>
-                      <span style={{ color: 'var(--brand-gold)' }}>{stat.icon}</span>
-                    </div>
-                    <div className="font-display font-black text-2xl" style={{ color: 'var(--brand-gold)' }}>
-                      {stat.number}
-                    </div>
-                    <div className="text-xs font-bold mt-1" style={{ color: 'var(--text-muted)' }}>
-                      {stat.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* Section A – Why Zeelin Academy Exists */}
-      <section className="py-24" style={{ backgroundColor: 'var(--bg-primary)' }}>
-        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Top — heading + text */}
-          <div className="max-w-4xl mx-auto space-y-6 mb-16">
-            <AnimatedSection delay={0}>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold leading-tight text-center"
-                style={{ color: 'var(--text-core)' }}>
-                Why Zeelin Academy Exists
-              </h2>
-            </AnimatedSection>
 
-            <AnimatedSection delay={100}>
-              <p className="text-lg leading-relaxed text-center" style={{ color: 'var(--text-secondary)' }}>
-                Many people want to move into Business Analysis, gain certification, or improve their career, but
-                they are often blocked by confusion, fear, lack of time, and overwhelming study materials.
-              </p>
-            </AnimatedSection>
-
-            <AnimatedSection delay={150}>
-              <div className="p-6 rounded-2xl border font-bold text-lg text-center"
-                style={{
-                  backgroundColor: 'var(--bg-secondary)',
-                  borderColor: 'var(--border)',
-                  color: 'var(--brand-gold)',
-                }}>
-                Zeelin Academy exists to remove that confusion and guide you systematically.
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={200}>
-              <div className="grid grid-cols-2 gap-4 max-w-2xl mx-auto">
-                {[
-                  { icon: <TrendingUp className="w-6 h-6" />, number: '£15k', label: 'Avg Salary Increase' },
-                  { icon: <Star className="w-6 h-6" />, number: '4.9/5', label: 'Student Rating' },
-                  { icon: <GraduationCap className="w-6 h-6" />, number: '50+', label: 'Expert Mentors' },
-                  { icon: <Globe className="w-6 h-6" />, number: '30+', label: 'Countries Reached' },
-                ].map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="p-4 rounded-xl border text-center transition-all duration-300 hover:-translate-y-1"
-                    style={{
-                      backgroundColor: 'var(--bg-card)',
-                      borderColor: 'var(--border)',
-                    }}
-                  >
-                    <div className="w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-3"
-                      style={{
-                        backgroundColor: 'rgba(223,186,107,0.1)',
-                        border: '1px solid rgba(223,186,107,0.2)',
-                      }}>
-                      <span style={{ color: 'var(--brand-gold)' }}>{stat.icon}</span>
-                    </div>
-                    <div className="font-display font-black text-xl" style={{ color: 'var(--brand-gold)' }}>
-                      {stat.number}
-                    </div>
-                    <div className="text-xs font-bold mt-1" style={{ color: 'var(--text-muted)' }}>
-                      {stat.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </AnimatedSection>
-          </div>
-
-          {/* Two-column — description + CTAs (left) / image (right) */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
-            <div className="space-y-6">
-              <AnimatedSection delay={100}>
-                <p className="text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                  Zeelin Academy was created to make Business Analysis learning simpler, clearer, and more accessible
-                  for busy people.
-                </p>
-                <p className="text-base leading-relaxed mt-3" style={{ color: 'var(--text-muted)' }}>
-                  We understand that many learners are not full-time students. They are parents, workers, career
-                  changers, professionals, and beginners trying to study while managing real-life responsibilities.
-                  That is why our training is designed to be practical, structured, visual, and supportive.
-                </p>
-              </AnimatedSection>
-
-              <AnimatedSection delay={200}>
-                <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                  <Link href="/courses" className="btn-gold px-8 py-4 text-base font-bold inline-block text-center">
-                    Explore Courses
-                  </Link>
-                  <Link href="/enroll" className="btn-outline-gold px-8 py-4 text-base font-bold inline-block text-center">
-                    Start Your Learning Journey
-                  </Link>
-                </div>
-              </AnimatedSection>
-            </div>
-
-            <AnimatedSection direction="right" delay={150} duration={700}>
-              <div className="relative h-[18.75rem] md:h-[25rem] rounded-2xl overflow-hidden shadow-xl"
-                style={{ backgroundColor: 'var(--bg-card)' }}>
-                <SafeImage
-                  src="/learner.jpg"
-                  alt="Business Analysis learning at Zeelin Academy"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </AnimatedSection>
-          </div>
-
-          {/* Bottom — testimonial-style quotes */}
-          <div>
-            <AnimatedSection delay={50}>
-              <p className="text-center font-display text-3xl font-bold mb-14" style={{ color: 'var(--text-core)' }}>
-                We help learners move from:
-              </p>
-            </AnimatedSection>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {transformations.map((t, idx) => (
-                <AnimatedSection key={idx} delay={200 + idx * 80}>
-                  <div
-                    className="relative p-8 rounded-2xl border shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-                    style={{
-                      backgroundColor: 'var(--bg-card)',
-                      borderColor: 'var(--border)',
-                    }}
-                  >
-                    <span className="font-display text-5xl leading-none absolute -top-2 left-4 opacity-20"
-                      style={{ color: 'var(--brand-gold)' }}>
-                      &ldquo;
-                    </span>
-                    <div className="flex items-center gap-3 mb-4 relative z-10">
-                      <span className="text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full"
-                        style={{ backgroundColor: 'rgba(239,68,68,0.1)', color: '#ef4444' }}>
-                        {t.from}
-                      </span>
-                      <ArrowRight className="w-4 h-4 shrink-0" style={{ color: 'var(--text-muted)' }} />
-                      <span className="text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full"
-                        style={{ backgroundColor: 'rgba(34,197,94,0.1)', color: '#22c55e' }}>
-                        {t.to}
-                      </span>
-                    </div>
-                    <p className="text-base leading-relaxed italic relative z-10" style={{ color: 'var(--text-secondary)' }}>
-                      &ldquo;{t.desc}&rdquo;
-                    </p>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Section B – Founder Story */}
       <section className="py-24" style={{ backgroundColor: 'var(--bg-secondary)' }}>
@@ -304,7 +115,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left - Image */}
             <AnimatedSection direction="right" delay={0} duration={700}>
-              <div className="relative w-full aspect-square max-w-[25rem] mx-auto rounded-3xl overflow-hidden shadow-xl"
+              <div className="relative w-full h-full mx-auto overflow-hidden shadow-xl"
                 style={{ backgroundColor: 'var(--bg-card)' }}>
                 <SafeImage src="/pic.jpg" alt="Dr. Franklin Kalu" fill className="object-cover" />
               </div>
@@ -501,57 +312,19 @@ export default function AboutPage() {
           </AnimatedSection>
 
           <AnimatedSection delay={150}>
-            <div className="p-8 md:p-10 rounded-2xl border shadow-lg max-w-3xl mx-auto"
-              style={{
-                backgroundColor: 'var(--bg-card)',
-                borderColor: 'var(--border)',
-              }}>
-              <div className="relative w-20 h-20 rounded-xl overflow-hidden mx-auto mb-6 border-2"
-                style={{ borderColor: 'rgba(223,186,107,0.3)' }}>
-                <SafeImage src="/success.jpeg" alt="Success" fill className="object-cover" />
+            <div className="max-w-5xl mx-auto space-y-6">
+              <div className="relative w-full h-[18.75rem] md:h-[25rem] overflow-hidden shadow-xl"
+                style={{ backgroundColor: 'var(--bg-card)' }}>
+                <SafeImage
+                  src="/success.jpeg"
+                  alt="Success"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <p className="text-xl md:text-2xl font-medium leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              <p className="text-xl md:text-2xl font-medium leading-relaxed text-center max-w-3xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
                 Our mission is to make Business Analysis training simple, structured, and achievable for busy learners.
               </p>
-            </div>
-          </AnimatedSection>
-
-          {/* Our Impact by Numbers */}
-          <AnimatedSection delay={200}>
-            <div className="mt-16 mb-16">
-              <h3 className="font-display text-2xl sm:text-3xl font-bold mb-10" style={{ color: 'var(--text-core)' }}>
-                Our Impact by <span style={{ color: 'var(--brand-gold)' }}>Numbers</span>
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                {[
-                  { icon: <BarChart3 className="w-8 h-8" />, number: '12,000+', label: 'Hours of Learning Content' },
-                  { icon: <BookOpen className="w-8 h-8" />, number: '85+', label: 'Comprehensive Modules' },
-                  { icon: <Globe className="w-8 h-8" />, number: '30+', label: 'Countries Worldwide' },
-                ].map((item) => (
-                  <div
-                    key={item.label}
-                    className="p-8 rounded-2xl border shadow-lg transition-all duration-300 hover:-translate-y-1"
-                    style={{
-                      backgroundColor: 'var(--bg-card)',
-                      borderColor: 'var(--border)',
-                    }}
-                  >
-                    <div className="w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-5"
-                      style={{
-                        backgroundColor: 'rgba(223,186,107,0.1)',
-                        border: '1px solid rgba(223,186,107,0.2)',
-                      }}>
-                      <span style={{ color: 'var(--brand-gold)' }}>{item.icon}</span>
-                    </div>
-                    <div className="font-display font-black text-3xl mb-2" style={{ color: 'var(--brand-gold)' }}>
-                      {item.number}
-                    </div>
-                    <div className="text-sm font-bold" style={{ color: 'var(--text-muted)' }}>
-                      {item.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
           </AnimatedSection>
 
@@ -661,54 +434,12 @@ export default function AboutPage() {
                 </div>
               </AnimatedSection>
 
-              {/* Our Approach — 4-step flow */}
-              <AnimatedSection delay={250}>
-                <div className="p-6 rounded-xl border shadow-md"
-                  style={{
-                    backgroundColor: 'var(--bg-card)',
-                    borderColor: 'var(--border)',
-                  }}>
-                  <h3 className="font-display text-lg font-bold mb-6 text-center" style={{ color: 'var(--text-core)' }}>
-                    Our Approach
-                  </h3>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                    {[
-                      { icon: <Play className="w-6 h-6" />, step: '01', label: 'Learn', desc: 'Structured video lessons and reading materials' },
-                      { icon: <Briefcase className="w-6 h-6" />, step: '02', label: 'Practice', desc: 'Hands-on exercises and mock exams' },
-                      { icon: <Zap className="w-6 h-6" />, step: '03', label: 'Apply', desc: 'Real-world case studies and projects' },
-                      { icon: <Trophy className="w-6 h-6" />, step: '04', label: 'Succeed', desc: 'Certification and career advancement' },
-                    ].map((item) => (
-                      <div key={item.step} className="text-center p-4 rounded-xl transition-all duration-300 hover:-translate-y-1"
-                        style={{
-                          backgroundColor: 'rgba(223,186,107,0.05)',
-                          border: '1px solid rgba(223,186,107,0.15)',
-                        }}>
-                        <div className="w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-3"
-                          style={{
-                            backgroundColor: 'rgba(223,186,107,0.1)',
-                            border: '1px solid rgba(223,186,107,0.2)',
-                          }}>
-                          <span style={{ color: 'var(--brand-gold)' }}>{item.icon}</span>
-                        </div>
-                        <div className="text-xs font-bold mb-1" style={{ color: 'var(--brand-gold)' }}>
-                          Step {item.step}
-                        </div>
-                        <div className="font-display font-bold text-sm" style={{ color: 'var(--text-core)' }}>
-                          {item.label}
-                        </div>
-                        <div className="text-xs mt-1 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-                          {item.desc}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </AnimatedSection>
+
             </div>
 
             {/* Right - Image */}
             <AnimatedSection direction="right" delay={100} duration={700}>
-              <div className="relative h-[21.875rem] md:h-[28.125rem] rounded-2xl overflow-hidden shadow-xl"
+              <div className="relative h-full overflow-hidden shadow-xl"
                 style={{ backgroundColor: 'var(--bg-card)' }}>
                 <SafeImage
                   src="/confident.jpg"

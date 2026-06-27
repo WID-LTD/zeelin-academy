@@ -1,3 +1,4 @@
+import BannerSection from '@/components/BannerSection'
 import WhoWeHelpSection from '@/components/WhoWeHelpSection'
 import PartnershipSection from '@/components/PartnershipSection'
 import WhyChooseSection from '@/components/WhyChooseSection'
@@ -22,6 +23,8 @@ export default function Home() {
           Expert-led courses, guided study plans, mock quizzes, visual summaries, and exam-readiness support — everything you need to prepare for your BCS certification with confidence and accelerate your career, all designed for busy professionals like you.
         </p>
       </section>
+
+      <BannerSection />
 
       <WhoWeHelpSection />
 

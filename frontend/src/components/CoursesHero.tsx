@@ -19,6 +19,7 @@ type Phase = 'idle' | 'left-in' | 'hold-left' | 'left-out' | 'right-in' | 'hold-
 export default function CoursesHero() {
   const [phase, setPhase] = useState<Phase>('idle')
   const sectionRef = useRef<HTMLElement>(null)
+  const startedRef = useRef(false)
 
   useEffect(() => {
     const el = sectionRef.current
@@ -26,7 +27,8 @@ export default function CoursesHero() {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !startedRef.current) {
+          startedRef.current = true
           setPhase('left-in')
         }
       },
@@ -67,29 +69,27 @@ export default function CoursesHero() {
   }, [phase])
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-32 relative overflow-hidden min-h-[60vh] flex items-center"
+    <section ref={sectionRef} className="pt-16 pb-4 relative overflow-hidden min-h-[45vh] flex items-center"
       style={{ backgroundColor: 'var(--bg-secondary)' }}>
       <div className="absolute inset-0 bg-hero-glow pointer-events-none opacity-40" />
       <div className="relative max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="flex items-center justify-center gap-8 md:gap-16 lg:gap-24">
+        <div className="flex items-center justify-center gap-4 md:gap-10 lg:gap-16 xl:gap-24">
           {/* Left Avatars */}
-          <div className="flex flex-col gap-6 md:gap-8">
+          <div className="flex flex-col gap-4 md:gap-6">
             {leftAvatars.map((avatar, i) => (
               <div key={avatar.word}
-                className={`flex items-center gap-4 md:gap-6 transition-all duration-700 ease-out ${
+                className={`flex items-center gap-3 md:gap-5 transition-all duration-700 ease-out ${
                   phase === 'left-in' || phase === 'hold-left'
                     ? 'opacity-100 translate-x-0'
-                    : phase === 'idle'
-                    ? 'opacity-0 -translate-x-24'
                     : 'opacity-0 -translate-x-24'
                 }`}
                 style={{ transitionDelay: `${i * 250}ms` }}
               >
-                <div className="w-14 h-14 md:w-20 md:h-20 rounded-full overflow-hidden border-2 shadow-lg flex-shrink-0"
+                <div className="w-14 h-14 md:w-20 md:h-20 rounded-full overflow-hidden border-2 shadow-lg flex-shrink-0 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_25px_rgba(212,175,55,0.4)]"
                   style={{ borderColor: 'var(--brand-gold)' }}>
                   <img src={avatar.src} alt={avatar.word} className="w-full h-full object-cover" />
                 </div>
-                <span className="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-7xl uppercase tracking-wide leading-none"
+                <span className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-8xl uppercase tracking-wide leading-none"
                   style={{ color: 'var(--text-core)' }}>
                   {avatar.word}
                 </span>
@@ -98,7 +98,7 @@ export default function CoursesHero() {
           </div>
 
           {/* Right Avatars */}
-          <div className="flex flex-col gap-6 md:gap-8">
+          <div className="flex flex-col gap-4 md:gap-6">
             {rightAvatars.map((avatar, i) => (
               <div key={i}
                 className={`transition-all duration-700 ease-out ${
@@ -108,7 +108,7 @@ export default function CoursesHero() {
                 }`}
                 style={{ transitionDelay: `${i * 250}ms` }}
               >
-                <div className="w-14 h-14 md:w-20 md:h-20 rounded-full overflow-hidden border-2 shadow-lg"
+                <div className="w-14 h-14 md:w-20 md:h-20 rounded-full overflow-hidden border-2 shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-[0_0_25px_rgba(212,175,55,0.4)]"
                   style={{ borderColor: 'var(--brand-gold)' }}>
                   <img src={avatar.src} alt={`Avatar ${i + 4}`} className="w-full h-full object-cover" />
                 </div>

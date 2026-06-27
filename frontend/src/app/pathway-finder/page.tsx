@@ -3,7 +3,7 @@
 import { useState, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ChevronRight, CheckCircle2, Phone, Search, Compass, BarChart3, Users, Star, ArrowRight, BookOpen, MessageCircle, Target, ClipboardList, Sparkles, GraduationCap, CheckCircle, Award, Clock, ShieldCheck, TrendingUp } from 'lucide-react'
+import { ChevronRight, CheckCircle2, Phone, Compass, BarChart3, Users, Star, ArrowRight, CheckCircle, ClipboardList, Award, ShieldCheck, TrendingUp } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
 
 const examFocusBooks = [
@@ -590,68 +590,45 @@ export default function PathwayFinder() {
     <div className="min-h-screen relative">
       {/* Section 1 — Book Carousel */}
       <section className="pt-24 overflow-hidden" style={{ backgroundColor: 'var(--bg-primary)' }}>
-        <div className="flex gap-6 overflow-x-hidden py-6 select-none cursor-grab" style={{ scrollBehavior: 'auto' }}>
-          {[...examFocusBooks, ...examFocusBooks].map((book, i) => (
-            <div key={i} className="flex-shrink-0 flex flex-col items-center group/book">
-              <div
-                className="relative w-[8.75rem] sm:w-[10rem] md:w-[11.875rem] aspect-[3/4] rounded-xl overflow-hidden transition-all duration-300 pointer-events-none group-hover/book:scale-[1.02]"
-                style={{ boxShadow: 'rgba(0,0,0,0.12) 0px 8px 30px', backgroundColor: 'var(--bg-card)' }}
-              >
-                <Image
-                  src={book.src}
-                  alt={book.title}
-                  fill
-                  className="object-cover"
-                  draggable={false}
-                  sizes="(max-width: 640px) 140px, (max-width: 768px) 160px, 190px"
-                />
+        <div
+          className="flex gap-6 overflow-x-hidden py-6 select-none group/banner"
+          style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%)' }}
+        >
+          <div className="flex gap-6 animate-marquee group-hover/banner:animate-marquee-paused">
+            {[...examFocusBooks, ...examFocusBooks, ...examFocusBooks, ...examFocusBooks].map((book, i) => (
+              <Link key={i} href="/courses" className="flex-shrink-0 flex flex-col items-center group/book no-underline">
                 <div
-                  className="absolute top-3 right-3 text-white font-bold px-2 py-1 rounded-lg shadow-xl z-10 flex flex-col items-center border"
-                  style={{ backgroundColor: 'rgba(220,38,38,0.9)', borderColor: 'rgba(220,38,38,0.5)' }}
+                  className="relative w-[8.75rem] sm:w-[10rem] md:w-[11.875rem] aspect-[3/4] overflow-hidden transition-all duration-300 group-hover/book:scale-[1.04] group-hover/book:shadow-[0_0_25px_rgba(212,175,55,0.25)] hover-glow"
+                  style={{ boxShadow: 'rgba(0,0,0,0.12) 0px 8px 30px', backgroundColor: 'var(--bg-card)', border: '1px solid transparent' }}
                 >
-                  <span className="line-through text-[0.65rem] leading-none opacity-80 mb-0.5">{book.oldPrice}</span>
-                  <span className="text-sm leading-none">{book.salePrice}</span>
+                  <Image
+                    src={book.src}
+                    alt={book.title}
+                    fill
+                    className="object-cover pointer-events-none"
+                    draggable={false}
+                    sizes="(max-width: 640px) 140px, (max-width: 768px) 160px, 190px"
+                  />
+                  <div
+                    className="absolute top-3 right-3 text-white font-bold px-2 py-1 z-10 flex flex-col items-center border"
+                    style={{ backgroundColor: 'rgba(220,38,38,0.9)', borderColor: 'rgba(220,38,38,0.5)' }}
+                  >
+                    <span className="line-through text-[0.65rem] leading-none opacity-80 mb-0.5">{book.oldPrice}</span>
+                    <span className="text-sm leading-none">{book.salePrice}</span>
+                  </div>
                 </div>
-              </div>
-              <div className="mt-4 w-[8.75rem] sm:w-[10rem] md:w-[11.875rem] text-center px-1">
-                <p className="text-sm md:text-base font-semibold leading-snug px-2 py-1 rounded border" style={{ color: 'var(--text-core)', borderColor: 'var(--border)', backgroundColor: 'var(--bg-card)' }}>
-                  {book.title}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Section 2 — Why Take This Assessment */}
-      <section className="py-20" style={{ backgroundColor: 'var(--bg-primary)' }}>
-        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <h2 className="font-display text-3xl sm:text-4xl font-black text-center mb-4" style={{ color: 'var(--text-core)' }}>
-              Why Take This <span style={{ color: 'var(--brand-gold)' }}>Assessment?</span>
-            </h2>
-            <p className="text-center max-w-2xl mx-auto mb-12 text-lg" style={{ color: 'var(--text-secondary)' }}>
-              Choosing the right BCS Diploma pathway is a critical career decision. Let us help you make an informed choice.
-            </p>
-          </AnimatedSection>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: Compass, title: 'Personalised Guidance', desc: 'Get a tailored pathway recommendation based on your background, skills, and career aspirations.' },
-              { icon: BarChart3, title: 'Data-Driven Matching', desc: 'Our algorithm analyses your responses against proven career progression data to find your best fit.' },
-              { icon: Clock, title: 'Takes Only 5 Minutes', desc: 'Answer 8 simple questions and receive your personalised pathway recommendation instantly.' },
-              { icon: ShieldCheck, title: 'No Commitment Required', desc: 'Your results are guidance only. You remain free to choose the pathway that feels right for you.' },
-            ].map((ben, i) => (
-              <AnimatedSection key={i} delay={i * 80}>
-                <div className="p-6 rounded-2xl border h-full text-center" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
-                  <ben.icon className="w-10 h-10 mx-auto mb-4" style={{ color: 'var(--brand-gold)' }} />
-                  <h3 className="font-bold text-lg mb-2" style={{ color: 'var(--text-core)' }}>{ben.title}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{ben.desc}</p>
+                <div className="mt-4 w-[8.75rem] sm:w-[10rem] md:w-[11.875rem] text-center px-1">
+                  <p className="text-sm md:text-base font-semibold leading-snug px-2 py-1 border transition-all duration-300 group-hover/book:border-[color:var(--brand-gold)]" style={{ color: 'var(--text-core)', borderColor: 'var(--border)', backgroundColor: 'var(--bg-card)' }}>
+                    {book.title}
+                  </p>
                 </div>
-              </AnimatedSection>
+              </Link>
             ))}
           </div>
         </div>
       </section>
+
+
 
       {/* Section 3 — Standalone Title */}
       <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
@@ -676,40 +653,7 @@ export default function PathwayFinder() {
         </div>
       </section>
 
-      {/* Section 4 — How It Works */}
-      <section className="py-20" style={{ backgroundColor: 'var(--bg-primary)' }}>
-        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <h2 className="font-display text-3xl sm:text-4xl font-black text-center mb-4" style={{ color: 'var(--text-core)' }}>
-              How It <span style={{ color: 'var(--brand-gold)' }}>Works</span>
-            </h2>
-            <p className="text-center max-w-2xl mx-auto mb-12 text-lg" style={{ color: 'var(--text-secondary)' }}>
-              Four simple steps to discover your ideal BCS Diploma pathway.
-            </p>
-          </AnimatedSection>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            {[
-              { icon: ClipboardList, step: '01', title: 'Tell Us About You', desc: 'Share your background, experience level, and current role so we can understand where you are starting from.' },
-              { icon: Search, step: '02', title: 'Define Your Goals', desc: 'Select your career direction, preferred job titles, and the type of BA work that excites you most.' },
-              { icon: Sparkles, step: '03', title: 'Set Your Preferences', desc: 'Choose your preferred technical level, learning goals, and diploma pathway preferences.' },
-              { icon: GraduationCap, step: '04', title: 'Get Your Recommendation', desc: 'Receive a personalised pathway recommendation with a detailed explanation of why it fits your profile.' },
-            ].map((item, i) => (
-              <AnimatedSection key={i} delay={i * 100}>
-                <div className="text-center">
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 relative" style={{ backgroundColor: 'rgba(212,175,55,0.1)' }}>
-                    <item.icon className="w-8 h-8" style={{ color: 'var(--brand-gold)' }} />
-                    <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full flex items-center justify-center text-[0.65rem] font-bold" style={{ backgroundColor: 'var(--brand-gold)', color: '#0f1115' }}>
-                      {item.step}
-                    </div>
-                  </div>
-                  <h3 className="font-bold text-lg mb-2" style={{ color: 'var(--text-core)' }}>{item.title}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{item.desc}</p>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* Section 5 — Start Assessment CTA with Trust Signals */}
       <section className="py-16" style={{ backgroundColor: 'var(--bg-secondary)' }}>
