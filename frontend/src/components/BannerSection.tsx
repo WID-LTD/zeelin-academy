@@ -15,17 +15,17 @@ function calcPercentOff(oldPrice: string, newPrice: string): string {
 
 // Original books list with pricing data
 const originalBooks = [
-  { src: '/exam_focus_foundation.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Foundation in Business Analysis', subtitle: 'A Zeelin Academy Companion Guide' },
-  { src: '/exam_focus_business_change.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Business Change', subtitle: 'A Zeelin Academy Companion Guide' },
-  { src: '/exam_focus_is_project_mgmt.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: IS Project Management', subtitle: 'A Zeelin Academy Companion Guide' },
-  { src: '/exam_focus_org_behaviour.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Organisational Behaviour', subtitle: 'A Zeelin Academy Companion Guide' },
-  { src: '/exam_focus_ba_practice.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Business Analysis Practice', subtitle: 'A Zeelin Academy Companion Guide' },
-  { src: '/exam_focus_requirements_eng.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Requirements Engineering', subtitle: 'A Zeelin Academy Companion Guide' },
-  { src: '/exam_focus_modelling_processes.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Modelling Business Processes', subtitle: 'A Zeelin Academy Companion Guide' },
-  { src: '/exam_focus_systems_modelling.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Systems Modelling Techniques', subtitle: 'A Zeelin Academy Companion Guide' },
-  { src: '/exam_focus_systems_development.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Systems Development Essentials', subtitle: 'A Zeelin Academy Companion Guide' },
-  { src: '/exam_focus_data_management.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Data Management Essentials', subtitle: 'A Zeelin Academy Companion Guide' },
-  { src: '/exam_focus_benefits_mgmt.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Benefits Management and Business Acceptance', subtitle: 'A Zeelin Academy Companion Guide' },
+  { src: '/exam_focus_foundation.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Foundation in Business Analysis' },
+  { src: '/exam_focus_business_change.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Business Change' },
+  { src: '/exam_focus_is_project_mgmt.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: IS Project Management' },
+  { src: '/exam_focus_org_behaviour.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Organisational Behaviour' },
+  { src: '/exam_focus_ba_practice.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Business Analysis Practice' },
+  { src: '/exam_focus_requirements_eng.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Requirements Engineering' },
+  { src: '/exam_focus_modelling_processes.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Modelling Business Processes' },
+  { src: '/exam_focus_systems_modelling.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Systems Modelling Techniques' },
+  { src: '/exam_focus_systems_development.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Systems Development Essentials' },
+  { src: '/exam_focus_data_management.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Data Management Essentials' },
+  { src: '/exam_focus_benefits_mgmt.png', price: '£100.00', oldPrice: '£129.99', title: 'Exam Focus: Benefits Management and Business Acceptance' },
 ].map(b => ({ ...b, percentOff: calcPercentOff(b.oldPrice, b.price) }))
 // Tripled for infinite smooth scroll buffer
 const books = [...originalBooks, ...originalBooks, ...originalBooks]
@@ -184,7 +184,6 @@ export default function BannerSection() {
                   {/* Book Title */}
                   <div className="mt-4 w-[8.75rem] sm:w-[10rem] md:w-[11.875rem] text-center px-1">
                     <p className="text-sm md:text-base font-semibold leading-snug px-2 py-1 rounded border" style={{ color: 'var(--text-core)', borderColor: 'var(--border)', backgroundColor: 'var(--bg-card)' }}>{book.title}</p>
-                    <p className="text-[0.6rem] md:text-xs leading-tight px-2 mt-1" style={{ color: 'var(--text-muted)' }}>{book.subtitle}</p>
                   </div>
                 </div>
               ))}
@@ -207,10 +206,10 @@ export default function BannerSection() {
           {/* Get the Strategy Guide */}
           <AnimatedSection delay={200}>
             <div className="w-full pt-10 border-t" style={{ borderColor: 'var(--border)' }}>
-              <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
                 
                 {/* Text Content */}
-                <div className="text-center lg:text-left">
+                <div className="text-center lg:text-left flex flex-col justify-center">
                   <h3 className="font-display text-3xl md:text-4xl lg:text-5xl font-black mb-4 leading-tight" style={{ color: 'var(--text-core)' }}>
                     Get the{' '}
                     <span style={{ color: 'var(--brand-gold)' }}>Business Analysis Strategy Guide to Business Analysis Exam Prep, Made Clear</span>
@@ -230,7 +229,7 @@ export default function BannerSection() {
 
                 {/* Video Content */}
                 <div 
-                  className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-[1.02]" 
+                  className="relative w-full h-full min-h-[320px] rounded-2xl overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-[1.02]" 
                   style={{ border: '1px solid var(--border)', backgroundColor: 'var(--bg-card)' }}
                 >
                   <iframe

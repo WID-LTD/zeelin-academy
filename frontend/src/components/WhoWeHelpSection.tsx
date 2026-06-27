@@ -54,7 +54,7 @@ export default function WhoWeHelpSection() {
   return (
     <section className="relative overflow-hidden py-10 lg:py-12" style={{ backgroundColor: 'var(--bg-secondary)' }}>
       <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
           {/* Left Column - Content */}
           <div className="space-y-8">
             <AnimatedSection delay={100}>
@@ -111,8 +111,8 @@ export default function WhoWeHelpSection() {
           </div>
 
           {/* Right Column - Photo Grid */}
-          <AnimatedSection direction="right" delay={200} duration={700} className="w-full">
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 h-[25rem] sm:h-[31.25rem] md:h-[37.5rem] 2xl:max-h-[45rem]">
+          <AnimatedSection direction="right" delay={200} duration={700} className="w-full h-full">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 h-full">
               {photos.map((img, i) => (
                 <div key={img.src}
                   className={`relative rounded-2xl overflow-hidden shadow-xl transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl ${i === 0 ? 'row-span-2 col-span-1' : ''}`}
