@@ -39,7 +39,7 @@ const routes = [
 
 export default function OfferSection() {
   return (
-    <section className="relative overflow-hidden py-16 md:py-28" style={{ backgroundColor: 'var(--bg-primary)' }}>
+    <section className="relative overflow-hidden pb-16 md:pb-28 pt-0" style={{ backgroundColor: 'var(--bg-primary)' }}>
       {/* Decorative glow */}
       <div className="absolute top-0 right-0 w-full h-full pointer-events-none overflow-hidden">
         <div className="absolute -top-32 -right-32 w-80 h-80 rounded-full opacity-[0.05]"
