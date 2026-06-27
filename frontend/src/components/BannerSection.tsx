@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import AnimatedSection from '@/components/AnimatedSection'
 
 const examFocusBooks = [
   { src: '/exam_focus_foundation.png', title: 'Exam Focus: Foundation in Business Analysis', oldPrice: '£129.99', salePrice: '£100.00' },
@@ -20,6 +21,7 @@ const examFocusBooks = [
 export default function BannerSection() {
   return (
     <section style={{ backgroundColor: 'var(--bg-primary)' }}>
+      {/* Top: Infinite-scroll book carousel */}
       <div
         className="flex gap-6 overflow-x-hidden py-6 select-none group/banner"
         style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%)' }}
@@ -56,6 +58,49 @@ export default function BannerSection() {
           ))}
         </div>
       </div>
+
+      {/* Bottom: Strategy Guide section */}
+      <AnimatedSection delay={200}>
+        <div className="w-full pt-10 pb-16" style={{ borderTop: '1px solid var(--border)' }}>
+          <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Text Content */}
+              <div className="text-center lg:text-left">
+                <h3 className="font-display text-3xl md:text-4xl lg:text-5xl font-black mb-4 leading-tight" style={{ color: 'var(--text-core)' }}>
+                  Get the{' '}
+                  <span style={{ color: 'var(--brand-gold)' }}>Business Analysis Strategy Guide to Business Analysis Exam Prep, Made Clear</span>
+                </h3>
+                <p className="text-base md:text-lg max-w-full mx-auto lg:mx-0 mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                  Zeelin Academy helps busy learners prepare for business analysis exams through structured teaching — guided study plans, mock quizzes, visual summaries, and exam-readiness support.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <Link href="/contact" className="btn-gold px-10 py-4 text-base font-bold inline-block text-center hover:scale-105 transition-transform">
+                    Download Free Guide
+                  </Link>
+                  <Link href="/courses" className="btn-outline-gold px-10 py-4 text-base font-bold inline-block text-center hover:scale-105 transition-transform">
+                    Explore Courses
+                  </Link>
+                </div>
+              </div>
+
+              {/* Video Content */}
+              <div
+                className="relative w-full min-h-[320px] overflow-hidden transition-all duration-300 hover:scale-[1.02]"
+                style={{ border: '1px solid var(--border)', backgroundColor: 'var(--bg-card)' }}
+              >
+                <video
+                  src="/home-video.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </AnimatedSection>
     </section>
   )
 }
