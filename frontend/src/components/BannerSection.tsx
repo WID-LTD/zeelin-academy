@@ -20,7 +20,7 @@ const examFocusBooks = [
 
 export default function BannerSection() {
   return (
-    <section style={{ backgroundColor: 'var(--bg-primary)' }}>
+    <section style={{ backgroundColor: 'transparent' }}>
       {/* Top: Infinite-scroll book carousel */}
       <div
         className="flex gap-6 overflow-x-hidden py-6 select-none group/banner"
@@ -66,17 +66,17 @@ export default function BannerSection() {
             <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Text Content */}
               <div className="text-center lg:text-left">
-                <h3 className="font-display text-3xl md:text-4xl lg:text-5xl font-black mb-4 leading-tight" style={{ color: 'var(--text-core)' }}>
+                <h3 className="font-display text-4xl md:text-5xl lg:text-6xl font-black mb-4 leading-tight" style={{ color: 'var(--text-core)' }}>
                   <span style={{ color: 'var(--brand-gold)' }}>Business Analysis Exam Prep, Made Clear</span>
                 </h3>
-                <p className="text-base md:text-lg max-w-full mx-auto lg:mx-0 mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                <p className="text-lg md:text-xl max-w-full mx-auto lg:mx-0 mb-8 leading-relaxed font-semibold" style={{ color: 'var(--text-secondary)' }}>
                   Zeelin Academy helps busy learners prepare for business analysis exams through structured teaching — guided study plans, mock quizzes, visual summaries, and exam-readiness support.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <Link href="/contact" className="btn-gold px-10 py-4 text-base font-bold inline-block text-center hover:scale-105 transition-transform">
+                  <Link href="/contact" className="btn-gold px-10 py-4 text-lg font-bold inline-block text-center hover:scale-105 transition-transform">
                     Download Free Guide
                   </Link>
-                  <Link href="/courses" className="btn-outline-gold px-10 py-4 text-base font-bold inline-block text-center hover:scale-105 transition-transform">
+                  <Link href="/courses" className="btn-outline-gold px-10 py-4 text-lg font-bold inline-block text-center hover:scale-105 transition-transform">
                     Explore Courses
                   </Link>
                 </div>

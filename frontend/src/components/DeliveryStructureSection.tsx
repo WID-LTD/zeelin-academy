@@ -17,20 +17,20 @@ const methods = [
 
 export default function DeliveryStructureSection() {
   return (
-    <section className="relative overflow-hidden py-16 md:py-20" style={{ backgroundColor: 'var(--bg-primary)' }}>
+    <section className="relative overflow-hidden py-16 md:py-20" style={{ backgroundColor: 'transparent' }}>
       <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column - Content */}
           <div className="space-y-6">
             <AnimatedSection delay={100}>
-              <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight" style={{ color: 'var(--text-core)' }}>
+              <h2 className="font-display text-4xl md:text-5xl font-black leading-tight" style={{ color: 'var(--text-core)' }}>
                 Course{' '}
                 <span style={{ color: 'var(--brand-gold)' }}>Delivery Structure</span>
               </h2>
             </AnimatedSection>
 
             <AnimatedSection delay={200}>
-              <p className="text-base md:text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              <p className="text-lg md:text-xl font-semibold leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 We break complex Business Analysis topics into small, clear, practical lessons that can be studied during a lunch break, commute, or evening study session. At Zeelin Academy our courses are delivered through structured Cohort and guided self-pace route. Our teaching method is built around the following:
               </p>
             </AnimatedSection>
@@ -50,10 +50,10 @@ export default function DeliveryStructureSection() {
                         }}
                       >
                         <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-                          style={{ backgroundColor: 'rgba(223,186,107,0.12)' }}>
+                          style={{ backgroundColor: 'rgba(212,160,42,0.12)' }}>
                           <Icon className="w-4.5 h-4.5" style={{ color: 'var(--brand-gold)' }} />
                         </div>
-                        <span className="text-sm font-semibold leading-snug" style={{ color: 'var(--text-core)' }}>
+                        <span className="text-sm font-bold leading-snug" style={{ color: 'var(--text-core)' }}>
                           {method.label}
                         </span>
                       </div>
@@ -70,9 +70,9 @@ export default function DeliveryStructureSection() {
               style={{ backgroundColor: 'var(--bg-card)' }}>
               {/* Gradient orbs */}
               <div className="absolute -top-10 -right-10 w-64 h-64 rounded-full opacity-[0.08] pointer-events-none"
-                style={{ background: 'radial-gradient(circle, #D4AF37, transparent 70%)' }} />
+                style={{ background: 'radial-gradient(circle, #D4A02A, transparent 70%)' }} />
               <div className="absolute -bottom-10 -left-10 w-56 h-56 rounded-full opacity-[0.06] pointer-events-none"
-                style={{ background: 'radial-gradient(circle, #B5952F, transparent 70%)' }} />
+                style={{ background: 'radial-gradient(circle, #B38916, transparent 70%)' }} />
 
               <SafeImage
                 src="/unique_teaching_method.png"
@@ -86,16 +86,16 @@ export default function DeliveryStructureSection() {
                 <div className="backdrop-blur-md rounded-xl px-4 py-3 shadow-lg border"
                   style={{
                     backgroundColor: 'var(--bg-card)',
-                    borderColor: 'rgba(223,186,107,0.25)',
+                    borderColor: 'rgba(212,160,42,0.25)',
                   }}>
                   <div className="flex items-center gap-2.5">
                     <div className="w-8 h-8 rounded-lg flex items-center justify-center"
-                      style={{ backgroundColor: 'rgba(223,186,107,0.12)' }}>
+                      style={{ backgroundColor: 'rgba(212,160,42,0.12)' }}>
                       <Zap className="w-4 h-4" style={{ color: 'var(--brand-gold)' }} />
                     </div>
                     <div>
                       <div className="text-xs font-bold" style={{ color: 'var(--text-core)' }}>Micro-Lessons</div>
-                      <div className="text-[0.625rem]" style={{ color: 'var(--text-muted)' }}>10-15 min each</div>
+                      <div className="text-[0.625rem] font-semibold" style={{ color: 'var(--text-muted)' }}>10-15 min each</div>
                     </div>
                   </div>
                 </div>
@@ -106,16 +106,16 @@ export default function DeliveryStructureSection() {
                 <div className="backdrop-blur-md rounded-xl px-4 py-3 shadow-lg border"
                   style={{
                     backgroundColor: 'var(--bg-card)',
-                    borderColor: 'rgba(223,186,107,0.25)',
+                    borderColor: 'rgba(212,160,42,0.25)',
                   }}>
                   <div className="flex items-center gap-2.5">
                     <div className="w-8 h-8 rounded-lg flex items-center justify-center"
-                      style={{ backgroundColor: 'rgba(223,186,107,0.12)' }}>
+                      style={{ backgroundColor: 'rgba(212,160,42,0.12)' }}>
                       <Award className="w-4 h-4" style={{ color: 'var(--brand-gold)' }} />
                     </div>
                     <div>
                       <div className="text-xs font-bold" style={{ color: 'var(--text-core)' }}>Exam Ready</div>
-                      <div className="text-[0.625rem]" style={{ color: 'var(--text-muted)' }}>BCS Aligned</div>
+                      <div className="text-[0.625rem] font-semibold" style={{ color: 'var(--text-muted)' }}>BCS Aligned</div>
                     </div>
                   </div>
                 </div>
