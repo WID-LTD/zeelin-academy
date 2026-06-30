@@ -31,7 +31,7 @@ export default function BannerSection() {
             <Link key={i} href="/courses" className="flex-shrink-0 flex flex-col items-center group/book no-underline">
               <div
                 className="relative w-[8.75rem] sm:w-[10rem] md:w-[11.875rem] aspect-[3/4] overflow-hidden transition-all duration-300 group-hover/book:scale-[1.04] group-hover/book:shadow-[0_0_25px_rgba(212,175,55,0.25)] hover-glow"
-                style={{ boxShadow: 'rgba(0,0,0,0.12) 0px 8px 30px', backgroundColor: 'var(--bg-card)', border: '1px solid transparent' }}
+                style={{ boxShadow: 'rgba(0,0,0,0.12) 0px 8px 30px', border: '1px solid transparent' }}
               >
                 <Image
                   src={book.src}
@@ -50,7 +50,7 @@ export default function BannerSection() {
                 </div>
               </div>
               <div className="mt-4 w-[8.75rem] sm:w-[10rem] md:w-[11.875rem] text-center px-1">
-                <p className="text-sm md:text-base font-semibold leading-snug px-2 py-1 border transition-all duration-300 group-hover/book:border-[color:var(--brand-gold)]" style={{ color: 'var(--text-core)', borderColor: 'var(--border)', backgroundColor: 'var(--bg-card)' }}>
+                <p className="text-sm md:text-base font-semibold leading-snug px-2 py-1 border transition-all duration-300 group-hover/book:border-[color:var(--brand-gold)]" style={{ color: 'var(--text-core)', borderColor: 'var(--border)', backgroundColor: 'transparent' }}>
                   {book.title}
                 </p>
               </div>

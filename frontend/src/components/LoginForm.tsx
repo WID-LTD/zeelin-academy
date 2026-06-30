@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useTheme } from './ThemeProvider'
 import { publicApi } from '@/lib/api'
 import type { LoginResponse } from '@/lib/types'
 import { AlertCircle, Loader2, ArrowLeft } from 'lucide-react'
@@ -28,7 +27,6 @@ export default function LoginForm({
   showForgotPassword,
   storageSetter,
 }: LoginFormProps) {
-  const { theme } = useTheme()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -53,7 +51,7 @@ export default function LoginForm({
 
   return (
     <div className="min-h-screen bg-[color:var(--bg-secondary)] flex items-center justify-center p-4">
-      <div className="max-w-5xl w-full bg-[color:var(--bg-primary)] rounded-[2rem] shadow-[0_8px_40px_rgb(0,0,0,0.08)] dark:shadow-[0_8px_40px_rgb(0,0,0,0.3)] flex overflow-hidden">
+      <div className="max-w-5xl w-full bg-[color:var(--bg-primary)] rounded-[2rem] shadow-[0_8px_40px_rgb(0,0,0,0.08)] flex overflow-hidden">
         
         {/* Left Side: Form */}
         <div className="w-full md:w-[50%] p-8 md:p-14 lg:p-16 flex flex-col justify-center relative">
@@ -61,7 +59,7 @@ export default function LoginForm({
           <div className="mb-10">
             <Link href="/">
               <Image
-                src={theme === 'dark' ? '/logo.png' : '/logo-light.png'}
+                src="/logo-light.png"
                 alt="Zeelin Academy"
                 width={150}
                 height={54}
@@ -114,7 +112,7 @@ export default function LoginForm({
             </div>
 
             {error && (
-              <div role="alert" className="p-3 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 text-sm flex items-center gap-2">
+              <div role="alert" className="p-3 rounded-lg bg-red-50 border border-red-200 text-red-600 text-sm flex items-center gap-2">
                 <AlertCircle className="w-5 h-5 shrink-0" />
                 {error}
               </div>
@@ -123,7 +121,7 @@ export default function LoginForm({
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-[#111827] dark:bg-white text-white dark:text-black font-semibold py-3.5 rounded-xl mt-4 hover:opacity-90 transition-all flex justify-center items-center shadow-md active:scale-[0.98]"
+              className="w-full bg-[#111827] text-white font-semibold py-3.5 rounded-xl mt-4 hover:opacity-90 transition-all flex justify-center items-center shadow-md active:scale-[0.98]"
             >
               {loading ? (
                 <>

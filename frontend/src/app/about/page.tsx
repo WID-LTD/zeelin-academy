@@ -118,8 +118,8 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="flex justify-center">
-            <div className="relative w-[350px] h-[350px] lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden border-2 border-dashed" style={{ borderColor: 'rgba(255,255,255,0.2)', backgroundColor: 'rgba(255,255,255,0.04)' }}>
-              <SafeImage src="/hero_mockup.png" alt="Zeelin Academy" fill className="object-cover" />
+            <div className="relative w-[280px] h-[280px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] 3xl:w-[480px] 3xl:h-[480px] rounded-full overflow-hidden border-[3px]" style={{ borderColor: 'var(--brand-gold)' }}>
+              <SafeImage src="/pic.jpg" alt="Dr Franklin Kalu" fill className="object-cover" />
             </div>
           </div>
         </div>

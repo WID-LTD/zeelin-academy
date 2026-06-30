@@ -44,23 +44,6 @@
   --logo-border: 2px solid var(--brand-gold);
 }
 
-.dark {
-  --bg-primary: #040A1A;
-  --bg-secondary: #0D1530;
-  --bg-card: #141E40;
-  --bg-card-hover: #1C2850;
-  --text-core: #F1F1F1;
-  --text-secondary: #D0D5E0;
-  --text-muted: #9CA3AF;
-  --border: #1C2850;
-  --border-hover: var(--brand-gold);
-  --text-nav: #FFFFFF;
-  --text-accent: #ECC863;
-  --btn-gold-text: #040A1A;
-  --logo-filter: none;
-  --logo-border: 2px solid var(--brand-gold);
-}
-
 html {
   font-size: clamp(16px, calc(100vw / 80), 32px);
 }
@@ -266,10 +249,6 @@ h1, h2, h3, h4, h5, h6 {
 .hover-lift:hover {
   transform: translateY(-2px) scale(1.01);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-}
-
-.dark .hover-lift:hover {
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
 .hover-glow {

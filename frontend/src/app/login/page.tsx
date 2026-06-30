@@ -4,13 +4,11 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useTheme } from '@/components/ThemeProvider'
 import { publicApi } from '@/lib/api'
 import { dispatchAuthEvent } from '@/lib/auth'
 import { AlertCircle, Loader2, ArrowLeft } from 'lucide-react'
 
 export default function LoginPage() {
-  const { theme } = useTheme()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -28,26 +26,17 @@ export default function LoginPage() {
         body: JSON.stringify({ email, password }),
       })
       const data = await res.json()
-      if (!res.ok) throw new Error(data.error || 'Invalid credentials')
 
-      // Store auth
-      localStorage.setItem('user-token', data.token)
-      localStorage.setItem('user-data', JSON.stringify(data.user))
-
-      // If admin, also store admin auth
-      if (data.user.role === 'admin') {
-        localStorage.setItem('admin-token', data.token)
-        localStorage.setItem('admin-user', JSON.stringify(data.user))
+      if (!res.ok) {
+        setError(data.message || data.error || 'Login failed')
+        return
       }
 
+      localStorage.setItem('token', data.token)
+      localStorage.setItem('user', JSON.stringify(data.user))
       dispatchAuthEvent()
 
-      // Redirect based on role
-      if (data.user.role === 'admin') {
-        router.push('/dashboard/admin')
-      } else {
-        router.push('/dashboard')
-      }
+      router.push('/dashboard')
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Connection failed')
     }
@@ -56,11 +45,11 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen bg-[color:var(--bg-secondary)] flex items-center justify-center p-4">
-      <div className="max-w-5xl w-full bg-[color:var(--bg-primary)] rounded-[2rem] shadow-[0_8px_40px_rgb(0,0,0,0.08)] dark:shadow-[0_8px_40px_rgb(0,0,0,0.3)] flex overflow-hidden">
+      <div className="max-w-5xl w-full bg-[color:var(--bg-primary)] rounded-[2rem] shadow-[0_8px_40px_rgb(0,0,0,0.08)] flex overflow-hidden">
         <div className="w-full md:w-[50%] p-8 md:p-14 lg:p-16 flex flex-col justify-center relative">
           <div className="mb-10">
             <Link href="/">
-              <Image src={theme === 'dark' ? '/logo.png' : '/logo-light.png'} alt="Zeelin Academy" width={150} height={54} className="w-auto h-[3rem] object-contain mb-10 drop-shadow-sm" priority />
+              <Image src="/logo-light.png" alt="Zeelin Academy" width={150} height={54} className="w-auto h-[3rem] object-contain mb-10 drop-shadow-sm" priority />
             </Link>
             <h1 className="text-3xl font-bold text-[color:var(--text-core)] mb-3">Welcome Back</h1>
             <p className="text-[color:var(--text-muted)] text-sm">Sign in to your account to continue.</p>
@@ -79,13 +68,13 @@ export default function LoginPage() {
             </div>
 
             {error && (
-              <div role="alert" className="p-3 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 text-sm flex items-center gap-2">
+              <div role="alert" className="p-3 rounded-lg bg-red-50 border border-red-200 text-red-600 text-sm flex items-center gap-2">
                 <AlertCircle className="w-5 h-5 shrink-0" /> {error}
               </div>
             )}
 
             <button type="submit" disabled={loading}
-              className="w-full bg-[#111827] dark:bg-white text-white dark:text-black font-semibold py-3.5 rounded-xl mt-4 hover:opacity-90 transition-all flex justify-center items-center shadow-md active:scale-[0.98]">
+              className="w-full bg-[#111827] text-white font-semibold py-3.5 rounded-xl mt-4 hover:opacity-90 transition-all flex justify-center items-center shadow-md active:scale-[0.98]">
               {loading ? <><Loader2 className="animate-spin -ml-1 mr-2 h-5 w-5" /> Signing in...</> : 'Sign in'}
             </button>
           </form>
