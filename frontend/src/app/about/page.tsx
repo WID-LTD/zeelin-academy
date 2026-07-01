@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import SafeImage from '@/components/SafeImage'
+import { GraduationCap, Layers, Award, Users, Lightbulb, HeartHandshake, TrendingUp, Wrench, ChevronRight, BookOpen, Globe } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'About Zeelin Academy | Our Story & Mission',
@@ -106,10 +107,15 @@ export default function AboutPage() {
               At Zeelin Academy, we empower busy professionals to build in-demand skills, pass with confidence, and advance their careers in Business Analysis.
             </p>
             <div className="flex flex-wrap gap-3 mb-8">
-              {['Expert-Led Training', 'Structured Learning', 'Proven Results', 'Supportive Community'].map((tag) => (
-                <span key={tag} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold" style={{ background: 'rgba(255,255,255,0.06)' }}>
-                  <span style={{ width: '10px', height: '10px', backgroundColor: 'var(--brand-gold)', borderRadius: '50%', display: 'inline-block' }} />
-                  {tag}
+              {[
+                { label: 'Expert-Led Training', icon: GraduationCap },
+                { label: 'Structured Learning', icon: Layers },
+                { label: 'Proven Results', icon: Award },
+                { label: 'Supportive Community', icon: Users },
+              ].map((tag) => (
+                <span key={tag.label} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold" style={{ background: 'rgba(255,255,255,0.06)' }}>
+                  <tag.icon className="w-4 h-4" style={{ color: 'var(--brand-gold)' }} />
+                  {tag.label}
                 </span>
               ))}
             </div>
@@ -127,10 +133,10 @@ export default function AboutPage() {
 
       {/* Section 2 — Founder Story: cream bg */}
       <section style={{ padding: '100px 5%', backgroundColor: 'var(--bg-cream)' }}>
-        <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <div className="relative" style={{ border: '1px solid var(--brand-gold)', padding: '12px', borderRadius: '8px', textAlign: 'center' }}>
-              <div className="relative w-full h-[350px] overflow-hidden" style={{ backgroundColor: '#1A263F', borderRadius: '4px', marginBottom: '12px' }}>
+        <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
+          <div className="flex">
+            <div className="relative w-full" style={{ border: '1px solid var(--brand-gold)', padding: '12px', borderRadius: '8px', textAlign: 'center', display: 'flex', flexDirection: 'column' }}>
+              <div className="relative w-full flex-1 overflow-hidden" style={{ backgroundColor: '#1A263F', borderRadius: '4px', marginBottom: '12px', minHeight: '300px' }}>
                 <SafeImage src="/pic.jpg" alt="Dr Franklin Kalu" fill className="object-cover" />
               </div>
               <div style={{ backgroundColor: '#0D1530', color: 'var(--brand-gold)', padding: '10px', fontSize: '0.9rem', fontWeight: 'bold', textTransform: 'uppercase', borderRadius: '4px' }}>
@@ -240,23 +246,35 @@ export default function AboutPage() {
       {/* Section 5 — Our Objective: navy bg */}
       <section style={{ backgroundColor: 'var(--navy-dark)', color: '#FFFFFF', padding: '80px 5%' }}>
         <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="relative w-full h-[350px] rounded-xl overflow-hidden" style={{ backgroundColor: 'var(--bg-card)' }}>
+            <SafeImage
+              src="/learning_experience.png"
+              alt="Zeelin Academy objective"
+              fill
+              className="object-cover"
+            />
+          </div>
           <div>
-            <div style={{ width: '32px', height: '32px', backgroundColor: 'var(--brand-gold)', borderRadius: '50%', marginBottom: '20px' }} />
             <h2 className="font-display text-4xl md:text-5xl font-black mb-6">
               Our <span style={{ color: 'var(--brand-gold)' }}>Objective</span>
             </h2>
-            <p className="text-lg font-semibold leading-relaxed" style={{ opacity: 0.9 }}>
+            <p className="text-lg font-semibold leading-relaxed mb-10" style={{ opacity: 0.9 }}>
               To provide structured, practical, and accessible Business Analysis training that helps learners from all backgrounds build confidence, achieve certification success, and develop the skills needed to contribute meaningfully to organisations worldwide.
             </p>
-          </div>
-          <div className="grid grid-cols-2 gap-5">
-            {objectives.map((obj) => (
-              <div key={obj.title} style={{ background: 'rgba(255,255,255,0.04)', padding: '25px', borderRadius: '6px' }}>
-                <div style={{ width: '20px', height: '20px', backgroundColor: 'var(--brand-gold)', borderRadius: '4px', marginBottom: '10px' }} />
-                <h4 className="font-display text-xl font-bold mb-1" style={{ color: '#FFFFFF' }}>{obj.title}</h4>
-                <p className="text-sm font-semibold" style={{ opacity: 0.8 }}>{obj.desc}</p>
-              </div>
-            ))}
+            <div className="grid grid-cols-2 gap-5">
+              {objectives.map((obj) => (
+                <div key={obj.title} style={{ background: 'rgba(255,255,255,0.04)', padding: '25px', borderRadius: '6px' }}>
+                  <div className="mb-3" style={{ color: 'var(--brand-gold)' }}>
+                    {obj.title === 'Structured Learning' && <BookOpen className="w-5 h-5" />}
+                    {obj.title === 'For All Backgrounds' && <Users className="w-5 h-5" />}
+                    {obj.title === 'Certification Success' && <Award className="w-5 h-5" />}
+                    {obj.title === 'Global Impact' && <Globe className="w-5 h-5" />}
+                  </div>
+                  <h4 className="font-display text-xl font-bold mb-1" style={{ color: '#FFFFFF' }}>{obj.title}</h4>
+                  <p className="text-sm font-semibold" style={{ opacity: 0.8 }}>{obj.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -270,13 +288,19 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-12 text-left">
             {values.map((v) => (
               <div key={v.title} style={{ backgroundColor: 'var(--white)', borderRadius: '8px', padding: '30px 20px', textAlign: 'left', borderTop: '4px solid var(--brand-gold)', borderLeft: '1px solid var(--border)', borderRight: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
-                <div style={{ width: '24px', height: '24px', backgroundColor: 'var(--dark-gold)', borderRadius: '4px', marginBottom: '15px' }} />
+                <div className="mb-3" style={{ color: 'var(--dark-gold)' }}>
+                  {v.title === 'Clarity' && <Lightbulb className="w-5 h-5" />}
+                  {v.title === 'Structure' && <Layers className="w-5 h-5" />}
+                  {v.title === 'Support' && <HeartHandshake className="w-5 h-5" />}
+                  {v.title === 'Confidence' && <TrendingUp className="w-5 h-5" />}
+                  {v.title === 'Practical learning' && <Wrench className="w-5 h-5" />}
+                </div>
                 <h4 className="font-display text-xl font-bold mb-1" style={{ color: 'var(--navy-dark)' }}>{v.title}</h4>
                 <p className="text-sm font-semibold mb-5" style={{ color: 'var(--text-muted)' }}>{v.desc}</p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                   {v.examples.map((ex, i) => (
                     <li key={i} className="flex gap-3 text-sm font-semibold mb-3" style={{ color: 'var(--text-secondary)' }}>
-                      <span style={{ width: '12px', height: '12px', backgroundColor: 'var(--brand-gold)', borderRadius: '2px', flexShrink: 0, marginTop: '4px' }} />
+                      <ChevronRight className="w-3.5 h-3.5 flex-shrink-0 mt-1" style={{ color: 'var(--brand-gold)' }} />
                       {ex}
                     </li>
                   ))}

@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import SafeImage from '@/components/SafeImage'
+import AnimatedSection from '@/components/AnimatedSection'
 
 const courses = [
   {
@@ -31,29 +32,51 @@ export default function CourseHighlightSection() {
   return (
     <section style={{ padding: '100px 5%' }}>
       <div className="max-w-[1600px] 3xl:max-w-[2400px] mx-auto">
-        <h2 className="font-display text-4xl md:text-5xl font-black text-center mb-12" style={{ color: 'var(--navy-dark)' }}>
-          All the Courses <span style={{ color: 'var(--dark-gold)' }}>We Offer</span>
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {courses.map((course) => (
-            <div key={course.title} style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '8px', overflow: 'hidden' }}>
-              <div className="relative w-full h-[200px]" style={{ backgroundColor: '#DDD' }}>
-                <SafeImage src={course.image} alt={course.title} fill className="object-cover" />
-              </div>
-              <div style={{ padding: '28px' }}>
-                <h3 className="font-display text-xl font-bold mb-3" style={{ color: 'var(--navy-dark)' }}>{course.title}</h3>
-                <div style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-muted)', marginBottom: '15px' }}>
-                  <span>{course.duration}</span>
-                </div>
-                <p className="text-base font-semibold mb-5" style={{ color: 'var(--text-secondary)' }}>{course.desc}</p>
-                <Link
-                  href={course.href}
-                  className="btn-gold w-full text-center justify-center text-base"
-                >
-                  View Course Details
-                </Link>
-              </div>
+        {/* Split layout: heading left, image right */}
+        <AnimatedSection delay={100}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <h2 className="font-display text-4xl md:text-5xl font-black mb-6" style={{ color: 'var(--navy-dark)' }}>
+                All the Courses <span style={{ color: 'var(--dark-gold)' }}>We Offer</span>
+              </h2>
+              <p className="text-lg font-semibold leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                Comprehensive BCS Diploma preparation — from Foundation through to Benefits Management.
+              </p>
             </div>
+            <div className="relative w-full h-[280px] rounded-xl overflow-hidden" style={{ backgroundColor: 'var(--bg-card)' }}>
+              <SafeImage
+                src="/learning_experience.png"
+                alt="Zeelin Academy courses"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </AnimatedSection>
+
+        {/* Course cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {courses.map((course, idx) => (
+            <AnimatedSection key={course.title} delay={200 + idx * 100}>
+              <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '8px', overflow: 'hidden' }}>
+                <div className="relative w-full h-[200px]" style={{ backgroundColor: '#DDD' }}>
+                  <SafeImage src={course.image} alt={course.title} fill className="object-cover" />
+                </div>
+                <div style={{ padding: '28px' }}>
+                  <h3 className="font-display text-xl font-bold mb-3" style={{ color: 'var(--navy-dark)' }}>{course.title}</h3>
+                  <div style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-muted)', marginBottom: '15px' }}>
+                    <span>{course.duration}</span>
+                  </div>
+                  <p className="text-base font-semibold mb-5" style={{ color: 'var(--text-secondary)' }}>{course.desc}</p>
+                  <Link
+                    href={course.href}
+                    className="btn-gold w-full text-center justify-center text-base"
+                  >
+                    View Course Details
+                  </Link>
+                </div>
+              </div>
+            </AnimatedSection>
           ))}
         </div>
       </div>
