@@ -65,7 +65,7 @@ export default function OfferSection() {
           </div>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {routes.map((route, idx) => {
             const Icon = route.icon
             return (

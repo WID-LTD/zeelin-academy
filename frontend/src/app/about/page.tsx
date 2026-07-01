@@ -211,7 +211,7 @@ export default function AboutPage() {
                   )}
                 </div>
                 <div className="flex-1">
-                  <div className="relative w-full h-[100px] overflow-hidden mb-3" style={{ backgroundColor: '#DDD', borderRadius: '4px' }}>
+                  <div className="relative w-full h-[80px] sm:h-[100px] overflow-hidden mb-3" style={{ backgroundColor: '#DDD', borderRadius: '4px' }}>
                     <SafeImage src={m.image} alt={m.year} fill className="object-cover" />
                   </div>
                   <h4 className="font-display text-xl font-bold mb-1" style={{ color: 'var(--dark-gold)' }}>{m.year} — {m.title}</h4>
@@ -246,7 +246,7 @@ export default function AboutPage() {
       {/* Section 5 — Our Objective: navy bg */}
       <section style={{ backgroundColor: 'var(--navy-dark)', color: '#FFFFFF', padding: '80px 5%' }}>
         <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="relative w-full h-[350px] rounded-xl overflow-hidden" style={{ backgroundColor: 'var(--bg-card)' }}>
+          <div className="relative w-full h-[220px] sm:h-[350px] rounded-xl overflow-hidden" style={{ backgroundColor: 'var(--bg-card)' }}>
             <SafeImage
               src="/learning_experience.png"
               alt="Zeelin Academy objective"
@@ -261,9 +261,9 @@ export default function AboutPage() {
             <p className="text-lg font-semibold leading-relaxed mb-10" style={{ opacity: 0.9 }}>
               To provide structured, practical, and accessible Business Analysis training that helps learners from all backgrounds build confidence, achieve certification success, and develop the skills needed to contribute meaningfully to organisations worldwide.
             </p>
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
               {objectives.map((obj) => (
-                <div key={obj.title} style={{ background: 'rgba(255,255,255,0.04)', padding: '25px', borderRadius: '6px' }}>
+                <div key={obj.title} className="p-5 sm:p-6" style={{ background: 'rgba(255,255,255,0.04)', borderRadius: '6px' }}>
                   <div className="mb-3" style={{ color: 'var(--brand-gold)' }}>
                     {obj.title === 'Structured Learning' && <BookOpen className="w-5 h-5" />}
                     {obj.title === 'For All Backgrounds' && <Users className="w-5 h-5" />}
@@ -285,7 +285,7 @@ export default function AboutPage() {
           <h2 className="font-display text-4xl md:text-5xl font-black mb-4" style={{ color: 'var(--navy-dark)' }}>
             The Principles That Guide<br /><span style={{ color: 'var(--dark-gold)' }}>Everything We Do</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-12 text-left">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 mt-12 text-left">
             {values.map((v) => (
               <div key={v.title} style={{ backgroundColor: 'var(--white)', borderRadius: '8px', padding: '30px 20px', textAlign: 'left', borderTop: '4px solid var(--brand-gold)', borderLeft: '1px solid var(--border)', borderRight: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
                 <div className="mb-3" style={{ color: 'var(--dark-gold)' }}>

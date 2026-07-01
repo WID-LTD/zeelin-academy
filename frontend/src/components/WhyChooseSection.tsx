@@ -59,7 +59,7 @@ export default function WhyChooseSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((f) => (
             <div key={f.tag} style={{ background: 'var(--bg-card)', borderRadius: '8px', overflow: 'hidden', textAlign: 'left', boxShadow: '0 4px 20px rgba(0,0,0,0.04)', border: '1px solid var(--border)' }}>
-              <div className="relative w-full h-[150px]" style={{ backgroundColor: '#E8E2D4' }}>
+              <div className="relative w-full h-[120px] sm:h-[150px]" style={{ backgroundColor: '#E8E2D4' }}>
                 <SafeImage src={f.image} alt={f.tag} fill className="object-cover" />
               </div>
               <div style={{ padding: '28px' }}>

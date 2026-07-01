@@ -43,7 +43,7 @@ export default function CourseHighlightSection() {
                 Comprehensive BCS Diploma preparation — from Foundation through to Benefits Management.
               </p>
             </div>
-            <div className="relative w-full h-[280px] rounded-xl overflow-hidden" style={{ backgroundColor: 'var(--bg-card)' }}>
+            <div className="relative w-full h-[200px] sm:h-[280px] rounded-xl overflow-hidden" style={{ backgroundColor: 'var(--bg-card)' }}>
               <SafeImage
                 src="/learning_experience.png"
                 alt="Zeelin Academy courses"
@@ -55,11 +55,11 @@ export default function CourseHighlightSection() {
         </AnimatedSection>
 
         {/* Course cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {courses.map((course, idx) => (
             <AnimatedSection key={course.title} delay={200 + idx * 100}>
               <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '8px', overflow: 'hidden' }}>
-                <div className="relative w-full h-[200px]" style={{ backgroundColor: '#DDD' }}>
+                <div className="relative w-full h-[160px] sm:h-[200px]" style={{ backgroundColor: '#DDD' }}>
                   <SafeImage src={course.image} alt={course.title} fill className="object-cover" />
                 </div>
                 <div style={{ padding: '28px' }}>

@@ -31,7 +31,7 @@ export default function WhoWeHelpSection() {
           </h2>
           <ul style={{ listStyle: 'none' }}>
             {audiences.map((item) => (
-              <li key={item} style={{ marginBottom: '18px', fontSize: '1.15rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '14px' }}>
+              <li key={item} className="text-base sm:text-lg mb-[18px]" style={{ fontWeight: 600, display: 'flex', alignItems: 'center', gap: '14px' }}>
                 <span style={{
                   color: 'var(--dark-gold)',
                   fontWeight: 'bold',
@@ -50,16 +50,12 @@ export default function WhoWeHelpSection() {
             ))}
           </ul>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-[15px]">
           {mosaicImages.map((img, i) => (
-            <div key={i} style={{
-              gridColumn: img.span === 2 ? 'span 2' : 'span 1',
-              height: '200px',
-              borderRadius: '6px',
-              overflow: 'hidden',
-              position: 'relative',
-            }}>
-              <SafeImage src={img.src} alt="" fill className="object-cover" />
+            <div key={i} className={img.span === 2 ? 'col-span-2' : 'col-span-1'}>
+              <div className="relative w-full h-[120px] sm:h-[160px] md:h-[200px] rounded-[6px] overflow-hidden">
+                <SafeImage src={img.src} alt="" fill className="object-cover" />
+              </div>
             </div>
           ))}
         </div>
