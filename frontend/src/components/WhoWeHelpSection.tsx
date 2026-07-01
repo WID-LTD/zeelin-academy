@@ -23,7 +23,7 @@ const mosaicImages = [
 
 export default function WhoWeHelpSection() {
   return (
-    <section style={{ backgroundColor: '#F3EFE3', padding: '80px 5%' }}>
+    <section className="py-16 lg:py-20 px-[5%]" style={{ backgroundColor: '#F3EFE3' }}>
       <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           <h2 className="font-display text-4xl md:text-5xl font-black mb-8" style={{ color: 'var(--navy-dark)' }}>

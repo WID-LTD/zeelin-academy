@@ -132,7 +132,7 @@ export default function AboutPage() {
       </section>
 
       {/* Section 2 — Founder Story: cream bg */}
-      <section style={{ padding: '100px 5%', backgroundColor: 'var(--bg-cream)' }}>
+      <section className="py-16 lg:py-24 px-[5%]" style={{ backgroundColor: 'var(--bg-cream)' }}>
         <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
           <div className="flex">
             <div className="relative w-full" style={{ border: '1px solid var(--brand-gold)', padding: '12px', borderRadius: '8px', textAlign: 'center', display: 'flex', flexDirection: 'column' }}>
@@ -178,7 +178,7 @@ export default function AboutPage() {
       </section>
 
       {/* Section 3 — Our Journey Timeline: white bg */}
-      <section style={{ padding: '100px 5%', backgroundColor: 'var(--white)' }}>
+      <section className="py-16 lg:py-24 px-[5%]" style={{ backgroundColor: 'var(--white)' }}>
         <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
             <span className="inline-block text-sm font-bold uppercase tracking-wider mb-3" style={{ color: 'var(--dark-gold)' }}>Our Story</span>
@@ -280,7 +280,7 @@ export default function AboutPage() {
       </section>
 
       {/* Section 6 — Principles: cream bg, 5-column cards */}
-      <section style={{ padding: '100px 5%', textAlign: 'center', backgroundColor: 'var(--bg-cream)' }}>
+      <section className="py-16 lg:py-24 px-[5%]" style={{ textAlign: 'center', backgroundColor: 'var(--bg-cream)' }}>
         <div className="max-w-[1600px] 3xl:max-w-[2400px] mx-auto">
           <h2 className="font-display text-4xl md:text-5xl font-black mb-4" style={{ color: 'var(--navy-dark)' }}>
             The Principles That Guide<br /><span style={{ color: 'var(--dark-gold)' }}>Everything We Do</span>

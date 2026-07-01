@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function CallToActionSection() {
   return (
-    <section style={{ backgroundColor: 'var(--navy-dark)', color: 'var(--white)', textAlign: 'center', padding: '100px 20px' }}>
+    <section style={{ backgroundColor: 'var(--navy-dark)', color: 'var(--white)', textAlign: 'center', padding: '60px 20px' }}>
       <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto">
         <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-black mb-4 leading-tight">
           Ready to start your Business Analysis<br /><span style={{ color: 'var(--primary-gold)' }}>Certification journey?</span>

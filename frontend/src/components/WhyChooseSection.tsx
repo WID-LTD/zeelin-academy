@@ -43,7 +43,7 @@ const features = [
 
 export default function WhyChooseSection() {
   return (
-    <section style={{ padding: '100px 5%', textAlign: 'center' }}>
+    <section className="py-16 lg:py-24 px-[5%]" style={{ textAlign: 'center' }}>
       <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto">
         <h2 className="font-display text-4xl md:text-5xl font-black mb-4" style={{ color: 'var(--navy-dark)' }}>
           Why Choose <span style={{ color: 'var(--dark-gold)' }}>Zeelin Academy</span>

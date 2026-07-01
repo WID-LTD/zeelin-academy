@@ -43,7 +43,7 @@ const testimonials = [
 
 export default function TestimonialSection() {
   return (
-    <section style={{ padding: '100px 5%', backgroundColor: 'transparent' }}>
+    <section style={{ padding: '60px 5%', backgroundColor: 'transparent' }}>
       <div className="max-w-[1200px] 3xl:max-w-[2100px] mx-auto">
         <h2 className="font-display text-4xl md:text-5xl font-black text-center mb-12" style={{ color: 'var(--navy-dark)' }}>
           What Our <span style={{ color: 'var(--dark-gold)' }}>Students Say</span>

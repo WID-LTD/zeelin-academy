@@ -30,7 +30,7 @@ const courses = [
 
 export default function CourseHighlightSection() {
   return (
-    <section style={{ padding: '100px 5%' }}>
+    <section className="py-16 lg:py-24 px-[5%]">
       <div className="max-w-[1600px] 3xl:max-w-[2400px] mx-auto">
         {/* Split layout: heading left, image right */}
         <AnimatedSection delay={100}>
