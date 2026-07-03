@@ -1,0 +1,52 @@
+Act as an expert frontend engineer specialized in React, Vite, TypeScript, and Tailwind CSS. Build a highly responsive, pixel-perfect, accessible, and clean client-side implementation of the attached "EduFlow LMS" authentication page UI.
+
+### Tech Stack Details
+- Framework: React 18+ (with Functional Components and Hooks)
+- Build Tool: Vite
+- Language: TypeScript (strict typing, explicit interfaces where needed)
+- Styling: Tailwind CSS (with native arbitrary values if needed, no external CSS modules)
+- Icons: Lucide React (or standard inline SVGs if needed)
+
+### Page Structure & Responsiveness Rules
+The page must be fully responsive across all device breakpoints (Mobile, Tablet, Desktop, Wide screens):
+1. Mobile/Tablet Breakpoints (under 1024px): 
+   - Hide the left-side dark marketing banner entirely.
+   - Center the registration form on the screen with clean padding (px-4 to px-6).
+2. Desktop Breakpoint (1024px and above):
+   - Implement a clean two-column grid layout (`grid grid-cols-1 lg:grid-cols-2 min-h-screen`).
+   - Left Column: Dark blue/purple marketing banner (`bg-[#0B0A26]` or matching gradient).
+   - Right Column: The "Create your account" form centered perfectly vertically and horizontally.
+
+### UI Element Specifications
+
+1. Left Column (Marketing Banner):
+   - Top left: "school EduFlow LMS" branding with correct text sizing.
+   - Hero Text: "Join the future of learning." in a large, bold font weight.
+   - Subtitle: The provided descriptive paragraph about empowering educators.
+   - Visual Centerpiece: Render a responsive mock card wrapper that mimics the abstract, glossy graphic shown in the image.
+   - Bottom Stats: A grid layout containing "12k+ Active Learners" and "4.9/5 User Satisfaction".
+
+2. Right Column (Registration Form):
+   - Heading & Subheading: "Create your account" and "Join over 12,000+ learners today."
+   - OAuth Buttons: Two half-width buttons side-by-side for Google and Microsoft authentication, complete with modern border curves and subtle hover states.
+   - Divider: "OR REGISTER WITH EMAIL" text centered between two horizontal lines.
+   - Role Selector: Two selectable tab-like grid blocks ("Student" and "Instructor"). Use conditional Tailwind classes to show a purple border and background highlight when a role is selected. Handle text wrapping gracefully so "Student" and "Instructor" do not break awkwardly.
+   - Input Fields: Form controls for "Full Name", "Email address", and "Password".
+     - Placeholders: "Enter your full name", "name@company.com", and "Create a strong password".
+     - Style: Clean light borders, explicit labels, proper focus rings (`focus:ring-2 focus:ring-indigo-600`).
+     - Password Field: Include a functional interactive visibility toggle button ("visibility" text or an eye icon).
+   - Checkbox: A stylized checkbox input or custom wrapper for the "I agree to the Terms of Service and Privacy Policy" agreement.
+   - Action Button: Large, full-width purple accent button (`bg-[#3b2ae0]` or matching palette) with white text, crisp transitions, and a disabled state UI.
+   - Footer: "Already have an account? Log in" with the login phrase styled as an active link.
+
+### Functional & Code Quality Requirements
+- State Management: Implement standard React `useState` hooks to track:
+  - Selected role ('student' | 'instructor')
+  - Form field inputs (Full Name, Email, Password)
+  - Password visibility toggle (boolean)
+  - Terms acceptance checkbox (boolean)
+- Event Handling: Provide a typed `handleSubmit` function that prevents the default form action and logs the clean form payload to the console.
+- Code Safety: Use strict TypeScript interfaces for component props if you decide to break this layout down into sub-components (e.g., FormInput, OAuthButton).
+- Typography: Use standard sans-serif font fallbacks that scale naturally via Tailwind utility classes (`text-sm`, `text-base`, `text-2xl`, etc.).
+
+Please output clean, production-ready code with separate logical sections or sub-components where appropriate. Do not use external UI kit libraries (like Shadcn or Material UI)—rely completely on pure Tailwind utility classes for the layout and animations.
