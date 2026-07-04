@@ -1,0 +1,262 @@
+# EduFlow LMS – Professional Project Initialization
+
+You are a senior full-stack software engineer.
+
+Initialize a production-ready, scalable monorepo for **EduFlow LMS**. Focus only on setting up the project structure, installing dependencies, configuring the development environment, and creating a clean architecture. Do **not** implement any application features or business logic.
+
+## Tech Stack
+
+### Frontend
+
+* React 19
+* Vite
+* TypeScript
+* Tailwind CSS v4
+* React Router DOM
+* Axios
+* TanStack React Query
+* React Hook Form
+* Zod
+* Framer Motion
+* Lucide React
+* React Hot Toast
+* clsx
+* tailwind-merge
+* ESLint
+* Prettier
+
+### Backend
+
+* Node.js
+* Express.js
+* JavaScript (ES Modules)
+* JSON file database
+* JWT
+* bcrypt
+* express-validator
+* cors
+* dotenv
+* helmet
+* morgan
+* cookie-parser
+* uuid
+* nodemon
+
+---
+
+# Project Structure
+
+Create the following structure:
+
+```text
+EduFlow-LMS/
+
+├── frontend/
+│
+├── backend/
+│
+├── .gitignore
+├── README.md
+└── package.json
+```
+
+---
+
+## Frontend Setup
+
+Inside the frontend directory:
+
+* Create a React + Vite + TypeScript project.
+* Install and configure Tailwind CSS v4.
+* Configure ESLint and Prettier.
+* Configure path aliases (`@/`).
+* Create a `.env` file and `.env.example`.
+* Create a clean folder structure.
+
+Folder structure:
+
+```text
+src/
+│
+├── assets/
+├── components/
+│   ├── common/
+│   ├── forms/
+│   ├── layout/
+│   └── ui/
+│
+├── context/
+├── hooks/
+├── layouts/
+├── pages/
+│   ├── auth/
+│   ├── admin/
+│   ├── instructor/
+│   └── student/
+│
+├── routes/
+├── services/
+├── store/
+├── styles/
+├── types/
+├── utils/
+├── App.tsx
+└── main.tsx
+```
+
+Create placeholder files where appropriate (such as `App.tsx`, route files, layout files, and index files).
+
+---
+
+## Backend Setup
+
+Inside the backend directory:
+
+Initialize an Express.js project using **JavaScript**, not TypeScript.
+
+Use ES Modules (`import` / `export`).
+
+Create this folder structure:
+
+```text
+src/
+
+├── config/
+├── controllers/
+├── middleware/
+├── routes/
+├── services/
+├── models/
+├── database/
+│   ├── users.json
+│   ├── courses.json
+│   ├── lessons.json
+│   ├── quizzes.json
+│   ├── enrollments.json
+│   └── settings.json
+│
+├── utils/
+├── app.js
+└── server.js
+```
+
+Create empty placeholder files where appropriate.
+
+---
+
+## Install Frontend Dependencies
+
+Install:
+
+* react-router-dom
+* axios
+* @tanstack/react-query
+* react-hook-form
+* zod
+* @hookform/resolvers
+* framer-motion
+* lucide-react
+* react-hot-toast
+* clsx
+* tailwind-merge
+
+Development dependencies:
+
+* tailwindcss
+* @tailwindcss/vite
+* eslint
+* prettier
+* eslint-config-prettier
+* eslint-plugin-react-hooks
+* eslint-plugin-react-refresh
+
+---
+
+## Install Backend Dependencies
+
+Install:
+
+* express
+* cors
+* dotenv
+* helmet
+* morgan
+* cookie-parser
+* jsonwebtoken
+* bcrypt
+* express-validator
+* uuid
+
+Development dependencies:
+
+* nodemon
+
+Configure npm scripts:
+
+```json
+"dev": "nodemon src/server.js",
+"start": "node src/server.js"
+```
+
+---
+
+## Configuration
+
+Configure:
+
+### Frontend
+
+* Tailwind CSS
+* Vite
+* TypeScript
+* Path aliases
+* ESLint
+* Prettier
+
+### Backend
+
+* Express app
+* CORS
+* dotenv
+* Helmet
+* Morgan
+* Cookie Parser
+
+Create a basic server that responds with:
+
+```text
+EduFlow LMS API is running...
+```
+
+---
+
+## Git
+
+Create a professional `.gitignore` for both frontend and backend.
+
+---
+
+## README
+
+Create a README explaining:
+
+* Project structure
+* Installation
+* Running frontend
+* Running backend
+
+---
+
+## Important
+
+Do **NOT** create:
+
+* Authentication
+* API routes
+* Controllers
+* Database logic
+* UI components
+* Pages
+* Business logic
+
+Only initialize the project, install dependencies, configure the development environment, and create a professional folder structure suitable for a large-scale application.
