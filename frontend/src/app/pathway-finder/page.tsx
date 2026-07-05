@@ -3,7 +3,7 @@
 import { useState, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ChevronRight, CheckCircle2, Phone, Compass, BarChart3, Users, Star, ArrowRight, CheckCircle, ClipboardList, Award, ShieldCheck, TrendingUp } from 'lucide-react'
+import { ChevronRight, CheckCircle2, Phone, ArrowRight, CheckCircle, ClipboardList } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
 
 const examFocusBooks = [
@@ -621,66 +621,100 @@ export default function PathwayFinder() {
         </div>
       </section>
 
-      {/* Section 3 — Hero */}
-      <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: '#0B1120' }}>
-        <div className="relative max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Section 3 — Header matching template */}
+      <section style={{ backgroundColor: '#f7f4eb', padding: '50px 0 35px' }}>
+        <div className="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection delay={0}>
-            <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl uppercase tracking-wide leading-none">
-              <span style={{ color: '#ffffff' }}>Zeelin Diploma </span>
-              <span style={{ color: 'var(--brand-gold)' }}>Pathway Finder</span>
+            <h1 className="font-display" style={{ color: '#002855', fontSize: '42px', fontWeight: 700, letterSpacing: '1px', lineHeight: 1.1, margin: 0 }}>
+              ZEELIN DIPLOMA
             </h1>
-          </AnimatedSection>
-          <AnimatedSection delay={100}>
-            <p className="text-lg sm:text-xl mt-6 max-w-2xl mx-auto font-medium" style={{ color: 'var(--text-secondary)' }}>
-              Choose your Diploma modules with clarity and confidence.
+            <h2 className="font-display" style={{ color: '#c5a043', fontSize: '46px', fontWeight: 600, letterSpacing: '2px', lineHeight: 1.1, margin: '5px 0 20px 0' }}>
+              PATHWAY FINDER
+            </h2>
+            <div style={{ color: '#c5a043', fontSize: '14px', marginBottom: '20px' }}>✦</div>
+            <p style={{ fontSize: '15px', color: '#1c2b39', maxWidth: '620px', margin: '0 auto', lineHeight: 1.6 }}>
+              Choosing the right Diploma modules can be confusing, especially when learners are unsure which specialist route is best for their career. <br />
+              At Zeelin Academy, we do not believe learners should choose modules blindly. That is why we provide our Zeelin Diploma Pathway Finder — a guided module selection support process designed to help learners choose their knowledge-based and practitioner modules with clarity.
             </p>
-          </AnimatedSection>
-          <AnimatedSection delay={200}>
-            <button onClick={scrollToForm} className="btn-gold mt-8 px-10 py-4 text-lg font-bold inline-block">
-              Start Pathway Check
-            </button>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Section 5 — Start Assessment CTA with Trust Signals */}
-      <section className="py-16" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Section 4 — Stats + Start My Assessment with mature hand */}
+      <section style={{ backgroundColor: '#f7f4eb', padding: '20px 0 40px' }}>
+        <div className="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
-            <h2 className="font-display text-3xl sm:text-4xl font-black mb-4" style={{ color: 'var(--text-core)' }}>
-              Ready to Find Your <span style={{ color: 'var(--brand-gold)' }}>Pathway?</span>
-            </h2>
-            <p className="text-lg max-w-2xl mx-auto mb-10" style={{ color: 'var(--text-secondary)' }}>
+            <h3 className="font-display" style={{ color: '#222222', fontSize: '32px', fontWeight: 700, margin: '0 0 15px 0' }}>
+              Ready to Find Your <span style={{ color: '#c5a043' }}>Pathway?</span>
+            </h3>
+            <p style={{ fontSize: '16px', color: '#444444', maxWidth: '580px', margin: '0 auto 40px auto', lineHeight: 1.5 }}>
               Join thousands of professionals who have used our pathway finder to make confident diploma decisions.
             </p>
           </AnimatedSection>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto mb-10">
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4" style={{ maxWidth: '680px', margin: '0 auto 35px auto' }}>
             {[
-              { icon: Users, value: '3,500+', label: 'Assessments Completed' },
-              { icon: Star, value: '4.9/5', label: 'Satisfaction Rating' },
-              { icon: Award, value: '95%', label: 'Found It Helpful' },
-              { icon: TrendingUp, value: '82%', label: 'Chose Recommended Path' },
+              {
+                value: '3,500+', label: 'Assessments Completed',
+                path: <><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></>
+              },
+              {
+                value: '4.9/5', label: 'Satisfaction Rating',
+                path: <><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></>
+              },
+              {
+                value: '95%', label: 'Found It Helpful',
+                path: <><circle cx="12" cy="8" r="7" /><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" /></>
+              },
+              {
+                value: '82%', label: 'Chose Recommended Path',
+                path: <><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" /></>
+              },
             ].map((stat, i) => (
               <AnimatedSection key={i} delay={i * 80}>
                 <div className="text-center">
-                  <stat.icon className="w-7 h-7 mx-auto mb-2" style={{ color: 'var(--brand-gold)' }} />
-                  <div className="text-2xl font-black font-display" style={{ color: 'var(--text-core)' }}>{stat.value}</div>
-                  <div className="text-xs font-medium" style={{ color: 'var(--text-secondary)' }}>{stat.label}</div>
+                  <svg style={{ width: '28px', height: '28px', fill: 'none', stroke: '#c5a043', strokeWidth: 2, marginBottom: '8px' }} viewBox="0 0 24 24">
+                    {stat.path}
+                  </svg>
+                  <div style={{ fontSize: '20px', fontWeight: 700, color: '#222222' }}>{stat.value}</div>
+                  <div style={{ fontSize: '11px', color: '#666666', marginTop: '3px', fontWeight: 500 }}>{stat.label}</div>
                 </div>
               </AnimatedSection>
             ))}
           </div>
+
           <AnimatedSection delay={200}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button onClick={scrollToForm} className="btn-gold px-10 py-4 text-lg font-bold inline-flex items-center gap-3">
-                <ClipboardList className="w-5 h-5" />
+            <div style={{ position: 'relative', display: 'inline-block' }}>
+              <button onClick={scrollToForm} className="btn-gold" style={{ fontSize: '16px', fontWeight: 700, padding: '12px 28px', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                <ClipboardList className="w-4 h-4" />
                 Start My Assessment
               </button>
-              <Link href="/contact" className="btn-outline-gold px-10 py-4 text-lg font-bold inline-flex items-center gap-3">
-                <Phone className="w-5 h-5" />
-                Talk to an Advisor
-              </Link>
+              {/* Mature hand overlay */}
+              <div style={{ position: 'absolute', bottom: '-20px', right: '-35px', pointerEvents: 'none' }}>
+                <svg width="40" height="48" viewBox="0 0 40 48" fill="none" stroke="var(--brand-gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 42c-3-5-6-10-8-12-2-2-3-2-4-1s-1 3 1 5l3 4-2-3c-1-2-2-2-3 0s0 3 1 5l2 3-1-3c-1-2-2-2-2-1s0 3 1 4l2 2h12l-2-8" />
+                  <path d="M18 10V5a2.5 2.5 0 0 1 5 0v12" />
+                  <circle cx="20.5" cy="3.5" r="1.5" fill="var(--brand-gold)" stroke="none" />
+                </svg>
+              </div>
             </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Section 5 — Find Your Best-Fit Diploma Pathway + Start Pathway Check */}
+      <section style={{ backgroundColor: '#f7f4eb', padding: '40px 0 60px', borderTop: '2px solid rgba(197,160,67,0.15)' }}>
+        <div className="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedSection>
+            <h3 className="font-display" style={{ color: '#002855', fontSize: '36px', fontWeight: 700, margin: '0 0 20px 0' }}>
+              Find Your Best-Fit <span style={{ color: '#c5a043' }}>Diploma Pathway</span>
+            </h3>
+            <p style={{ fontSize: '16px', color: '#222222', maxWidth: '620px', margin: '0 auto 35px auto', lineHeight: 1.6 }}>
+              Choosing your Business Analysis Diploma modules can feel confusing. Our pathway finder helps you identify a suitable route based on your background, confidence level, career direction, and the type of Business Analyst you want to become.
+            </p>
+            <button onClick={scrollToForm} className="btn-gold" style={{ fontSize: '16px', fontWeight: 700, padding: '12px 32px' }}>
+              Start Pathway Check
+            </button>
           </AnimatedSection>
         </div>
       </section>
