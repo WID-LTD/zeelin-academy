@@ -689,32 +689,11 @@ export default function PathwayFinder() {
                 <ClipboardList className="w-4 h-4" />
                 Start My Assessment
               </button>
-              {/* Mature hand overlay */}
-              <div style={{ position: 'absolute', bottom: '-20px', right: '-35px', pointerEvents: 'none' }}>
-                <svg width="40" height="48" viewBox="0 0 40 48" fill="none" stroke="var(--brand-gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M18 42c-3-5-6-10-8-12-2-2-3-2-4-1s-1 3 1 5l3 4-2-3c-1-2-2-2-3 0s0 3 1 5l2 3-1-3c-1-2-2-2-2-1s0 3 1 4l2 2h12l-2-8" />
-                  <path d="M18 10V5a2.5 2.5 0 0 1 5 0v12" />
-                  <circle cx="20.5" cy="3.5" r="1.5" fill="var(--brand-gold)" stroke="none" />
-                </svg>
+              {/* Hand pointer icon overlay */}
+              <div style={{ position: 'absolute', bottom: '-24px', right: '-40px', pointerEvents: 'none' }}>
+                <img src="/hand-pointer.svg" alt="" width={44} height={44} style={{ display: 'block' }} />
               </div>
             </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Section 5 — Find Your Best-Fit Diploma Pathway + Start Pathway Check */}
-      <section style={{ backgroundColor: '#f7f4eb', padding: '40px 0 60px', borderTop: '2px solid rgba(197,160,67,0.15)' }}>
-        <div className="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <AnimatedSection>
-            <h3 className="font-display" style={{ color: '#002855', fontSize: '36px', fontWeight: 700, margin: '0 0 20px 0' }}>
-              Find Your Best-Fit <span style={{ color: '#c5a043' }}>Diploma Pathway</span>
-            </h3>
-            <p style={{ fontSize: '16px', color: '#222222', maxWidth: '620px', margin: '0 auto 35px auto', lineHeight: 1.6 }}>
-              Choosing your Business Analysis Diploma modules can feel confusing. Our pathway finder helps you identify a suitable route based on your background, confidence level, career direction, and the type of Business Analyst you want to become.
-            </p>
-            <button onClick={scrollToForm} className="btn-gold" style={{ fontSize: '16px', fontWeight: 700, padding: '12px 32px' }}>
-              Start Pathway Check
-            </button>
           </AnimatedSection>
         </div>
       </section>
