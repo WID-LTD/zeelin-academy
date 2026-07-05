@@ -39,6 +39,42 @@ const features = [
     desc: 'A progress-based readiness check that helps learners understand whether they are prepared before booking or sitting their exam.',
     image: '/certificate_preview.png',
   },
+  {
+    tag: 'Oral Readiness',
+    title: 'Oral Exam Readiness Support',
+    desc: 'Provides focused preparation for explaining concepts clearly and responding confidently to examiner-style questions.',
+    image: '/consultation.png',
+  },
+  {
+    tag: 'Pathway Finder',
+    title: 'Diploma Pathway Finder',
+    desc: 'Guidance to help learners select modules based on their background, career goals, and confidence level.',
+    image: '/unique_teaching_method.png',
+  },
+  {
+    tag: 'Companion Guides',
+    title: 'Exam Focus Companion Guides',
+    desc: 'Access to course-specific study guides to support understanding and revision.',
+    image: '/banner.png',
+  },
+  {
+    tag: 'Booking Guidance',
+    title: 'Exam Booking Guidance',
+    desc: 'Support for understanding the official booking process and choosing the correct modules.',
+    image: '/confident.jpg',
+  },
+  {
+    tag: 'Tutor Check-Ins',
+    title: 'Personal Tutor Check-Ins',
+    desc: 'Weekly one-on-one sessions for personalized feedback, tracking progress, and maintaining motivation.',
+    image: '/achievement_business_analysts.png',
+  },
+  {
+    tag: 'Study Groups',
+    title: 'Community Study Groups',
+    desc: 'Small-group peer learning to collaborate on case studies, share tips, and build confidence in a supportive environment.',
+    image: '/diverse-student-group.jpg',
+  },
 ]
 
 export default function WhyChooseSection() {

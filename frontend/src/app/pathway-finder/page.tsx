@@ -7,17 +7,17 @@ import { ChevronRight, CheckCircle2, Phone, Compass, BarChart3, Users, Star, Arr
 import AnimatedSection from '@/components/AnimatedSection'
 
 const examFocusBooks = [
-  { src: '/books/foundation.png', title: 'Exam Focus: Foundation in Business Analysis', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/books/business_change.png', title: 'Exam Focus: Business Change', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/books/is_project_mgmt.png', title: 'Exam Focus: IS Project Management', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/books/org_behaviour.png', title: 'Exam Focus: Organisational Behaviour', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/books/ba_practice.png', title: 'Exam Focus: Business Analysis Practice', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/books/requirements_eng.png', title: 'Exam Focus: Requirements Engineering', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/books/modelling_processes.png', title: 'Exam Focus: Modelling Business Processes', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/books/systems_modelling.png', title: 'Exam Focus: Systems Modelling Techniques', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/books/systems_development.png', title: 'Exam Focus: Systems Development Essentials', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/books/data_management.png', title: 'Exam Focus: Data Management Essentials', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/books/benefits_mgmt.png', title: 'Exam Focus: Benefits Management and Business Acceptance', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/books/foundation.png', title: 'Exam Focus: Foundation in Business Analysis' },
+  { src: '/books/business_change.png', title: 'Exam Focus: Business Change' },
+  { src: '/books/is_project_mgmt.png', title: 'Exam Focus: IS Project Management' },
+  { src: '/books/org_behaviour.png', title: 'Exam Focus: Organisational Behaviour' },
+  { src: '/books/ba_practice.png', title: 'Exam Focus: Business Analysis Practice' },
+  { src: '/books/requirements_eng.png', title: 'Exam Focus: Requirements Engineering' },
+  { src: '/books/modelling_processes.png', title: 'Exam Focus: Modelling Business Processes' },
+  { src: '/books/systems_modelling.png', title: 'Exam Focus: Systems Modelling Techniques' },
+  { src: '/books/systems_development.png', title: 'Exam Focus: Systems Development Essentials' },
+  { src: '/books/data_management.png', title: 'Exam Focus: Data Management Essentials' },
+  { src: '/books/benefits_mgmt.png', title: 'Exam Focus: Benefits Management and Business Acceptance' },
 ]
 
 const q3Options = [
@@ -609,13 +609,6 @@ export default function PathwayFinder() {
                     draggable={false}
                     sizes="(max-width: 640px) 140px, (max-width: 768px) 160px, 190px"
                   />
-                  <div
-                    className="absolute top-3 right-3 text-white font-bold px-2 py-1 z-10 flex flex-col items-center border"
-                    style={{ backgroundColor: 'rgba(220,38,38,0.9)', borderColor: 'rgba(220,38,38,0.5)' }}
-                  >
-                    <span className="line-through text-[0.65rem] leading-none opacity-80 mb-0.5">{book.oldPrice}</span>
-                    <span className="text-sm leading-none">{book.salePrice}</span>
-                  </div>
                 </div>
                 <div className="mt-4 w-[8.75rem] sm:w-[10rem] md:w-[11.875rem] text-center px-1">
                   <p className="text-sm md:text-base font-semibold leading-snug px-2 py-1 border transition-all duration-300 group-hover/book:border-[color:var(--brand-gold)]" style={{ color: 'var(--text-core)', borderColor: 'var(--border)', backgroundColor: 'var(--bg-card)' }}>
