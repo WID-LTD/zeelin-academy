@@ -621,11 +621,8 @@ export default function PathwayFinder() {
         </div>
       </section>
 
-
-
-      {/* Section 3 — Standalone Title */}
-      <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-        <div className="absolute inset-0 bg-hero-glow pointer-events-none opacity-40" />
+      {/* Section 3 — Hero */}
+      <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: '#0B1120' }}>
         <div className="relative max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection delay={0}>
             <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl uppercase tracking-wide leading-none">
@@ -640,13 +637,11 @@ export default function PathwayFinder() {
           </AnimatedSection>
           <AnimatedSection delay={200}>
             <button onClick={scrollToForm} className="btn-gold mt-8 px-10 py-4 text-lg font-bold inline-block">
-              Find My Diploma Pathway
+              Start Pathway Check
             </button>
           </AnimatedSection>
         </div>
       </section>
-
-
 
       {/* Section 5 — Start Assessment CTA with Trust Signals */}
       <section className="py-16" style={{ backgroundColor: 'var(--bg-secondary)' }}>
@@ -676,10 +671,16 @@ export default function PathwayFinder() {
             ))}
           </div>
           <AnimatedSection delay={200}>
-            <button onClick={scrollToForm} className="btn-gold px-10 py-4 text-lg font-bold inline-flex items-center gap-3">
-              <ClipboardList className="w-5 h-5" />
-              Start My Assessment
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button onClick={scrollToForm} className="btn-gold px-10 py-4 text-lg font-bold inline-flex items-center gap-3">
+                <ClipboardList className="w-5 h-5" />
+                Start My Assessment
+              </button>
+              <Link href="/contact" className="btn-outline-gold px-10 py-4 text-lg font-bold inline-flex items-center gap-3">
+                <Phone className="w-5 h-5" />
+                Talk to an Advisor
+              </Link>
+            </div>
           </AnimatedSection>
         </div>
       </section>
