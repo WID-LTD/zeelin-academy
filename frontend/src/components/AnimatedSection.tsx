@@ -42,13 +42,13 @@ export default function AnimatedSection({
 
   const getTransform = () => {
     switch (direction) {
-      case 'up': return 'translateY(40px)'
-      case 'down': return 'translateY(-40px)'
-      case 'right': return 'translateX(60px)'
-      case 'left': return 'translateX(-60px)'
+      case 'up': return 'translateY(2.5rem)'
+      case 'down': return 'translateY(-2.5rem)'
+      case 'right': return 'translateX(3.75rem)'
+      case 'left': return 'translateX(-3.75rem)'
       case 'scale': return 'scale(0.9)'
       case 'fadeIn': return 'none'
-      default: return 'translateY(40px)'
+      default: return 'translateY(2.5rem)'
     }
   }
 

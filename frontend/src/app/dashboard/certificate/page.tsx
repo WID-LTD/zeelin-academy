@@ -105,7 +105,7 @@ export default function CertificatePage() {
             </p>
 
             {/* Gold Seal */}
-            <div className="w-20 h-20 rounded-full mx-auto mb-10 flex items-center justify-center" style={{ border: '3px solid #D4AF37', background: 'linear-gradient(135deg, #fff 0%, #fdf6e3 100%)' }}>
+            <div className="w-20 h-20 rounded-full mx-auto mb-10 flex items-center justify-center" style={{ border: '0.1875rem solid #D4AF37', background: 'linear-gradient(135deg, #fff 0%, #fdf6e3 100%)' }}>
               <Award className="w-10 h-10" style={{ color: '#D4AF37' }} />
             </div>
 

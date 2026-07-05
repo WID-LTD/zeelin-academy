@@ -22,8 +22,8 @@ export default function BannerSection() {
   return (
     <section style={{ backgroundColor: 'transparent' }}>
       {/* Hero H1 */}
-      <div style={{ textAlign: 'center', padding: '60px 20px', background: 'radial-gradient(circle at center, #FFFDF9 0%, #FAF7F0 100%)' }}>
-        <h1 className="font-display text-4xl md:text-5xl lg:text-6xl" style={{ color: 'var(--navy-dark)', maxWidth: '900px', margin: '0 auto 20px', fontWeight: 700, lineHeight: 1.2 }}>
+      <div style={{ textAlign: 'center', padding: '3.75rem 1.25rem', background: 'radial-gradient(circle at center, #FFFDF9 0%, #FAF7F0 100%)' }}>
+        <h1 className="font-display text-4xl md:text-5xl lg:text-6xl" style={{ color: 'var(--navy-dark)', maxWidth: '56.25rem', margin: '0 auto 1.25rem', fontWeight: 700, lineHeight: 1.2 }}>
           Stop Guessing. Start Preparing for your <span style={{ color: '#AA820A' }}>Business Analysis Exam</span> with clarity.
         </h1>
       </div>

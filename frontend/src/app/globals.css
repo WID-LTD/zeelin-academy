@@ -45,7 +45,7 @@
 }
 
 html {
-  font-size: clamp(16px, calc(10px + 0.5vw), 22px);
+  font-size: clamp(16px, calc(8px + 0.8vw), 32px);
 }
 
 * {
@@ -100,15 +100,15 @@ body {
 .btn-gold {
   background: var(--gradient-gold);
   color: var(--btn-gold-text);
-  padding: 12px 26px;
-  border-radius: 4px;
+  padding: 0.75rem 1.625rem;
+  border-radius: 0.25rem;
   font-weight: 700;
   border: none;
   cursor: pointer;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
   box-shadow: 0 4px 10px rgba(179, 137, 22, 0.25);
   transition: all 0.3s ease;
 }
@@ -121,14 +121,14 @@ body {
 .btn-outline {
   border: 2px solid var(--primary-gold);
   color: var(--dark-gold);
-  padding: 12px 26px;
-  border-radius: 4px;
+  padding: 0.75rem 1.625rem;
+  border-radius: 0.25rem;
   font-weight: 700;
   background: transparent;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
   transition: all 0.3s ease;
 }
 
@@ -188,7 +188,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 0.5rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -197,7 +197,7 @@ h1, h2, h3, h4, h5, h6 {
 
 ::-webkit-scrollbar-thumb {
   background: var(--brand-gold);
-  border-radius: 4px;
+  border-radius: 0.25rem;
 }
 
 @keyframes pulse-gold {
