@@ -115,7 +115,7 @@ export default function DeliveryStructureSection() {
                     </div>
                     <div>
                       <div className="text-xs font-bold" style={{ color: 'var(--text-core)' }}>Exam Ready</div>
-                      <div className="text-[0.625rem] font-semibold" style={{ color: 'var(--text-muted)' }}>BCS Aligned</div>
+                      <div className="text-[0.625rem] font-semibold" style={{ color: 'var(--text-muted)' }}>Exam Aligned</div>
                     </div>
                   </div>
                 </div>

@@ -58,7 +58,7 @@ export default function PractitionerPathwayPage() {
           </AnimatedSection>
           <div className="max-w-2xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
-              { icon: CheckCircle, label: 'BCS Foundation Certificate or equivalent knowledge' },
+              { icon: CheckCircle, label: 'Foundation Certificate or equivalent knowledge' },
               { icon: CheckCircle, label: 'At least 6 months of BA or related work experience' },
               { icon: CheckCircle, label: 'Familiarity with requirements documentation' },
               { icon: CheckCircle, label: 'Understanding of stakeholder management basics' },
@@ -91,7 +91,7 @@ export default function PractitionerPathwayPage() {
             {[
               { icon: Brain, title: 'Advanced Analysis', desc: 'Dive into complex problem-solving with root cause analysis, system thinking, and advanced modeling techniques.' },
               { icon: Target, title: 'Scenario-Based Learning', desc: 'Tackle real-world business cases that simulate the challenges senior BAs face in industry.' },
-              { icon: Zap, title: 'Exam-Focused Preparation', desc: 'Structured preparation for the BCS Practitioner exam with scenario-based questions and mock oral assessments.' },
+              { icon: Zap, title: 'Exam-Focused Preparation', desc: 'Structured preparation for the Practitioner exam with scenario-based questions and mock oral assessments.' },
             ].map((item, i) => (
               <AnimatedSection key={i} delay={i * 100}>
                 <div className="p-8 rounded-2xl border h-full" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
@@ -113,12 +113,12 @@ export default function PractitionerPathwayPage() {
               Exam Preparation <span style={{ color: 'var(--brand-gold)' }}>Tips</span>
             </h2>
             <p className="text-center max-w-2xl mx-auto mb-12 text-lg" style={{ color: 'var(--text-secondary)' }}>
-              Proven strategies to help you ace the BCS Practitioner exam.
+               Proven strategies to help you ace the Practitioner exam.
             </p>
           </AnimatedSection>
           <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
-              { icon: BookOpen, title: 'Study the Syllabus', desc: 'Familiarise yourself with the BCS Practitioner syllabus and weightings so you can prioritise high-value topics.' },
+              { icon: BookOpen, title: 'Study the Syllabus', desc: 'Familiarise yourself with the Practitioner syllabus and weightings so you can prioritise high-value topics.' },
               { icon: FileCheck, title: 'Practice Scenarios', desc: 'Work through as many scenario-based questions as possible. Focus on applying concepts, not just memorising them.' },
               { icon: Clock, title: 'Time Management', desc: 'Allocate time per question during the exam. Practice under timed conditions to build speed and accuracy.' },
               { icon: MessageCircle, title: 'Join Study Groups', desc: 'Discuss concepts with peers. Teaching others is one of the most effective ways to reinforce your understanding.' },
@@ -150,7 +150,7 @@ export default function PractitionerPathwayPage() {
               <div className="p-8 rounded-2xl border relative" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
                 <Quote className="w-10 h-10 mb-4" style={{ color: 'var(--brand-gold)' }} />
                 <blockquote className="text-lg leading-relaxed mb-6 italic" style={{ color: 'var(--text-core)' }}>
-                  &ldquo;The Practitioner Pathway transformed the way I approach Business Analysis. The scenario-based learning and mock exams gave me the confidence to pass the BCS Practitioner exam on my first attempt. Within three months, I was promoted to Senior Business Analyst.&rdquo;
+                  &ldquo;The Practitioner Pathway transformed the way I approach Business Analysis. The scenario-based learning and mock exams gave me the confidence to pass the Practitioner exam on my first attempt. Within three months, I was promoted to Senior Business Analyst.&rdquo;
                 </blockquote>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg" style={{ backgroundColor: 'var(--bg-secondary)', color: 'var(--brand-gold)' }}>SK</div>

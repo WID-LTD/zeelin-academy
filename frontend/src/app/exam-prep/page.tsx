@@ -149,10 +149,10 @@ export default function BcsExamPrepPage() {
         {/* Hero Section */}
         <div className="text-center max-w-4xl mx-auto mb-16 animate-in fade-in duration-700">
           <h1 className="font-display text-4xl sm:text-5xl font-bold leading-tight mb-6 text-[color:var(--text-core)]">
-            BCS Business Analysis <span className="gold">Exam Prep</span>
+            Business Analysis <span className="gold">Exam Prep</span>
           </h1>
           <p className="text-xl text-secondary leading-relaxed max-w-2xl mx-auto">
-            Excel in your BCS exam modules and oral examination with our focused question banks, real-world case studies, and professional UK-based mentorship.
+             Excel in your exam modules and oral examination with our focused question banks, real-world case studies, and professional UK-based mentorship.
           </p>
         </div>
 
@@ -174,11 +174,11 @@ export default function BcsExamPrepPage() {
           ))}
         </AnimatedSection>
 
-        {/* BCS Exam Overview */}
+        {/* Exam Overview */}
         <AnimatedSection direction="up" className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <div className="md:col-span-1 p-8 rounded-2xl border bg-[rgba(212,175,55,0.03)] border-[rgba(212,175,55,0.2)]">
             <h2 className="font-display text-2xl font-bold mb-6 text-[color:var(--text-core)]">
-              BCS Diploma <span className="gold">Overview</span>
+              Diploma <span className="gold">Overview</span>
             </h2>
             <div className="space-y-4">
               <div className="flex justify-between items-center py-3 border-b border-[color:var(--border)]">
@@ -322,7 +322,7 @@ export default function BcsExamPrepPage() {
                   <p className="text-sm text-muted">
                     {score === quizQuestions.length 
                       ? "Excellent! You have a strong grasp of the core Business Analysis concepts." 
-                      : "Good effort! Review the explanations to strengthen your understanding before taking the BCS exams."}
+                      : "Good effort! Review the explanations to strengthen your understanding before taking the certification exams."}
                   </p>
                 </div>
 
@@ -338,14 +338,14 @@ export default function BcsExamPrepPage() {
             )}
           </div>
 
-          {/* BCS Diploma Roadmap - 5 columns */}
+          {/* Diploma Roadmap - 5 columns */}
           <div className="lg:col-span-5 space-y-6">
             <div className="p-8 rounded-2xl border bg-[color:var(--bg-card)] border-[color:var(--border)] shadow-md">
               <h3 className="font-display text-xl font-bold mb-4 text-[color:var(--text-core)]">
-                The BCS Diploma <span className="gold">Path</span>
+                The Diploma <span className="gold">Path</span>
               </h3>
               <p className="text-sm text-secondary leading-relaxed mb-6">
-                To achieve the prestigious **BCS International Diploma in Business Analysis**, you must pass four module certifications followed by a final 50-minute Oral Examination.
+                To achieve the prestigious **Professional Diploma in Business Analysis**, you must pass four module certifications followed by a final 50-minute Oral Examination.
               </p>
 
               <div className="space-y-4">
@@ -354,7 +354,7 @@ export default function BcsExamPrepPage() {
                   { title: '2. Core Module (1 required)', desc: 'Choose between Requirements Engineering or Systems Development.' },
                   { title: '3. Specialist Module (1 required)', desc: 'Choose from Modelling Business Processes, Benefits Management, or Data Management.' },
                   { title: '4. Knowledge-Based (1 required)', desc: 'Select from Commercial Awareness, Organisational Behaviour, or Foundation in BA.' },
-                  { title: '5. Oral Examination', desc: 'A 50-minute interview with two BCS examiners testing your application of all modules.' }
+                  { title: '5. Oral Examination', desc: 'A 50-minute interview with two examiners testing your application of all modules.' }
                 ].map((step, i) => (
                   <div key={i} className="flex gap-3">
                     <div className="w-6 h-6 rounded-full gold-bg flex items-center justify-center text-xs font-bold text-black flex-shrink-0 mt-0.5">
@@ -375,9 +375,9 @@ export default function BcsExamPrepPage() {
                 <h4 className="text-sm font-bold text-[color:var(--text-core)]">Why Prep with Zeelin Academy?</h4>
               </div>
               <ul className="text-xs text-secondary space-y-2 pl-8 list-disc">
-                <li>Over 95% pass rate on first attempt of BCS exams.</li>
+                <li>Over 95% pass rate on first attempt of certification exams.</li>
                 <li>Realistic oral examination simulation and expert feedback.</li>
-                <li>Course materials designed directly under Dr. Franklin Kalu (MBCS).</li>
+                <li>Course materials designed directly under Dr. Franklin Kalu.</li>
                 <li>Exclusive syllabus-aligned mock question banks.</li>
               </ul>
             </div>
@@ -387,10 +387,10 @@ export default function BcsExamPrepPage() {
               <div className="absolute top-0 right-0 w-24 h-24 bg-[rgba(212,175,55,0.03)] rounded-bl-full pointer-events-none" />
               <div className="flex items-center gap-3 mb-3">
                 <Award className="w-6 h-6 text-[color:var(--brand-gold)]" />
-                <h4 className="font-bold text-[color:var(--text-core)]">BCS Pass <span className="gold">Guarantee</span></h4>
+                <h4 className="font-bold text-[color:var(--text-core)]">Pass <span className="gold">Guarantee</span></h4>
               </div>
               <p className="text-xs text-secondary leading-relaxed mb-3">
-                We are so confident in our prep program that if you do not pass your BCS exam on the first attempt after completing our full course, we will provide free additional tutoring and support until you do.
+                We are so confident in our prep program that if you do not pass your certification exam on the first attempt after completing our full course, we will provide free additional tutoring and support until you do.
               </p>
               <p className="text-xs text-muted italic">
                 *Terms and conditions apply. Guarantee valid for students who complete 100% of course materials and attend all mentoring sessions.
@@ -402,7 +402,7 @@ export default function BcsExamPrepPage() {
         {/* Detailed Breakdown Section */}
         <div className="border-t border-[color:var(--border)] pt-16">
           <h2 className="font-display text-2xl sm:text-3xl font-bold text-center mb-12 text-[color:var(--text-core)]">
-            Core BCS Modules We <span className="gold">Prepare You For</span>
+            Core Modules We <span className="gold">Prepare You For</span>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -425,7 +425,7 @@ export default function BcsExamPrepPage() {
               {
                 title: 'Oral Exam Preparation',
                 icon: <Award className="w-6 h-6 text-[color:var(--brand-gold)]" />,
-                desc: 'Specialized 1-on-1 coaching simulating the official BCS board. Focus on structure, clarity, confidence, and terminology.'
+                desc: 'Specialized 1-on-1 coaching simulating the official exam board. Focus on structure, clarity, confidence, and terminology.'
               }
             ].map((mod, i) => (
               <div key={i} className="p-6 rounded-xl border bg-[color:var(--bg-card)] border-[color:var(--border)] hover:border-[color:var(--brand-gold)]/30 transition-all">
@@ -446,7 +446,7 @@ export default function BcsExamPrepPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
-              { title: 'Business Analysis 4th Ed.', author: 'Debra Paul & James Cadle', desc: 'The official BCS textbook covering the entire BA syllabus.' },
+              { title: 'Business Analysis 4th Ed.', author: 'Debra Paul & James Cadle',                 desc: 'A trusted textbook covering the entire BA syllabus.' },
               { title: 'BABOK v3 Guide', author: 'IIBA', desc: 'The global standard for business analysis best practices.' },
               { title: 'Requirements Engineering', author: 'Elizabeth Hull et al.', desc: 'A practical guide to requirements processes and management.' },
             ].map((book, i) => (
@@ -463,17 +463,17 @@ export default function BcsExamPrepPage() {
         {/* FAQ Section */}
         <AnimatedSection direction="up" className="mt-20 border-t border-[color:var(--border)] pt-16">
           <h2 className="font-display text-2xl sm:text-3xl font-bold text-center mb-12 text-[color:var(--text-core)]">
-            BCS Exam <span className="gold">FAQ</span>
+            Exam <span className="gold">FAQ</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
               {
-                q: "How long does it take to prepare for the BCS Diploma?",
+                q: "How long does it take to prepare for the Diploma?",
                 a: "Most students complete the full diploma preparation within 3-6 months, depending on study pace and prior experience."
               },
               {
-                q: "What is the BCS Oral Examination like?",
-                a: "The oral exam is a 50-minute structured interview with two BCS examiners. You present a case study and answer questions that connect all modules."
+                q: "What is the Oral Examination like?",
+                a: "The oral exam is a 50-minute structured interview with two examiners. You present a case study and answer questions that connect all modules."
               },
               {
                 q: "Do I need prior experience to enrol?",
@@ -481,7 +481,7 @@ export default function BcsExamPrepPage() {
               },
               {
                 q: "Are the practice exams updated for the latest syllabus?",
-                a: "Yes, we regularly review and update our question banks to align with the current BCS syllabus and examination standards."
+                a: "Yes, we regularly review and update our question banks to align with the current syllabus and examination standards."
               },
               {
                 q: "Can I retake the quiz questions multiple times?",
@@ -507,10 +507,10 @@ export default function BcsExamPrepPage() {
         <div className="mt-20 p-10 rounded-2xl border text-center relative overflow-hidden bg-[rgba(212,175,55,0.03)] border-[rgba(212,175,55,0.2)]">
           <div className="absolute inset-0 bg-hero-glow pointer-events-none opacity-50" />
           <h2 className="font-display text-3xl font-bold mb-4 text-[color:var(--text-core)]">
-            Ready to pass your BCS Oral Board?
+            Ready to pass your Oral Board?
           </h2>
           <p className="text-secondary max-w-xl mx-auto mb-8">
-            Get access to realistic mock panels, structured answers, and expert tips from Dr. Franklin Kalu. Join today and obtain your BCS Diploma.
+             Get access to realistic mock panels, structured answers, and expert tips from Dr. Franklin Kalu. Join today and obtain your Diploma.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/enroll" className="btn-gold px-8 py-3 text-sm font-semibold">

@@ -5,17 +5,17 @@ import Link from 'next/link'
 import AnimatedSection from '@/components/AnimatedSection'
 
 const examFocusBooks = [
-  { src: '/exam_focus_foundation.png', title: 'Exam Focus: Foundation in Business Analysis', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/exam_focus_business_change.png', title: 'Exam Focus: Business Change', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/exam_focus_is_project_mgmt.png', title: 'Exam Focus: IS Project Management', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/exam_focus_org_behaviour.png', title: 'Exam Focus: Organisational Behaviour', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/exam_focus_ba_practice.png', title: 'Exam Focus: Business Analysis Practice', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/exam_focus_requirements_eng.png', title: 'Exam Focus: Requirements Engineering', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/exam_focus_modelling_processes.png', title: 'Exam Focus: Modelling Business Processes', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/exam_focus_systems_modelling.png', title: 'Exam Focus: Systems Modelling Techniques', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/exam_focus_systems_development.png', title: 'Exam Focus: Systems Development Essentials', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/exam_focus_data_management.png', title: 'Exam Focus: Data Management Essentials', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/exam_focus_benefits_mgmt.png', title: 'Exam Focus: Benefits Management and Business Acceptance', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/books/foundation.png', title: 'Exam Focus: Foundation in Business Analysis', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/books/business_change.png', title: 'Exam Focus: Business Change', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/books/is_project_mgmt.png', title: 'Exam Focus: IS Project Management', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/books/org_behaviour.png', title: 'Exam Focus: Organisational Behaviour', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/books/ba_practice.png', title: 'Exam Focus: Business Analysis Practice', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/books/requirements_eng.png', title: 'Exam Focus: Requirements Engineering', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/books/modelling_processes.png', title: 'Exam Focus: Modelling Business Processes', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/books/systems_modelling.png', title: 'Exam Focus: Systems Modelling Techniques', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/books/systems_development.png', title: 'Exam Focus: Systems Development Essentials', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/books/data_management.png', title: 'Exam Focus: Data Management Essentials', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/books/benefits_mgmt.png', title: 'Exam Focus: Benefits Management and Business Acceptance', oldPrice: '£129.99', salePrice: '£100.00' },
 ]
 
 export default function BannerSection() {

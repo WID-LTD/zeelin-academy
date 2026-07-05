@@ -163,7 +163,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
               {[
                 { label: 'PhD', desc: 'Doctorate Degree' },
-                { label: 'MBCS', desc: 'British Computer Society' },
+                { label: 'Chartered', desc: 'IT Professional Member' },
                 { label: 'PRINCE2', desc: 'Certified Practitioner' },
                 { label: 'AgilePM', desc: 'Agile Certified' },
               ].map((cred) => (

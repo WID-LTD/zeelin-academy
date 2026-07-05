@@ -57,7 +57,7 @@ export default function OfferSection() {
               <span style={{ color: 'var(--brand-gold)' }}>Offers</span>
             </h2>
             <p className="text-lg md:text-xl font-semibold mb-6" style={{ color: 'var(--text-secondary)' }}>
-              Prepare for the BCS International Diploma in Business Analysis with structured teaching, guided study, mock quizzes, visual summaries, and exam-readiness support.
+              Prepare for the Professional Diploma in Business Analysis with structured teaching, guided study, mock quizzes, visual summaries, and exam-readiness support.
             </p>
             <p className="text-lg md:text-xl font-bold" style={{ color: 'var(--text-core)' }}>
               Choose the route that fits your goal:

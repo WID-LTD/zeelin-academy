@@ -7,7 +7,7 @@ import { categories } from '@/lib/courseData'
 
 export const metadata: Metadata = {
   title: 'Our Training Programmes | Zeelin Academy',
-  description: 'Explore our BCS Diploma pathways: Foundation, Core, Practitioner, and Oral Exam preparation. Find the right course for your Business Analysis career.',
+  description: 'Explore our Diploma pathways: Foundation, Core, Practitioner, and Oral Exam preparation. Find the right course for your Business Analysis career.',
 }
 
 export default function CoursesPage() {

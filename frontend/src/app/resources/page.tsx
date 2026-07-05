@@ -82,9 +82,17 @@ const templates: Template[] = [
 ]
 
 const books = [
-  { src: '/exam_focus_foundation.png', title: 'Exam Focus: Foundation in Business Analysis', author: 'Zeelin Academy', desc: 'Targeted exam preparation for the BCS Foundation Certificate in Business Analysis.' },
-  { src: '/exam_focus_business_change.png', title: 'Exam Focus: Business Change', author: 'Zeelin Academy', desc: 'Focused revision guide for the Business Change Certificate in Business Analysis exam.' },
-  { src: '/exam_focus_ba_practice.png', title: 'Exam Focus: Business Analysis Practice', author: 'Zeelin Academy', desc: 'Essential exam prep for the BCS Business Analysis Practice certificate.' },
+  { src: '/books/foundation.png', title: 'Exam Focus: Foundation in Business Analysis', author: 'Zeelin Academy', desc: 'A complete study resource covering the essential principles, core concepts, and foundational techniques required for entry-level Business Analysis certification.' },
+  { src: '/books/business_change.png', title: 'Exam Focus: Business Change', author: 'Zeelin Academy', desc: 'Focused revision guide covering change management principles, stakeholder transitions, and organisational transformation strategies for certification success.' },
+  { src: '/books/is_project_mgmt.png', title: 'Exam Focus: IS Project Management', author: 'Zeelin Academy', desc: 'Targeted preparation for Information Systems project management certification, covering project planning, risk management, and delivery methodologies.' },
+  { src: '/books/org_behaviour.png', title: 'Exam Focus: Organisational Behaviour', author: 'Zeelin Academy', desc: 'Comprehensive guide to organisational behaviour concepts including team dynamics, corporate culture, leadership styles, and change management.' },
+  { src: '/books/ba_practice.png', title: 'Exam Focus: Business Analysis Practice', author: 'Zeelin Academy', desc: 'Essential exam prep covering strategic analysis, stakeholder management, requirements engineering, and solution evaluation in real-world contexts.' },
+  { src: '/books/requirements_eng.png', title: 'Exam Focus: Requirements Engineering', author: 'Zeelin Academy', desc: 'In-depth study resource for requirements elicitation, documentation, validation, and management throughout the project lifecycle.' },
+  { src: '/books/modelling_processes.png', title: 'Exam Focus: Modelling Business Processes', author: 'Zeelin Academy', desc: 'Practical guide to business process modelling using industry-standard techniques including BPMN, process mapping, and improvement analysis.' },
+  { src: '/books/systems_modelling.png', title: 'Exam Focus: Systems Modelling Techniques', author: 'Zeelin Academy', desc: 'Comprehensive resource for systems modelling using UML, entity-relationship diagrams, and other structured analysis techniques.' },
+  { src: '/books/systems_development.png', title: 'Exam Focus: Systems Development Essentials', author: 'Zeelin Academy', desc: 'Essential guide covering the systems development lifecycle, from feasibility and analysis through design, implementation, and maintenance.' },
+  { src: '/books/data_management.png', title: 'Exam Focus: Data Management Essentials', author: 'Zeelin Academy', desc: 'Focused preparation for data management certification covering data governance, modelling, storage, and information assurance principles.' },
+  { src: '/books/benefits_mgmt.png', title: 'Exam Focus: Benefits Management and Business Acceptance', author: 'Zeelin Academy', desc: 'Complete study resource for benefits realisation, business acceptance testing, and value-driven project delivery.' },
 ]
 
 export default function ResourcesPage() {
@@ -176,7 +184,7 @@ export default function ResourcesPage() {
                 <div>
                   <div className="relative aspect-[3/4] w-40 mx-auto rounded-lg overflow-hidden border mb-6 shadow-md" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border)' }}>
                     {i === 0 && (
-                      <div className="absolute top-2 right-2 z-10 px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-[color:var(--brand-gold)] text-black">
+                      <div className="absolute top-2 right-2 z-10 px-2 py-1 rounded-md text-[0.625rem] font-bold uppercase tracking-wider bg-[color:var(--brand-gold)] text-black">
                         Recently Added
                       </div>
                     )}
@@ -192,15 +200,10 @@ export default function ResourcesPage() {
                   <p className="text-sm text-secondary leading-relaxed text-center">{book.desc}</p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-[color:var(--border)] text-center">
-                  <a 
-                    href="https://www.bcs.org/publications-and-journals/books/" 
-                    target="_blank" 
-                    rel="noreferrer" 
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold gold hover:underline"
-                  >
-                    View Publication Details
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
+                  <Link href="/enroll" className="inline-flex items-center gap-1.5 text-xs font-semibold gold hover:underline">
+                    View Study Details
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
                 </div>
               </div>
             ))}
@@ -219,9 +222,9 @@ export default function ResourcesPage() {
                 <Badge className="w-4 h-4 text-[color:var(--brand-gold)]" />
                 <span className="text-xs font-bold uppercase tracking-wider text-[color:var(--brand-gold)]">Most Downloaded</span>
               </div>
-              <h3 className="font-display text-xl font-bold text-[color:var(--text-core)] mb-3">BCS Diploma Complete Study Kit</h3>
+              <h3 className="font-display text-xl font-bold text-[color:var(--text-core)] mb-3">Diploma Complete Study Kit</h3>
               <p className="text-sm text-secondary mb-4 leading-relaxed">
-                Everything you need to pass the BCS International Diploma in Business Analysis. Includes all module guides, practice exams, template packs, and oral prep materials.
+                Everything you need to pass the Professional Diploma in Business Analysis. Includes all module guides, practice exams, template packs, and oral prep materials.
               </p>
               <div className="flex flex-wrap items-center gap-4 text-xs text-muted mb-6">
                 <span className="flex items-center gap-1"><Download className="w-3.5 h-3.5" /> 3,400+ downloads</span>
@@ -347,16 +350,16 @@ export default function ResourcesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
               {
-                q: "Do I get official BCS textbooks when enrolling?",
+                q: "Do I get official textbooks when enrolling?",
                 a: "Yes! Students in our comprehensive diploma courses receive access to recommended prep resources, practice exams, and official reading outlines."
               },
               {
                 q: "Can I use these templates in my daily BA job?",
-                a: "Absolutely. Our templates align with industry best practices (BCS & BABOK guide) and are fully customisable for real-world project usage."
+                a: "Absolutely. Our templates align with industry best practices and the BABOK guide, and are fully customisable for real-world project usage."
               },
               {
                 q: "Are the mock exam questions updated regularly?",
-                a: "Yes, our exam simulators are designed to match current BCS module requirements. We consistently refresh questions based on recent syllabus revisions."
+                a: "Yes, our exam simulators are designed to match current module requirements. We consistently refresh questions based on recent syllabus revisions."
               },
               {
                 q: "Who can I speak to if I need a custom template?",

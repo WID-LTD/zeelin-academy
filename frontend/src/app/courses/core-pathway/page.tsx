@@ -7,7 +7,7 @@ import { categories } from '@/lib/courseData'
 
 export const metadata: Metadata = {
   title: 'Core Pathway | Zeelin Academy',
-  description: 'Prepare for BCS exams with our Core Pathway courses. Designed for learners who want to build on their BA foundation.',
+  description: 'Prepare for professional exams with our Core Pathway courses. Designed for learners who want to build on their BA foundation.',
 }
 
 const cat = categories.find((c) => c.slug === 'core-pathway')!
@@ -85,7 +85,7 @@ export default function CorePathwayPage() {
               { icon: Lightbulb, title: 'Strategic Thinking', desc: 'Apply SWOT, PESTLE, root cause analysis, and business case development.' },
               { icon: BarChart3, title: 'Data-Driven Decisions', desc: 'Use metrics, KPIs, and performance analysis to guide solution evaluation.' },
               { icon: Users, title: 'Stakeholder Management', desc: 'Build rapport, facilitate workshops, and manage expectations effectively.' },
-              { icon: Award, title: 'Certification Readiness', desc: 'Prepare confidently for BCS intermediate-level certification exams.' },
+              { icon: Award, title: 'Certification Readiness', desc: 'Prepare confidently for intermediate-level certification exams.' },
               { icon: RefreshCw, title: 'Agile & Waterfall', desc: 'Navigate both traditional and agile delivery frameworks with ease.' },
               { icon: MessageCircle, title: 'Communication Skills', desc: 'Present findings, write reports, and influence decision-makers.' },
             ].map((skill, i) => (

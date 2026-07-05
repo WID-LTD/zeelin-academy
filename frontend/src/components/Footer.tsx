@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { FaLinkedinIn, FaTwitter, FaYoutube, FaInstagram, FaArrowRight } from 'react-icons/fa'
 
 const whyZeelin = [
-  'BCS-aligned curriculum',
+  'Industry-aligned curriculum',
   'Lifetime access to materials',
   'Personal success coach',
   'Flexible self-paced study',
@@ -75,7 +75,7 @@ export default function Footer() {
             {/* Newsletter */}
             <div className="p-4 rounded-xl border" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
               <h4 className="text-xs font-bold mb-2" style={{ color: 'var(--text-core)' }}>Stay Updated</h4>
-              <p className="text-[10px] mb-3" style={{ color: 'var(--text-muted)' }}>
+              <p className="text-[0.625rem] mb-3" style={{ color: 'var(--text-muted)' }}>
                 Get the latest BA tips and course updates
               </p>
               <form className="flex gap-2" onSubmit={(e) => e.preventDefault()} aria-label="Newsletter signup">
@@ -105,7 +105,7 @@ export default function Footer() {
               <Link href="/about" className="text-xs py-2 transition-all duration-200 hover:translate-x-1" style={{ color: 'var(--text-muted)' }}>About Zeelin Academy</Link>
               <Link href="/pathway-finder" className="text-xs py-2 transition-all duration-200 hover:translate-x-1" style={{ color: 'var(--text-muted)' }}>Diploma Pathway Finder</Link>
               <Link href="/courses" className="text-xs py-2 transition-all duration-200 hover:translate-x-1" style={{ color: 'var(--text-muted)' }}>Courses</Link>
-              <Link href="/bcs-exam-prep" className="text-xs py-2 transition-all duration-200 hover:translate-x-1" style={{ color: 'var(--text-muted)' }}>BCS BA Exam Prep</Link>
+              <Link href="/exam-prep" className="text-xs py-2 transition-all duration-200 hover:translate-x-1" style={{ color: 'var(--text-muted)' }}>BA Exam Prep</Link>
               <Link href="/resources" className="text-xs py-2 transition-all duration-200 hover:translate-x-1" style={{ color: 'var(--text-muted)' }}>Resources</Link>
               <Link href="/contact" className="text-xs py-2 transition-all duration-200 hover:translate-x-1" style={{ color: 'var(--text-muted)' }}>Contact</Link>
             </div>

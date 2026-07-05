@@ -23,7 +23,7 @@ const foundationLearn = [
   'Understand the role and responsibilities of a Business Analyst',
   'Apply key BA techniques and frameworks in real scenarios',
   'Build confidence in stakeholder management and elicitation',
-  'Prepare effectively for BCS certification exams',
+  'Prepare effectively for professional certification exams',
 ]
 
 const coreLearn = [
@@ -55,23 +55,23 @@ export const categories: CategoryData[] = [
     letter: 'A',
     name: 'Foundation Pathway',
     tagline: 'For people who are completely new',
-    description: 'A structured 6-week programme designed to help busy learners prepare for the BCS Foundation exam using micro-learning, visual explanations, quizzes, and guided support.',
+    description: 'A structured 6-week programme designed to help busy learners prepare for the Foundation exam using micro-learning, visual explanations, quizzes, and guided support.',
     slug: 'foundation-pathway',
     courses: [
       {
         id: 'bcs-foundation',
-        title: 'BCS Foundation Certificate in Business Analysis',
+        title: 'Foundation Certificate in Business Analysis',
         for: 'Beginners, career changers, and busy professionals',
         duration: '6 weeks',
         learn: foundationLearn,
         includes,
-        outcome: 'Build confidence and prepare for the BCS Foundation exam',
+        outcome: 'Build confidence and prepare for the Foundation exam',
         media: '/activities/Bussiness-foudation.mp4',
         isVideo: true,
       },
       {
         id: 'bcs-business-change',
-        title: 'BCS Business Change Certificate',
+        title: 'Business Change Certificate',
         for: 'Aspiring change analysts and business professionals',
         duration: '6 weeks',
         learn: foundationLearn,
@@ -82,7 +82,7 @@ export const categories: CategoryData[] = [
       },
       {
         id: 'bcs-is-project-management',
-        title: 'BCS IS Project Management Certificate',
+        title: 'IS Project Management Certificate',
         for: 'Project coordinators, new project managers, and BAs',
         duration: '6 weeks',
         learn: foundationLearn,
@@ -93,7 +93,7 @@ export const categories: CategoryData[] = [
       },
       {
         id: 'bcs-organisational-behaviour',
-        title: 'BCS Organisational Behaviour Certificate',
+        title: 'Organisational Behaviour Certificate',
         for: 'People-focused professionals and team leads',
         duration: '6 weeks',
         learn: foundationLearn,
@@ -108,12 +108,12 @@ export const categories: CategoryData[] = [
     letter: 'B',
     name: 'Core Pathway',
     tagline: 'For people preparing for exams',
-    description: 'A structured 6-week programme designed to help busy learners prepare for BCS exams using micro-learning, visual explanations, quizzes, and guided support.',
+    description: 'A structured 6-week programme designed to help busy learners prepare for professional exams using micro-learning, visual explanations, quizzes, and guided support.',
     slug: 'core-pathway',
     courses: [
       {
         id: 'bcs-ba-practice',
-        title: 'BCS Business Analysis Practice',
+        title: 'Business Analysis Practice',
         for: 'Aspiring BAs, junior analysts, and career changers',
         duration: '6 weeks',
         learn: coreLearn,
@@ -202,23 +202,23 @@ export const categories: CategoryData[] = [
   {
     letter: 'D',
     name: 'Oral Examination',
-    tagline: 'For candidates preparing for their BCS oral exam',
-    description: 'Focused preparation programme to help you pass your BCS Oral Examination with confidence.',
+    tagline: 'For candidates preparing for their oral exam',
+    description: 'Focused preparation programme to help you pass your Oral Examination with confidence.',
     slug: 'oral-examination',
     courses: [
       {
         id: 'bcs-oral-exam',
-        title: 'BCS Oral Exam Preparation',
-        for: 'Candidates preparing for the BCS Oral Examination',
+        title: 'Oral Exam Preparation',
+        for: 'Candidates preparing for the Oral Examination',
         duration: '4 weeks',
         learn: [
-          'Understand the BCS oral exam structure and expectations',
+          'Understand the oral exam structure and expectations',
           'Practice answering typical oral exam questions',
           'Build confidence in articulating BA knowledge verbally',
           'Receive feedback and guidance from experienced trainers',
         ],
         includes,
-        outcome: 'Prepare effectively and pass your BCS Oral Examination',
+        outcome: 'Prepare effectively and pass your Oral Examination',
         media: '/business_analysis_course.png',
         isVideo: false,
       },

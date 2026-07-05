@@ -4,7 +4,7 @@ import SafeImage from '@/components/SafeImage'
 import AnimatedSection from '@/components/AnimatedSection'
 
 const partners = [
-  { name: 'BCS', logo: '/bcs.png' },
+  { name: 'Awarding Body', logo: '/bcs.png' },
   { name: 'APMG International', logo: '/apmg.png' },
   { name: 'IIBA', logo: '/iiba.jpg' },
   { name: 'WID LTD', logo: '/wid-ltd.png' },

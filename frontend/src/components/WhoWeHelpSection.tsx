@@ -7,7 +7,7 @@ const audiences = [
   'Career changers',
   'Busy 9\u20135 professionals',
   'Parents with limited study time',
-  'People preparing for BCS Business Analysis exams',
+  'People preparing for Business Analysis exams',
   'People who feel overwhelmed by big textbooks',
   'Visual learners',
   'Professionals who want practical BA confidence',
@@ -31,17 +31,17 @@ export default function WhoWeHelpSection() {
           </h2>
           <ul style={{ listStyle: 'none' }}>
             {audiences.map((item) => (
-              <li key={item} className="text-base sm:text-lg mb-[18px]" style={{ fontWeight: 600, display: 'flex', alignItems: 'center', gap: '14px' }}>
+              <li key={item} className="text-base sm:text-lg mb-[1.125rem]" style={{ fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.875rem' }}>
                 <span style={{
                   color: 'var(--dark-gold)',
                   fontWeight: 'bold',
                   border: '2px solid var(--dark-gold)',
-                  width: '26px',
-                  height: '26px',
+                  width: '1.625rem',
+                  height: '1.625rem',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  borderRadius: '4px',
+                  borderRadius: '0.25rem',
                   fontSize: '0.85rem',
                   flexShrink: 0,
                 }}>✓</span>
@@ -50,10 +50,10 @@ export default function WhoWeHelpSection() {
             ))}
           </ul>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-[15px]">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-[0.9375rem]">
           {mosaicImages.map((img, i) => (
             <div key={i} className={img.span === 2 ? 'col-span-2' : 'col-span-1'}>
-              <div className="relative w-full h-[120px] sm:h-[160px] md:h-[200px] rounded-[6px] overflow-hidden">
+              <div className="relative w-full h-[7.5rem] sm:h-[10rem] md:h-[12.5rem] rounded-[0.375rem] overflow-hidden">
                 <SafeImage src={img.src} alt="" fill className="object-cover" />
               </div>
             </div>

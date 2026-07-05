@@ -54,14 +54,14 @@ export default function FoundationPathwayPage() {
               Foundation Level <span style={{ color: 'var(--brand-gold)' }}>Overview</span>
             </h2>
             <p className="text-center max-w-3xl mx-auto mb-12 text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              The Foundation Pathway is your entry point into Business Analysis. It covers the essential knowledge, core concepts, and foundational techniques required to understand the BA discipline and prepare for BCS Foundation certification.
+              The Foundation Pathway is your entry point into Business Analysis. It covers the essential knowledge, core concepts, and foundational techniques required to understand the BA discipline and prepare for Foundation certification.
             </p>
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { icon: BookOpen, title: 'Core Concepts', items: ['BACCM™ model', 'BA role & responsibilities', 'Industry standards & best practices', 'BA competencies & career paths'] },
               { icon: Layers, title: 'Key Techniques', items: ['Stakeholder identification', 'Requirements elicitation', 'Process modeling basics', 'Document analysis'] },
-              { icon: Award, title: 'Certification Prep', items: ['BCS Foundation syllabus', 'Mock exam questions', 'Study guides & resources', 'Exam tips & techniques'] },
+              { icon: Award, title: 'Certification Prep', items: ['Foundation syllabus', 'Mock exam questions', 'Study guides & resources', 'Exam tips & techniques'] },
             ].map((col, i) => (
               <AnimatedSection key={i} delay={i * 100}>
                 <div className="p-6 rounded-2xl border h-full" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
@@ -143,7 +143,7 @@ export default function FoundationPathwayPage() {
                   { feature: 'Target Audience', foundation: 'Beginners & career changers', practitioner: 'Experienced BAs & professionals' },
                   { feature: 'Prerequisites', foundation: 'None', practitioner: 'Foundation certification or equivalent' },
                   { feature: 'Focus Area', foundation: 'Core concepts & techniques', practitioner: 'Advanced analysis & application' },
-                  { feature: 'Certification Level', foundation: 'BCS Foundation Certificate', practitioner: 'BCS Practitioner Certificate' },
+                  { feature: 'Certification Level', foundation: 'Foundation Certificate', practitioner: 'Practitioner Certificate' },
                   { feature: 'Duration', foundation: '6 weeks', practitioner: '6 weeks' },
                   { feature: 'Exam Format', foundation: 'Multiple choice', practitioner: 'Scenario-based & oral' },
                   { feature: 'Career Impact', foundation: 'Entry-level BA roles', practitioner: 'Senior BA & lead roles' },
@@ -175,7 +175,7 @@ export default function FoundationPathwayPage() {
             {[
               { q: 'Do I need any prior experience to start Foundation?', a: 'No prior experience is required. The Foundation Pathway is designed for complete beginners and career changers who want to enter the Business Analysis field.' },
               { q: 'How long does it take to complete the Foundation Pathway?', a: 'The Foundation Pathway is structured over 6 weeks, with approximately 8-10 hours of study per week. You can progress at your own pace.' },
-              { q: 'Will I be ready for the BCS Foundation exam?', a: 'Yes. The curriculum is aligned with the BCS Foundation syllabus and includes mock exams, practice questions, and revision materials to ensure you are fully prepared.' },
+              { q: 'Will I be ready for the Foundation exam?', a: 'Yes. The curriculum is aligned with the Foundation syllabus and includes mock exams, practice questions, and revision materials to ensure you are fully prepared.' },
               { q: 'Can I switch to the Practitioner Pathway later?', a: 'Absolutely. Many students start with Foundation and progress to Practitioner once they have built their confidence and passed the Foundation exam.' },
               { q: 'What career opportunities will I have after Foundation?', a: 'Graduates typically pursue roles such as Junior Business Analyst, Process Analyst, or Business Change Analyst. The pathway provides a solid foundation for career progression.' },
             ].map((faq, i) => (

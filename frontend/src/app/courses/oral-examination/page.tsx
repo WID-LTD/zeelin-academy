@@ -7,7 +7,7 @@ import { categories } from '@/lib/courseData'
 
 export const metadata: Metadata = {
   title: 'Oral Examination | Zeelin Academy',
-  description: 'Prepare for your BCS Oral Examination with our focused preparation course.',
+  description: 'Prepare for your Oral Examination with our focused preparation course.',
 }
 
 const cat = categories.find((c) => c.slug === 'oral-examination')!
@@ -53,16 +53,16 @@ export default function OralExaminationPage() {
               Exam Format <span style={{ color: 'var(--brand-gold)' }}>Guide</span>
             </h2>
             <p className="text-center max-w-2xl mx-auto mb-12 text-lg" style={{ color: 'var(--text-secondary)' }}>
-              Understand exactly what to expect in the BCS Oral Examination and how to prepare effectively.
+               Understand exactly what to expect in the Oral Examination and how to prepare effectively.
             </p>
           </AnimatedSection>
           <div className="max-w-3xl mx-auto">
             {[
-              { step: '01', title: 'Registration & Scheduling', desc: 'Register for your chosen exam date through the BCS portal. You will receive a confirmation with your allocated time slot and virtual meeting link.', icon: ClipboardList },
+              { step: '01', title: 'Registration & Scheduling', desc: 'Register for your chosen exam date through the exam portal. You will receive a confirmation with your allocated time slot and virtual meeting link.', icon: ClipboardList },
               { step: '02', title: 'Pre-Exam Briefing', desc: 'The examiner will introduce themselves, explain the format, and confirm the technical setup. You will have 5 minutes to settle in and ask any clarifying questions.', icon: BookOpen },
               { step: '03', title: 'Scenario Presentation', desc: 'You will be presented with a business scenario related to your chosen diploma pathway. Take notes and prepare your response. You have up to 10 minutes to review the scenario.', icon: Lightbulb },
               { step: '04', title: 'Oral Response & Discussion', desc: 'Present your analysis, recommendations, and rationale. The examiner will ask probing questions to assess your depth of understanding and application of BA techniques.', icon: MessageCircle },
-              { step: '05', title: 'Assessment & Results', desc: 'The examiner evaluates your response against the BCS marking criteria. Results are typically issued within 2-3 weeks via email.', icon: Award },
+              { step: '05', title: 'Assessment & Results', desc: 'The examiner evaluates your response against the marking criteria. Results are typically issued within 2-3 weeks via email.', icon: Award },
             ].map((step, i) => (
               <AnimatedSection key={i} delay={i * 100}>
                 <div className="flex items-start gap-6 p-6 rounded-2xl border mb-6" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
@@ -171,7 +171,7 @@ export default function OralExaminationPage() {
               Ready to Book Your <span style={{ color: 'var(--brand-gold)' }}>Oral Exam?</span>
             </h2>
             <p className="text-lg max-w-2xl mx-auto mb-8" style={{ color: 'var(--text-secondary)' }}>
-              Schedule your BCS Oral Examination through Zeelin Academy. We will guide you through the booking process and ensure you are fully prepared.
+               Schedule your Oral Examination through Zeelin Academy. We will guide you through the booking process and ensure you are fully prepared.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/enroll" className="btn-gold px-10 py-4 text-lg font-bold inline-flex items-center gap-3">

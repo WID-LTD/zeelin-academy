@@ -49,7 +49,7 @@ export default function Header() {
             <Link href="/about" className={`nav-link text-[0.8125rem] font-medium ${isActive('/about') ? 'active' : ''}`}>About</Link>
             <Link href="/pathway-finder" className={`nav-link text-[0.8125rem] font-medium ${isActive('/pathway-finder') ? 'active' : ''}`}>Pathway Finder</Link>
             <Link href="/courses" className={`nav-link text-[0.8125rem] font-medium ${isActive('/courses') ? 'active' : ''}`}>Courses</Link>
-            <Link href="/bcs-exam-prep" className={`nav-link text-[0.8125rem] font-medium ${isActive('/bcs-exam-prep') ? 'active' : ''}`}>Exam Prep</Link>
+            <Link href="/exam-prep" className={`nav-link text-[0.8125rem] font-medium ${isActive('/exam-prep') ? 'active' : ''}`}>Exam Prep</Link>
             <Link href="/resources" className={`nav-link text-[0.8125rem] font-medium ${isActive('/resources') ? 'active' : ''}`}>Resources</Link>
             <Link href="/contact" className={`nav-link text-[0.8125rem] font-medium ${isActive('/contact') ? 'active' : ''}`}>Contact</Link>
 
@@ -59,7 +59,7 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-1 md:hidden">
-            <button className="p-3 flex items-center justify-center" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-controls="mobile-menu" aria-label="Toggle menu" style={{ minWidth: '44px', minHeight: '44px' }}>
+            <button className="p-3 flex items-center justify-center" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-controls="mobile-menu" aria-label="Toggle menu" style={{ minWidth: '2.75rem', minHeight: '2.75rem' }}>
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: 'var(--text-core)' }}>
                 {menuOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -78,7 +78,7 @@ export default function Header() {
               <Link href="/about" className={`nav-link py-3 text-sm font-medium ${isActive('/about') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>About</Link>
               <Link href="/pathway-finder" className={`nav-link py-3 text-sm font-medium ${isActive('/pathway-finder') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Pathway Finder</Link>
               <Link href="/courses" className={`nav-link py-3 text-sm font-medium ${isActive('/courses') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Courses</Link>
-              <Link href="/bcs-exam-prep" className={`nav-link py-3 text-sm font-medium ${isActive('/bcs-exam-prep') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Exam Prep</Link>
+              <Link href="/exam-prep" className={`nav-link py-3 text-sm font-medium ${isActive('/exam-prep') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Exam Prep</Link>
               <Link href="/resources" className={`nav-link py-3 text-sm font-medium ${isActive('/resources') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Resources</Link>
               <Link href="/contact" className={`nav-link py-3 text-sm font-medium ${isActive('/contact') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Contact</Link>
               <Link href="/enroll" className="btn-gold w-full py-4 text-sm text-center mt-2" onClick={() => setMenuOpen(false)}>Enroll Now</Link>

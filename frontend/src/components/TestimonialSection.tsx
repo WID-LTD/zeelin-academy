@@ -5,7 +5,7 @@ import SafeImage from '@/components/SafeImage'
 const testimonials = [
   {
     name: 'Sarah',
-    role: 'BCS Foundation Certificate Student',
+    role: 'Foundation Certificate Student',
     text: 'I was a complete beginner and had never studied Business Analysis before. Zeelin\u2019s roadmap helped me build confidence from day one.',
     avatar: '/avatar_1.png',
   },
@@ -29,7 +29,7 @@ const testimonials = [
   },
   {
     name: 'Priya',
-    role: 'BCS Practitioner Candidate',
+    role: 'Practitioner Candidate',
     text: 'I felt overwhelmed by traditional textbooks. Zeelin\u2019s mock quizzes and exam readiness system helped me approach the exam with confidence.',
     avatar: '/avatar_5.png',
   },
@@ -43,16 +43,16 @@ const testimonials = [
 
 export default function TestimonialSection() {
   return (
-    <section style={{ padding: '60px 5%', backgroundColor: 'transparent' }}>
+    <section style={{ padding: '3.75rem 5%', backgroundColor: 'transparent' }}>
       <div className="max-w-[1200px] 3xl:max-w-[2100px] mx-auto">
         <h2 className="font-display text-4xl md:text-5xl font-black text-center mb-12" style={{ color: 'var(--navy-dark)' }}>
           What Our <span style={{ color: 'var(--dark-gold)' }}>Students Say</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {testimonials.map((item) => (
-            <div key={item.name} style={{ border: '1px solid var(--border)', borderRadius: '8px', padding: '32px', background: 'var(--bg-cream)' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '18px' }}>
-                <div className="relative w-[56px] h-[56px] rounded-full overflow-hidden" style={{ backgroundColor: 'var(--brand-gold)' }}>
+            <div key={item.name} style={{ border: '1px solid var(--border)', borderRadius: '0.5rem', padding: '2rem', background: 'var(--bg-cream)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.125rem' }}>
+                <div className="relative w-[3.5rem] h-[3.5rem] rounded-full overflow-hidden" style={{ backgroundColor: 'var(--brand-gold)' }}>
                   <SafeImage src={item.avatar} alt={item.name} fill className="object-cover" />
                 </div>
                 <div>

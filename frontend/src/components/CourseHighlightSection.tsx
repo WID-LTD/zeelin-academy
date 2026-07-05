@@ -40,10 +40,10 @@ export default function CourseHighlightSection() {
                 All the Courses <span style={{ color: 'var(--dark-gold)' }}>We Offer</span>
               </h2>
               <p className="text-lg font-semibold leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                Comprehensive BCS Diploma preparation — from Foundation through to Benefits Management.
+                Comprehensive Diploma preparation — from Foundation through to Benefits Management.
               </p>
             </div>
-            <div className="relative w-full h-[200px] sm:h-[280px] rounded-xl overflow-hidden" style={{ backgroundColor: 'var(--bg-card)' }}>
+            <div className="relative w-full h-[12.5rem] sm:h-[17.5rem] rounded-xl overflow-hidden" style={{ backgroundColor: 'var(--bg-card)' }}>
               <SafeImage
                 src="/learning_experience.png"
                 alt="Zeelin Academy courses"
@@ -58,13 +58,13 @@ export default function CourseHighlightSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {courses.map((course, idx) => (
             <AnimatedSection key={course.title} delay={200 + idx * 100}>
-              <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '8px', overflow: 'hidden' }}>
-                <div className="relative w-full h-[160px] sm:h-[200px]" style={{ backgroundColor: '#DDD' }}>
+              <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '0.5rem', overflow: 'hidden' }}>
+                <div className="relative w-full h-[10rem] sm:h-[12.5rem]" style={{ backgroundColor: '#DDD' }}>
                   <SafeImage src={course.image} alt={course.title} fill className="object-cover" />
                 </div>
-                <div style={{ padding: '28px' }}>
+                <div style={{ padding: '1.75rem' }}>
                   <h3 className="font-display text-xl font-bold mb-3" style={{ color: 'var(--navy-dark)' }}>{course.title}</h3>
-                  <div style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-muted)', marginBottom: '15px' }}>
+                  <div style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-muted)', marginBottom: '0.9375rem' }}>
                     <span>{course.duration}</span>
                   </div>
                   <p className="text-base font-semibold mb-5" style={{ color: 'var(--text-secondary)' }}>{course.desc}</p>

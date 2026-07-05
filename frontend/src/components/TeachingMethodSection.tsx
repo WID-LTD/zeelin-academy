@@ -9,9 +9,9 @@ const methods = [
   { label: 'Micro-Learning', icon: Zap, description: 'Bite-sized 10-15 minute lessons designed to fit into your busy schedule. Learn during your commute, lunch break, or any spare moment without feeling overwhelmed.' },
   { label: 'Simple Explanations', icon: BookOpen, description: 'Complex Business Analysis concepts broken down into plain English. No jargon, no confusion — just clear, step-by-step explanations you can actually understand.' },
   { label: 'Visual Examples', icon: Eye, description: 'Diagrams, flowcharts, and real-world case studies that bring theory to life. See how each concept applies in actual business analysis scenarios.' },
-  { label: 'Live Training', icon: Monitor, description: 'Weekly interactive sessions with experienced BCS-certified instructors. Get your questions answered in real-time and learn alongside fellow students.' },
+  { label: 'Live Training', icon: Monitor, description: 'Weekly interactive sessions with experienced certified instructors. Get your questions answered in real-time and learn alongside fellow students.' },
   { label: 'Guided Study', icon: ClipboardList, description: 'A clear 6-week study plan that tells you exactly what to learn each week. No guesswork, no wasted time — just a direct path to certification.' },
-  { label: 'Mock Quiz', icon: FileQuestion, description: 'BCS-style practice questions with detailed feedback and explanations. Track your progress and identify areas that need more focus before the real exam.' },
+  { label: 'Mock Quiz', icon: FileQuestion, description: 'Exam-style practice questions with detailed feedback and explanations. Track your progress and identify areas that need more focus before the real exam.' },
   { label: 'Zeelin Exam Readiness', icon: Award, description: '' },
   { label: 'Accountability', icon: RefreshCw, description: '' },
 ]
@@ -158,7 +158,7 @@ Unique{' '}
                     </div>
                     <div>
                       <div className="text-xs font-bold" style={{ color: 'var(--text-core)' }}>Exam Ready</div>
-                      <div className="text-[0.625rem]" style={{ color: 'var(--text-muted)' }}>BCS Aligned</div>
+                      <div className="text-[0.625rem]" style={{ color: 'var(--text-muted)' }}>Exam Aligned</div>
                     </div>
                   </div>
                 </div>

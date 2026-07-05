@@ -34,7 +34,7 @@ export default function HomeCoursesSection() {
               <span style={{ color: 'var(--brand-gold)' }}>Courses</span>
             </h2>
             <p className="text-lg md:text-xl" style={{ color: 'var(--text-secondary)' }}>
-              Explore all our BCS Diploma pathways — from Foundation to Oral Examination
+              Explore all our Diploma pathways — from Foundation to Oral Examination
             </p>
           </div>
         </AnimatedSection>
@@ -64,20 +64,20 @@ export default function HomeCoursesSection() {
                     {/* Badges overlay */}
                     <div className="absolute top-3 left-3 flex flex-wrap gap-2">
                       <span
-                        className="text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm"
+                        className="text-[0.625rem] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm"
                         style={{ backgroundColor: level.color, color: 'var(--text-core)' }}
                       >
                         {level.label}
                       </span>
                       <span
-                        className="text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm inline-flex items-center gap-1"
+                        className="text-[0.625rem] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm inline-flex items-center gap-1"
                         style={{ backgroundColor: 'rgba(0,0,0,0.5)', color: '#fff' }}
                       >
                         <Clock className="w-3 h-3" />
                         {course.duration}
                       </span>
                       <span
-                        className="text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm inline-flex items-center gap-1"
+                        className="text-[0.625rem] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm inline-flex items-center gap-1"
                         style={{ backgroundColor: 'rgba(0,0,0,0.4)', color: '#fff' }}
                       >
                         <Monitor className="w-3 h-3" />

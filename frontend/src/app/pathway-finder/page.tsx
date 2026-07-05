@@ -7,17 +7,17 @@ import { ChevronRight, CheckCircle2, Phone, Compass, BarChart3, Users, Star, Arr
 import AnimatedSection from '@/components/AnimatedSection'
 
 const examFocusBooks = [
-  { src: '/exam_focus_foundation.png', title: 'Exam Focus: Foundation in Business Analysis', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/exam_focus_business_change.png', title: 'Exam Focus: Business Change', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/exam_focus_is_project_mgmt.png', title: 'Exam Focus: IS Project Management', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/exam_focus_org_behaviour.png', title: 'Exam Focus: Organisational Behaviour', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/exam_focus_ba_practice.png', title: 'Exam Focus: Business Analysis Practice', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/exam_focus_requirements_eng.png', title: 'Exam Focus: Requirements Engineering', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/exam_focus_modelling_processes.png', title: 'Exam Focus: Modelling Business Processes', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/exam_focus_systems_modelling.png', title: 'Exam Focus: Systems Modelling Techniques', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/exam_focus_systems_development.png', title: 'Exam Focus: Systems Development Essentials', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/exam_focus_data_management.png', title: 'Exam Focus: Data Management Essentials', oldPrice: '£129.99', salePrice: '£100.00' },
-  { src: '/exam_focus_benefits_mgmt.png', title: 'Exam Focus: Benefits Management and Business Acceptance', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/books/foundation.png', title: 'Exam Focus: Foundation in Business Analysis', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/books/business_change.png', title: 'Exam Focus: Business Change', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/books/is_project_mgmt.png', title: 'Exam Focus: IS Project Management', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/books/org_behaviour.png', title: 'Exam Focus: Organisational Behaviour', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/books/ba_practice.png', title: 'Exam Focus: Business Analysis Practice', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/books/requirements_eng.png', title: 'Exam Focus: Requirements Engineering', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/books/modelling_processes.png', title: 'Exam Focus: Modelling Business Processes', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/books/systems_modelling.png', title: 'Exam Focus: Systems Modelling Techniques', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/books/systems_development.png', title: 'Exam Focus: Systems Development Essentials', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/books/data_management.png', title: 'Exam Focus: Data Management Essentials', oldPrice: '£129.99', salePrice: '£100.00' },
+  { src: '/books/benefits_mgmt.png', title: 'Exam Focus: Benefits Management and Business Acceptance', oldPrice: '£129.99', salePrice: '£100.00' },
 ]
 
 const q3Options = [
@@ -142,7 +142,7 @@ export default function PathwayFinder() {
         Find Your Best-Fit <span style={{ color: 'var(--brand-gold)' }}>Diploma Pathway</span>
       </h2>
       <p className="text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-        Choosing your BCS International Diploma modules can feel confusing. Our pathway finder helps you identify a suitable route based on your background, confidence level, career direction, and the type of Business Analyst you want to become.
+        Choosing your Professional Diploma modules can feel confusing. Our pathway finder helps you identify a suitable route based on your background, confidence level, career direction, and the type of Business Analyst you want to become.
       </p>
       <button onClick={handleNext} className="btn-gold px-10 py-4 text-lg font-bold inline-block">
         Start Pathway Check
@@ -542,7 +542,7 @@ export default function PathwayFinder() {
           {[
             { href: '/courses/core-pathway', title: 'Core Pathway', desc: 'Build on your BA foundation with structured learning.' },
             { href: '/courses/foundation-pathway', title: 'Foundation Pathway', desc: 'Start your BA journey with essential concepts.' },
-            { href: '/courses/oral-examination', title: 'Oral Exam Prep', desc: 'Prepare for your BCS Oral Examination.' },
+            { href: '/courses/oral-examination', title: 'Oral Exam Prep', desc: 'Prepare for your Oral Examination.' },
           ].slice(0, result?.path?.toLowerCase().includes('foundation') ? 2 : 2).map((rec, i) => (
             <Link key={i} href={rec.href}
               className="flex items-center justify-between p-5 rounded-xl border transition-all hover:shadow-md group"
@@ -558,7 +558,7 @@ export default function PathwayFinder() {
       </div>
 
       <p className="text-sm mt-8 max-w-xl mx-auto" style={{ color: 'var(--text-muted)' }}>
-        Our recommendation is guidance only. You remain free to choose your own modules based on your goals, employer requirements, personal preference, or official BCS guidance. Zeelin Academy will also review your answers and may reach out to discuss further.
+        Our recommendation is guidance only. You remain free to choose your own modules based on your goals, employer requirements, personal preference, or official guidance. Zeelin Academy will also review your answers and may reach out to discuss further.
       </p>
 
       <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
@@ -642,7 +642,7 @@ export default function PathwayFinder() {
           </AnimatedSection>
           <AnimatedSection delay={100}>
             <p className="text-lg sm:text-xl mt-6 max-w-2xl mx-auto font-medium" style={{ color: 'var(--text-secondary)' }}>
-              Choose your BCS Diploma modules with clarity and confidence.
+              Choose your Diploma modules with clarity and confidence.
             </p>
           </AnimatedSection>
           <AnimatedSection delay={200}>

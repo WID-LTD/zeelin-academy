@@ -92,7 +92,7 @@ export default function CertificatePage() {
               Diploma in Business Analysis
             </p>
             <p className="text-xs text-gray-400 mb-8">
-              BCS International Diploma Pathway
+              Professional Diploma Pathway
             </p>
 
             <div className="w-32 h-1 gold-bg mx-auto mb-8 rounded-full" />
@@ -182,7 +182,7 @@ export default function CertificatePage() {
             </a>
           </div>
           <p className="text-xs text-muted mt-6">
-            #ZeelinAcademy #BusinessAnalysis #BCSDiploma
+            #ZeelinAcademy #BusinessAnalysis #BADiploma
           </p>
         </AnimatedSection>
 

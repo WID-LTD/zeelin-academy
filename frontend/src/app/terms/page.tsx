@@ -39,8 +39,8 @@ export default function TermsPage() {
               <li><strong>&ldquo;Platform&rdquo;</strong> means the Zeelin Academy website, learning management system, mobile application, and any other digital interface through which Services are delivered.</li>
               <li><strong>&ldquo;Enrolment&rdquo;</strong> means the process by which a User registers for and gains access to a Course or Programme, subject to the payment of applicable fees.</li>
               <li><strong>&ldquo;Fees&rdquo;</strong> means all charges, costs, subscriptions, and payments required to access the Services, including but not limited to course fees, enrolment fees, registration fees, examination fees, certification fees, and any applicable taxes, levies, or surcharges.</li>
-              <li><strong>&ldquo;BCS&rdquo;</strong> means the British Computer Society, The Chartered Institute for IT, and any of its affiliated examination bodies.</li>
-              <li><strong>&ldquo;Certification&rdquo;</strong> means any certificate, diploma, badge, or credential awarded upon successful completion of a Course or examination, whether awarded by Zeelin Academy, BCS, or any other awarding body.</li>
+              <li><strong>&ldquo;Awarding Body&rdquo;</strong> means the professional institute, examination board, or accredited organisation that sets and awards the certification for which Zeelin Academy provides preparatory education.</li>
+              <li><strong>&ldquo;Certification&rdquo;</strong> means any certificate, diploma, badge, or credential awarded upon successful completion of a Course or examination, whether awarded by Zeelin Academy or any other awarding body.</li>
             </ul>
           </section>
 
@@ -65,7 +65,7 @@ export default function TermsPage() {
               <li><strong>Cancellation within 14 days of course start:</strong> If you cancel your enrolment within fourteen (14) days of the scheduled start date but before the Course has commenced, you shall receive a refund of 75% of the Fees paid.</li>
               <li><strong>Cancellation after course commencement:</strong> If you cancel your enrolment after the Course has commenced, you shall receive a pro-rata refund based on the proportion of the Course not yet delivered, less an administrative processing fee of £100 or 10% of the total Fees, whichever is greater. No refund shall be given if more than 50% of the Course has been delivered.</li>
               <li><strong>Dissatisfaction guarantee:</strong> If you are dissatisfied with the quality of the Course within the first seven (7) days of access, you may request a full refund, provided that you have completed no more than 20% of the Course content. This guarantee applies only to the first Course you enrol in and does not apply to repeat enrolments, bundle purchases, or promotional offers.</li>
-              <li><strong>Exam fees and third-party charges:</strong> Fees paid to third-party examination bodies, including but not limited to BCS examination fees, are non-refundable and non-transferable unless the relevant examination body expressly permits otherwise.</li>
+              <li><strong>Exam fees and third-party charges:</strong> Fees paid to third-party examination bodies, including but not limited to examination fees charged by the awarding body, are non-refundable and non-transferable unless the relevant examination body expressly permits otherwise.</li>
             </ul>
             <p className="mt-4">All refund requests must be submitted in writing to contact@zeelinacademy.com and will be processed within thirty (30) business days of approval. Refunds will be issued using the same payment method used for the original transaction, unless otherwise agreed. Zeelin Academy reserves the right to deduct any applicable bank charges, currency conversion fees, or transaction costs from the refund amount.</p>
           </section>
@@ -125,9 +125,9 @@ export default function TermsPage() {
 
           <section>
             <h2 className="font-display text-2xl font-bold mb-4" style={{ color: 'var(--text-core)' }}>8. Examination and Certification</h2>
-            <p>Zeelin Academy provides preparatory education and training for BCS examinations and other professional certifications. However, Zeelin Academy does not guarantee that any student will pass any examination or obtain any certification. Examination outcomes depend on a variety of factors, including but not limited to the student&apos;s prior knowledge, study habits, time commitment, comprehension, and examination performance, all of which are outside the control of Zeelin Academy.</p>
+            <p>Zeelin Academy provides preparatory education and training for professional examinations and certifications. However, Zeelin Academy does not guarantee that any student will pass any examination or obtain any certification. Examination outcomes depend on a variety of factors, including but not limited to the student&apos;s prior knowledge, study habits, time commitment, comprehension, and examination performance, all of which are outside the control of Zeelin Academy.</p>
             <p className="mt-4">Any references to pass rates, success rates, or student outcomes are based on historical data and are not indicative of future results. Individual results may vary significantly. Zeelin Academy expressly disclaims any warranties or representations regarding examination or certification outcomes.</p>
-            <p className="mt-4">Examination fees, registration processes, scheduling, and administration are the sole responsibility of the relevant examination body (e.g., BCS). Zeelin Academy shall not be liable for any errors, omissions, delays, or changes made by such examination bodies. Students are responsible for verifying examination dates, locations, fees, and requirements directly with the relevant examination body.</p>
+            <p className="mt-4">Examination fees, registration processes, scheduling, and administration are the sole responsibility of the relevant awarding body. Zeelin Academy shall not be liable for any errors, omissions, delays, or changes made by such examination bodies. Students are responsible for verifying examination dates, locations, fees, and requirements directly with the relevant awarding body.</p>
           </section>
 
           <section>
@@ -140,10 +140,10 @@ export default function TermsPage() {
             <p>Notwithstanding the foregoing, if Zeelin Academy is found to be liable for any damages arising out of or in connection with these Terms or the Services, such liability shall be limited to the total amount of Fees paid by you to Zeelin Academy in the twelve (12) months immediately preceding the event giving rise to the claim. This limitation represents the entire liability of Zeelin Academy and your exclusive remedy for any claim arising under or in connection with these Terms. Multiple claims or actions brought by the same user shall not increase this cap.</p>
 
             <h3 className="font-semibold text-lg mt-6 mb-3" style={{ color: 'var(--text-core)' }}>9.3 No Liability for Third-Party Services</h3>
-            <p>Zeelin Academy shall have no liability for any damages, losses, or costs arising from the use of third-party services, including but not limited to payment processors, examination bodies (including BCS), hosting providers, or any other third-party platforms or services used in connection with the delivery of our Services.</p>
+            <p>Zeelin Academy shall have no liability for any damages, losses, or costs arising from the use of third-party services, including but not limited to payment processors, examination bodies, hosting providers, or any other third-party platforms or services used in connection with the delivery of our Services.</p>
 
             <h3 className="font-semibold text-lg mt-6 mb-3" style={{ color: 'var(--text-core)' }}>9.4 No Liability for Examination Outcomes</h3>
-            <p>Zeelin Academy expressly disclaims any liability for examination outcomes, including but not limited to failure to pass any BCS or other certification examination. Our educational services are provided as preparation only, and individual results depend on numerous factors beyond our control.</p>
+            <p>Zeelin Academy expressly disclaims any liability for examination outcomes, including but not limited to failure to pass any certification examination. Our educational services are provided as preparation only, and individual results depend on numerous factors beyond our control.</p>
 
             <h3 className="font-semibold text-lg mt-6 mb-3" style={{ color: 'var(--text-core)' }}>9.5 Exceptions</h3>
             <p>Nothing in these Terms shall exclude or limit liability for death or personal injury caused by negligence, fraud or fraudulent misrepresentation, or any other liability that cannot be excluded or limited under applicable law.</p>

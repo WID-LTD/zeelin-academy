@@ -24,7 +24,7 @@ export default function CookieConsent() {
   if (!visible) return null
 
   return (
-    <div className="fixed bottom-20 left-0 right-0 z-50 p-4 md:bottom-4 md:left-4 md:right-auto md:w-full md:max-w-[400px]">
+    <div className="fixed bottom-20 left-0 right-0 z-50 p-4 md:bottom-4 md:left-4 md:right-auto md:w-full md:max-w-[25rem]">
       <div className="relative rounded-lg bg-[#0F1115] p-4 shadow-xl">
         <button
           onClick={reject}

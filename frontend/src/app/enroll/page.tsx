@@ -182,8 +182,8 @@ function EnrollForm() {
       {/* Why Choose This Course */}
       <AnimatedSection direction="up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         {[
-          { icon: <Award className="w-5 h-5" />, title: 'BCS-Aligned Curriculum', desc: 'Mapped to the official BCS syllabus' },
-          { icon: <Star className="w-5 h-5" />, title: 'Expert Mentors', desc: 'Learn from Dr. Franklin Kalu (MBCS)' },
+          { icon: <Award className="w-5 h-5" />, title: 'Industry-Aligned Curriculum', desc: 'Mapped to the official syllabus' },
+          { icon: <Star className="w-5 h-5" />, title: 'Expert Mentors', desc: 'Learn from Dr. Franklin Kalu' },
           { icon: <Clock className="w-5 h-5" />, title: 'Flexible Learning', desc: 'Self-paced with live support sessions' },
           { icon: <ShieldCheck className="w-5 h-5" />, title: 'Pass Guarantee', desc: '95%+ first-attempt pass rate' },
         ].map((item, i) => (

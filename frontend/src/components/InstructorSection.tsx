@@ -5,10 +5,10 @@ import { User, CheckCircle, Briefcase, HeartHandshake, HeadphonesIcon } from 'lu
 
 const instructor = {
   name: 'Dr. Franklin Kalu',
-  title: 'Founder & Lead Instructor, BCS Certified Business Analysis Professional',
-  bio: 'With over 15 years of experience in Business Analysis and enterprise transformation, Dr. Kalu has helped hundreds of professionals achieve BCS certification. His teaching philosophy centres on breaking down complex concepts into digestible, real-world applications that students can immediately put into practice.',
+  title: 'Founder & Lead Instructor, Certified Business Analysis Professional',
+  bio: 'With over 15 years of experience in Business Analysis and enterprise transformation, Dr. Kalu has helped hundreds of professionals achieve professional certification. His teaching philosophy centres on breaking down complex concepts into digestible, real-world applications that students can immediately put into practice.',
   specializations: [
-    'BCS Diploma Preparation',
+    'Diploma Preparation',
     'Requirements Engineering',
     'Stakeholder Management',
     'Agile & Waterfall Methodologies',
@@ -42,9 +42,9 @@ export default function InstructorSection() {
           style={{ background: 'radial-gradient(circle at 50% 50%, #D4AF37, transparent 70%)' }} />
         <div className="absolute bottom-0 right-0 w-80 h-80 opacity-[0.02]"
           style={{ background: 'radial-gradient(circle at 50% 50%, #D4AF37, transparent 70%)' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.015] rounded-full border"
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[37.5rem] h-[37.5rem] opacity-[0.015] rounded-full border"
           style={{ borderColor: 'rgba(212,175,55,0.15)' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] opacity-[0.015] rounded-full border"
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[25rem] h-[25rem] opacity-[0.015] rounded-full border"
           style={{ borderColor: 'rgba(212,175,55,0.1)' }} />
         <svg className="absolute top-10 left-10 w-24 h-24 opacity-[0.04]">
           <pattern id="inst-dots" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
@@ -62,7 +62,7 @@ export default function InstructorSection() {
               Learn from <span className='gold'>Expert Instructors</span>
             </h2>
             <p className="text-lg md:text-xl" style={{ color: 'var(--text-secondary)' }}>
-              All courses are taught by BCS-certified professionals with real industry experience,
+              All courses are taught by certified professionals with real industry experience,
               ensuring you receive practical, high-quality training that prepares you for certification and beyond.
             </p>
           </div>
