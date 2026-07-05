@@ -125,7 +125,7 @@ export default function AboutPage() {
           </div>
           <div className="flex justify-center">
             <div className="relative w-[17.5rem] h-[17.5rem] md:w-[21.875rem] md:h-[21.875rem] lg:w-[25rem] lg:h-[25rem] 3xl:w-[30rem] 3xl:h-[30rem] rounded-full overflow-hidden border-[3px]" style={{ borderColor: 'var(--brand-gold)' }}>
-              <SafeImage src="/pic.jpg" alt="Dr Franklin Kalu" fill className="object-cover" />
+              <SafeImage src="/franklin.jpg" alt="Dr Franklin Kalu" fill className="object-cover" />
             </div>
           </div>
         </div>
@@ -137,7 +137,7 @@ export default function AboutPage() {
           <div className="flex">
             <div className="relative w-full" style={{ border: '1px solid var(--brand-gold)', padding: '0.75rem', borderRadius: '0.5rem', textAlign: 'center', display: 'flex', flexDirection: 'column' }}>
               <div className="relative w-full flex-1 overflow-hidden" style={{ backgroundColor: '#1A263F', borderRadius: '0.25rem', marginBottom: '0.75rem', minHeight: '18.75rem' }}>
-                <SafeImage src="/pic.jpg" alt="Dr Franklin Kalu" fill className="object-cover" />
+                <SafeImage src="/franklin.jpg" alt="Dr Franklin Kalu" fill className="object-cover" />
               </div>
               <div style={{ backgroundColor: '#0D1530', color: 'var(--brand-gold)', padding: '0.625rem', fontSize: '0.9rem', fontWeight: 'bold', textTransform: 'uppercase', borderRadius: '0.25rem' }}>
                 Dr Franklin Kalu
