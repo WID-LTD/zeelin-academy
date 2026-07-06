@@ -32,7 +32,7 @@ export default function TestimonialSection() {
 
   return (
     <section className="py-16 lg:py-24 px-[5%]" style={{ backgroundColor: 'transparent' }}>
-      <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto">
+      <div className="max-w-[1600px] 3xl:max-w-[2400px] mx-auto">
         {/* Heading */}
         <div className="relative text-center mb-10 md:mb-12">
           <div className="flex items-center justify-center gap-[15px] mb-3">
@@ -75,7 +75,7 @@ export default function TestimonialSection() {
                   <image href={card.image} x="0" y="0" width="190" height="260" preserveAspectRatio="xMidYMid slice" clipPath={`url(#curve-clip-${card.id})`} />
                 </svg>
               </div>
-              <div className="flex-1 p-4 md:py-[25px] md:pr-[30px] md:pl-[15px] flex flex-col relative">
+              <div className="flex-1 p-4 md:py-[25px] md:pr-[30px] md:pl-[15px] flex flex-col relative md:max-w-[480px]">
                 <h3 className="text-xl md:text-[22px] font-bold mb-[2px]" style={{ color: '#112240', fontFamily: "'Georgia', serif" }}>{card.name}</h3>
                 <div className="text-[11px] md:text-xs font-bold mb-2" style={{ color: '#D5B266' }}>{card.role}</div>
                 <div className="text-sm mb-3 tracking-wider" style={{ color: '#D5B266', letterSpacing: '2px' }}>★★★★★</div>
