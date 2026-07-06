@@ -31,16 +31,42 @@ export default function TestimonialSection() {
   ]
 
   return (
-    <section style={{ padding: '3.75rem 5%', backgroundColor: 'transparent' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        <h2 className="font-display text-4xl md:text-5xl font-black text-center mb-12" style={{ color: 'var(--navy-dark)' }}>
-          What Our <span style={{ color: 'var(--dark-gold)' }}>Students Say</span>
-        </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '30px', backgroundColor: '#FAF7F0', padding: '40px', boxSizing: 'border-box', fontFamily: "'Helvetica Neue', Arial, sans-serif", borderRadius: '0.5rem' }}>
+    <section className="py-16 lg:py-24 px-[5%]" style={{ backgroundColor: 'transparent' }}>
+      <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto">
+        {/* Heading */}
+        <div className="relative text-center mb-10 md:mb-12">
+          <div className="flex items-center justify-center gap-[15px] mb-3">
+            <div className="w-[35px] h-px" style={{ backgroundColor: '#D5B266' }} />
+            <span className="text-[13px] font-bold tracking-[1.5px]" style={{ color: '#D5B266', fontFamily: "'Helvetica Neue', Arial, sans-serif" }}>SUCCESS STORIES</span>
+            <div className="w-[35px] h-px" style={{ backgroundColor: '#D5B266' }} />
+          </div>
+
+          <h2 className="font-display text-4xl md:text-5xl font-black mb-4" style={{ color: 'var(--navy-dark)' }}>
+            What Our <span style={{ color: 'var(--dark-gold)' }}>Students Say</span>
+          </h2>
+
+          <p className="text-sm md:text-base max-w-[500px] mx-auto" style={{ color: '#4A4A4A', fontFamily: "'Helvetica Neue', Arial, sans-serif", lineHeight: 1.6, fontWeight: 400 }}>
+            Real stories from learners who transformed their careers<br className="hidden sm:inline" /> with Zeelin Academy.
+          </p>
+
+          <div className="w-[70px] h-[2px] mx-auto mt-6" style={{ backgroundColor: '#D5B266' }} />
+
+          {/* Decorative elements */}
+          <div className="absolute top-[15px] left-[15px] w-[80px] h-[80px] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#E8E2D5 2px, transparent 2px)', backgroundSize: '12px 12px', opacity: 0.7 }} />
+          <span className="absolute bottom-[-20px] left-[15px] text-[140px] leading-none pointer-events-none select-none" style={{ color: '#F1ECE0', fontFamily: "'Georgia', serif", fontWeight: 'bold' }}>{'\u201C'}</span>
+          <span className="absolute top-[-10px] right-[20px] text-[140px] leading-none pointer-events-none select-none" style={{ color: '#F1ECE0', fontFamily: "'Georgia', serif", fontWeight: 'bold' }}>{'\u201D'}</span>
+        </div>
+
+        {/* Card grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-[30px] p-4 sm:p-6 md:p-10 rounded-xl" style={{ backgroundColor: '#FAF7F0' }}>
           {cards.map((card) => (
-            <div key={card.id} style={{ display: 'flex', height: '260px', backgroundColor: '#FFFFFF', borderRadius: '16px', boxShadow: '0 10px 30px rgba(180, 160, 130, 0.15)', overflow: 'hidden', position: 'relative', borderBottom: '3px solid #D5B266' }}>
-              <div style={{ width: '190px', height: '100%', flexShrink: 0, position: 'relative' }}>
-                <svg style={{ width: '100%', height: '100%', display: 'block' }} viewBox="0 0 190 260" preserveAspectRatio="none">
+            <div
+              key={card.id}
+              className="flex flex-col md:flex-row h-auto md:h-[260px] rounded-2xl overflow-hidden relative"
+              style={{ backgroundColor: '#FFFFFF', boxShadow: '0 10px 30px rgba(180, 160, 130, 0.15)', borderBottom: '3px solid #D5B266' }}
+            >
+              <div className="w-full md:w-[190px] h-[200px] md:h-full flex-shrink-0 relative">
+                <svg className="w-full h-full block" viewBox="0 0 190 260" preserveAspectRatio="none">
                   <defs>
                     <clipPath id={`curve-clip-${card.id}`}>
                       <path d="M 0,0 L 190,0 Q 155,130 190,260 L 0,260 Z" />
@@ -49,12 +75,12 @@ export default function TestimonialSection() {
                   <image href={card.image} x="0" y="0" width="190" height="260" preserveAspectRatio="xMidYMid slice" clipPath={`url(#curve-clip-${card.id})`} />
                 </svg>
               </div>
-              <div style={{ flex: 1, padding: '25px 30px 25px 15px', display: 'flex', flexDirection: 'column', position: 'relative' }}>
-                <h3 style={{ margin: '0 0 2px 0', color: '#112240', fontSize: '22px', fontFamily: "'Georgia', serif", fontWeight: 'bold' }}>{card.name}</h3>
-                <div style={{ color: '#D5B266', fontSize: '12px', fontWeight: 'bold', marginBottom: '10px' }}>{card.role}</div>
-                <div style={{ color: '#D5B266', fontSize: '14px', marginBottom: '12px', letterSpacing: '2px' }}>★★★★★</div>
-                <p style={{ margin: 0, color: '#4A4A4A', fontSize: '12px', lineHeight: 1.6, fontWeight: 400 }}>&ldquo;{card.quote}&rdquo;</p>
-                <span style={{ position: 'absolute', top: '15px', right: '30px', fontFamily: "'Georgia', serif", fontSize: '60px', color: '#FAF2E3', lineHeight: 1, fontWeight: 'bold', pointerEvents: 'none' }}>❝</span>
+              <div className="flex-1 p-4 md:py-[25px] md:pr-[30px] md:pl-[15px] flex flex-col relative">
+                <h3 className="text-xl md:text-[22px] font-bold mb-[2px]" style={{ color: '#112240', fontFamily: "'Georgia', serif" }}>{card.name}</h3>
+                <div className="text-[11px] md:text-xs font-bold mb-2" style={{ color: '#D5B266' }}>{card.role}</div>
+                <div className="text-sm mb-3 tracking-wider" style={{ color: '#D5B266', letterSpacing: '2px' }}>★★★★★</div>
+                <p className="text-xs sm:text-[12px] leading-relaxed" style={{ color: '#4A4A4A', lineHeight: 1.6, fontWeight: 400 }}>&ldquo;{card.quote}&rdquo;</p>
+                <span className="absolute top-3 md:top-[15px] right-4 md:right-[30px] text-[40px] md:text-[60px] leading-none font-bold pointer-events-none" style={{ color: '#FAF2E3', fontFamily: "'Georgia', serif" }}>❝</span>
               </div>
             </div>
           ))}
