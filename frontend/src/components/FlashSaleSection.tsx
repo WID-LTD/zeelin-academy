@@ -1,68 +1,53 @@
-'use client'
-
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { getTimeLeft, COUNTDOWN_DATE } from '@/lib/constants'
 
 export default function FlashSaleSection() {
-  const [isMounted, setIsMounted] = useState(false)
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
-
-  useEffect(() => {
-    setIsMounted(true)
-    setTimeLeft(getTimeLeft(new Date(COUNTDOWN_DATE)))
-    const timer = setInterval(() => {
-      setTimeLeft(getTimeLeft(new Date(COUNTDOWN_DATE)))
-    }, 1000)
-    return () => clearInterval(timer)
-  }, [])
-
   return (
-    <section className="py-10 lg:py-12">
-      <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-2xl overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none" style={{
-            background: 'radial-gradient(ellipse at 50% 50%, rgba(212,160,42,0.12), transparent 70%)'
-          }} />
-          <div className="relative p-6 sm:p-12 md:p-16 text-center" style={{ backgroundColor: 'rgba(223,186,107,0.06)' }}>
-            <h2 className="font-display text-4xl md:text-5xl font-black mb-4" style={{ color: 'var(--text-core)' }}>
-              Start Your <span style={{ color: 'var(--brand-gold)' }}>Journey</span> Today
-            </h2>
-
-            {/* Pricing */}
-            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mb-6">
-              <span className="text-2xl sm:text-3xl font-bold text-gray-400 line-through">£499</span>
-              <div className="px-3 py-1 rounded-lg text-sm sm:text-base font-bold animate-pulse-gold whitespace-nowrap" style={{ background: 'linear-gradient(135deg, #dc2626, #b91c1c)', color: 'white' }}>
-                Save 40%
-              </div>
-              <span className="text-4xl sm:text-5xl font-black" style={{ color: 'var(--brand-gold)' }}>£299</span>
-            </div>
-
-            {/* Countdown */}
-            <div className="flex items-center justify-center gap-2 sm:gap-4 mb-8">
-              {[
-                { label: 'Days', value: timeLeft.days },
-                { label: 'Hours', value: timeLeft.hours },
-                { label: 'Minutes', value: timeLeft.minutes },
-                { label: 'Seconds', value: timeLeft.seconds },
-              ].map((unit) => (
-                <div key={unit.label} className="text-center">
-                  <div className="w-14 sm:w-16 h-14 sm:h-16 rounded-xl flex items-center justify-center text-lg sm:text-xl font-bold shadow-lg" style={{ backgroundColor: 'var(--bg-card)', color: 'var(--brand-gold)', border: '1px solid var(--border)' }}>
-                    {isMounted ? String(unit.value).padStart(2, '0') : '00'}
-                  </div>
-                  <div className="text-[0.6rem] sm:text-[0.65rem] mt-1.5 text-muted font-bold uppercase tracking-wider">{unit.label}</div>
-                </div>
-              ))}
-            </div>
-
-            <p className="text-lg font-semibold mb-8 max-w-xl mx-auto text-secondary">
-              Join thousands of successful graduates. Enroll now at the discounted rate and start your Business Analysis journey.
-            </p>
-
-            <Link href="/enroll" className="btn-gold px-10 py-4 text-lg font-bold inline-block hover:scale-105 transition-transform">
-              Enroll Now — £299
-            </Link>
+    <section style={{ padding: '60px 5%', backgroundColor: 'transparent' }}>
+      <div style={{ display: 'flex', width: '100%', maxWidth: '1200px', height: '400px', backgroundColor: '#FAF7F0', fontFamily: "'Georgia', 'Times New Roman', serif", overflow: 'hidden', position: 'relative', boxSizing: 'border-box', border: '1px solid #e2ddd5', margin: '0 auto' }}>
+        <div style={{ flex: '1.1', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '40px 20px 40px 60px', textAlign: 'center', position: 'relative', zIndex: 2 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '24px' }}>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L4 5V11C4 16.55 7.42 21.74 12 23C16.58 21.74 20 16.55 20 11V5L12 2Z" stroke="#D5B266" strokeWidth="2" fill="none"/>
+              <text x="12" y="15" fill="#D5B266" fontSize="10" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">Z</text>
+            </svg>
+            <span style={{ fontFamily: "'Helvetica Neue', Arial, sans-serif", fontSize: '13px', letterSpacing: '2px', color: '#112240', fontWeight: 'bold' }}>ZEELIN ACADEMY</span>
           </div>
+          <h1 style={{ margin: '0 0 12px 0', color: '#112240', fontSize: '44px', fontWeight: 700, fontFamily: "'Georgia', serif", lineHeight: 1.2 }}>Start Your Journey Today</h1>
+          <div style={{ color: '#D5B266', fontSize: '10px', marginBottom: '20px', fontFamily: 'sans-serif' }}>✧</div>
+          <p style={{ margin: '0 0 28px 0', color: '#4A4A4A', fontSize: '16px', fontFamily: "'Helvetica Neue', Arial, sans-serif", lineHeight: 1.5, maxWidth: '460px' }}>
+            Join thousands of successful learners and start your Business Analysis journey with confidence.
+          </p>
+          <Link href="/enroll" style={{ display: 'inline-block', backgroundColor: '#162542', color: '#FFFFFF', textDecoration: 'none', padding: '14px 40px', fontSize: '15px', fontWeight: 'bold', fontFamily: "'Helvetica Neue', Arial, sans-serif", borderRadius: '6px', marginBottom: '35px' }}>
+            Enroll Now
+          </Link>
+          <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', maxWidth: '520px', gap: '10px', fontFamily: "'Helvetica Neue', Arial, sans-serif", fontSize: '11px', color: '#333333', borderTop: '1px solid rgba(213, 178, 102, 0.25)', paddingTop: '20px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', textAlign: 'left' }}>
+              <span style={{ fontSize: '22px', color: '#D5B266' }}>👤</span>
+              <div style={{ lineHeight: 1.3 }}>Learn from<br /><strong style={{ color: '#162542' }}>Industry Experts</strong></div>
+            </div>
+            <div style={{ width: '1px', backgroundColor: 'rgba(213, 178, 102, 0.3)', height: '25px', alignSelf: 'center' }} />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', textAlign: 'left' }}>
+              <span style={{ fontSize: '22px', color: '#D5B266' }}>🏅</span>
+              <div style={{ lineHeight: 1.3 }}>Practical Skills for<br /><strong style={{ color: '#162542' }}>Real-World Impact</strong></div>
+            </div>
+            <div style={{ width: '1px', backgroundColor: 'rgba(213, 178, 102, 0.3)', height: '25px', alignSelf: 'center' }} />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', textAlign: 'left' }}>
+              <span style={{ fontSize: '22px', color: '#D5B266' }}>📈</span>
+              <div style={{ lineHeight: 1.3 }}>Advance Your Career<br /><strong style={{ color: '#162542' }}>with Confidence</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div style={{ flex: '0.9', position: 'relative', height: '100%' }}>
+          <svg style={{ width: '100%', height: '100%', display: 'block' }} viewBox="0 0 500 400" preserveAspectRatio="none">
+            <defs>
+              <clipPath id="image-curve-clip">
+                <path d="M 120,0 Q 15,200 120,400 L 500,400 L 500,0 Z" />
+              </clipPath>
+            </defs>
+            <image href="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=800&q=80" x="0" y="0" width="500" height="400" preserveAspectRatio="xMidYMid slice" clipPath="url(#image-curve-clip)" />
+            <path d="M 120,0 Q 15,200 120,400" fill="none" stroke="#D5B266" strokeWidth="3" />
+          </svg>
         </div>
       </div>
     </section>

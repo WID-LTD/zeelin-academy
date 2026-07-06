@@ -5,7 +5,6 @@ import DeliveryStructureSection from '@/components/DeliveryStructureSection'
 import CourseHighlightSection from '@/components/CourseHighlightSection'
 import OfferSection from '@/components/OfferSection'
 import FlashSaleSection from '@/components/FlashSaleSection'
-import CallToActionSection from '@/components/CallToActionSection'
 import TestimonialSection from '@/components/TestimonialSection'
 
 export default function Home() {
@@ -26,8 +25,6 @@ export default function Home() {
       <TestimonialSection />
 
       <FlashSaleSection />
-
-      <CallToActionSection />
     </div>
   )
 }

@@ -31,28 +31,35 @@ export default function TestimonialSection() {
   ]
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '30px', width: '100%', maxWidth: '1200px', backgroundColor: '#FAF7F0', padding: '40px', boxSizing: 'border-box', fontFamily: "'Helvetica Neue', Arial, sans-serif", margin: '0 auto' }}>
-      {cards.map((card) => (
-        <div key={card.id} style={{ display: 'flex', height: '260px', backgroundColor: '#FFFFFF', borderRadius: '16px', boxShadow: '0 10px 30px rgba(180, 160, 130, 0.15)', overflow: 'hidden', position: 'relative', borderBottom: '3px solid #D5B266' }}>
-          <div style={{ width: '190px', height: '100%', flexShrink: 0, position: 'relative' }}>
-            <svg style={{ width: '100%', height: '100%', display: 'block' }} viewBox="0 0 190 260" preserveAspectRatio="none">
-              <defs>
-                <clipPath id={`curve-clip-${card.id}`}>
-                  <path d="M 0,0 L 190,0 Q 155,130 190,260 L 0,260 Z" />
-                </clipPath>
-              </defs>
-              <image href={card.image} x="0" y="0" width="190" height="260" preserveAspectRatio="xMidYMid slice" clipPath={`url(#curve-clip-${card.id})`} />
-            </svg>
-          </div>
-          <div style={{ flex: 1, padding: '25px 30px 25px 15px', display: 'flex', flexDirection: 'column', position: 'relative' }}>
-            <h3 style={{ margin: '0 0 2px 0', color: '#112240', fontSize: '22px', fontFamily: "'Georgia', serif", fontWeight: 'bold' }}>{card.name}</h3>
-            <div style={{ color: '#D5B266', fontSize: '12px', fontWeight: 'bold', marginBottom: '10px' }}>{card.role}</div>
-            <div style={{ color: '#D5B266', fontSize: '14px', marginBottom: '12px', letterSpacing: '2px' }}>★★★★★</div>
-            <p style={{ margin: 0, color: '#4A4A4A', fontSize: '12px', lineHeight: 1.6, fontWeight: 400 }}>&ldquo;{card.quote}&rdquo;</p>
-            <span style={{ position: 'absolute', top: '15px', right: '30px', fontFamily: "'Georgia', serif", fontSize: '60px', color: '#FAF2E3', lineHeight: 1, fontWeight: 'bold', pointerEvents: 'none' }}>❝</span>
-          </div>
+    <section style={{ padding: '3.75rem 5%', backgroundColor: 'transparent' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <h2 className="font-display text-4xl md:text-5xl font-black text-center mb-12" style={{ color: 'var(--navy-dark)' }}>
+          What Our <span style={{ color: 'var(--dark-gold)' }}>Students Say</span>
+        </h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '30px', backgroundColor: '#FAF7F0', padding: '40px', boxSizing: 'border-box', fontFamily: "'Helvetica Neue', Arial, sans-serif", borderRadius: '0.5rem' }}>
+          {cards.map((card) => (
+            <div key={card.id} style={{ display: 'flex', height: '260px', backgroundColor: '#FFFFFF', borderRadius: '16px', boxShadow: '0 10px 30px rgba(180, 160, 130, 0.15)', overflow: 'hidden', position: 'relative', borderBottom: '3px solid #D5B266' }}>
+              <div style={{ width: '190px', height: '100%', flexShrink: 0, position: 'relative' }}>
+                <svg style={{ width: '100%', height: '100%', display: 'block' }} viewBox="0 0 190 260" preserveAspectRatio="none">
+                  <defs>
+                    <clipPath id={`curve-clip-${card.id}`}>
+                      <path d="M 0,0 L 190,0 Q 155,130 190,260 L 0,260 Z" />
+                    </clipPath>
+                  </defs>
+                  <image href={card.image} x="0" y="0" width="190" height="260" preserveAspectRatio="xMidYMid slice" clipPath={`url(#curve-clip-${card.id})`} />
+                </svg>
+              </div>
+              <div style={{ flex: 1, padding: '25px 30px 25px 15px', display: 'flex', flexDirection: 'column', position: 'relative' }}>
+                <h3 style={{ margin: '0 0 2px 0', color: '#112240', fontSize: '22px', fontFamily: "'Georgia', serif", fontWeight: 'bold' }}>{card.name}</h3>
+                <div style={{ color: '#D5B266', fontSize: '12px', fontWeight: 'bold', marginBottom: '10px' }}>{card.role}</div>
+                <div style={{ color: '#D5B266', fontSize: '14px', marginBottom: '12px', letterSpacing: '2px' }}>★★★★★</div>
+                <p style={{ margin: 0, color: '#4A4A4A', fontSize: '12px', lineHeight: 1.6, fontWeight: 400 }}>&ldquo;{card.quote}&rdquo;</p>
+                <span style={{ position: 'absolute', top: '15px', right: '30px', fontFamily: "'Georgia', serif", fontSize: '60px', color: '#FAF2E3', lineHeight: 1, fontWeight: 'bold', pointerEvents: 'none' }}>❝</span>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
+    </section>
   )
 }
