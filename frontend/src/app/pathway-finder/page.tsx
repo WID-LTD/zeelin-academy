@@ -122,7 +122,7 @@ export default function PathwayFinder() {
   const update = (field: string, value: string | string[]) => setFormData({ ...formData, [field]: value })
 
   const renderProgress = () => (
-    <div className="max-w-2xl mx-auto w-full mb-12">
+    <div className="max-w-2xl lg:max-w-4xl mx-auto w-full mb-12">
       <div className="flex justify-between text-xs font-bold uppercase tracking-wider mb-3" style={{ color: 'var(--brand-gold)' }}>
         <span>Step {step - 1} of 5</span>
         <span>{Math.round(((step - 1) / 5) * 100)}% Completed</span>
@@ -137,7 +137,7 @@ export default function PathwayFinder() {
   )
 
   const renderStep1 = () => (
-    <div className="text-center space-y-6 max-w-2xl mx-auto py-8">
+    <div className="text-center space-y-6 max-w-2xl lg:max-w-4xl mx-auto py-8">
       <h2 className="font-display text-3xl sm:text-4xl font-bold leading-tight" style={{ color: 'var(--text-core)' }}>
         Find Your Best-Fit <span style={{ color: 'var(--brand-gold)' }}>Diploma Pathway</span>
       </h2>
@@ -151,7 +151,7 @@ export default function PathwayFinder() {
   )
 
   const renderStep2 = () => (
-    <div className="space-y-6 max-w-lg mx-auto">
+    <div className="space-y-6 max-w-lg lg:max-w-2xl lg:max-w-4xl mx-auto">
       <h2 className="text-2xl font-bold text-center" style={{ color: 'var(--text-core)' }}>About You</h2>
       <div className="space-y-5">
         <div>
@@ -223,7 +223,7 @@ export default function PathwayFinder() {
   )
 
   const renderStep3 = () => (
-    <div className="space-y-6 max-w-lg mx-auto">
+    <div className="space-y-6 max-w-lg lg:max-w-2xl lg:max-w-4xl mx-auto">
       <h2 className="text-2xl font-bold text-center" style={{ color: 'var(--text-core)' }}>Your Background</h2>
       <div>
         <label className="block text-lg font-semibold mb-4" style={{ color: 'var(--text-core)' }}>What best describes your current situation?</label>
@@ -264,12 +264,12 @@ export default function PathwayFinder() {
   )
 
   const renderStep4 = () => (
-    <div className="space-y-8 max-w-xl mx-auto">
+    <div className="space-y-8 max-w-xl lg:max-w-3xl mx-auto">
       <h2 className="text-2xl font-bold text-center" style={{ color: 'var(--text-core)' }}>Career Direction</h2>
 
       <div>
         <label className="block text-md font-semibold mb-3" style={{ color: 'var(--text-core)' }}>What type of work do you enjoy most?</label>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
           {[
             { id: 'A', label: 'Understanding business problems' },
             { id: 'B', label: 'Improving processes' },
@@ -294,7 +294,7 @@ export default function PathwayFinder() {
 
       <div>
         <label className="block text-md font-semibold mb-3" style={{ color: 'var(--text-core)' }}>Which career direction interests you most?</label>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
           {q3Options.map(opt => (
             <label key={opt.id}
               className="flex items-center gap-3 p-3 border rounded-xl cursor-pointer transition-all"
@@ -313,7 +313,7 @@ export default function PathwayFinder() {
 
       <div>
         <label className="block text-md font-semibold mb-3" style={{ color: 'var(--text-core)' }}>What kind of job titles attract you? (Choose up to 3)</label>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
           {jobTitleOptions.map(opt => {
             const selected = formData.q4.includes(opt.id)
             const atMax = formData.q4.length >= 3 && !selected
@@ -355,12 +355,12 @@ export default function PathwayFinder() {
   )
 
   const renderStep5 = () => (
-    <div className="space-y-8 max-w-xl mx-auto">
+    <div className="space-y-8 max-w-xl lg:max-w-3xl mx-auto">
       <h2 className="text-2xl font-bold text-center" style={{ color: 'var(--text-core)' }}>Confidence &amp; Preference</h2>
 
       <div>
         <label className="block text-md font-semibold mb-3" style={{ color: 'var(--text-core)' }}>What do you want your Diploma pathway to help you do?</label>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
           {[
             { id: 'A', label: 'Build a strong BA foundation' },
             { id: 'B', label: 'Understand business processes better' },
@@ -444,7 +444,7 @@ export default function PathwayFinder() {
   )
 
   const renderStep6 = () => (
-    <div className="space-y-8 max-w-lg mx-auto">
+    <div className="space-y-8 max-w-lg lg:max-w-2xl lg:max-w-4xl mx-auto">
       <h2 className="text-2xl font-bold text-center" style={{ color: 'var(--text-core)' }}>Final Preference</h2>
 
       <div>
@@ -499,7 +499,7 @@ export default function PathwayFinder() {
   )
 
   const renderStep7 = () => (
-    <div className="text-center space-y-6 max-w-2xl mx-auto py-8">
+    <div className="text-center space-y-6 max-w-2xl lg:max-w-4xl mx-auto py-8">
       <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
         style={{ backgroundColor: 'rgba(34,197,94,0.1)' }}>
         <CheckCircle2 className="w-10 h-10" style={{ color: '#22c55e' }} />
@@ -534,7 +534,7 @@ export default function PathwayFinder() {
       )}
 
       {/* Next Steps — Recommended Courses */}
-      <div className="mt-8 text-left max-w-2xl mx-auto">
+      <div className="mt-8 text-left max-w-2xl lg:max-w-4xl mx-auto">
         <h3 className="font-bold text-lg mb-4 text-center" style={{ color: 'var(--text-core)' }}>
           Recommended <span style={{ color: 'var(--brand-gold)' }}>Next Steps</span>
         </h3>
@@ -557,7 +557,7 @@ export default function PathwayFinder() {
         </div>
       </div>
 
-      <p className="text-sm mt-8 max-w-xl mx-auto" style={{ color: 'var(--text-muted)' }}>
+      <p className="text-sm mt-8 max-w-xl lg:max-w-3xl mx-auto" style={{ color: 'var(--text-muted)' }}>
         Our recommendation is guidance only. You remain free to choose your own modules based on your goals, employer requirements, personal preference, or official guidance. Zeelin Academy will also review your answers and may reach out to discuss further.
       </p>
 
@@ -622,17 +622,17 @@ export default function PathwayFinder() {
       </section>
 
       {/* Section 3 — Header matching template */}
-      <section style={{ backgroundColor: '#f7f4eb', padding: '50px 0 35px' }}>
-        <div className="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-[clamp(2rem,1rem+2vw,4rem)] px-[5%]" style={{ backgroundColor: '#f7f4eb' }}>
+        <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto text-center">
           <AnimatedSection delay={0}>
-            <h1 className="font-display" style={{ color: '#002855', fontSize: '42px', fontWeight: 700, letterSpacing: '1px', lineHeight: 1.1, margin: 0 }}>
+            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-wide leading-tight" style={{ color: '#002855' }}>
               ZEELIN DIPLOMA
             </h1>
-            <h2 className="font-display" style={{ color: '#c5a043', fontSize: '46px', fontWeight: 600, letterSpacing: '2px', lineHeight: 1.1, margin: '5px 0 20px 0' }}>
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-wider leading-tight mt-1 mb-5" style={{ color: '#c5a043' }}>
               PATHWAY FINDER
             </h2>
-            <div style={{ color: '#c5a043', fontSize: '14px', marginBottom: '20px' }}>✦</div>
-            <p style={{ fontSize: '15px', color: '#1c2b39', maxWidth: '620px', margin: '0 auto', lineHeight: 1.6 }}>
+            <div className="text-sm mb-5" style={{ color: '#c5a043' }}>✦</div>
+            <p className="text-sm md:text-base lg:text-lg max-w-[clamp(20rem,15rem+20vw,40rem)] mx-auto leading-relaxed" style={{ color: '#1c2b39' }}>
               Choosing the right Diploma modules can be confusing, especially when learners are unsure which specialist route is best for their career. <br />
               At Zeelin Academy, we do not believe learners should choose modules blindly. That is why we provide our Zeelin Diploma Pathway Finder — a guided module selection support process designed to help learners choose their knowledge-based and practitioner modules with clarity.
             </p>
@@ -641,18 +641,18 @@ export default function PathwayFinder() {
       </section>
 
       {/* Section 4 — Stats + Start My Assessment with mature hand */}
-      <section style={{ backgroundColor: '#f7f4eb', padding: '20px 0 40px' }}>
-        <div className="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-[clamp(1.25rem,0.625rem+1.25vw,2.5rem)] px-[5%]" style={{ backgroundColor: '#f7f4eb' }}>
+        <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto text-center">
           <AnimatedSection>
-            <h3 className="font-display" style={{ color: '#222222', fontSize: '32px', fontWeight: 700, margin: '0 0 15px 0' }}>
+            <h3 className="font-display text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4" style={{ color: '#222222' }}>
               Ready to Find Your <span style={{ color: '#c5a043' }}>Pathway?</span>
             </h3>
-            <p style={{ fontSize: '16px', color: '#444444', maxWidth: '580px', margin: '0 auto 40px auto', lineHeight: 1.5 }}>
+            <p className="text-sm md:text-base lg:text-lg max-w-[clamp(18rem,14rem+18vw,36rem)] mx-auto mb-10 leading-relaxed" style={{ color: '#444444' }}>
               Join thousands of professionals who have used our pathway finder to make confident diploma decisions.
             </p>
           </AnimatedSection>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4" style={{ maxWidth: '680px', margin: '0 auto 35px auto' }}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4" style={{ margin: '0 auto 2.1875rem auto' }}>
             {[
               {
                 value: '3,500+', label: 'Assessments Completed',
@@ -673,11 +673,11 @@ export default function PathwayFinder() {
             ].map((stat, i) => (
               <AnimatedSection key={i} delay={i * 80}>
                 <div className="text-center">
-                  <svg style={{ width: '28px', height: '28px', fill: 'none', stroke: '#c5a043', strokeWidth: 2, marginBottom: '8px' }} viewBox="0 0 24 24">
+                  <svg className="w-7 h-7 lg:w-9 lg:h-9 mb-2" style={{ fill: 'none', stroke: '#c5a043', strokeWidth: 2 }} viewBox="0 0 24 24">
                     {stat.path}
                   </svg>
-                  <div style={{ fontSize: '20px', fontWeight: 700, color: '#222222' }}>{stat.value}</div>
-                  <div style={{ fontSize: '11px', color: '#666666', marginTop: '3px', fontWeight: 500 }}>{stat.label}</div>
+                  <div className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold" style={{ color: '#222222' }}>{stat.value}</div>
+                  <div className="text-[0.625rem] md:text-xs lg:text-sm font-medium mt-0.5" style={{ color: '#666666' }}>{stat.label}</div>
                 </div>
               </AnimatedSection>
             ))}
@@ -685,7 +685,7 @@ export default function PathwayFinder() {
 
           <AnimatedSection delay={200}>
             <div style={{ position: 'relative', display: 'inline-block' }}>
-              <button onClick={scrollToForm} className="btn-gold" style={{ fontSize: '16px', fontWeight: 700, padding: '12px 28px', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+              <button onClick={scrollToForm} className="btn-gold text-sm md:text-base lg:text-lg font-bold px-7 py-3 inline-flex items-center gap-2">
                 <ClipboardList className="w-4 h-4" />
                 Start My Assessment
               </button>
@@ -708,7 +708,7 @@ export default function PathwayFinder() {
                 {[2,3,4,5,6].map((s, i) => (
                   <div key={s} className="flex items-center gap-4">
                     <div className="flex items-center gap-2">
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all ${
+                      <div className={`w-8 h-8 lg:w-12 lg:h-12 rounded-full flex items-center justify-center text-xs lg:text-sm font-bold transition-all ${
                         step === s ? 'shadow-[0_0_0_2px_var(--brand-gold)]' : ''
                       }`} style={{
                         backgroundColor: step > s ? 'var(--brand-gold)' : step === s ? 'var(--brand-gold)' : 'var(--border)',
@@ -721,7 +721,7 @@ export default function PathwayFinder() {
                         {['About You', 'Background', 'Career', 'Preferences', 'Final'][i]}
                       </span>
                     </div>
-                    {i < 4 && <div className="w-8 h-px" style={{ backgroundColor: step > s ? 'var(--brand-gold)' : 'var(--border)' }} />}
+                    {i < 4 && <div className="w-8 lg:w-16 h-px" style={{ backgroundColor: step > s ? 'var(--brand-gold)' : 'var(--border)' }} />}
                   </div>
                 ))}
               </div>

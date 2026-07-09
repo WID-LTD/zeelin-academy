@@ -59,7 +59,7 @@ export const categories: CategoryData[] = [
     slug: 'foundation-pathway',
     courses: [
       {
-        id: 'bcs-foundation',
+        id: 'foundation-cert',
         title: 'Foundation Certificate in Business Analysis',
         for: 'Beginners, career changers, and busy professionals',
         duration: '6 weeks',
@@ -70,7 +70,7 @@ export const categories: CategoryData[] = [
         isVideo: true,
       },
       {
-        id: 'bcs-business-change',
+        id: 'business-change',
         title: 'Business Change Certificate',
         for: 'Aspiring change analysts and business professionals',
         duration: '6 weeks',
@@ -81,7 +81,7 @@ export const categories: CategoryData[] = [
         isVideo: true,
       },
       {
-        id: 'bcs-is-project-management',
+        id: 'is-project-mgmt',
         title: 'IS Project Management Certificate',
         for: 'Project coordinators, new project managers, and BAs',
         duration: '6 weeks',
@@ -92,7 +92,7 @@ export const categories: CategoryData[] = [
         isVideo: false,
       },
       {
-        id: 'bcs-organisational-behaviour',
+        id: 'org-behaviour',
         title: 'Organisational Behaviour Certificate',
         for: 'People-focused professionals and team leads',
         duration: '6 weeks',
@@ -112,7 +112,7 @@ export const categories: CategoryData[] = [
     slug: 'core-pathway',
     courses: [
       {
-        id: 'bcs-ba-practice',
+        id: 'ba-practice',
         title: 'Business Analysis Practice',
         for: 'Aspiring BAs, junior analysts, and career changers',
         duration: '6 weeks',
@@ -207,7 +207,7 @@ export const categories: CategoryData[] = [
     slug: 'oral-examination',
     courses: [
       {
-        id: 'bcs-oral-exam',
+        id: 'oral-exam-prep',
         title: 'Oral Exam Preparation',
         for: 'Candidates preparing for the Oral Examination',
         duration: '4 weeks',

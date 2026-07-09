@@ -81,7 +81,7 @@ export default function WhyChooseSection() {
   return (
     <section className="py-16 lg:py-24 px-[5%]" style={{ textAlign: 'center' }}>
       <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto">
-        <h2 className="font-display text-4xl md:text-5xl font-black mb-4" style={{ color: 'var(--navy-dark)' }}>
+        <h2 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-wide mb-4" style={{ color: 'var(--navy-dark)' }}>
           Why Choose <span style={{ color: 'var(--dark-gold)' }}>Zeelin Academy</span>
         </h2>
         <p className="text-lg md:text-xl font-semibold max-w-[800px] mx-auto mb-6" style={{ color: 'var(--text-secondary)' }}>

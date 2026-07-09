@@ -3,8 +3,8 @@ export default function TestimonialSection() {
     {
       id: '1',
       name: 'Sarah',
-      role: 'BCS Foundation Certificate Student',
-      quote: "I was a complete beginner and had never studied Business Analysis before. Zeelin Academy made everything so easy to follow. The visual summaries and step-by-step roadmap helped me build confidence from day one. I passed my BCS Foundation exam in just 6 weeks!",
+      role: 'Foundation Certificate Student',
+      quote: "I was a complete beginner and had never studied Business Analysis before. Zeelin Academy made everything so easy to follow. The visual summaries and step-by-step roadmap helped me build confidence from day one. I passed my Foundation exam in just 6 weeks!",
       image: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=400&q=80',
     },
     {

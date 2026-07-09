@@ -108,7 +108,7 @@ const quizQuestions: Question[] = [
   }
 ]
 
-export default function BcsExamPrepPage() {
+export default function ExamPrepPage() {
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
   const [isAnswered, setIsAnswered] = useState(false)
