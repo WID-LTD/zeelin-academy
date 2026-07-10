@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import AnimatedSection from '@/components/AnimatedSection'
 import SafeImage from '@/components/SafeImage'
-import { ChevronRight, ClipboardList, Lightbulb, Zap, Star, Calendar, Clock, ShieldCheck, Crown, Users, CheckCircle, Award, BookOpen, MessageCircle, BarChart3 } from 'lucide-react'
+import { ChevronRight, ClipboardList, Lightbulb, Zap, Star, Calendar, Clock, ShieldCheck, Crown, Users, CheckCircle, Award, BookOpen, MessageCircle, BarChart3, User } from 'lucide-react'
 import { categories } from '@/lib/courseData'
 
 export const metadata: Metadata = {
@@ -211,11 +211,11 @@ export default function OralExaminationPage() {
 
                   <div className="flex flex-wrap gap-4 text-sm">
                     <div className="flex items-center gap-2 font-medium" style={{ color: 'var(--text-secondary)' }}>
-                      <span className="text-lg" style={{ color: 'var(--brand-gold)' }}>👤</span>
+                      <User className="w-4 h-4" style={{ color: 'var(--brand-gold)' }} />
                       {course.for}
                     </div>
                     <div className="flex items-center gap-2 font-medium" style={{ color: 'var(--text-secondary)' }}>
-                      <span className="text-lg" style={{ color: 'var(--brand-gold)' }}>⏱</span>
+                      <Clock className="w-4 h-4" style={{ color: 'var(--brand-gold)' }} />
                       {course.duration}
                     </div>
                   </div>

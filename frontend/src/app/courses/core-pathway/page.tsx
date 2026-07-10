@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import AnimatedSection from '@/components/AnimatedSection'
 import SafeImage from '@/components/SafeImage'
-import { ChevronRight, BookOpen, Target, Lightbulb, BarChart3, Users, Award, Clock, MessageCircle, FileCheck, Monitor, RefreshCw, Star, CheckCircle, GraduationCap } from 'lucide-react'
+import { ChevronRight, BookOpen, Target, Lightbulb, BarChart3, Users, Award, Clock, MessageCircle, FileCheck, Monitor, RefreshCw, Star, CheckCircle, GraduationCap, User } from 'lucide-react'
 import { categories } from '@/lib/courseData'
 
 export const metadata: Metadata = {
@@ -183,11 +183,11 @@ export default function CorePathwayPage() {
 
                   <div className="flex flex-wrap gap-4 text-sm">
                     <div className="flex items-center gap-2 font-medium" style={{ color: 'var(--text-secondary)' }}>
-                      <span className="text-lg" style={{ color: 'var(--brand-gold)' }}>👤</span>
+                      <User className="w-4 h-4" style={{ color: 'var(--brand-gold)' }} />
                       {course.for}
                     </div>
                     <div className="flex items-center gap-2 font-medium" style={{ color: 'var(--text-secondary)' }}>
-                      <span className="text-lg" style={{ color: 'var(--brand-gold)' }}>⏱</span>
+                      <Clock className="w-4 h-4" style={{ color: 'var(--brand-gold)' }} />
                       {course.duration}
                     </div>
                   </div>
