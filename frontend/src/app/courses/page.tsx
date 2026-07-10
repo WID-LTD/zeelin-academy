@@ -2,6 +2,8 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import AnimatedSection from '@/components/AnimatedSection'
 import { categories } from '@/lib/courseData'
+import { certificates } from '@/lib/certificateData'
+import CourseCertificateSection from '@/components/CourseCertificateSection'
 
 export const metadata: Metadata = {
   title: 'Our Training Programmes | Zeelin Academy',
@@ -162,6 +164,17 @@ export default function CoursesPage() {
           </AnimatedSection>
         </div>
       </section>
+
+      {/* 11 Certificate Sections */}
+      {certificates.map((cert, idx) => (
+        <section key={cert.id} className="px-[5%]">
+          <div className="max-w-[800px] mx-auto">
+            <AnimatedSection delay={0}>
+              <CourseCertificateSection data={cert} />
+            </AnimatedSection>
+          </div>
+        </section>
+      ))}
 
       {/* Badges */}
       <section className="px-[5%] pb-20">
