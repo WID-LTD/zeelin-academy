@@ -84,17 +84,15 @@ const templates: Template[] = [
 ]
 
 const books = [
-  { src: '/books/foundation.png', title: 'Exam Focus: Foundation in Business Analysis', author: 'Zeelin Academy', desc: 'A complete study resource covering the essential principles, core concepts, and foundational techniques required for entry-level Business Analysis certification.' },
-  { src: '/books/business_change.png', title: 'Exam Focus: Business Change', author: 'Zeelin Academy', desc: 'Focused revision guide covering change management principles, stakeholder transitions, and organisational transformation strategies for certification success.' },
-  { src: '/books/is_project_mgmt.png', title: 'Exam Focus: IS Project Management', author: 'Zeelin Academy', desc: 'Targeted preparation for Information Systems project management certification, covering project planning, risk management, and delivery methodologies.' },
-  { src: '/books/org_behaviour.png', title: 'Exam Focus: Organisational Behaviour', author: 'Zeelin Academy', desc: 'Comprehensive guide to organisational behaviour concepts including team dynamics, corporate culture, leadership styles, and change management.' },
-  { src: '/books/ba_practice.png', title: 'Exam Focus: Business Analysis Practice', author: 'Zeelin Academy', desc: 'Essential exam prep covering strategic analysis, stakeholder management, requirements engineering, and solution evaluation in real-world contexts.' },
-  { src: '/books/requirements_eng.png', title: 'Exam Focus: Requirements Engineering', author: 'Zeelin Academy', desc: 'In-depth study resource for requirements elicitation, documentation, validation, and management throughout the project lifecycle.' },
-  { src: '/books/modelling_processes.png', title: 'Exam Focus: Modelling Business Processes', author: 'Zeelin Academy', desc: 'Practical guide to business process modelling using industry-standard techniques including BPMN, process mapping, and improvement analysis.' },
-  { src: '/books/systems_modelling.png', title: 'Exam Focus: Systems Modelling Techniques', author: 'Zeelin Academy', desc: 'Comprehensive resource for systems modelling using UML, entity-relationship diagrams, and other structured analysis techniques.' },
-  { src: '/books/systems_development.png', title: 'Exam Focus: Systems Development Essentials', author: 'Zeelin Academy', desc: 'Essential guide covering the systems development lifecycle, from feasibility and analysis through design, implementation, and maintenance.' },
-  { src: '/books/data_management.png', title: 'Exam Focus: Data Management Essentials', author: 'Zeelin Academy', desc: 'Focused preparation for data management certification covering data governance, modelling, storage, and information assurance principles.' },
-  { src: '/books/benefits_mgmt.png', title: 'Exam Focus: Benefits Management and Business Acceptance', author: 'Zeelin Academy', desc: 'Complete study resource for benefits realisation, business acceptance testing, and value-driven project delivery.' },
+  { src: '/books/foundation_in_bussiness_analysis_pratice.png', title: 'Exam Focus: Foundation in Business Analysis', author: 'Zeelin Academy', guideKey: 'foundation', desc: 'A complete study resource covering the essential principles, core concepts, and foundational techniques required for entry-level Business Analysis certification.' },
+  { src: '/books/bussiness_change.png', title: 'Exam Focus: Business Change', author: 'Zeelin Academy', guideKey: 'business_change', desc: 'Focused revision guide covering change management principles, stakeholder transitions, and organisational transformation strategies for certification success.' },
+  { src: '/books/project_management.png', title: 'Exam Focus: IS Project Management', author: 'Zeelin Academy', guideKey: 'is_project_mgmt', desc: 'Targeted preparation for Information Systems project management certification, covering project planning, risk management, and delivery methodologies.' },
+  { src: '/books/organisational_behaviour.png', title: 'Exam Focus: Organisational Behaviour', author: 'Zeelin Academy', guideKey: 'org_behaviour', desc: 'Comprehensive guide to organisational behaviour concepts including team dynamics, corporate culture, leadership styles, and change management.' },
+  { src: '/books/requirements_engineering.png', title: 'Exam Focus: Requirements Engineering', author: 'Zeelin Academy', guideKey: 'requirements_eng', desc: 'In-depth study resource for requirements elicitation, documentation, validation, and management throughout the project lifecycle.' },
+  { src: '/books/modelling_buussiness_process.png', title: 'Exam Focus: Modelling Business Processes', author: 'Zeelin Academy', guideKey: 'modelling_processes', desc: 'Practical guide to business process modelling using industry-standard techniques including BPMN, process mapping, and improvement analysis.' },
+  { src: '/books/system_modelling_techniques.png', title: 'Exam Focus: Systems Modelling Techniques', author: 'Zeelin Academy', guideKey: 'systems_modelling', desc: 'Comprehensive resource for systems modelling using UML, entity-relationship diagrams, and other structured analysis techniques.' },
+  { src: '/books/data_management_essential.png', title: 'Exam Focus: Data Management Essentials', author: 'Zeelin Academy', guideKey: 'data_management', desc: 'Focused preparation for data management certification covering data governance, modelling, storage, and information assurance principles.' },
+  { src: '/books/benefits_mangement_and_bussiness_acceptance.png', title: 'Exam Focus: Benefits Management and Business Acceptance', author: 'Zeelin Academy', guideKey: 'benefits_mgmt', desc: 'Complete study resource for benefits realisation, business acceptance testing, and value-driven project delivery.' },
 ]
 
 export default function ResourcesPage() {
@@ -202,9 +200,9 @@ export default function ResourcesPage() {
                   <p className="text-sm text-secondary leading-relaxed text-center">{book.desc}</p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-[color:var(--border)] text-center space-y-2">
-                  {bookGuides[book.src.split('/').pop()?.replace('.png', '') || ''] ? (
+                  {bookGuides[book.guideKey] ? (
                     <button
-                      onClick={() => generateBookGuidePdf(book.src.split('/').pop()?.replace('.png', '') || '')}
+                      onClick={() => generateBookGuidePdf(book.guideKey)}
                       className="inline-flex items-center gap-1.5 text-xs font-semibold gold hover:underline"
                     >
                       <Download className="w-3.5 h-3.5" />

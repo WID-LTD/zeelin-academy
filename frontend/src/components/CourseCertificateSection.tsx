@@ -19,10 +19,10 @@ export default function CourseCertificateSection({ data }: { data: CertificateDa
       {/* Header */}
       <header className="text-center mb-10 lg:mb-14 xl:mb-16">
         <h2
-          className="font-display font-bold leading-tight mb-5"
+          className="font-display font-black leading-tight mb-5"
           style={{
             color: 'var(--navy-dark)',
-            fontSize: 'clamp(1.5rem, 1rem + 2.5vw, 3.5rem)',
+            fontSize: 'clamp(1.75rem, 1.25rem + 2.5vw, 4.5rem)',
           }}
         >
           {data.title}
@@ -104,8 +104,8 @@ export default function CourseCertificateSection({ data }: { data: CertificateDa
         <div className="flex items-center gap-2.5 lg:gap-3" style={{ color: 'var(--navy-dark)' }}>
           <Building className="w-5 h-5 lg:w-6 lg:h-6" style={{ color: 'var(--brand-gold)' }} />
           <span
-            className="font-serif font-bold whitespace-normal"
-            style={{ fontSize: 'clamp(1.25rem, 1rem + 1vw, 2.25rem)' }}
+            className="font-serif font-black whitespace-normal"
+            style={{ fontSize: 'clamp(1.5rem, 1.125rem + 1vw, 3rem)' }}
           >
             What you would learn
           </span>
@@ -140,12 +140,12 @@ export default function CourseCertificateSection({ data }: { data: CertificateDa
               >
                 {i + 1}
               </div>
-              <h4 className="font-serif font-bold leading-tight pt-0.5" style={{ color: 'var(--navy-dark)', fontSize: 'clamp(0.875rem, 0.75rem + 0.3vw, 1.375rem)' }}>
+              <h4 className="font-serif font-bold leading-tight pt-0.5" style={{ color: 'var(--navy-dark)', fontSize: 'clamp(1rem, 0.875rem + 0.3vw, 1.75rem)' }}>
                 {week.title}
               </h4>
             </div>
             <div className="h-px w-full mb-3 lg:mb-4" style={{ backgroundColor: 'var(--brand-gold)' }} />
-            <p className="font-medium leading-snug" style={{ color: 'var(--navy-dark)', fontSize: 'clamp(0.6875rem, 0.625rem + 0.15vw, 0.9375rem)' }}>
+            <p className="font-semibold leading-snug" style={{ color: 'var(--navy-dark)', fontSize: 'clamp(0.8125rem, 0.75rem + 0.15vw, 1.25rem)' }}>
               {week.desc}
             </p>
           </div>

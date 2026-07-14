@@ -1,8 +1,14 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { BookOpen, BookCopy, Briefcase, MessageCircle } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
 import { categories } from '@/lib/courseData'
-import { certificates } from '@/lib/certificateData'
+import {
+  foundationCertificates,
+  coreCertificates,
+  practitionerCertificates,
+  oralCertificates,
+} from '@/lib/certificateData'
 import CourseCertificateSection from '@/components/CourseCertificateSection'
 
 export const metadata: Metadata = {
@@ -18,30 +24,10 @@ const cardTitle: Record<string, string> = {
 }
 
 const icons: Record<string, JSX.Element> = {
-  'foundation-pathway': (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-    </svg>
-  ),
-  'core-pathway': (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1 0-3.12 3.02 3.02 0 0 1 0-3.88 2.5 2.5 0 0 1 0-3.12A2.5 2.5 0 0 1 9.5 2zM14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 0-3.12 3.02 3.02 0 0 0 0-3.88 2.5 2.5 0 0 0 0-3.12A2.5 2.5 0 0 0 14.5 2z" />
-    </svg>
-  ),
-  'practitioner-pathway': (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="2" height="14" width="20" y="7" rx="2" ry="2" />
-      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-    </svg>
-  ),
-  'oral-examination': (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-      <circle cx="8" cy="10" r="1" />
-      <circle cx="12" cy="10" r="1" />
-      <circle cx="16" cy="10" r="1" />
-    </svg>
-  ),
+  'foundation-pathway': <BookOpen className="w-8 h-8" />,
+  'core-pathway': <BookCopy className="w-8 h-8" />,
+  'practitioner-pathway': <Briefcase className="w-8 h-8" />,
+  'oral-examination': <MessageCircle className="w-8 h-8" />,
 }
 
 const instructorImages: Record<string, string> = {
@@ -127,8 +113,87 @@ export default function CoursesPage() {
         </div>
       </section>
 
-      {/* 11 Certificate Sections */}
-      {certificates.map((cert, idx) => (
+      {/* 11 Foundation Certificate Sections */}
+      <section className="px-[5%] pt-6 pb-0">
+        <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] 4xl:max-w-[2000px] mx-auto">
+          <AnimatedSection delay={0}>
+            <div className="flex items-center gap-4 mb-8 lg:mb-10 xl:mb-12">
+              <div className="h-px flex-grow max-w-[60px]" style={{ backgroundColor: '#D4A02A' }} />
+              <h2 className="font-display text-2xl lg:text-3xl xl:text-4xl font-black uppercase tracking-wider" style={{ color: '#0c1e36' }}>
+                Foundation Modules
+              </h2>
+              <div className="h-px flex-grow max-w-[60px]" style={{ backgroundColor: '#D4A02A' }} />
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+      {foundationCertificates.map((cert, idx) => (
+        <section key={cert.id} className={`px-[5%] py-8 lg:py-10 xl:py-12 ${idx > 0 ? 'course-section-divider' : ''}`}>
+          <AnimatedSection delay={0}>
+            <CourseCertificateSection data={cert} />
+          </AnimatedSection>
+        </section>
+      ))}
+
+      {/* Core Certificate Sections */}
+      <section className="px-[5%] pt-12 pb-0">
+        <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] 4xl:max-w-[2000px] mx-auto">
+          <AnimatedSection delay={0}>
+            <div className="flex items-center gap-4 mb-8 lg:mb-10 xl:mb-12">
+              <div className="h-px flex-grow max-w-[60px]" style={{ backgroundColor: '#D4A02A' }} />
+              <h2 className="font-display text-2xl lg:text-3xl xl:text-4xl font-black uppercase tracking-wider" style={{ color: '#0c1e36' }}>
+                Core Modules
+              </h2>
+              <div className="h-px flex-grow max-w-[60px]" style={{ backgroundColor: '#D4A02A' }} />
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+      {coreCertificates.map((cert, idx) => (
+        <section key={cert.id} className={`px-[5%] py-8 lg:py-10 xl:py-12 ${idx > 0 ? 'course-section-divider' : ''}`}>
+          <AnimatedSection delay={0}>
+            <CourseCertificateSection data={cert} />
+          </AnimatedSection>
+        </section>
+      ))}
+
+      {/* Practitioner Certificate Sections */}
+      <section className="px-[5%] pt-12 pb-0">
+        <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] 4xl:max-w-[2000px] mx-auto">
+          <AnimatedSection delay={0}>
+            <div className="flex items-center gap-4 mb-8 lg:mb-10 xl:mb-12">
+              <div className="h-px flex-grow max-w-[60px]" style={{ backgroundColor: '#D4A02A' }} />
+              <h2 className="font-display text-2xl lg:text-3xl xl:text-4xl font-black uppercase tracking-wider" style={{ color: '#0c1e36' }}>
+                Practitioner Modules
+              </h2>
+              <div className="h-px flex-grow max-w-[60px]" style={{ backgroundColor: '#D4A02A' }} />
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+      {practitionerCertificates.map((cert, idx) => (
+        <section key={cert.id} className={`px-[5%] py-8 lg:py-10 xl:py-12 ${idx > 0 ? 'course-section-divider' : ''}`}>
+          <AnimatedSection delay={0}>
+            <CourseCertificateSection data={cert} />
+          </AnimatedSection>
+        </section>
+      ))}
+
+      {/* Oral Certificate Sections */}
+      <section className="px-[5%] pt-12 pb-0">
+        <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] 4xl:max-w-[2000px] mx-auto">
+          <AnimatedSection delay={0}>
+            <div className="flex items-center gap-4 mb-8 lg:mb-10 xl:mb-12">
+              <div className="h-px flex-grow max-w-[60px]" style={{ backgroundColor: '#D4A02A' }} />
+              <h2 className="font-display text-2xl lg:text-3xl xl:text-4xl font-black uppercase tracking-wider" style={{ color: '#0c1e36' }}>
+                Oral Module
+              </h2>
+              <div className="h-px flex-grow max-w-[60px]" style={{ backgroundColor: '#D4A02A' }} />
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+      {oralCertificates.map((cert, idx) => (
         <section key={cert.id} className={`px-[5%] py-8 lg:py-10 xl:py-12 ${idx > 0 ? 'course-section-divider' : ''}`}>
           <AnimatedSection delay={0}>
             <CourseCertificateSection data={cert} />

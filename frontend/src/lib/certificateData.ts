@@ -6,7 +6,7 @@ export interface CertificateData {
   weeks: { title: string; desc: string }[]
 }
 
-export const certificates: CertificateData[] = [
+export const foundationCertificates: CertificateData[] = [
   {
     id: 'ba-foundation',
     title: 'Foundation Certificate in Business Analysis',
@@ -258,6 +258,197 @@ export const certificates: CertificateData[] = [
       { title: 'Week 4 \u2013 Making Sense of What You\u2019ve Gathered', desc: 'Breaking down and examining requirements to spot gaps, conflicts, or missing pieces.' },
       { title: 'Week 5 \u2013 Confirming You\u2019ve Got It Right', desc: 'Checking requirements with stakeholders before any work begins, to avoid costly mistakes.' },
       { title: 'Week 6 \u2013 Keeping Requirements Under Control', desc: 'Tracking changes and keeping requirements accurate and relevant throughout the life of a project.' },
+    ],
+  },
+]
+
+export const coreCertificates: CertificateData[] = [
+  {
+    id: 'core-ba-practice',
+    title: 'Business Analysis Practice',
+    whoItsFor: [
+      'Aspiring BAs, junior analysts, and career changers',
+      'Project managers and business change managers',
+      'Consultants supporting client organisations',
+      'Business owners wanting a clearer analytical approach to decisions',
+      'Anyone wanting a practical, step-by-step approach to business analysis',
+    ],
+    format: [
+      '6-week program, one core session per week, with practical exercises and a real-world case study to apply each step immediately.',
+      'Exam format: 1-hour, closed-book, multiple-choice exam (~40 questions, ~65% pass mark)',
+    ],
+    weeks: [
+      { title: 'Week 1 \u2013 Analysing the Business Context', desc: 'Understanding how business analysis fits into the wider strategy and learning to see the bigger picture before diving into detail.' },
+      { title: 'Week 2 \u2013 Engaging Stakeholders', desc: 'Identifying key stakeholders and mastering techniques to manage their interests, expectations, and influence throughout a project.' },
+      { title: 'Week 3 \u2013 Investigating the Current Situation', desc: 'Applying investigative techniques to build a clear, honest picture of where the business currently stands.' },
+      { title: 'Week 4 \u2013 Defining the Business Need', desc: 'Turning research and analysis into a well-defined gap between current reality and desired future state.' },
+      { title: 'Week 5 \u2013 Shaping the Right Solution', desc: 'Exploring options, evaluating feasibility, and designing a solution that genuinely addresses the business need.' },
+      { title: 'Week 6 \u2013 Making the Business Case', desc: 'Building a compelling business case that justifies the investment and secures stakeholder approval.' },
+    ],
+  },
+  {
+    id: 'core-requirements-engineering',
+    title: 'Requirements Engineering',
+    whoItsFor: [
+      'Business analysts and requirements engineers',
+      'Project managers responsible for scope and delivery',
+      'Product owners and product managers',
+      'Consultants gathering client needs',
+      'Anyone wanting a practical understanding of how to gather, document, and manage business requirements',
+    ],
+    format: [
+      '6-week program, one core session per week, with practical exercises and a real-world case study to apply each step immediately.',
+      'Exam format: 1-hour, closed-book, multiple-choice exam (~40 questions, ~65% pass mark)',
+    ],
+    weeks: [
+      { title: 'Week 1 \u2013 Requirements as a Service', desc: 'Understanding what requirements engineering truly means and why treating it as a structured service leads to better project outcomes.' },
+      { title: 'Week 2 \u2013 Eliciting Real Needs', desc: 'Mastering elicitation techniques to draw out genuine stakeholder needs, uncovering what is actually required versus what is assumed.' },
+      { title: 'Week 3 \u2013 Documenting with Clarity', desc: 'Turning raw findings into clear, well-structured written requirements that leave no room for ambiguity.' },
+      { title: 'Week 4 \u2013 Analysing and Validating', desc: 'Breaking down requirements to identify gaps, conflicts, and missing pieces before they become costly problems.' },
+      { title: 'Week 5 \u2013 Gaining Agreement', desc: 'Confirming requirements with stakeholders through structured reviews, walkthroughs, and sign-off processes.' },
+      { title: 'Week 6 \u2013 Managing Through Change', desc: 'Tracking changes, maintaining version control, and keeping requirements relevant throughout the project lifecycle.' },
+    ],
+  },
+]
+
+export const practitionerCertificates: CertificateData[] = [
+  {
+    id: 'prac-modelling-processes',
+    title: 'Modelling Business Processes',
+    whoItsFor: [
+      'Business analysts and process improvement specialists',
+      'Operations managers wanting more efficient workflows',
+      'Business owners looking to streamline how their company runs',
+      'Project and change managers implementing new processes',
+      'Anyone wanting a practical understanding of how to map, improve, and implement better business processes',
+    ],
+    format: [
+      '6-week program, one core session per week, with practical exercises and a real-world case study to apply each step immediately.',
+      'Exam format: 1-hour, closed-book, multiple-choice exam (~40 questions, ~65% pass mark)',
+    ],
+    weeks: [
+      { title: 'Week 1 \u2013 The Role of Process', desc: 'Understanding what business processes are and why studying them properly is fundamental to making change work.' },
+      { title: 'Week 2 \u2013 The Big Picture View', desc: 'Mapping out how the business works at the highest level using organisational context and value chain analysis.' },
+      { title: 'Week 3 \u2013 Following the Flow', desc: 'Understanding what sets processes in motion, how events trigger activities, and how the business responds.' },
+      { title: 'Week 4 \u2013 Detailed Process Modelling', desc: 'Breaking processes down step by step using industry-standard modelling techniques such as BPMN.' },
+      { title: 'Week 5 \u2013 Identifying Improvements', desc: 'Analysing current processes to identify weaknesses, bottlenecks, and opportunities for meaningful improvement.' },
+      { title: 'Week 6 \u2013 Implementing Change', desc: 'Putting improved processes into practice, managing the transition, and measuring the impact of changes made.' },
+    ],
+  },
+  {
+    id: 'prac-systems-modelling',
+    title: 'Systems Modelling Techniques',
+    whoItsFor: [
+      'Business analysts and systems analysts',
+      'Software developers and solution designers',
+      'IT professionals bridging business and technical teams',
+      'Project managers overseeing system-related change',
+      'Anyone wanting a practical understanding of how to model systems clearly before building or changing them',
+    ],
+    format: [
+      '6-week program, one core session per week, with practical exercises and a real-world case study to apply each step immediately.',
+      'Exam format: 1-hour, closed-book, multiple-choice exam (~40 questions, ~65% pass mark)',
+    ],
+    weeks: [
+      { title: 'Week 1 \u2013 Systems Thinking', desc: 'Understanding what systems modelling is and why visualising a system before building it is critical for success.' },
+      { title: 'Week 2 \u2013 Models in Context', desc: 'Learning how different types of models fit within the bigger picture of a business or technical system.' },
+      { title: 'Week 3 \u2013 Functional Modelling', desc: 'Capturing the functions and actions a system needs to perform using use case diagrams and activity diagrams.' },
+      { title: 'Week 4 \u2013 Structural Modelling', desc: 'Modelling the fixed structures and data relationships that define how a system stores and organises information.' },
+      { title: 'Week 5 \u2013 Behavioural Modelling', desc: 'Capturing how a system responds and transitions through different states over time.' },
+      { title: 'Week 6 \u2013 Integrated Modelling', desc: 'Combining functional, structural, and behavioural models into one coherent system specification.' },
+    ],
+  },
+  {
+    id: 'prac-systems-dev',
+    title: 'Systems Development Essentials',
+    whoItsFor: [
+      'Systems analysts and business analysts working with technical teams',
+      'Software developers and solution architects',
+      'IT project managers overseeing development work',
+      'Quality assurance professionals',
+      'Anyone wanting a practical understanding of how systems are designed, built, and maintained',
+    ],
+    format: [
+      '6-week program, one core session per week, with practical exercises and a real-world case study to apply each step immediately.',
+      'Exam format: 1-hour, closed-book, multiple-choice exam (~40 questions, ~65% pass mark)',
+    ],
+    weeks: [
+      { title: 'Week 1 \u2013 Roles in Systems Development', desc: 'Understanding the different roles involved in developing a system and how they collaborate throughout a project.' },
+      { title: 'Week 2 \u2013 System Architecture Basics', desc: 'Grasping the foundations of system architecture and how a system is structured before any code is written.' },
+      { title: 'Week 3 \u2013 The Development Lifecycle', desc: 'Following the full journey a system takes, from initial concept through design, build, and deployment.' },
+      { title: 'Week 4 \u2013 Development Approaches', desc: 'Exploring practical methodologies teams use to build systems, including waterfall, agile, and hybrid approaches.' },
+      { title: 'Week 5 \u2013 Investigating Before Building', desc: 'Digging into the real problem space through feasibility analysis and requirements investigation before designing solutions.' },
+      { title: 'Week 6 \u2013 Delivery and Maintenance', desc: 'Bringing the system to life through deployment, ensuring quality, and planning for ongoing support and evolution.' },
+    ],
+  },
+  {
+    id: 'prac-data-management',
+    title: 'Data Management Essentials',
+    whoItsFor: [
+      'Business owners wanting to make better use of their company\u2019s data',
+      'Operations and admin staff responsible for records and systems',
+      'IT and data professionals supporting business functions',
+      'Managers wanting cleaner, more reliable information for decisions',
+      'Anyone wanting a practical understanding of how to manage and use business data well',
+    ],
+    format: [
+      '6-week program, one core session per week, with practical exercises and a real-world case study to apply each step immediately.',
+      'Exam format: 1-hour, closed-book, multiple-choice exam (~40 questions, ~65% pass mark)',
+    ],
+    weeks: [
+      { title: 'Week 1 \u2013 The Value of Data', desc: 'Understanding what data management means and why it matters to every business, big or small, as a strategic asset.' },
+      { title: 'Week 2 \u2013 Data Organisation and Quality', desc: 'The everyday discipline of organising, labelling, and maintaining data so it stays accurate, consistent, and useful.' },
+      { title: 'Week 3 \u2013 Managing Data Systems', desc: 'Understanding the basics of managing databases and data storage, including where data lives and how it is kept safe.' },
+      { title: 'Week 4 \u2013 Building a Single Source of Truth', desc: 'Creating a shared, reliable data environment where business information can be stored, accessed, and trusted.' },
+      { title: 'Week 5 \u2013 Data Governance and Ownership', desc: 'Understanding who owns data, who is responsible for it, and how governance frameworks keep data compliant.' },
+      { title: 'Week 6 \u2013 Data as a Business Asset', desc: 'Bringing it all together using well-managed data to drive better decisions, measure performance, and create value.' },
+    ],
+  },
+  {
+    id: 'prac-benefits-management',
+    title: 'Benefits Management and Business Acceptance',
+    whoItsFor: [
+      'Business owners wanting to see real returns from change initiatives',
+      'Project and change managers responsible for delivering results',
+      'Business analysts tracking value beyond project completion',
+      'Quality and testing staff supporting business change',
+      'Anyone wanting a practical understanding of how to plan, test, and deliver real business benefits',
+    ],
+    format: [
+      '6-week program, one core session per week, with practical exercises and a real-world case study to apply each step immediately.',
+      'Exam format: 1-hour, closed-book, multiple-choice exam (~40 questions, ~65% pass mark)',
+    ],
+    weeks: [
+      { title: 'Week 1 \u2013 Defining Benefits', desc: 'Understanding what a business benefit truly is and why it should drive every change decision from the very beginning.' },
+      { title: 'Week 2 \u2013 Mapping Benefit Dependencies', desc: 'Grouping and understanding how different benefits connect to and depend on one another within a change programme.' },
+      { title: 'Week 3 \u2013 Planning for Value', desc: 'Building a practical benefits realisation plan that tracks value throughout the project, not just at the end.' },
+      { title: 'Week 4 \u2013 Defining Acceptance Criteria', desc: 'Setting clear standards and methods to test whether a change is actually ready and acceptable to the business.' },
+      { title: 'Week 5 \u2013 Testing and Validation', desc: 'Applying practical testing techniques, planning the testing process, and confirming that results meet expectations.' },
+      { title: 'Week 6 \u2013 From Delivery to Payoff', desc: 'Revisiting the business case, rolling out the change, and ensuring promised benefits are actually delivered and sustained.' },
+    ],
+  },
+]
+
+export const oralCertificates: CertificateData[] = [
+  {
+    id: 'oral-exam-prep',
+    title: 'Oral Exam Preparation',
+    whoItsFor: [
+      'Candidates preparing for the Oral Examination',
+      'Business analysts seeking professional certification',
+      'Professionals wanting to validate their practical BA experience',
+      'Learners who have completed Foundation or Practitioner pathways',
+      'Anyone needing structured preparation for an oral assessment in business analysis',
+    ],
+    format: [
+      '4-week program, one core session per week, with mock oral exercises, peer feedback, and personalised trainer guidance.',
+      'Oral examination format: structured panel assessment with scenario-based questions and portfolio discussion.',
+    ],
+    weeks: [
+      { title: 'Week 1 \u2013 Understanding the Exam', desc: 'Learning the oral exam structure, assessment criteria, and expectations to build a clear preparation strategy.' },
+      { title: 'Week 2 \u2013 Building Your Portfolio', desc: 'Structuring your experience, selecting appropriate examples, and preparing to articulate your BA competence.' },
+      { title: 'Week 3 \u2013 Practice and Feedback', desc: 'Participating in mock oral sessions, receiving constructive feedback, and refining your responses.' },
+      { title: 'Week 4 \u2013 Final Preparation', desc: 'Consolidating knowledge, practising under timed conditions, and building confidence for the actual examination.' },
     ],
   },
 ]
