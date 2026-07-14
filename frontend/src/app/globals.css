@@ -258,6 +258,16 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1.03);
 }
 
+/* --- Hero Dark Gradient --- */
+.hero-dark {
+  background: linear-gradient(135deg, #0c1e36 0%, #162a4a 100%);
+}
+
+/* --- Course Section Divider --- */
+.course-section-divider {
+  border-top: 1px solid rgba(184, 151, 83, 0.12);
+}
+
 /* --- Silk Pattern Background Layers --- */
 .silk-pattern {
   position: fixed;

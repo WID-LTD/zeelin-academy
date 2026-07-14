@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import AnimatedSection from '@/components/AnimatedSection'
 import SafeImage from '@/components/SafeImage'
-import { ChevronRight, BookOpen, Layers, ArrowUpDown, Plus, Minus, HelpCircle, CheckCircle, GraduationCap, Star, Clock, Award, Users, FileCheck, MessageCircle, User } from 'lucide-react'
+import { ChevronRight, BookOpen, Layers, Plus, Minus, CheckCircle, Award, Clock, User } from 'lucide-react'
 import { categories } from '@/lib/courseData'
 
 export const metadata: Metadata = {
@@ -15,18 +15,18 @@ const cat = categories.find((c) => c.slug === 'foundation-pathway')!
 export default function FoundationPathwayPage() {
   return (
     <div className="min-h-screen">
-      {/* Section 1 — Standalone Title */}
-      <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-        <div className="absolute inset-0 bg-hero-glow pointer-events-none opacity-40" />
-        <div className="relative max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Hero Section */}
+      <section className="hero-dark py-24 md:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-hero-glow pointer-events-none opacity-30" />
+        <div className="relative max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] 4xl:max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection delay={0}>
-            <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl uppercase tracking-wide leading-none">
+            <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl xl:text-7xl uppercase tracking-wide leading-none">
               <span style={{ color: '#ffffff' }}>Foundation </span>
               <span style={{ color: 'var(--brand-gold)' }}>Pathway</span>
             </h1>
           </AnimatedSection>
           <AnimatedSection delay={100}>
-            <p className="text-lg sm:text-xl mt-6 max-w-3xl mx-auto font-medium" style={{ color: 'var(--text-secondary)' }}>
+            <p className="text-lg sm:text-xl mt-6 max-w-3xl mx-auto font-medium" style={{ color: 'rgba(255,255,255,0.75)' }}>
               {cat.description}
             </p>
           </AnimatedSection>
@@ -34,8 +34,8 @@ export default function FoundationPathwayPage() {
       </section>
 
       {/* Breadcrumb */}
-      <section className="py-4 border-b" style={{ backgroundColor: 'var(--bg-primary)', borderColor: 'var(--border)' }}>
-        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-4 course-section-divider">
+        <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center gap-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
             <Link href="/" className="hover:gold transition-colors">Home</Link>
             <ChevronRight className="w-4 h-4" />
@@ -47,24 +47,24 @@ export default function FoundationPathwayPage() {
       </section>
 
       {/* Foundation Level Overview */}
-      <section className="py-20" style={{ backgroundColor: 'var(--bg-primary)' }}>
-        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 md:py-20 lg:py-24">
+        <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <h2 className="font-display text-3xl sm:text-4xl font-black text-center mb-4" style={{ color: 'var(--text-core)' }}>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-center mb-4" style={{ color: 'var(--text-core)' }}>
               Foundation Level <span style={{ color: 'var(--brand-gold)' }}>Overview</span>
             </h2>
             <p className="text-center max-w-3xl mx-auto mb-12 text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
               The Foundation Pathway is your entry point into Business Analysis. It covers the essential knowledge, core concepts, and foundational techniques required to understand the BA discipline and prepare for Foundation certification.
             </p>
           </AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {[
               { icon: BookOpen, title: 'Core Concepts', items: ['BACCM™ model', 'BA role & responsibilities', 'Industry standards & best practices', 'BA competencies & career paths'] },
               { icon: Layers, title: 'Key Techniques', items: ['Stakeholder identification', 'Requirements elicitation', 'Process modeling basics', 'Document analysis'] },
               { icon: Award, title: 'Certification Prep', items: ['Foundation syllabus', 'Mock exam questions', 'Study guides & resources', 'Exam tips & techniques'] },
             ].map((col, i) => (
               <AnimatedSection key={i} delay={i * 100}>
-                <div className="p-6 rounded-2xl border h-full" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                <div className="p-6 lg:p-8 rounded-2xl border h-full" style={{ backgroundColor: 'rgba(255,255,255,0.6)', backdropFilter: 'blur(8px)', borderColor: 'var(--border)' }}>
                   <col.icon className="w-10 h-10 mb-4" style={{ color: 'var(--brand-gold)' }} />
                   <h3 className="font-bold text-xl mb-4" style={{ color: 'var(--text-core)' }}>{col.title}</h3>
                   <ul className="space-y-3">
@@ -83,17 +83,17 @@ export default function FoundationPathwayPage() {
       </section>
 
       {/* Detailed Module List */}
-      <section className="py-20" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 md:py-20 lg:py-24 course-section-divider">
+        <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <h2 className="font-display text-3xl sm:text-4xl font-black text-center mb-4" style={{ color: 'var(--text-core)' }}>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-center mb-4" style={{ color: 'var(--text-core)' }}>
               What&apos;s <span style={{ color: 'var(--brand-gold)' }}>Covered</span>
             </h2>
             <p className="text-center max-w-2xl mx-auto mb-12 text-lg" style={{ color: 'var(--text-secondary)' }}>
               A step-by-step curriculum designed to build your confidence from the ground up.
             </p>
           </AnimatedSection>
-          <div className="max-w-3xl mx-auto space-y-6">
+          <div className="max-w-4xl mx-auto space-y-4">
             {[
               { week: 'Weeks 1-2', title: 'Business Analysis Foundations', desc: 'Introduction to BA, BACCM™ model, stakeholder identification, and the role of a BA.' },
               { week: 'Weeks 1-2', title: 'Elicitation & Collaboration', desc: 'Interview techniques, workshop facilitation, surveys, and focus groups.' },
@@ -102,7 +102,7 @@ export default function FoundationPathwayPage() {
               { week: 'Weeks 5-6', title: 'Requirements Analysis & Design', desc: 'BPMN modeling, data modeling, use cases, and wireframing.' },
             ].map((mod, i) => (
               <AnimatedSection key={i} delay={i * 80}>
-                <div className="flex items-start gap-5 p-6 rounded-2xl border" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                <div className="flex items-start gap-5 p-5 lg:p-6 rounded-2xl border" style={{ backgroundColor: 'rgba(255,255,255,0.6)', backdropFilter: 'blur(8px)', borderColor: 'var(--border)' }}>
                   <div className="w-20 flex-shrink-0 text-center">
                     <div className="text-xs font-bold uppercase" style={{ color: 'var(--brand-gold)' }}>{mod.week}</div>
                   </div>
@@ -119,23 +119,23 @@ export default function FoundationPathwayPage() {
       </section>
 
       {/* Comparison Table */}
-      <section className="py-20" style={{ backgroundColor: 'var(--bg-primary)' }}>
-        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 md:py-20 lg:py-24">
+        <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <h2 className="font-display text-3xl sm:text-4xl font-black text-center mb-4" style={{ color: 'var(--text-core)' }}>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-center mb-4" style={{ color: 'var(--text-core)' }}>
               Foundation vs <span style={{ color: 'var(--brand-gold)' }}>Practitioner</span>
             </h2>
             <p className="text-center max-w-2xl mx-auto mb-12 text-lg" style={{ color: 'var(--text-secondary)' }}>
               Understand the difference and choose the right level for your career.
             </p>
           </AnimatedSection>
-          <div className="max-w-4xl mx-auto overflow-x-auto">
+          <div className="max-w-4xl mx-auto overflow-x-auto rounded-2xl border" style={{ backgroundColor: 'rgba(255,255,255,0.6)', backdropFilter: 'blur(8px)', borderColor: 'var(--border)' }}>
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr>
-                  <th className="p-4 border-b font-bold" style={{ borderColor: 'var(--border)', color: 'var(--text-core)' }}>Feature</th>
-                  <th className="p-4 border-b font-bold text-center" style={{ borderColor: 'var(--border)', color: 'var(--brand-gold)' }}>Foundation</th>
-                  <th className="p-4 border-b font-bold text-center" style={{ borderColor: 'var(--border)', color: 'var(--brand-gold)' }}>Practitioner</th>
+                  <th className="p-4 lg:p-5 border-b font-bold" style={{ borderColor: 'var(--border)', color: 'var(--text-core)' }}>Feature</th>
+                  <th className="p-4 lg:p-5 border-b font-bold text-center" style={{ borderColor: 'var(--border)', color: 'var(--brand-gold)' }}>Foundation</th>
+                  <th className="p-4 lg:p-5 border-b font-bold text-center" style={{ borderColor: 'var(--border)', color: 'var(--brand-gold)' }}>Practitioner</th>
                 </tr>
               </thead>
               <tbody>
@@ -161,10 +161,10 @@ export default function FoundationPathwayPage() {
       </section>
 
       {/* FAQ Accordion */}
-      <section className="py-20" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 md:py-20 lg:py-24 course-section-divider">
+        <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <h2 className="font-display text-3xl sm:text-4xl font-black text-center mb-4" style={{ color: 'var(--text-core)' }}>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-center mb-4" style={{ color: 'var(--text-core)' }}>
               Frequently Asked <span style={{ color: 'var(--brand-gold)' }}>Questions</span>
             </h2>
             <p className="text-center max-w-2xl mx-auto mb-12 text-lg" style={{ color: 'var(--text-secondary)' }}>
@@ -180,7 +180,7 @@ export default function FoundationPathwayPage() {
               { q: 'What career opportunities will I have after Foundation?', a: 'Graduates typically pursue roles such as Junior Business Analyst, Process Analyst, or Business Change Analyst. The pathway provides a solid foundation for career progression.' },
             ].map((faq, i) => (
               <AnimatedSection key={i} delay={i * 80}>
-                <details className="group rounded-2xl border overflow-hidden" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                <details className="group rounded-2xl border overflow-hidden" style={{ backgroundColor: 'rgba(255,255,255,0.6)', backdropFilter: 'blur(8px)', borderColor: 'var(--border)' }}>
                   <summary className="flex items-center justify-between p-5 cursor-pointer list-none font-bold" style={{ color: 'var(--text-core)' }}>
                     {faq.q}
                     <Plus className="w-5 h-5 flex-shrink-0 group-open:hidden" style={{ color: 'var(--brand-gold)' }} />
@@ -196,18 +196,18 @@ export default function FoundationPathwayPage() {
         </div>
       </section>
 
-      {/* Section 2 — Course Cards */}
-      <section className="py-24" style={{ backgroundColor: 'var(--bg-primary)' }}>
-        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Course Cards */}
+      <section className="py-16 md:py-20 lg:py-24">
+        <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 lg:gap-8">
           {cat.courses.map((course, idx) => (
             <AnimatedSection key={course.id} delay={idx * 100} duration={600}>
               <div
                 className="rounded-2xl border overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col"
-                style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}
+                style={{ backgroundColor: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(8px)', borderColor: 'var(--border)' }}
               >
                 {/* Media */}
-                <div className="relative w-full aspect-video" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+                <div className="relative w-full aspect-video" style={{ backgroundColor: 'rgba(243,239,227,0.5)' }}>
                   {course.isVideo ? (
                     <video
                       src={course.media}
@@ -277,7 +277,7 @@ export default function FoundationPathwayPage() {
 
                   <div
                     className="p-4 rounded-xl border text-sm font-semibold"
-                    style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border)', color: 'var(--text-core)' }}
+                    style={{ backgroundColor: 'rgba(243,239,227,0.4)', borderColor: 'var(--border)', color: 'var(--text-core)' }}
                   >
                     Outcome: {course.outcome}
                   </div>

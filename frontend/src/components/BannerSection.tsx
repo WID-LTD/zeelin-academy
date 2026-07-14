@@ -5,17 +5,15 @@ import Link from 'next/link'
 import AnimatedSection from '@/components/AnimatedSection'
 
 const examFocusBooks = [
-  { src: '/books/foundation.png', title: 'Exam Focus: Foundation in Business Analysis' },
-  { src: '/books/business_change.png', title: 'Exam Focus: Business Change' },
-  { src: '/books/is_project_mgmt.png', title: 'Exam Focus: IS Project Management' },
-  { src: '/books/org_behaviour.png', title: 'Exam Focus: Organisational Behaviour' },
-  { src: '/books/ba_practice.png', title: 'Exam Focus: Business Analysis Practice' },
-  { src: '/books/requirements_eng.png', title: 'Exam Focus: Requirements Engineering' },
-  { src: '/books/modelling_processes.png', title: 'Exam Focus: Modelling Business Processes' },
-  { src: '/books/systems_modelling.png', title: 'Exam Focus: Systems Modelling Techniques' },
-  { src: '/books/systems_development.png', title: 'Exam Focus: Systems Development Essentials' },
-  { src: '/books/data_management.png', title: 'Exam Focus: Data Management Essentials' },
-  { src: '/books/benefits_mgmt.png', title: 'Exam Focus: Benefits Management and Business Acceptance' },
+  { src: '/books/foundation_in_bussiness_analysis_pratice.png', title: 'Exam Focus: Foundation in Business Analysis' },
+  { src: '/books/bussiness_change.png', title: 'Exam Focus: Business Change' },
+  { src: '/books/project_management.png', title: 'Exam Focus: IS Project Management' },
+  { src: '/books/organisational_behaviour.png', title: 'Exam Focus: Organisational Behaviour' },
+  { src: '/books/requirements_engineering.png', title: 'Exam Focus: Requirements Engineering' },
+  { src: '/books/modelling_buussiness_process.png', title: 'Exam Focus: Modelling Business Processes' },
+  { src: '/books/system_modelling_techniques.png', title: 'Exam Focus: Systems Modelling Techniques' },
+  { src: '/books/data_management_essential.png', title: 'Exam Focus: Data Management Essentials' },
+  { src: '/books/benefits_mangement_and_bussiness_acceptance.png', title: 'Exam Focus: Benefits Management and Business Acceptance' },
 ]
 
 export default function BannerSection() {

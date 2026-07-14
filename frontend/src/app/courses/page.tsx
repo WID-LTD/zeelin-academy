@@ -51,26 +51,22 @@ const instructorImages: Record<string, string> = {
   'oral-examination': '/Oral%20Examination/OE-1%20(1).jpg',
 }
 
-const swooshBg = 'data:image/svg+xml;utf8,' + encodeURIComponent(
-  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 120" fill="%23b89753" opacity="0.12"><path d="M30,40 Q40,35 45,25 T60,30 T80,20 T95,40 T75,70 T50,80 Z M140,25 Q160,15 180,20 T210,15 T230,35 T210,75 T160,85 T135,55 Z M40,85 Q45,95 60,90 T70,105 Z"/></svg>`
-)
-
 export default function CoursesPage() {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F6F0E5' }}>
-      {/* Header */}
-      <section className="py-16 lg:py-24 px-[5%]">
-        <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto text-center">
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="hero-dark py-16 md:py-24 lg:py-32 px-[5%]">
+        <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] 4xl:max-w-[2000px] mx-auto text-center">
           <AnimatedSection>
-            <div className="mb-5 flex justify-center" style={{ color: '#b89753' }}>
+            <div className="mb-5 flex justify-center" style={{ color: '#D4A02A' }}>
               <svg width="40" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4 22h16M4 20h16M5 20v-9M9 20v-9M13 20v-9M19 20v-9M3 11l9-7 9 7M12 2v2" />
               </svg>
             </div>
-            <h1 className="font-display text-[clamp(1.75rem,1rem+2.5vw,3rem)] font-bold tracking-wider uppercase leading-tight mb-5" style={{ color: '#0c1e36' }}>
+            <h1 className="font-display text-[clamp(1.75rem,1rem+2.5vw,3rem)] sm:text-[clamp(2rem,1rem+3vw,3.5rem)] lg:text-[clamp(2.5rem,1rem+3.5vw,4rem)] font-black tracking-wider uppercase leading-tight mb-5" style={{ color: '#ffffff' }}>
               Our Training Programmes
             </h1>
-            <p className="text-sm md:text-base lg:text-lg max-w-[600px] mx-auto leading-relaxed" style={{ color: '#6e6e6e' }}>
+            <p className="text-sm md:text-base lg:text-lg xl:text-xl max-w-[700px] mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>
               Structured learning pathways designed for busy professionals and future Business Analysts worldwide.
             </p>
           </AnimatedSection>
@@ -78,16 +74,17 @@ export default function CoursesPage() {
       </section>
 
       {/* Category Cards */}
-      <section className="px-[5%] pb-16 lg:pb-24">
-        <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto">
-          <div className="flex flex-wrap justify-center gap-6">
+      <section className="px-[5%] py-16 lg:py-24">
+        <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] 4xl:max-w-[2000px] mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
             {categories.map((cat, idx) => (
               <AnimatedSection key={cat.slug} delay={idx * 100}>
-                <Link href={`/courses/${cat.slug}`} className="block">
+                <Link href={`/courses/${cat.slug}`} className="block h-full">
                 <div
-                  className="w-[clamp(14rem,12rem+10vw,17.5rem)] rounded-xl flex flex-col items-center text-center px-6 py-10 pb-8 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                  className="rounded-xl flex flex-col items-center text-center px-6 py-10 pb-8 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 h-full"
                   style={{
-                    backgroundColor: '#ffffff',
+                    backgroundColor: 'rgba(255,255,255,0.7)',
+                    backdropFilter: 'blur(12px)',
                     boxShadow: '0 10px 30px rgba(184, 151, 83, 0.06)',
                     border: '1px solid rgba(184, 151, 83, 0.12)',
                   }}
@@ -113,12 +110,7 @@ export default function CoursesPage() {
                   </p>
 
                   {/* Instructor Photo */}
-                  <div className="w-full flex justify-center items-center mt-auto pt-2" style={{
-                    backgroundImage: `url('${swooshBg}')`,
-                    backgroundSize: 'contain',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'center',
-                  }}>
+                  <div className="w-full flex justify-center items-center mt-auto pt-2">
                     <div className="w-[5rem] h-[5rem] rounded-full p-[3px]" style={{ border: '2px solid #b89753', backgroundColor: '#fff' }}>
                       <img
                         src={instructorImages[cat.slug] || '/instructor_1.png'}
@@ -135,40 +127,10 @@ export default function CoursesPage() {
         </div>
       </section>
 
-      {/* Foundation Modules Detail Section */}
-      <section className="px-[5%] pb-20">
-        <div className="max-w-[800px] mx-auto">
-          <AnimatedSection>
-            <div className="rounded-2xl p-8 text-center relative overflow-hidden" style={{
-              backgroundColor: '#fdfaf5',
-              border: '1px solid #dcdcdc',
-              boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
-              borderBottom: '8px solid #001f3f',
-            }}>
-              <h2 className="font-display text-[clamp(1.75rem,1.5rem+2vw,3rem)] font-bold mb-4 tracking-tight" style={{ color: '#001f3f' }}>
-                Foundation Modules
-              </h2>
-
-              <div className="flex items-center justify-center mb-5" style={{ color: '#c5a059' }}>
-                <span className="flex-1 h-px" style={{ backgroundColor: '#c5a059', marginRight: '0.9375rem' }} />
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="#c5a059">
-                  <path d="M4 20h16v2H4v-2zM6 18h12v-2H6v2zm1-2h10v-1H7v1zm0-3h10v-1H7v1zm1-3h8v-1H8v1zm-1-3h10v-1H7v1zM6 6h12V4H6v2z" />
-                </svg>
-                <span className="flex-1 h-px" style={{ backgroundColor: '#c5a059', marginLeft: '0.9375rem' }} />
-              </div>
-
-              <p className="text-base md:text-lg max-w-[640px] mx-auto leading-relaxed" style={{ color: '#333' }}>
-                These modules help learners build the knowledge base needed to understand Business Analysis, business change, project environments, and organisational behaviour before progressing through the wider Diploma pathway.
-              </p>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
       {/* 11 Certificate Sections */}
       {certificates.map((cert, idx) => (
-        <section key={cert.id} className="px-[5%]">
-          <div className="max-w-[800px] mx-auto">
+        <section key={cert.id} className="px-[5%] py-10 lg:py-14 course-section-divider">
+          <div className="max-w-[900px] xl:max-w-[1000px] 2xl:max-w-[1100px] 3xl:max-w-[1200px] mx-auto">
             <AnimatedSection delay={0}>
               <CourseCertificateSection data={cert} />
             </AnimatedSection>
@@ -177,8 +139,8 @@ export default function CoursesPage() {
       ))}
 
       {/* Badges */}
-      <section className="px-[5%] pb-20">
-        <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto">
+      <section className="px-[5%] py-16 lg:py-20">
+        <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] mx-auto">
           <AnimatedSection delay={100}>
             <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-[0.6875rem] font-bold uppercase tracking-wider" style={{ color: '#0c1e36' }}>
               <div className="flex items-center gap-2">

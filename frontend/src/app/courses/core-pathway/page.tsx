@@ -15,17 +15,18 @@ const cat = categories.find((c) => c.slug === 'core-pathway')!
 export default function CorePathwayPage() {
   return (
     <div className="min-h-screen">
-      <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-        <div className="absolute inset-0 bg-hero-glow pointer-events-none opacity-40" />
-        <div className="relative max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Hero Section */}
+      <section className="hero-dark py-24 md:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-hero-glow pointer-events-none opacity-30" />
+        <div className="relative max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] 4xl:max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection delay={0}>
-            <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl uppercase tracking-wide leading-none">
+            <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl xl:text-7xl uppercase tracking-wide leading-none">
               <span style={{ color: '#ffffff' }}>Core </span>
               <span style={{ color: 'var(--brand-gold)' }}>Pathway</span>
             </h1>
           </AnimatedSection>
           <AnimatedSection delay={100}>
-            <p className="text-lg sm:text-xl mt-6 max-w-3xl mx-auto font-medium" style={{ color: 'var(--text-secondary)' }}>
+            <p className="text-lg sm:text-xl mt-6 max-w-3xl mx-auto font-medium" style={{ color: 'rgba(255,255,255,0.75)' }}>
               {cat.description}
             </p>
           </AnimatedSection>
@@ -33,8 +34,8 @@ export default function CorePathwayPage() {
       </section>
 
       {/* Breadcrumb */}
-      <section className="py-4 border-b" style={{ backgroundColor: 'var(--bg-primary)', borderColor: 'var(--border)' }}>
-        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-4 course-section-divider">
+        <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center gap-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
             <Link href="/" className="hover:gold transition-colors">Home</Link>
             <ChevronRight className="w-4 h-4" />
@@ -46,9 +47,9 @@ export default function CorePathwayPage() {
       </section>
 
       {/* Stats Row */}
-      <section className="py-16" style={{ backgroundColor: 'var(--bg-primary)' }}>
-        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <section className="py-12 md:py-16">
+        <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
             {[
               { icon: Award, label: 'Pass Rate', value: '92%' },
               { icon: Clock, label: 'Avg. Completion', value: '12 Weeks' },
@@ -56,9 +57,9 @@ export default function CorePathwayPage() {
               { icon: Star, label: 'Rating', value: '4.8/5.0' },
             ].map((stat, i) => (
               <AnimatedSection key={i} delay={i * 100}>
-                <div className="text-center p-6 rounded-2xl border" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                <div className="text-center p-5 lg:p-6 rounded-2xl border" style={{ backgroundColor: 'rgba(255,255,255,0.6)', backdropFilter: 'blur(8px)', borderColor: 'var(--border)' }}>
                   <stat.icon className="w-8 h-8 mx-auto mb-3" style={{ color: 'var(--brand-gold)' }} />
-                  <div className="text-3xl font-black font-display mb-1" style={{ color: 'var(--text-core)' }}>{stat.value}</div>
+                  <div className="text-2xl lg:text-3xl font-black font-display mb-1" style={{ color: 'var(--text-core)' }}>{stat.value}</div>
                   <div className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>{stat.label}</div>
                 </div>
               </AnimatedSection>
@@ -68,17 +69,17 @@ export default function CorePathwayPage() {
       </section>
 
       {/* What You'll Learn */}
-      <section className="py-20" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 md:py-20 lg:py-24 course-section-divider">
+        <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <h2 className="font-display text-3xl sm:text-4xl font-black text-center mb-4" style={{ color: 'var(--text-core)' }}>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-center mb-4" style={{ color: 'var(--text-core)' }}>
               What You&apos;ll <span style={{ color: 'var(--brand-gold)' }}>Learn</span>
             </h2>
             <p className="text-center max-w-2xl mx-auto mb-12 text-lg" style={{ color: 'var(--text-secondary)' }}>
               Core Pathway equips you with practical Business Analysis skills that you can apply immediately.
             </p>
           </AnimatedSection>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
             {[
               { icon: BookOpen, title: 'BA Fundamentals', desc: 'Master the BACCM™ model, stakeholder identification, and the core BA toolkit.' },
               { icon: Target, title: 'Requirements Engineering', desc: 'Elicit, analyse, validate, and manage requirements through the full life cycle.' },
@@ -90,7 +91,7 @@ export default function CorePathwayPage() {
               { icon: MessageCircle, title: 'Communication Skills', desc: 'Present findings, write reports, and influence decision-makers.' },
             ].map((skill, i) => (
               <AnimatedSection key={i} delay={i * 80}>
-                <div className="p-6 rounded-2xl border h-full" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                <div className="p-5 lg:p-6 rounded-2xl border h-full" style={{ backgroundColor: 'rgba(255,255,255,0.6)', backdropFilter: 'blur(8px)', borderColor: 'var(--border)' }}>
                   <skill.icon className="w-10 h-10 mb-4" style={{ color: 'var(--brand-gold)' }} />
                   <h3 className="font-bold text-lg mb-2" style={{ color: 'var(--text-core)' }}>{skill.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{skill.desc}</p>
@@ -102,17 +103,17 @@ export default function CorePathwayPage() {
       </section>
 
       {/* Course Includes */}
-      <section className="py-20" style={{ backgroundColor: 'var(--bg-primary)' }}>
-        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 md:py-20 lg:py-24">
+        <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <h2 className="font-display text-3xl sm:text-4xl font-black text-center mb-4" style={{ color: 'var(--text-core)' }}>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-center mb-4" style={{ color: 'var(--text-core)' }}>
               Course <span style={{ color: 'var(--brand-gold)' }}>Includes</span>
             </h2>
             <p className="text-center max-w-2xl mx-auto mb-12 text-lg" style={{ color: 'var(--text-secondary)' }}>
               Everything you need to succeed, all in one place.
             </p>
           </AnimatedSection>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 lg:gap-4">
             {[
               { icon: Award, label: 'Certificate of Completion' },
               { icon: Clock, label: 'Lifetime Access' },
@@ -122,7 +123,7 @@ export default function CorePathwayPage() {
               { icon: RefreshCw, label: 'Free Updates' },
             ].map((item, i) => (
               <AnimatedSection key={i} delay={i * 80}>
-                <div className="p-5 rounded-xl border text-center" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                <div className="p-4 lg:p-5 rounded-xl border text-center" style={{ backgroundColor: 'rgba(255,255,255,0.6)', backdropFilter: 'blur(8px)', borderColor: 'var(--border)' }}>
                   <item.icon className="w-7 h-7 mx-auto mb-3" style={{ color: 'var(--brand-gold)' }} />
                   <span className="text-xs font-semibold" style={{ color: 'var(--text-core)' }}>{item.label}</span>
                 </div>
@@ -133,23 +134,23 @@ export default function CorePathwayPage() {
       </section>
 
       {/* Instructor */}
-      <section className="py-20" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 md:py-20 lg:py-24 course-section-divider">
+        <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <h2 className="font-display text-3xl sm:text-4xl font-black text-center mb-12" style={{ color: 'var(--text-core)' }}>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-center mb-12" style={{ color: 'var(--text-core)' }}>
               Meet Your <span style={{ color: 'var(--brand-gold)' }}>Instructor</span>
             </h2>
           </AnimatedSection>
           <div className="max-w-3xl mx-auto">
             <AnimatedSection delay={100}>
-              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8 p-8 rounded-2xl border" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
-                <div className="w-28 h-28 rounded-full flex-shrink-0 flex items-center justify-center text-4xl font-bold" style={{ backgroundColor: 'var(--bg-secondary)', color: 'var(--brand-gold)' }}>
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8 p-6 lg:p-8 rounded-2xl border" style={{ backgroundColor: 'rgba(255,255,255,0.6)', backdropFilter: 'blur(8px)', borderColor: 'var(--border)' }}>
+                <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-full flex-shrink-0 flex items-center justify-center text-4xl font-bold" style={{ backgroundColor: 'rgba(243,239,227,0.5)', color: 'var(--brand-gold)' }}>
                   <GraduationCap className="w-14 h-14" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-1" style={{ color: 'var(--text-core)' }}>Dr. Franklin Kalu</h3>
                   <p className="text-sm font-semibold mb-4" style={{ color: 'var(--brand-gold)' }}>Senior Business Analyst & Educator</p>
-                  <p className="leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                  <p className="leading-relaxed text-sm lg:text-base" style={{ color: 'var(--text-secondary)' }}>
                     With over 15 years of experience in Business Analysis across Fortune 500 companies, Dr. Franklin Kalu brings real-world insights to every lesson. He is passionate about helping aspiring BAs build successful careers and has trained over 3,000 professionals globally. His teaching approach blends theory with hands-on practice, ensuring you develop skills that matter in the workplace.
                   </p>
                 </div>
@@ -159,16 +160,17 @@ export default function CorePathwayPage() {
         </div>
       </section>
 
-      <section className="py-24" style={{ backgroundColor: 'var(--bg-primary)' }}>
-        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Course Cards */}
+      <section className="py-16 md:py-20 lg:py-24">
+        <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 lg:gap-8">
           {cat.courses.map((course, idx) => (
             <AnimatedSection key={course.id} delay={idx * 100} duration={600}>
               <div
                 className="rounded-2xl border overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col"
-                style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}
+                style={{ backgroundColor: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(8px)', borderColor: 'var(--border)' }}
               >
-                <div className="relative w-full aspect-video" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+                <div className="relative w-full aspect-video" style={{ backgroundColor: 'rgba(243,239,227,0.5)' }}>
                   {course.isVideo ? (
                     <video src={course.media} className="w-full h-full object-cover" muted loop playsInline autoPlay />
                   ) : (
@@ -225,7 +227,7 @@ export default function CorePathwayPage() {
 
                   <div
                     className="p-4 rounded-xl border text-sm font-semibold"
-                    style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border)', color: 'var(--text-core)' }}
+                    style={{ backgroundColor: 'rgba(243,239,227,0.4)', borderColor: 'var(--border)', color: 'var(--text-core)' }}
                   >
                     Outcome: {course.outcome}
                   </div>

@@ -42,10 +42,10 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
   ]
 
   return (
-    <div className="min-h-screen bg-[color:var(--bg-primary)] pt-20">
+    <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <div className="bg-gray-900 text-white py-16 md:py-24">
-        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="hero-dark text-white py-16 md:py-24">
+        <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] 4xl:max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
             <div className="lg:col-span-2">
               <div className="flex items-center gap-2 text-sm gold font-medium mb-4">
@@ -92,7 +92,7 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
         </div>
       </div>
 
-      <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
+      <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           
           {/* Main Content */}
@@ -233,7 +233,7 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
 
           {/* Sticky Sidebar */}
           <div className="lg:col-span-1">
-            <div className="sticky top-28 border border-[color:var(--border)] bg-[color:var(--bg-card)] rounded-2xl shadow-xl overflow-hidden hidden lg:block">
+            <div className="sticky top-28 border rounded-2xl shadow-xl overflow-hidden hidden lg:block" style={{ backgroundColor: 'rgba(255,255,255,0.8)', backdropFilter: 'blur(12px)', borderColor: 'var(--border)' }}>
               {/* Course Preview Image */}
               <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 relative">
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -311,8 +311,8 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
       </div>
 
       {/* Related Courses */}
-      <section className="py-20" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 md:py-20 course-section-divider">
+        <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold mb-8 text-center" style={{ color: 'var(--text-core)' }}>
             Related <span style={{ color: 'var(--brand-gold)' }}>Courses</span>
           </h2>
@@ -344,8 +344,8 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
       </section>
 
       {/* Sticky Enrollment CTA Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 border-t backdrop-blur-lg" style={{ backgroundColor: 'rgba(15,17,21,0.95)', borderColor: 'var(--border)' }}>
-        <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+      <div className="fixed bottom-0 left-0 right-0 z-50 border-t backdrop-blur-lg" style={{ backgroundColor: 'rgba(255,255,255,0.92)', borderColor: 'var(--border)' }}>
+        <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
           <div className="hidden sm:block">
             <div className="text-sm font-bold" style={{ color: 'var(--text-core)' }}>Master International Business Analysis</div>
             <div className="flex items-center gap-2 text-xs mt-0.5" style={{ color: 'var(--text-secondary)' }}>

@@ -7,17 +7,15 @@ import { ChevronRight, CheckCircle2, Phone, ArrowRight, CheckCircle, ClipboardLi
 import AnimatedSection from '@/components/AnimatedSection'
 
 const examFocusBooks = [
-  { src: '/books/foundation.png', title: 'Exam Focus: Foundation in Business Analysis' },
-  { src: '/books/business_change.png', title: 'Exam Focus: Business Change' },
-  { src: '/books/is_project_mgmt.png', title: 'Exam Focus: IS Project Management' },
-  { src: '/books/org_behaviour.png', title: 'Exam Focus: Organisational Behaviour' },
-  { src: '/books/ba_practice.png', title: 'Exam Focus: Business Analysis Practice' },
-  { src: '/books/requirements_eng.png', title: 'Exam Focus: Requirements Engineering' },
-  { src: '/books/modelling_processes.png', title: 'Exam Focus: Modelling Business Processes' },
-  { src: '/books/systems_modelling.png', title: 'Exam Focus: Systems Modelling Techniques' },
-  { src: '/books/systems_development.png', title: 'Exam Focus: Systems Development Essentials' },
-  { src: '/books/data_management.png', title: 'Exam Focus: Data Management Essentials' },
-  { src: '/books/benefits_mgmt.png', title: 'Exam Focus: Benefits Management and Business Acceptance' },
+  { src: '/books/foundation_in_bussiness_analysis_pratice.png', title: 'Exam Focus: Foundation in Business Analysis' },
+  { src: '/books/bussiness_change.png', title: 'Exam Focus: Business Change' },
+  { src: '/books/project_management.png', title: 'Exam Focus: IS Project Management' },
+  { src: '/books/organisational_behaviour.png', title: 'Exam Focus: Organisational Behaviour' },
+  { src: '/books/requirements_engineering.png', title: 'Exam Focus: Requirements Engineering' },
+  { src: '/books/modelling_buussiness_process.png', title: 'Exam Focus: Modelling Business Processes' },
+  { src: '/books/system_modelling_techniques.png', title: 'Exam Focus: Systems Modelling Techniques' },
+  { src: '/books/data_management_essential.png', title: 'Exam Focus: Data Management Essentials' },
+  { src: '/books/benefits_mangement_and_bussiness_acceptance.png', title: 'Exam Focus: Benefits Management and Business Acceptance' },
 ]
 
 const q3Options = [
@@ -589,7 +587,7 @@ export default function PathwayFinder() {
   return (
     <div className="min-h-screen relative">
       {/* Section 1 — Book Carousel */}
-      <section className="pt-24 overflow-hidden" style={{ backgroundColor: 'var(--bg-primary)' }}>
+      <section className="pt-24 overflow-hidden">
         <div
           className="flex gap-6 overflow-x-hidden py-6 select-none group/banner"
           style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%)' }}
@@ -599,7 +597,7 @@ export default function PathwayFinder() {
               <Link key={i} href="/courses" className="flex-shrink-0 flex flex-col items-center group/book no-underline">
                 <div
                   className="relative w-[8.75rem] sm:w-[10rem] md:w-[11.875rem] aspect-[3/4] overflow-hidden transition-all duration-300 group-hover/book:scale-[1.04] group-hover/book:shadow-[0_0_25px_rgba(212,175,55,0.25)] hover-glow"
-                  style={{ boxShadow: 'rgba(0,0,0,0.12) 0px 8px 30px', backgroundColor: 'var(--bg-card)', border: '1px solid transparent' }}
+                  style={{ boxShadow: 'rgba(0,0,0,0.12) 0px 8px 30px', backgroundColor: 'rgba(255,255,255,0.7)', border: '1px solid transparent' }}
                 >
                   <Image
                     src={book.src}
@@ -611,7 +609,7 @@ export default function PathwayFinder() {
                   />
                 </div>
                 <div className="mt-4 w-[8.75rem] sm:w-[10rem] md:w-[11.875rem] text-center px-1">
-                  <p className="text-sm md:text-base font-semibold leading-snug px-2 py-1 border transition-all duration-300 group-hover/book:border-[color:var(--brand-gold)]" style={{ color: 'var(--text-core)', borderColor: 'var(--border)', backgroundColor: 'var(--bg-card)' }}>
+                  <p className="text-sm md:text-base font-semibold leading-snug px-2 py-1 border transition-all duration-300 group-hover/book:border-[color:var(--brand-gold)]" style={{ color: 'var(--text-core)', borderColor: 'var(--border)', backgroundColor: 'rgba(255,255,255,0.7)' }}>
                     {book.title}
                   </p>
                 </div>
@@ -622,8 +620,8 @@ export default function PathwayFinder() {
       </section>
 
       {/* Section 3 — Header matching template */}
-      <section className="py-[clamp(2rem,1rem+2vw,4rem)] px-[5%]" style={{ backgroundColor: '#f7f4eb' }}>
-        <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto text-center">
+      <section className="py-[clamp(2rem,1rem+2vw,4rem)] px-[5%]">
+        <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] 4xl:max-w-[2000px] mx-auto text-center">
           <AnimatedSection delay={0}>
             <h1 className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-wide leading-tight" style={{ color: '#002855' }}>
               ZEELIN DIPLOMA
@@ -641,8 +639,8 @@ export default function PathwayFinder() {
       </section>
 
       {/* Section 4 — Stats + Start My Assessment with mature hand */}
-      <section className="py-[clamp(1.25rem,0.625rem+1.25vw,2.5rem)] px-[5%]" style={{ backgroundColor: '#f7f4eb' }}>
-        <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto text-center">
+      <section className="py-[clamp(1.25rem,0.625rem+1.25vw,2.5rem)] px-[5%]">
+        <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] 4xl:max-w-[2000px] mx-auto text-center">
           <AnimatedSection>
             <h3 className="font-display text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4" style={{ color: '#222222' }}>
               Ready to Find Your <span style={{ color: '#c5a043' }}>Pathway?</span>
@@ -699,7 +697,7 @@ export default function PathwayFinder() {
       </section>
 
       {/* Section 6 — Multi-Step Form */}
-      <section ref={formRef} className="py-24" style={{ backgroundColor: 'var(--bg-primary)' }}>
+      <section ref={formRef} className="py-24">
         <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Enhanced Progress Indicator */}
           {step > 1 && step < 7 && (
