@@ -129,12 +129,10 @@ export default function CoursesPage() {
 
       {/* 11 Certificate Sections */}
       {certificates.map((cert, idx) => (
-        <section key={cert.id} className="px-[5%] py-10 lg:py-14 course-section-divider">
-          <div className="max-w-[900px] xl:max-w-[1000px] 2xl:max-w-[1100px] 3xl:max-w-[1200px] mx-auto">
-            <AnimatedSection delay={0}>
-              <CourseCertificateSection data={cert} />
-            </AnimatedSection>
-          </div>
+        <section key={cert.id} className={`px-[5%] py-8 lg:py-10 xl:py-12 ${idx > 0 ? 'course-section-divider' : ''}`}>
+          <AnimatedSection delay={0}>
+            <CourseCertificateSection data={cert} />
+          </AnimatedSection>
         </section>
       ))}
 
