@@ -59,7 +59,7 @@ export default function FoundationPathwayPage() {
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {[
-              { icon: BookOpen, title: 'Core Concepts', items: ['BACCM™ model', 'BA role & responsibilities', 'Industry standards & best practices', 'BA competencies & career paths'] },
+              { icon: BookOpen, title: 'Core Concepts', items: ['Core Concept Model', 'BA role & responsibilities', 'Industry standards & best practices', 'BA competencies & career paths'] },
               { icon: Layers, title: 'Key Techniques', items: ['Stakeholder identification', 'Requirements elicitation', 'Process modeling basics', 'Document analysis'] },
               { icon: Award, title: 'Certification Prep', items: ['Foundation syllabus', 'Mock exam questions', 'Study guides & resources', 'Exam tips & techniques'] },
             ].map((col, i) => (
@@ -95,7 +95,7 @@ export default function FoundationPathwayPage() {
           </AnimatedSection>
           <div className="max-w-4xl mx-auto space-y-4">
             {[
-              { week: 'Weeks 1-2', title: 'Business Analysis Foundations', desc: 'Introduction to BA, BACCM™ model, stakeholder identification, and the role of a BA.' },
+              { week: 'Weeks 1-2', title: 'Business Analysis Foundations', desc: 'Introduction to BA, Core Concept Model, stakeholder identification, and the role of a BA.' },
               { week: 'Weeks 1-2', title: 'Elicitation & Collaboration', desc: 'Interview techniques, workshop facilitation, surveys, and focus groups.' },
               { week: 'Weeks 3-4', title: 'Requirements Life Cycle Management', desc: 'Traceability matrices, prioritization frameworks, and change management.' },
               { week: 'Weeks 3-4', title: 'Strategy Analysis', desc: 'SWOT analysis, root cause analysis, business case development.' },

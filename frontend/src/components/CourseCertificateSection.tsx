@@ -104,7 +104,7 @@ export default function CourseCertificateSection({ data }: { data: CertificateDa
         <div className="flex items-center gap-2.5 lg:gap-3" style={{ color: 'var(--navy-dark)' }}>
           <Building className="w-5 h-5 lg:w-6 lg:h-6" style={{ color: 'var(--brand-gold)' }} />
           <span
-            className="font-serif font-bold whitespace-nowrap"
+            className="font-serif font-bold whitespace-normal"
             style={{ fontSize: 'clamp(1.25rem, 1rem + 1vw, 2.25rem)' }}
           >
             What you would learn

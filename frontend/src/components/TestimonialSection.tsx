@@ -36,9 +36,9 @@ export default function TestimonialSection() {
         {/* Heading */}
         <div className="relative text-center mb-10 md:mb-12">
           <div className="flex items-center justify-center gap-[0.9375rem] mb-3">
-            <div className="w-[2.1875rem] h-px" style={{ backgroundColor: '#D5B266' }} />
-            <span className="text-[0.8125rem] font-bold tracking-[0.09375rem]" style={{ color: '#D5B266', fontFamily: "'Helvetica Neue', Arial, sans-serif" }}>SUCCESS STORIES</span>
-            <div className="w-[2.1875rem] h-px" style={{ backgroundColor: '#D5B266' }} />
+            <div className="w-[2.1875rem] h-px" style={{ backgroundColor: '#D4A02A' }} />
+            <span className="text-[0.8125rem] font-bold tracking-[0.09375rem]" style={{ color: '#D4A02A', fontFamily: "'Helvetica Neue', Arial, sans-serif" }}>SUCCESS STORIES</span>
+            <div className="w-[2.1875rem] h-px" style={{ backgroundColor: '#D4A02A' }} />
           </div>
 
           <h2 className="font-display text-4xl md:text-5xl font-black mb-4" style={{ color: 'var(--navy-dark)' }}>
@@ -49,7 +49,7 @@ export default function TestimonialSection() {
             Real stories from learners who transformed their careers<br className="hidden sm:inline" /> with Zeelin Academy.
           </p>
 
-          <div className="w-[4.375rem] h-[0.125rem] mx-auto mt-6" style={{ backgroundColor: '#D5B266' }} />
+          <div className="w-[4.375rem] h-[0.125rem] mx-auto mt-6" style={{ backgroundColor: '#D4A02A' }} />
 
           {/* Decorative elements */}
           <div className="absolute top-[0.9375rem] left-[0.9375rem] w-[5rem] h-[5rem] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#E8E2D5 2px, transparent 2px)', backgroundSize: '0.75rem 0.75rem', opacity: 0.7 }} />
@@ -63,7 +63,7 @@ export default function TestimonialSection() {
             <div
               key={card.id}
               className="flex flex-col md:flex-row h-auto md:min-h-[16.25rem] rounded-2xl overflow-hidden relative"
-              style={{ backgroundColor: '#FFFFFF', boxShadow: '0 10px 30px rgba(180, 160, 130, 0.15)', borderBottom: '3px solid #D5B266' }}
+              style={{ backgroundColor: '#FFFFFF', boxShadow: '0 10px 30px rgba(180, 160, 130, 0.15)', borderBottom: '3px solid #D4A02A' }}
             >
               <div className="w-full md:w-[11.875rem] h-[12.5rem] md:h-full flex-shrink-0 relative">
                 <svg className="w-full h-full block" viewBox="0 0 190 260" preserveAspectRatio="none">
@@ -77,8 +77,8 @@ export default function TestimonialSection() {
               </div>
               <div className="flex-1 p-4 md:py-[1.5625rem] md:pr-[1.875rem] md:pl-[0.9375rem] flex flex-col relative md:max-w-[30rem]">
                 <h3 className="text-xl md:text-[1.375rem] font-bold mb-[0.125rem]" style={{ color: '#112240', fontFamily: "'Georgia', serif" }}>{card.name}</h3>
-                <div className="text-[0.6875rem] md:text-[0.75rem] font-bold mb-2" style={{ color: '#D5B266' }}>{card.role}</div>
-                <div className="text-sm mb-3 tracking-wider" style={{ color: '#D5B266', letterSpacing: '0.125rem' }}>★★★★★</div>
+                <div className="text-[0.6875rem] md:text-[0.75rem] font-bold mb-2" style={{ color: '#D4A02A' }}>{card.role}</div>
+                <div className="text-sm mb-3 tracking-wider" style={{ color: '#D4A02A', letterSpacing: '0.125rem' }}>★★★★★</div>
                 <p className="text-xs sm:text-[0.75rem] leading-relaxed" style={{ color: '#4A4A4A', lineHeight: 1.6, fontWeight: 400 }}>&ldquo;{card.quote}&rdquo;</p>
                 <span className="absolute top-3 md:top-[0.9375rem] right-4 md:right-[1.875rem] text-[2.5rem] md:text-[3.75rem] leading-none font-bold pointer-events-none" style={{ color: '#FAF2E3', fontFamily: "'Georgia', serif" }}>❝</span>
               </div>

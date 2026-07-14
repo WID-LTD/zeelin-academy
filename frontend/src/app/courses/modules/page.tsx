@@ -15,7 +15,7 @@ const videoMap: Record<string, string> = {
 }
 
 const modules = [
-  { id: 'ba-foundations', title: 'Business Analysis Foundations', type: 'free', desc: 'Introduction to BA, BACCM™ Model, stakeholder identification, and the role of a Business Analyst.', lessons: 6, icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z', biWeek: 'Weeks 1-2' },
+  { id: 'ba-foundations', title: 'Business Analysis Foundations', type: 'free', desc: 'Introduction to BA, Core Concept Model, stakeholder identification, and the role of a Business Analyst.', lessons: 6, icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z', biWeek: 'Weeks 1-2' },
   { id: 'elicitation', title: 'Elicitation & Collaboration', type: 'free', desc: 'Master interviews, workshops, focus groups, and survey techniques.', lessons: 8, icon: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z', biWeek: 'Weeks 1-2' },
   { id: 'requirements-mgmt', title: 'Requirements Life Cycle Mgmt', type: 'paid', desc: 'Traceability matrices, prioritization frameworks, change management.', lessons: 10, icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15', biWeek: 'Weeks 3-4' },
   { id: 'strategy-analysis', title: 'Strategy Analysis', type: 'paid', desc: 'SWOT analysis, root cause analysis, business case development.', lessons: 10, icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', biWeek: 'Weeks 3-4' },

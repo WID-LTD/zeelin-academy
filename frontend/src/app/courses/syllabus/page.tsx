@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 const weeks = [
-  { num: 1, title: 'Business Analysis Planning and Monitoring', topics: ['BACCM™ Core Concept Model', 'Stakeholder identification & mapping', 'Planning the BA approach', 'Governance and BA metrics', 'Tools: Stakeholder maps, RACI matrix'] },
+  { num: 1, title: 'Business Analysis Planning and Monitoring', topics: ['Core Concept Model', 'Stakeholder identification & mapping', 'Planning the BA approach', 'Governance and BA metrics', 'Tools: Stakeholder maps, RACI matrix'] },
   { num: 2, title: 'Elicitation and Collaboration', topics: ['Interview techniques', 'Workshops facilitation', 'Focus groups', 'Survey analysis', 'Tools: Elicitation activity plans'] },
   { num: 3, title: 'Requirements Life Cycle Management', topics: ['Requirements traceability', 'MoSCoW prioritization', 'Change management', 'Requirements approval', 'Tools: Traceability matrices, Jira'] },
   { num: 4, title: 'Strategy Analysis', topics: ['Current vs future state', 'Risk identification', 'Root cause analysis', 'Business case development', 'Tools: SWOT, 5 Whys'] },
@@ -18,7 +18,7 @@ export default function SyllabusPage() {
             Weekly <span className="gold">Syllabus</span>
           </h1>
           <p className="text-lg max-w-2xl mx-auto text-secondary">
-            Week-by-week breakdown of the Diploma in Business Analysis program
+            Week-by-week breakdown of the Professional Qualification in Business Analysis program
           </p>
         </div>
 
@@ -52,7 +52,7 @@ export default function SyllabusPage() {
             Ready to Get <span className="gold">Started?</span>
           </h2>
           <p className="mb-8 max-w-xl mx-auto text-secondary">
-            Complete the full program and earn your Diploma in Business Analysis. Enroll now to begin your journey.
+            Complete the full program and earn your Professional Qualification in Business Analysis. Enroll now to begin your journey.
           </p>
           <Link href="/enroll" className="btn-gold px-10 py-4 text-lg inline-block">
             Enroll Now - Start Your Journey

@@ -9,7 +9,7 @@ import { ChevronLeft, Check, Lightbulb } from 'lucide-react'
 const moduleLessons: Record<string, { id: string; title: string; duration: string; video?: string; content: string }[]> = {
   'ba-foundations': [
     { id: 'ba-intro', title: 'What is Business Analysis?', duration: '15 min', video: '/VID-20260605-WA0123.mp4', content: 'Learn the fundamentals of Business Analysis, its role in organizations, and the value it delivers.' },
-    { id: 'baccm', title: 'BACCM Core Concept Model', duration: '20 min', content: 'Understand the six core concepts: Change, Need, Solution, Stakeholder, Value, and Context.' },
+    { id: 'baccm', title: 'Core Concept Model', duration: '20 min', content: 'Understand the six core concepts: Change, Need, Solution, Stakeholder, Value, and Context.' },
     { id: 'stakeholder-id', title: 'Stakeholder Identification', duration: '18 min', content: 'Techniques for identifying stakeholders and understanding their influence and impact.' },
     { id: 'ba-planning', title: 'BA Approach Planning', duration: '22 min', content: 'How to plan the Business Analysis approach for any project or initiative.' },
     { id: 'governance', title: 'Governance & BA Metrics', duration: '15 min', content: 'Understanding governance structures and measuring BA effectiveness.' },

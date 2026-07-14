@@ -26,7 +26,7 @@ export default function MobileNav() {
               key={item.href}
               href={item.href}
               className={`flex flex-col items-center justify-center gap-0.5 w-full h-full transition-colors ${
-                isActive ? 'text-[#D4AF37]' : 'text-white/50'
+                isActive ? 'text-[#D4A02A]' : 'text-white/50'
               }`}
             >
               <Icon size={20} />

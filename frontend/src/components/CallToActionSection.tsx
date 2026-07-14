@@ -2,43 +2,43 @@ import Link from 'next/link'
 
 export default function CallToActionSection() {
   return (
-    <div style={{ display: 'flex', width: '100%', maxWidth: '1200px', height: '400px', backgroundColor: '#FAF7F0', fontFamily: "'Georgia', 'Times New Roman', serif", overflow: 'hidden', position: 'relative', boxSizing: 'border-box', border: '1px solid #e2ddd5', margin: '0 auto' }}>
-      <div style={{ flex: '1.1', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '40px 20px 40px 60px', textAlign: 'center', position: 'relative', zIndex: 2 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '24px' }}>
+    <div className="w-full max-w-[1200px] min-h-[320px] lg:min-h-[400px] bg-[#FAF7F0] font-serif border border-[#e2ddd5] mx-auto relative overflow-hidden flex flex-col lg:flex-row">
+      <div className="flex-1 flex flex-col items-center justify-center px-6 py-10 lg:px-15 lg:py-10 text-center relative z-2">
+        <div className="flex items-center gap-2 mb-5 lg:mb-6">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 2L4 5V11C4 16.55 7.42 21.74 12 23C16.58 21.74 20 16.55 20 11V5L12 2Z" stroke="#D5B266" strokeWidth="2" fill="none"/>
             <text x="12" y="15" fill="#D5B266" fontSize="10" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">Z</text>
           </svg>
-          <span style={{ fontFamily: "'Helvetica Neue', Arial, sans-serif", fontSize: '13px', letterSpacing: '2px', color: '#112240', fontWeight: 'bold' }}>ZEELIN ACADEMY</span>
+          <span className="font-sans text-xs sm:text-sm font-bold tracking-widest text-[#112240]">ZEELIN ACADEMY</span>
         </div>
-        <h1 style={{ margin: '0 0 12px 0', color: '#112240', fontSize: '44px', fontWeight: 700, fontFamily: "'Georgia', serif", lineHeight: 1.2 }}>Start Your Journey Today</h1>
-        <div style={{ color: '#D5B266', fontSize: '10px', marginBottom: '20px', fontFamily: 'sans-serif' }}>✧</div>
-        <p style={{ margin: '0 0 28px 0', color: '#4A4A4A', fontSize: '16px', fontFamily: "'Helvetica Neue', Arial, sans-serif", lineHeight: 1.5, maxWidth: '460px' }}>
+        <h1 className="m-0 mb-2 lg:mb-3 text-[#112240] text-3xl sm:text-4xl lg:text-5xl font-bold font-serif leading-tight">Start Your Journey Today</h1>
+        <div className="text-[#D5B266] text-xs mb-4 lg:mb-5 font-sans">✧</div>
+        <p className="m-0 mb-6 lg:mb-7 text-[#4A4A4A] text-sm sm:text-base font-sans leading-relaxed max-w-md">
           Join thousands of successful learners and start your Business Analysis journey with confidence.
         </p>
-        <Link href="/enroll" style={{ display: 'inline-block', backgroundColor: '#162542', color: '#FFFFFF', textDecoration: 'none', padding: '14px 40px', fontSize: '15px', fontWeight: 'bold', fontFamily: "'Helvetica Neue', Arial, sans-serif", borderRadius: '6px', marginBottom: '35px' }}>
+        <Link href="/enroll" className="inline-block bg-[#162542] text-white no-underline px-8 py-3 sm:px-10 sm:py-3.5 text-sm sm:text-base font-bold font-sans rounded-md mb-7 lg:mb-8 hover:bg-[#1e3358] transition-colors">
           Enroll Now
         </Link>
-        <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', maxWidth: '520px', gap: '10px', fontFamily: "'Helvetica Neue', Arial, sans-serif", fontSize: '11px', color: '#333333', borderTop: '1px solid rgba(213, 178, 102, 0.25)', paddingTop: '20px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', textAlign: 'left' }}>
-            <span style={{ fontSize: '22px', color: '#D5B266' }}>👤</span>
-            <div style={{ lineHeight: 1.3 }}>Learn from<br /><strong style={{ color: '#162542' }}>Industry Experts</strong></div>
+        <div className="flex justify-between w-full max-w-md gap-2 sm:gap-3 font-sans text-xs text-[#333] border-t border-[rgba(213,178,102,0.25)] pt-5 lg:pt-6">
+          <div className="flex items-center gap-2 text-left">
+            <span className="text-lg sm:text-2xl text-[#D5B266]">👤</span>
+            <div className="leading-snug">Learn from<br /><strong className="text-[#162542]">Industry Experts</strong></div>
           </div>
-          <div style={{ width: '1px', backgroundColor: 'rgba(213, 178, 102, 0.3)', height: '25px', alignSelf: 'center' }} />
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', textAlign: 'left' }}>
-            <span style={{ fontSize: '22px', color: '#D5B266' }}>🏅</span>
-            <div style={{ lineHeight: 1.3 }}>Practical Skills for<br /><strong style={{ color: '#162542' }}>Real-World Impact</strong></div>
+          <div className="w-px bg-[rgba(213,178,102,0.3)] h-6 self-center flex-shrink-0" />
+          <div className="flex items-center gap-2 text-left">
+            <span className="text-lg sm:text-2xl text-[#D5B266]">🏅</span>
+            <div className="leading-snug">Practical Skills for<br /><strong className="text-[#162542]">Real-World Impact</strong></div>
           </div>
-          <div style={{ width: '1px', backgroundColor: 'rgba(213, 178, 102, 0.3)', height: '25px', alignSelf: 'center' }} />
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', textAlign: 'left' }}>
-            <span style={{ fontSize: '22px', color: '#D5B266' }}>📈</span>
-            <div style={{ lineHeight: 1.3 }}>Advance Your Career<br /><strong style={{ color: '#162542' }}>with Confidence</strong></div>
+          <div className="w-px bg-[rgba(213,178,102,0.3)] h-6 self-center flex-shrink-0" />
+          <div className="flex items-center gap-2 text-left">
+            <span className="text-lg sm:text-2xl text-[#D5B266]">📈</span>
+            <div className="leading-snug">Advance Your Career<br /><strong className="text-[#162542]">with Confidence</strong></div>
           </div>
         </div>
       </div>
 
-      <div style={{ flex: '0.9', position: 'relative', height: '100%' }}>
-        <svg style={{ width: '100%', height: '100%', display: 'block' }} viewBox="0 0 500 400" preserveAspectRatio="none">
+      <div className="flex-0.9 relative h-48 lg:h-auto lg:block hidden">
+        <svg className="w-full h-full block" viewBox="0 0 500 400" preserveAspectRatio="none">
           <defs>
             <clipPath id="image-curve-clip">
               <path d="M 120,0 Q 15,200 120,400 L 500,400 L 500,0 Z" />

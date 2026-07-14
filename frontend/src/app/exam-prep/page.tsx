@@ -345,7 +345,7 @@ export default function ExamPrepPage() {
                 The Diploma <span className="gold">Path</span>
               </h3>
               <p className="text-sm text-secondary leading-relaxed mb-6">
-                To achieve the prestigious **Professional Diploma in Business Analysis**, you must pass four module certifications followed by a final 50-minute Oral Examination.
+                To achieve the prestigious **Professional Qualification in Business Analysis**, you must pass four module certifications followed by a final 50-minute Oral Examination.
               </p>
 
               <div className="space-y-4">

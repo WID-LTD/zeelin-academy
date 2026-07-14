@@ -89,7 +89,7 @@ export default function CertificatePage() {
 
             <p className="text-gray-600 mb-2">Has successfully completed the</p>
             <p className="font-display text-2xl font-bold text-gray-900 mb-4">
-              Diploma in Business Analysis
+              Professional Qualification in Business Analysis
             </p>
             <p className="text-xs text-gray-400 mb-8">
               Professional Diploma Pathway
@@ -129,7 +129,7 @@ export default function CertificatePage() {
         </div>
 
         <p className="text-center text-sm text-muted mt-8">
-          This certificate verifies that the recipient has completed the Diploma in Business Analysis program at Zeelin Academy.
+          This certificate verifies that the recipient has completed the Professional Qualification in Business Analysis program at Zeelin Academy.
         </p>
 
         {/* Download & Share Actions */}
@@ -177,7 +177,7 @@ export default function CertificatePage() {
             <a href="#" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-xl flex items-center justify-center border bg-[color:var(--bg-card)] border-[color:var(--border)] hover:border-blue-400 transition-all hover:scale-110 text-secondary hover:text-blue-400" title="Share on Twitter">
               <Twitter className="w-5 h-5" />
             </a>
-            <a href="mailto:?subject=Zeelin Academy Certificate&body=I have successfully completed the Diploma in Business Analysis at Zeelin Academy." className="w-12 h-12 rounded-xl flex items-center justify-center border bg-[color:var(--bg-card)] border-[color:var(--border)] hover:border-[color:var(--brand-gold)] transition-all hover:scale-110 text-secondary hover:text-[color:var(--brand-gold)]" title="Share via Email">
+            <a href="mailto:?subject=Zeelin Academy Certificate&body=I have successfully completed the Professional Qualification in Business Analysis at Zeelin Academy." className="w-12 h-12 rounded-xl flex items-center justify-center border bg-[color:var(--bg-card)] border-[color:var(--border)] hover:border-[color:var(--brand-gold)] transition-all hover:scale-110 text-secondary hover:text-[color:var(--brand-gold)]" title="Share via Email">
               <Mail className="w-5 h-5" />
             </a>
           </div>

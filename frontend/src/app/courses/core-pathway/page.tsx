@@ -81,7 +81,7 @@ export default function CorePathwayPage() {
           </AnimatedSection>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
             {[
-              { icon: BookOpen, title: 'BA Fundamentals', desc: 'Master the BACCM™ model, stakeholder identification, and the core BA toolkit.' },
+              { icon: BookOpen, title: 'BA Fundamentals', desc: 'Master the Core Concept Model, stakeholder identification, and the core BA toolkit.' },
               { icon: Target, title: 'Requirements Engineering', desc: 'Elicit, analyse, validate, and manage requirements through the full life cycle.' },
               { icon: Lightbulb, title: 'Strategic Thinking', desc: 'Apply SWOT, PESTLE, root cause analysis, and business case development.' },
               { icon: BarChart3, title: 'Data-Driven Decisions', desc: 'Use metrics, KPIs, and performance analysis to guide solution evaluation.' },

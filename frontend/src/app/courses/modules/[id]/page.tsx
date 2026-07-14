@@ -17,10 +17,10 @@ const moduleDetails: Record<string, {
     title: 'Business Analysis Foundations',
     type: 'free',
     duration: '2 Weeks',
-    overview: 'Introduction to Business Analysis, the BACCM™ Core Concept Model, stakeholder identification, and the role of a Business Analyst in modern organizations.',
+    overview: 'Introduction to Business Analysis, the Core Concept Model, stakeholder identification, and the role of a Business Analyst in modern organizations.',
     objectives: [
       'Understand the role and responsibilities of a Business Analyst',
-      'Apply the BACCM™ Core Concept Model to real-world scenarios',
+      'Apply the Core Concept Model to real-world scenarios',
       'Identify and map stakeholders effectively',
       'Plan the Business Analysis approach for any project',
     ],
@@ -30,7 +30,7 @@ const moduleDetails: Record<string, {
         title: 'Introduction to Business Analysis',
         topics: [
           'What is Business Analysis?',
-          'The BACCM™ Core Concept Model',
+          'The Core Concept Model',
           'Role of a BA in an organization',
           'BA competencies and career paths',
           'Industry standards and best practices',
@@ -38,7 +38,7 @@ const moduleDetails: Record<string, {
         exercises: [
           'Write a 1-page summary of the BA role in your own words',
           'Identify 5 stakeholders in a sample project scenario',
-          'Create a BACCM™ model for a business problem',
+          'Create a Core Concept Model for a business problem',
         ],
       },
       {
@@ -60,7 +60,7 @@ const moduleDetails: Record<string, {
     ],
     outcomes: [
       'Confidently define the BA role and responsibilities',
-      'Apply BACCM™ to analyze business situations',
+      'Apply Core Concept Model to analyze business situations',
       'Identify and manage stakeholders using RACI',
       'Create a structured BA approach plan',
     ],

@@ -5,6 +5,8 @@ import Link from 'next/link'
 import SafeImage from '@/components/SafeImage'
 import { Download, BookOpen, Copy, Check, ExternalLink, FileText, Layout, FileSpreadsheet, ArrowRight, HelpCircle, Search, Star, Badge, Zap, MessageCircle } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
+import { generateGuidePdf, generateBookGuidePdf } from '@/lib/generateGuidePdf'
+import bookGuides from '@/lib/bookGuides'
 
 interface Template {
   id: string
@@ -53,12 +55,12 @@ const templates: Template[] = [
   },
   {
     id: 'baccm',
-    title: 'BACCM\u2122 Framework Guide',
+    title: 'Core Concept Model Framework Guide',
     format: 'PDF Quick Guide',
     category: 'BA Foundations',
     description: 'A pocket-sized reference guide to the Business Analysis Core Concept Model: Change, Need, Solution, Stakeholder, Value, Context.',
     icon: <FileText className="w-5 h-5 text-[color:var(--brand-gold)]" />,
-    outline: `### BACCM\u2122 Core Concepts
+    outline: `### Core Concept Model
 1. **Change:** The act of transformation in response to a need.
 2. **Need:** A problem or opportunity to be addressed.
 3. **Solution:** A specific way of satisfying one or more needs in a context.
@@ -199,11 +201,21 @@ export default function ResourcesPage() {
                   <p className="text-xs text-muted text-center mb-4">{book.author}</p>
                   <p className="text-sm text-secondary leading-relaxed text-center">{book.desc}</p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-[color:var(--border)] text-center">
-                  <Link href="/enroll" className="inline-flex items-center gap-1.5 text-xs font-semibold gold hover:underline">
-                    View Study Details
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
+                <div className="mt-6 pt-4 border-t border-[color:var(--border)] text-center space-y-2">
+                  {bookGuides[book.src.split('/').pop()?.replace('.png', '') || ''] ? (
+                    <button
+                      onClick={() => generateBookGuidePdf(book.src.split('/').pop()?.replace('.png', '') || '')}
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold gold hover:underline"
+                    >
+                      <Download className="w-3.5 h-3.5" />
+                      Download Study Guide PDF
+                    </button>
+                  ) : (
+                    <Link href="/enroll" className="inline-flex items-center gap-1.5 text-xs font-semibold gold hover:underline">
+                      View Study Details
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  )}
                 </div>
               </div>
             ))}
@@ -224,7 +236,7 @@ export default function ResourcesPage() {
               </div>
               <h3 className="font-display text-xl font-bold text-[color:var(--text-core)] mb-3">Diploma Complete Study Kit</h3>
               <p className="text-sm text-secondary mb-4 leading-relaxed">
-                Everything you need to pass the Professional Diploma in Business Analysis. Includes all module guides, practice exams, template packs, and oral prep materials.
+                Everything you need to pass the Professional Qualification in Business Analysis. Includes all module guides, practice exams, template packs, and oral prep materials.
               </p>
               <div className="flex flex-wrap items-center gap-4 text-xs text-muted mb-6">
                 <span className="flex items-center gap-1"><Download className="w-3.5 h-3.5" /> 3,400+ downloads</span>
@@ -324,7 +336,15 @@ export default function ResourcesPage() {
                   </pre>
                 </div>
 
-                <Link href="/enroll" className="btn-gold w-full py-3 text-sm flex items-center justify-center gap-2">
+                <button
+                  onClick={() => generateGuidePdf(selectedTemplate.title, selectedTemplate.category, selectedTemplate.outline)}
+                  className="btn-gold w-full py-3 text-sm flex items-center justify-center gap-2 mb-3"
+                >
+                  <Download className="w-4 h-4" />
+                  Download PDF Guide
+                </button>
+
+                <Link href="/enroll" className="btn-outline-gold w-full py-3 text-sm flex items-center justify-center gap-2">
                   Get Full Premium Templates Package
                   <Download className="w-4 h-4" />
                 </Link>
@@ -355,7 +375,7 @@ export default function ResourcesPage() {
               },
               {
                 q: "Can I use these templates in my daily BA job?",
-                a: "Absolutely. Our templates align with industry best practices and the BABOK guide, and are fully customisable for real-world project usage."
+                a: "Absolutely. Our templates align with industry best practices and the BA Practice Guide, and are fully customisable for real-world project usage."
               },
               {
                 q: "Are the mock exam questions updated regularly?",

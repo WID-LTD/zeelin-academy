@@ -9,7 +9,7 @@ import CookieConsent from '@/components/CookieConsent'
 import BackgroundPattern from '@/components/BackgroundPattern'
 
 export const metadata: Metadata = {
-  title: 'Zeelin Academy | Diploma in Business Analysis',
+  title: 'Zeelin Academy | Professional Qualification in Business Analysis',
   description: 'Transform your career with Zeelin Academy - Pioneered by Dr. Franklin Kalu. Structured, practical Business Analysis education.',
   icons: { icon: '/favicon.png', apple: '/favicon.png' }
 }

@@ -22,7 +22,7 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
     {
       title: 'Module 1: Introduction to Business Analysis',
       duration: '6 hours',
-      lessons: ['What is Business Analysis?', 'Role of a Business Analyst', 'Business Analysis Core Concept Model (BACCM)', 'Career Paths in Business Analysis']
+      lessons: ['What is Business Analysis?', 'Role of a Business Analyst', 'Core Concept Model', 'Career Paths in Business Analysis']
     },
     {
       title: 'Module 2: Strategy Analysis',
@@ -98,7 +98,8 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
           {/* Main Content */}
           <div className="lg:col-span-2">
             {/* Tabs */}
-            <div role="tablist" aria-label="Course sections" className="flex overflow-x-auto border-b border-[color:var(--border)] mb-8 hide-scrollbar">
+            <div className="relative">
+              <div role="tablist" aria-label="Course sections" className="flex overflow-x-auto border-b border-[color:var(--border)] mb-8 hide-scrollbar">
               {['overview', 'curriculum', 'reviews', 'instructor'].map((tab) => (
                 <button
                   key={tab}
@@ -116,6 +117,8 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
                   {tab}
                 </button>
               ))}
+            </div>
+              <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[color:var(--bg-primary)] to-transparent pointer-events-none lg:hidden" />
             </div>
 
             {/* Tab Content */}
@@ -235,7 +238,7 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
           <div className="lg:col-span-1">
             <div className="sticky top-28 border rounded-2xl shadow-xl overflow-hidden hidden lg:block" style={{ backgroundColor: 'rgba(255,255,255,0.8)', backdropFilter: 'blur(12px)', borderColor: 'var(--border)' }}>
               {/* Course Preview Image */}
-              <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 relative">
+              <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 relative overflow-y-auto max-h-[70vh]">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <button className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg hover:scale-105 transition-transform" style={{ color: 'var(--brand-gold)' }} aria-label="Play course preview video">
                     <Play className="w-12 h-12" style={{ color: 'white' }} />
@@ -344,7 +347,7 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
       </section>
 
       {/* Sticky Enrollment CTA Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 border-t backdrop-blur-lg" style={{ backgroundColor: 'rgba(255,255,255,0.92)', borderColor: 'var(--border)' }}>
+      <div className="fixed bottom-0 left-0 right-0 z-40 border-t backdrop-blur-lg" style={{ backgroundColor: 'rgba(255,255,255,0.92)', borderColor: 'var(--border)' }}>
         <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
           <div className="hidden sm:block">
             <div className="text-sm font-bold" style={{ color: 'var(--text-core)' }}>Master International Business Analysis</div>
