@@ -1,8 +1,10 @@
 import Link from 'next/link'
+import AnimatedSection from '@/components/AnimatedSection'
 
 export default function CallToActionSection() {
   return (
-    <div className="w-full max-w-[1200px] min-h-[320px] lg:min-h-[400px] bg-[#FAF7F0] font-serif border border-[#e2ddd5] mx-auto relative overflow-hidden flex flex-col lg:flex-row">
+    <AnimatedSection delay={0}>
+    <div className="w-full min-h-[320px] lg:min-h-[400px] font-serif relative overflow-hidden flex flex-col lg:flex-row">
       <div className="flex-1 flex flex-col items-center justify-center px-6 py-10 lg:px-15 lg:py-10 text-center relative z-2">
         <div className="flex items-center gap-2 mb-5 lg:mb-6">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,5 +51,6 @@ export default function CallToActionSection() {
         </svg>
       </div>
     </div>
+    </AnimatedSection>
   )
 }

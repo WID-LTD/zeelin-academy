@@ -1,3 +1,5 @@
+import AnimatedSection from '@/components/AnimatedSection'
+
 export default function TestimonialSection() {
   const cards = [
     {
@@ -35,6 +37,7 @@ export default function TestimonialSection() {
       <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto">
         {/* Heading */}
         <div className="relative text-center mb-10 md:mb-12">
+          <AnimatedSection delay={0}>
           <div className="flex items-center justify-center gap-[0.9375rem] mb-3">
             <div className="w-[2.1875rem] h-px" style={{ backgroundColor: '#D4A02A' }} />
             <span className="text-[0.8125rem] font-bold tracking-[0.09375rem]" style={{ color: '#D4A02A', fontFamily: "'Helvetica Neue', Arial, sans-serif" }}>SUCCESS STORIES</span>
@@ -50,6 +53,7 @@ export default function TestimonialSection() {
           </p>
 
           <div className="w-[4.375rem] h-[0.125rem] mx-auto mt-6" style={{ backgroundColor: '#D4A02A' }} />
+          </AnimatedSection>
 
           {/* Decorative elements */}
           <div className="absolute top-[0.9375rem] left-[0.9375rem] w-[5rem] h-[5rem] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#E8E2D5 2px, transparent 2px)', backgroundSize: '0.75rem 0.75rem', opacity: 0.7 }} />
@@ -58,11 +62,11 @@ export default function TestimonialSection() {
         </div>
 
         {/* Card grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-[1.875rem] p-4 sm:p-6 md:p-[2.5rem] rounded-xl" style={{ backgroundColor: '#FAF7F0' }}>
-          {cards.map((card) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-[1.875rem]">
+          {cards.map((card, idx) => (
+            <AnimatedSection key={card.id} delay={100 + idx * 120}>
             <div
-              key={card.id}
-              className="flex flex-col md:flex-row h-auto md:min-h-[16.25rem] rounded-2xl overflow-hidden relative"
+              className="flex flex-col md:flex-row h-auto md:min-h-[16.25rem] rounded-2xl overflow-hidden relative hover-lift-shadow"
               style={{ backgroundColor: '#FFFFFF', boxShadow: '0 10px 30px rgba(180, 160, 130, 0.15)', borderBottom: '3px solid #D4A02A' }}
             >
               <div className="w-full md:w-[11.875rem] h-[12.5rem] md:h-full flex-shrink-0 relative">
@@ -83,6 +87,7 @@ export default function TestimonialSection() {
                 <span className="absolute top-3 md:top-[0.9375rem] right-4 md:right-[1.875rem] text-[2.5rem] md:text-[3.75rem] leading-none font-bold pointer-events-none" style={{ color: '#FAF2E3', fontFamily: "'Georgia', serif" }}>❝</span>
               </div>
             </div>
+            </AnimatedSection>
           ))}
         </div>
       </div>

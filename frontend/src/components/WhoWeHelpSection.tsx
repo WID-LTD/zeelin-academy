@@ -1,6 +1,7 @@
 'use client'
 
 import SafeImage from '@/components/SafeImage'
+import AnimatedSection from '@/components/AnimatedSection'
 
 const audiences = [
   'Complete beginners',
@@ -25,6 +26,7 @@ export default function WhoWeHelpSection() {
   return (
     <section className="py-16 lg:py-20 px-[5%]" style={{ backgroundColor: '#F3EFE3' }}>
       <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <AnimatedSection direction="left">
         <div>
           <h2 className="font-display text-4xl md:text-5xl font-black mb-8" style={{ color: 'var(--navy-dark)' }}>
             Who Zeelin Academy <span style={{ color: 'var(--dark-gold)' }}>helps</span>
@@ -50,15 +52,18 @@ export default function WhoWeHelpSection() {
             ))}
           </ul>
         </div>
+        </AnimatedSection>
+        <AnimatedSection direction="right">
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-[0.9375rem]">
           {mosaicImages.map((img, i) => (
-            <div key={i} className={img.span === 2 ? 'col-span-2' : 'col-span-1'}>
-              <div className="relative w-full h-[7.5rem] sm:h-[10rem] md:h-[12.5rem] rounded-[0.375rem] overflow-hidden">
-                <SafeImage src={img.src} alt="" fill className="object-cover" />
+            <div key={i} className={`${img.span === 2 ? 'col-span-2' : 'col-span-1'} group overflow-hidden rounded-[0.375rem]`}>
+              <div className="relative w-full h-[7.5rem] sm:h-[10rem] md:h-[12.5rem] overflow-hidden">
+                <SafeImage src={img.src} alt="" fill className="object-cover hover-image-zoom transition-all duration-500" />
               </div>
             </div>
           ))}
         </div>
+        </AnimatedSection>
       </div>
     </section>
   )

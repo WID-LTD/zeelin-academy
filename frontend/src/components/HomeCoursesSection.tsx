@@ -48,18 +48,18 @@ export default function HomeCoursesSection() {
                   className="rounded-2xl border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col group"
                   style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}
                 >
-                  <div className="relative w-full aspect-video" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+                  <div className="relative w-full aspect-video overflow-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
                     {course.isVideo ? (
                       <video
                         src={course.media}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover hover-image-zoom"
                         muted
                         loop
                         playsInline
                         autoPlay
                       />
                     ) : (
-                      <SafeImage src={course.media} alt={course.title} fill className="object-cover" />
+                      <SafeImage src={course.media} alt={course.title} fill className="object-cover hover-image-zoom" />
                     )}
                     {/* Badges overlay */}
                     <div className="absolute top-3 left-3 flex flex-wrap gap-2">

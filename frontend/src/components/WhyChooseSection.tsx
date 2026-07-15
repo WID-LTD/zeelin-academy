@@ -1,6 +1,7 @@
 'use client'
 
 import SafeImage from '@/components/SafeImage'
+import AnimatedSection from '@/components/AnimatedSection'
 
 const features = [
   {
@@ -81,6 +82,7 @@ export default function WhyChooseSection() {
   return (
     <section className="py-16 lg:py-24 px-[5%]" style={{ textAlign: 'center' }}>
       <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto">
+        <AnimatedSection delay={0}>
         <h2 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-wide mb-4" style={{ color: 'var(--navy-dark)' }}>
           Why Choose <span style={{ color: 'var(--dark-gold)' }}>Zeelin Academy</span>
         </h2>
@@ -91,21 +93,26 @@ export default function WhyChooseSection() {
         <h3 className="font-display text-2xl md:text-3xl font-bold italic mb-10" style={{ color: 'var(--dark-gold)' }}>
           A Guided Path. Every Step of the Way.
         </h3>
+        </AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((f) => (
-            <div key={f.tag} style={{ background: 'var(--bg-card)', borderRadius: '0.5rem', overflow: 'hidden', textAlign: 'left', boxShadow: '0 4px 20px rgba(0,0,0,0.04)', border: '1px solid var(--border)' }}>
-              <div className="relative w-full h-[7.5rem] sm:h-[9.375rem]" style={{ backgroundColor: '#E8E2D4' }}>
-                <SafeImage src={f.image} alt={f.tag} fill className="object-cover" />
+          {features.map((f, idx) => (
+            <AnimatedSection key={f.tag} delay={100 + idx * 60}>
+            <div className="group" style={{ background: 'var(--bg-card)', borderRadius: '0.5rem', overflow: 'hidden', textAlign: 'left', boxShadow: '0 4px 20px rgba(0,0,0,0.04)', border: '1px solid var(--border)', transition: 'box-shadow 0.4s cubic-bezier(0.16,1,0.3,1), transform 0.4s cubic-bezier(0.16,1,0.3,1)' }}
+                 onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 12px 40px rgba(180,160,130,0.2)'; e.currentTarget.style.transform = 'translateY(-4px)' }}
+                 onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.04)'; e.currentTarget.style.transform = 'translateY(0)' }}>
+              <div className="relative w-full h-[7.5rem] sm:h-[9.375rem] overflow-hidden" style={{ backgroundColor: '#E8E2D4' }}>
+                <SafeImage src={f.image} alt={f.tag} fill className="object-cover hover-image-zoom" />
               </div>
               <div style={{ padding: '1.75rem' }}>
                 <span style={{ display: 'inline-block', background: 'var(--navy-dark)', color: 'white', fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', padding: '0.3125rem 0.875rem', borderRadius: '1.25rem', marginBottom: '0.9375rem' }}>
                   {f.tag}
                 </span>
                 <h4 className="font-display text-xl font-bold mb-3" style={{ color: 'var(--navy-dark)' }}>{f.title}</h4>
-                <p className="text-base font-semibold leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{f.desc}</p>
+                  <p className="text-base font-semibold leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{f.desc}</p>
+                </div>
               </div>
-            </div>
+            </AnimatedSection>
           ))}
         </div>
       </div>

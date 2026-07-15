@@ -1,10 +1,12 @@
 import Link from 'next/link'
+import AnimatedSection from '@/components/AnimatedSection'
 
 export default function FlashSaleSection() {
   return (
     <section className="py-16 lg:py-24 px-[5%]" style={{ backgroundColor: 'transparent' }}>
       <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto">
-        <div className="flex flex-col-reverse lg:flex-row h-auto lg:min-h-[25rem] rounded-xl overflow-hidden" style={{ backgroundColor: '#FAF7F0', fontFamily: "'Georgia', 'Times New Roman', serif", border: '1px solid #e2ddd5' }}>
+        <AnimatedSection delay={0}>
+        <div className="flex flex-col-reverse lg:flex-row h-auto lg:min-h-[25rem] rounded-xl overflow-hidden hover-lift-shadow" style={{ backgroundColor: '#FAF7F0', fontFamily: "'Georgia', 'Times New Roman', serif", border: '1px solid #e2ddd5' }}>
           {/* Left Content */}
           <div className="flex-[1.1] flex flex-col items-center justify-center p-6 sm:p-8 md:p-10 lg:py-[2.5rem] lg:pl-[3.75rem] lg:pr-[1.25rem] text-center relative z-[2]">
             <div className="w-full max-w-full lg:max-w-[36.25rem] mx-auto">
@@ -72,6 +74,7 @@ export default function FlashSaleSection() {
             </svg>
           </div>
         </div>
+        </AnimatedSection>
       </div>
     </section>
   )

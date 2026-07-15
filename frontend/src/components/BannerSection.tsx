@@ -20,13 +20,16 @@ export default function BannerSection() {
   return (
     <section style={{ backgroundColor: 'transparent' }}>
       {/* Hero H1 */}
+      <AnimatedSection delay={0} direction="up">
       <div style={{ textAlign: 'center', padding: '3.75rem 1.25rem', background: 'radial-gradient(circle at center, #FFFDF9 0%, #FAF7F0 100%)' }}>
         <h1 className="font-display text-4xl md:text-5xl lg:text-6xl" style={{ color: 'var(--navy-dark)', maxWidth: '56.25rem', margin: '0 auto 1.25rem', fontWeight: 700, lineHeight: 1.2 }}>
           Stop Guessing. Start Preparing for your <span style={{ color: '#AA820A' }}>Business Analysis Exam</span> with clarity.
         </h1>
       </div>
+      </AnimatedSection>
 
       {/* Top: Infinite-scroll book carousel */}
+      <AnimatedSection delay={100} direction="up">
       <div
         className="flex gap-6 overflow-x-hidden py-6 select-none group/banner"
         style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%)' }}
@@ -56,6 +59,7 @@ export default function BannerSection() {
           ))}
         </div>
       </div>
+      </AnimatedSection>
 
       {/* Bottom: Strategy Guide section */}
       <AnimatedSection delay={200}>

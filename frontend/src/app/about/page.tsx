@@ -160,19 +160,6 @@ export default function AboutPage() {
               <p className="text-lg font-semibold mb-2" style={{ color: 'var(--navy-dark)' }}>&ldquo;Success becomes achievable when learning is structured, practical, and designed for real life.&rdquo;</p>
               <cite style={{ color: 'var(--dark-gold)', fontWeight: 'bold', fontStyle: 'normal' }}>&mdash; Dr Franklin Kalu</cite>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
-              {[
-                { label: 'PhD', desc: 'Doctorate Degree' },
-                { label: 'Chartered', desc: 'IT Professional Member' },
-                { label: 'PRINCE2', desc: 'Certified Practitioner' },
-                { label: 'AgilePM', desc: 'Agile Certified' },
-              ].map((cred) => (
-                <div key={cred.label} className="p-4 rounded-xl border text-center" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
-                  <div className="font-display font-black text-xl" style={{ color: 'var(--brand-gold)' }}>{cred.label}</div>
-                  <div className="text-xs font-bold mt-1" style={{ color: 'var(--text-muted)' }}>{cred.desc}</div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
