@@ -86,7 +86,7 @@ module.exports = async (req, res) => {
       console.error('Twilio error:', twilioErr)
     }
 
-    res.json({ success: true, message: 'Verification code sent' })
+    res.json({ success: true, message: 'Verification code sent', enrollment_id: enrollmentId })
   } catch (error) {
     console.error('Enroll error:', error)
     res.status(500).json({ error: 'Internal server error' })

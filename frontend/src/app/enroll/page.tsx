@@ -21,6 +21,7 @@ function EnrollForm() {
   const searchParams = useSearchParams()
   const preselectedModule = searchParams.get('module') || ''
   const preselectedType = searchParams.get('type') || 'paid'
+  const preselectedPackage = searchParams.get('package') || ''
 
   const [step, setStep] = useState(1)
   const [form, setForm] = useState({
@@ -31,12 +32,15 @@ function EnrollForm() {
     enrollmentType: preselectedType,
     experience: '',
     goals: '',
+    packageSlug: preselectedPackage,
   })
   const [focusedField, setFocusedField] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
   const [codeSent, setCodeSent] = useState(false)
   const [verified, setVerified] = useState(false)
   const [code, setCode] = useState('')
+  const [enrollmentId, setEnrollmentId] = useState<number | null>(null)
+  const [processingPayment, setProcessingPayment] = useState(false)
   const [touched, setTouched] = useState<Record<string, boolean>>({})
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -91,6 +95,8 @@ function EnrollForm() {
         body: JSON.stringify(form),
       })
       if (res.ok) {
+        const data = await res.json()
+        if (data.enrollment_id) setEnrollmentId(data.enrollment_id)
         setCodeSent(true)
       } else {
         const data = await res.json()
@@ -117,6 +123,32 @@ function EnrollForm() {
     }
   }
 
+  const handlePayment = async () => {
+    setProcessingPayment(true)
+    try {
+      const res = await fetch('/api/payments/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          enrollmentId: enrollmentId,
+          packageSlug: form.packageSlug || form.enrollmentType,
+          amount: form.packageSlug === 'fast-track' || form.packageSlug === 'complete-bundle' ? 400 : 100,
+          email: form.email,
+          fullName: form.fullName,
+        }),
+      })
+      const data = await res.json()
+      if (data.url) {
+        window.location.href = data.url
+      } else {
+        alert('Failed to initiate payment. Please try again.')
+      }
+    } catch {
+      alert('Failed to process payment')
+    }
+    setProcessingPayment(false)
+  }
+
   if (verified) {
     return (
       <div className="max-w-xl mx-auto text-center py-20">
@@ -126,18 +158,25 @@ function EnrollForm() {
             <CheckCircle className="w-10 h-10" style={{ color: '#D4A02A' }} />
           </div>
           <h2 className="font-display text-3xl font-black mb-4" style={{ color: '#0c1e36' }}>
-            Enrollment <span style={{ color: '#D4A02A' }}>Confirmed!</span>
+            Verified &amp; Ready
           </h2>
           <p className="text-base font-semibold mb-3" style={{ color: '#4A4A4A' }}>
-            Your enrollment has been verified. Welcome to Zeelin Academy!
+            Your email has been verified. Complete payment to confirm your enrollment.
           </p>
           <p className="text-sm mb-8" style={{ color: '#6e6e6e' }}>
-            Check your email at <strong style={{ color: '#0c1e36' }}>{form.email}</strong> for further instructions.
+            Enrolled as <strong style={{ color: '#0c1e36' }}>{form.fullName}</strong> &mdash; {form.email}
           </p>
-          <Link href="/" className="inline-block px-8 py-3.5 rounded-lg font-bold text-sm transition-all duration-300 hover:scale-105"
-            style={{ backgroundColor: '#D4A02A', color: '#fff' }}>
-            Back to Home
-          </Link>
+          <div className="space-y-4">
+            <button onClick={handlePayment} disabled={processingPayment}
+              className="w-full py-4 rounded-lg font-bold text-base uppercase tracking-wider transition-all hover:scale-[1.02] active:scale-95 shadow-xl disabled:opacity-50"
+              style={{ backgroundColor: '#D4A02A', color: '#fff' }}>
+              {processingPayment ? 'Processing...' : `Proceed to Payment`}
+            </button>
+            <Link href="/" className="inline-block text-sm font-semibold transition-colors hover:underline"
+              style={{ color: '#6e6e6e' }}>
+              Back to Home
+            </Link>
+          </div>
         </AnimatedSection>
       </div>
     )

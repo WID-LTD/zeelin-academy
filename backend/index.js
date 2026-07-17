@@ -16,6 +16,10 @@ const allowedOrigins = [
 ]
 
 app.use(cors({ origin: allowedOrigins, credentials: true }))
+
+// Stripe webhook needs raw body — mount before express.json()
+app.use(require('./routes/stripe-webhook'))
+
 app.use(express.json())
 
 // In-memory store for verification codes
@@ -33,6 +37,7 @@ app.post('/api/pathway-finder', require('./routes/pathway-finder'))
 app.post('/api/contact', require('./routes/contact'))
 app.post('/api/checkin', require('./routes/checkin'))
 app.get('/api/packages', require('./routes/packages'))
+app.use('/api/payments', require('./routes/payments'))
 app.use('/api/profile', require('./routes/profile'))
 app.use('/api/progress', require('./routes/progress'))
 app.use('/api/admin', require('./routes/admin'))
