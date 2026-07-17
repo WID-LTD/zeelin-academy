@@ -1,4 +1,4 @@
-require('dotenv').config({ path: '../.env.local' })
+require('dotenv').config({ path: './zeelin-academy.env' })
 const express = require('express')
 const cors = require('cors')
 const { initDB } = require('./db')
