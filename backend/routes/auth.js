@@ -142,6 +142,45 @@ router.post('/admin/change-password', verifyToken, async (req, res) => {
   }
 })
 
+// Get package enrollments + payment stats (admin)
+router.get('/admin/package-enrollments', verifyToken, async (req, res) => {
+  if (req.user.role !== 'admin') return res.status(403).json({ error: 'Forbidden' })
+  try {
+    const result = await pool.query(`
+      SELECT e.id, e.full_name, e.email, e.phone, e.package_slug, e.status as enrollment_status,
+             e.created_at, p.amount, p.currency, p.status as payment_status, p.stripe_session_id,
+             pk.name as package_name, pk.price as package_price
+      FROM enrollments e
+      LEFT JOIN payments p ON p.enrollment_id = e.id
+      LEFT JOIN packages pk ON pk.slug = e.package_slug
+      WHERE e.package_slug IS NOT NULL
+      ORDER BY e.created_at DESC
+    `)
+    const stats = await pool.query(`
+      SELECT
+        COUNT(DISTINCT e.id) as total,
+        COALESCE(SUM(p.amount) FILTER (WHERE p.status = 'completed'), 0) as revenue,
+        COUNT(DISTINCT e.id) FILTER (WHERE e.status = 'paid') as paid_count,
+        COUNT(DISTINCT e.id) FILTER (WHERE e.status = 'pending') as pending_count
+      FROM enrollments e
+      LEFT JOIN payments p ON p.enrollment_id = e.id
+      WHERE e.package_slug IS NOT NULL
+    `)
+    res.json({
+      enrollments: result.rows,
+      stats: {
+        total: parseInt(stats.rows[0].total),
+        revenue: parseFloat(stats.rows[0].revenue),
+        paid: parseInt(stats.rows[0].paid_count),
+        pending: parseInt(stats.rows[0].pending_count),
+      }
+    })
+  } catch (err) {
+    console.error('Package enrollments error:', err)
+    res.status(500).json({ error: 'Failed' })
+  }
+})
+
 // Generate credentials for a verified enrollment (admin)
 router.post('/admin/generate-credentials', verifyToken, async (req, res) => {
   if (req.user.role !== 'admin') return res.status(403).json({ error: 'Forbidden' })
