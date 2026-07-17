@@ -1,0 +1,6 @@
+◇ injected env (0) from ../.env.local // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+◇ injected env (0) from ../.env.local // tip: ⌘ suppress logs { quiet: true }
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3000
+
+ ✓ Starting...

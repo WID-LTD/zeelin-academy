@@ -29,6 +29,7 @@ const pricingCards = [
     ],
     featured: false,
     btnLabel: 'SELECT MODULE',
+    href: '/enroll?type=paid',
   },
   {
     title: 'Zeelin Complete Diploma Exam Prep Bundle',
@@ -44,6 +45,7 @@ const pricingCards = [
     ],
     featured: true,
     btnLabel: 'ENROLL IN BUNDLE',
+    href: '/enroll?type=bundle',
   },
   {
     title: 'Zeelin Fast-Track Diploma Exam Prep',
@@ -58,6 +60,7 @@ const pricingCards = [
     ],
     featured: false,
     btnLabel: 'START FAST-TRACK',
+    href: '/enroll?type=fast-track',
   },
 ]
 
@@ -206,13 +209,14 @@ export default function PackagesPage() {
                       )
                     })}
                   </div>
-                  <button className="w-full py-4 lg:py-5 rounded-lg font-bold text-sm md:text-base uppercase tracking-wider shadow-xl active:scale-95 transition-transform"
+                  <Link href={card.href}
+                    className="block w-full text-center py-4 lg:py-5 rounded-lg font-bold text-sm md:text-base uppercase tracking-wider shadow-xl active:scale-95 hover:scale-[1.02] transition-transform"
                     style={{
                       background: 'linear-gradient(135deg, #DFBA6B 0%, #C29C47 100%)',
                       color: '#0D1B2A',
                     }}>
                     {card.btnLabel}
-                  </button>
+                  </Link>
                 </div>
               ) : (
                 <div key={card.title}
@@ -245,15 +249,15 @@ export default function PackagesPage() {
                       )
                     })}
                   </div>
-                  <button
-                    className="w-full py-4 lg:py-5 rounded-lg border-2 font-bold text-sm md:text-base uppercase tracking-wider transition-all hover:scale-[1.02] active:scale-95"
+                  <Link href={card.href}
+                    className="block w-full text-center py-4 lg:py-5 rounded-lg border-2 font-bold text-sm md:text-base uppercase tracking-wider transition-all hover:scale-[1.02] active:scale-95"
                     style={{
                       borderColor: '#0D1B2A',
                       color: '#0D1B2A',
                       backgroundColor: 'transparent',
                     }}>
                     {card.btnLabel}
-                  </button>
+                  </Link>
                 </div>
               )
             })}
@@ -381,7 +385,7 @@ export default function PackagesPage() {
               <div className="aspect-video rounded-xl overflow-hidden shadow-xl border-4"
                 style={{ borderColor: 'rgba(212,160,42,0.1)' }}>
                 <img
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA0gzLXUp48V0dJSiCC2Vqa43Tm7J--U-M_w-APFr-5YFwqDib8tHHzmcPMT7el94ySUT9K94gT19UZDx5JI9hfUmzm1i5Am-dCjoGOlwHMu8I9Xil8wDRHHje1HP0n8czn_rLUTLktlRLeAkN2eLOk5A5RXOc2PbqxX7jlBjZYrRSLkgyRWv8G4oOwbabA-rS7-X77Z_UxYTTZKlQGiyDtSmxE7T_5cu_WcztyjeDr2F9NSWEo46q_HSFdTdg_q0iwzq_Co3Te_LG"
+                  src="/international-business-analysis.jpg"
                   alt="Corporate Learning Environment"
                   className="w-full h-full object-cover"
                 />

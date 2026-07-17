@@ -4,11 +4,13 @@ const cors = require('cors')
 const { initDB } = require('./db')
 
 const app = express()
-const PORT = process.env.BACKEND_PORT || 3030
+const PORT = process.env.BACKEND_PORT || 3031
 
 const allowedOrigins = [
   'http://localhost:3000',
+  'http://localhost:3001',
   'http://localhost:3030',
+  'http://localhost:3031',
   'https://zeelin-academy.onrender.com',
   'https://zeelin-academy.vercel.app'
 ]
@@ -28,6 +30,11 @@ app.post('/api/verify-code', require('./routes/verify-code'))
 app.post('/api/send-email', require('./routes/send-email'))
 app.post('/api/send-whatsapp', require('./routes/send-whatsapp'))
 app.post('/api/pathway-finder', require('./routes/pathway-finder'))
+app.post('/api/contact', require('./routes/contact'))
+app.post('/api/checkin', require('./routes/checkin'))
+app.use('/api/profile', require('./routes/profile'))
+app.use('/api/progress', require('./routes/progress'))
+app.use('/api/admin', require('./routes/admin'))
 
 // Init DB then seed admin, then start
 initDB().then(() => {
