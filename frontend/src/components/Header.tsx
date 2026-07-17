@@ -49,6 +49,7 @@ export default function Header() {
             <Link href="/about" className={`nav-link text-[0.8125rem] font-medium ${isActive('/about') ? 'active' : ''}`}>About</Link>
             <Link href="/pathway-finder" className={`nav-link text-[0.8125rem] font-medium ${isActive('/pathway-finder') ? 'active' : ''}`}>Pathway Finder</Link>
             <Link href="/courses" className={`nav-link text-[0.8125rem] font-medium ${isActive('/courses') ? 'active' : ''}`}>Courses</Link>
+            <Link href="/packages" className={`nav-link text-[0.8125rem] font-medium ${isActive('/packages') ? 'active' : ''}`}>Packages</Link>
             <Link href="/exam-prep" className={`nav-link text-[0.8125rem] font-medium ${isActive('/exam-prep') ? 'active' : ''}`}>Exam Prep</Link>
             <Link href="/resources" className={`nav-link text-[0.8125rem] font-medium ${isActive('/resources') ? 'active' : ''}`}>Resources</Link>
             <Link href="/contact" className={`nav-link text-[0.8125rem] font-medium ${isActive('/contact') ? 'active' : ''}`}>Contact</Link>
@@ -78,6 +79,7 @@ export default function Header() {
               <Link href="/about" className={`nav-link py-3 text-sm font-medium ${isActive('/about') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>About</Link>
               <Link href="/pathway-finder" className={`nav-link py-3 text-sm font-medium ${isActive('/pathway-finder') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Pathway Finder</Link>
               <Link href="/courses" className={`nav-link py-3 text-sm font-medium ${isActive('/courses') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Courses</Link>
+              <Link href="/packages" className={`nav-link py-3 text-sm font-medium ${isActive('/packages') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Packages</Link>
               <Link href="/exam-prep" className={`nav-link py-3 text-sm font-medium ${isActive('/exam-prep') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Exam Prep</Link>
               <Link href="/resources" className={`nav-link py-3 text-sm font-medium ${isActive('/resources') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Resources</Link>
               <Link href="/contact" className={`nav-link py-3 text-sm font-medium ${isActive('/contact') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Contact</Link>
