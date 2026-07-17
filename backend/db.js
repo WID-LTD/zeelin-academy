@@ -29,6 +29,7 @@ async function initDB() {
         enrollment_type VARCHAR(20),
         experience VARCHAR(20),
         goals TEXT,
+        package_slug VARCHAR(100),
         status VARCHAR(20) DEFAULT 'pending',
         created_at TIMESTAMP DEFAULT NOW()
       )
@@ -52,10 +53,63 @@ async function initDB() {
         created_at TIMESTAMP DEFAULT NOW()
       )
     `)
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS packages (
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        slug VARCHAR(100) UNIQUE NOT NULL,
+        price DECIMAL(10,2) NOT NULL,
+        currency VARCHAR(3) DEFAULT 'GBP',
+        description TEXT,
+        features JSONB,
+        is_active BOOLEAN DEFAULT true,
+        created_at TIMESTAMP DEFAULT NOW()
+      )
+    `)
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS package_enrollments (
+        id SERIAL PRIMARY KEY,
+        enrollment_id INTEGER REFERENCES enrollments(id),
+        package_slug VARCHAR(100) NOT NULL,
+        amount DECIMAL(10,2) NOT NULL,
+        currency VARCHAR(3) DEFAULT 'GBP',
+        status VARCHAR(20) DEFAULT 'pending',
+        created_at TIMESTAMP DEFAULT NOW()
+      )
+    `)
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS payments (
+        id SERIAL PRIMARY KEY,
+        enrollment_id INTEGER REFERENCES enrollments(id),
+        package_enrollment_id INTEGER REFERENCES package_enrollments(id),
+        amount DECIMAL(10,2) NOT NULL,
+        currency VARCHAR(3) DEFAULT 'GBP',
+        stripe_session_id VARCHAR(255),
+        stripe_payment_intent VARCHAR(255),
+        status VARCHAR(20) DEFAULT 'pending',
+        created_at TIMESTAMP DEFAULT NOW()
+      )
+    `)
+    await seedPackages()
     console.log('Database tables initialized')
   } catch (err) {
     console.error('DB init error:', err.message)
   }
+}
+
+async function seedPackages() {
+  const existing = await pool.query('SELECT COUNT(*) FROM packages')
+  if (parseInt(existing.rows[0].count) > 0) return
+
+  await pool.query(`
+    INSERT INTO packages (name, slug, price, description, features) VALUES
+    ('Module-by-Module Exam Prep', 'single-module', 100.00, 'Focus on one BCS exam at a time with 6 weeks of guided preparation.',
+     '["6 weeks duration","Focus on one exam","Personalized support","Mon-Fri live training","Saturday Success Lab","Mock quizzes","LMS access"]'),
+    ('Complete Diploma Exam Prep Bundle', 'complete-bundle', 400.00, 'Full BCS International Diploma preparation with all modules, cohorts, and support.',
+     '["24-week standard route","Starter & Hybrid cohorts","Complete diploma syllabus","Group mentorship","All single-module features","Oral exam support","Exam booking guidance"]'),
+    ('Fast-Track Diploma Exam Prep', 'fast-track', 400.00, 'Intensive 6-week route for experienced learners covering the full diploma.',
+     '["6-week intensive route","For experienced learners","Accelerated schedule","Mon-Fri live training","Saturday Success Lab","Exam readiness checks","Coaching call"]')
+  `)
 }
 
 module.exports = { pool, initDB }

@@ -2,7 +2,7 @@ const { pool } = require('../db')
 
 module.exports = async (req, res) => {
   try {
-    const { fullName, email, phone, selectedModule, enrollmentType, experience, goals } = req.body
+    const { fullName, email, phone, selectedModule, enrollmentType, experience, goals, packageSlug } = req.body
 
     if (!email) {
       return res.status(400).json({ error: 'Email is required' })
@@ -14,16 +14,16 @@ module.exports = async (req, res) => {
     let enrollmentId = null
     try {
       const result = await pool.query(
-        `INSERT INTO enrollments (full_name, email, phone, selected_module, enrollment_type, experience, goals, status)
-         VALUES ($1, $2, $3, $4, $5, $6, $7, 'pending') RETURNING id`,
-        [fullName, email, phone, selectedModule, enrollmentType, experience, goals]
+        `INSERT INTO enrollments (full_name, email, phone, selected_module, enrollment_type, experience, goals, package_slug, status)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, 'pending') RETURNING id`,
+        [fullName, email, phone, selectedModule, enrollmentType, experience, goals, packageSlug || null]
       )
       enrollmentId = result.rows[0].id
     } catch (dbErr) {
       console.error('DB insert error:', dbErr.message)
     }
 
-    globalThis.__verificationStore[email] = { code, data: { fullName, email, phone, selectedModule, enrollmentType, experience, goals, enrollmentId } }
+    globalThis.__verificationStore[email] = { code, data: { fullName, email, phone, selectedModule, enrollmentType, experience, goals, packageSlug, enrollmentId } }
 
     // Send verification email via Brevo
     const emailRes = await fetch('https://api.brevo.com/v3/smtp/email', {
