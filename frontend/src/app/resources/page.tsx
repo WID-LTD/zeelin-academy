@@ -112,13 +112,34 @@ export default function ResourcesPage() {
       <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Hero Section */}
-        <div className="text-center max-w-4xl mx-auto mb-16 animate-in fade-in duration-700">
+        <div className="relative overflow-hidden rounded-2xl p-12 lg:p-16 mb-16"
+          style={{
+            background: 'linear-gradient(135deg, #FAF7F0 0%, #F0EAD6 100%)',
+          }}>
+          {/* Decorative background SVGs */}
+          <div className="absolute inset-0 overflow-hidden" style={{ pointerEvents: 'none' }}>
+            <svg className="absolute top-0 right-0 w-32 lg:w-48 opacity-[0.06]"
+              viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="0" r="100" fill="#D4A02A" />
+              <path d="M70 0 L100 30" stroke="#D4A02A" strokeWidth="0.5" fill="none" />
+              <path d="M50 0 L100 50" stroke="#D4A02A" strokeWidth="0.3" fill="none" />
+            </svg>
+            <svg className="absolute bottom-0 left-0 w-24 lg:w-36 opacity-[0.04]"
+              viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" y="5" width="90" height="90" rx="12" fill="none" stroke="#D4A02A" strokeWidth="1" />
+              <rect x="15" y="15" width="70" height="70" rx="6" fill="none" stroke="#D4A02A" strokeWidth="0.5" />
+              <circle cx="20" cy="20" r="3" fill="#D4A02A" />
+              <circle cx="80" cy="20" r="3" fill="#D4A02A" />
+            </svg>
+          </div>
+          <div className="text-center max-w-4xl mx-auto relative z-10">
           <h1 className="font-display text-4xl sm:text-5xl font-bold leading-tight mb-6 text-[color:var(--text-core)]">
             Business Analysis <span className="gold">Resources</span>
           </h1>
           <p className="text-xl text-secondary leading-relaxed max-w-2xl mx-auto">
             Enhance your study and work processes with our curated selection of textbooks, free templates, and learning frameworks.
           </p>
+        </div>
         </div>
 
         {/* Search Bar */}

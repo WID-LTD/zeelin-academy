@@ -16,7 +16,7 @@ const learningFeatures = [
   {
     icon: School, accent: 'navy',
     title: 'Monday to Friday live /instructor led Training',
-    desc: 'Daily one-hour interactive classes breaking down complex BCS Diploma concepts. Led by expert instructors focusing on clarity, exam techniques, and practical application.',
+    desc: 'Daily one-hour interactive classes breaking down complex Diploma concepts. Led by expert instructors focusing on clarity, exam techniques, and practical application.',
   },
   {
     icon: FlaskConical, accent: 'gold',
@@ -58,9 +58,9 @@ const learningFeatures = [
   },
   {
     icon: CreditCard, accent: 'navy',
-    title: 'Bonus - Zeelin BCS membership Tour',
-    desc: 'Guided tour and walkthrough on how to maximize BCS membership benefits, access BCS resources, and utilize their library effectively.',
-    disclaimer: 'This is a walkthrough of how to use your BCS membership. It is not an offer of free BCS membership.',
+    title: 'Bonus - Zeelin Professional Membership Tour',
+    desc: 'Guided tour and walkthough on how to maximize professional membership benefits.',
+    disclaimer: 'This is a walkthrough of how to use your professional society membership. It is not an offer of free membership.',
   },
   {
     icon: BookMarked, accent: 'gold',
@@ -76,7 +76,7 @@ const learningFeatures = [
   {
     icon: CalendarCheck, accent: 'gold',
     title: 'Exam booking Guidance',
-    desc: 'Step-by-step guidance on how to book exams, choose the right dates, and manage the BCS portal requirements.',
+    desc: 'Step-by-step guidance on how to book exams, choose the right dates, and manage the portal requirements.',
     tagline: '"Your focus should be on passing, not paperwork."',
   },
 ]
@@ -178,7 +178,7 @@ export default function PackagesPageContent() {
             </h1>
             <p className="text-lg md:text-xl xl:text-2xl font-semibold max-w-[800px] 3xl:max-w-[1200px] mx-auto"
               style={{ color: 'var(--text-secondary)' }}>
-              Prepare for the BCS International Diploma in Business Analysis with Zeelin Academy&rsquo;s structured,
+              Prepare for the Professional Diploma in Business Analysis with Zeelin Academy&rsquo;s structured,
               expert-led exam preparation support.
             </p>
           </div>
@@ -188,6 +188,7 @@ export default function PackagesPageContent() {
       {/* ===== PRICING & PACKAGES GRID ===== */}
       <AnimatedSection delay={100}>
         <section className="py-16 lg:py-24 px-[5%] max-w-[1280px] 3xl:max-w-[2240px] mx-auto">
+          <h2 className="sr-only">Pricing Packages</h2>
           {loading ? (
             <div className="text-center py-12 text-lg" style={{ color: 'var(--text-secondary)' }}>Loading packages...</div>
           ) : (
@@ -294,9 +295,9 @@ export default function PackagesPageContent() {
                       <Route className="w-8 h-8 lg:w-10 lg:h-10" style={{ color: '#0D1B2A' }} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-xs md:text-sm uppercase tracking-widest mb-1" style={{ color: '#0D1B2A' }}>
+                      <h3 className="font-bold text-xs md:text-sm uppercase tracking-widest mb-1" style={{ color: '#0D1B2A' }}>
                         STANDARD ROUTE (24 WEEKS)
-                      </h4>
+                      </h3>
                       <p className="text-sm md:text-base lg:text-lg" style={{ color: 'var(--text-secondary)' }}>
                         Our standard Business analysis Diploma preparation route gives learners approximately six weeks per module.
                         This is suitable for busy professionals, parents, career changers, and learners who want steady progress
@@ -310,9 +311,9 @@ export default function PackagesPageContent() {
                       <FastForward className="w-8 h-8 lg:w-10 lg:h-10" style={{ color: 'var(--brand-gold)' }} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-xs md:text-sm uppercase tracking-widest mb-1" style={{ color: 'var(--brand-gold)' }}>
+                      <h3 className="font-bold text-xs md:text-sm uppercase tracking-widest mb-1" style={{ color: 'var(--brand-gold)' }}>
                         FAST-TRACK ROUTE (6 WEEKS)
-                      </h4>
+                      </h3>
                       <p className="text-sm md:text-base lg:text-lg" style={{ color: 'var(--text-secondary)' }}>
                         Our fast-track route is an intensive preparation option for experienced or highly committed learners who
                         want to cover the full Diploma preparation structure in a shorter period.
@@ -336,9 +337,9 @@ export default function PackagesPageContent() {
                       <Info className="w-6 h-6 lg:w-7 lg:h-7 flex-shrink-0" style={{ color: 'var(--brand-gold)' }} />
                       <div className="space-y-3 lg:space-y-4">
                         <div>
-                          <h5 className="font-bold text-xs md:text-sm uppercase tracking-widest mb-1" style={{ color: '#0D1B2A' }}>
+                          <h3 className="font-bold text-xs md:text-sm uppercase tracking-widest mb-1" style={{ color: '#0D1B2A' }}>
                             Exam Fees
-                          </h5>
+                          </h3>
                           <p className="text-xs md:text-sm lg:text-base leading-relaxed" style={{ color: 'var(--text-core)' }}>
                             Zeelin Academy&rsquo;s fees cover training and exam preparation support only.
                             Official exam fees are not included. Learners are responsible for booking
@@ -346,22 +347,21 @@ export default function PackagesPageContent() {
                           </p>
                         </div>
                         <div>
-                          <h6 className="font-bold text-xs md:text-sm uppercase tracking-widest mb-1" style={{ color: '#0D1B2A' }}>
+                          <h4 className="font-bold text-xs md:text-sm uppercase tracking-widest mb-1" style={{ color: '#0D1B2A' }}>
                             Exam Booking Guidance
-                          </h6>
+                          </h4>
                           <p className="text-xs md:text-sm lg:text-base leading-relaxed" style={{ color: 'var(--text-core)' }}>
                             Learners will also receive a guided exam-booking walkthrough.
                           </p>
                         </div>
                         <div className="p-3 lg:p-4 rounded-lg" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-                          <h6 className="font-bold text-xs md:text-sm uppercase tracking-widest mb-1" style={{ color: '#ba1a1a' }}>
+                          <h4 className="font-bold text-xs md:text-sm uppercase tracking-widest mb-1" style={{ color: '#ba1a1a' }}>
                             Disclaimer
-                          </h6>
+                          </h4>
                           <p className="text-xs md:text-sm lg:text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                            Zeelin Academy is an independent training provider and is not BCS, The Chartered Institute for IT.
-                            We provide exam preparation support for learners preparing for BCS Business Analysis certifications.
-                            BCS names, certification titles, trademarks, syllabuses, exam materials, and official resources
-                            remain the property of BCS. Learners are responsible for checking current BCS requirements,
+                            Zeelin Academy is an independent training provider.
+We provide exam preparation support for learners preparing for professional certifications.
+Learners are responsible for checking current certification requirements,
                             booking their official exams, and paying exam fees separately.
                           </p>
                         </div>
@@ -382,10 +382,10 @@ export default function PackagesPageContent() {
             style={{ background: 'radial-gradient(circle at 50% 50%, #D4AF37 0%, transparent 50%)' }} />
           <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center relative z-10">
             <div className="space-y-4 lg:space-y-6">
-              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-black leading-tight"
+              <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-black leading-tight"
                 style={{ color: 'var(--text-core)' }}>
                 Delivery Structure
-              </h1>
+              </h2>
               <p className="text-lg md:text-xl xl:text-2xl font-semibold leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 At Zeelin Academy, our Diploma preparation is delivered through structured cohorts and /or guided self-paced
                 route. This helps learners stay organised, receive consistent support, and prepare without confusion. Learners
@@ -417,7 +417,7 @@ export default function PackagesPageContent() {
                   </div>
                   <div>
                     <div className="font-bold text-xs lg:text-sm uppercase tracking-widest" style={{ color: '#0D1B2A' }}>
-                      BCS Accredited Path
+                      Professional Pathway
                     </div>
                     <div className="text-xs lg:text-sm font-semibold" style={{ color: 'var(--text-secondary)' }}>
                       Guaranteed Syllabus Alignment
@@ -518,26 +518,15 @@ export default function PackagesPageContent() {
       <AnimatedSection delay={500}>
         <section className="relative py-16 lg:py-24 px-[5%] overflow-hidden"
           style={{
-            background: 'linear-gradient(135deg, #0D1B2A 0%, #1a2d4a 100%)',
-            color: '#ffffff',
+            backgroundColor: 'var(--bg-secondary)',
           }}>
-          <div className="absolute inset-0 opacity-5 pointer-events-none">
-            <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <pattern id="grid" patternUnits="userSpaceOnUse" width="40" height="40">
-                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#D4AF37" strokeWidth="1" />
-                </pattern>
-              </defs>
-              <rect fill="url(#grid)" height="100%" width="100%" />
-            </svg>
-          </div>
           <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto relative z-10">
             <div className="text-center mb-16 lg:mb-20">
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black uppercase tracking-tight mb-4"
                 style={{ color: 'var(--brand-gold)' }}>
                 6-week structured reading roadmap
               </h2>
-              <p className="text-xl md:text-2xl lg:text-3xl font-bold italic mb-6 lg:mb-8 text-white">
+              <p className="text-xl md:text-2xl lg:text-3xl font-bold italic mb-6 lg:mb-8" style={{ color: 'var(--text-core)' }}>
                 Know what to read. Know when to read it. Know how it helps you pass.
               </p>
               <div className="max-w-[800px] 3xl:max-w-[1200px] mx-auto">
@@ -559,36 +548,36 @@ export default function PackagesPageContent() {
                       style={{ borderColor: 'var(--brand-gold)', color: 'var(--brand-gold)' }}>
                       <item.icon className="w-6 h-6 lg:w-7 lg:h-7" />
                     </div>
-                    <p className="text-base md:text-lg lg:text-xl font-semibold text-white">
+                    <p className="text-base md:text-lg lg:text-xl font-semibold" style={{ color: 'var(--text-core)' }}>
                       {item.text}
                     </p>
                   </div>
                 ))}
               </div>
-              <div className="p-6 lg:p-8 xl:p-10 rounded-2xl backdrop-blur-md"
-                style={{ backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+              <div className="p-6 lg:p-8 xl:p-10 rounded-2xl shadow-lg"
+                style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border)' }}>
                 <div className="flex items-center gap-4 lg:gap-6 mb-4 lg:mb-6">
                   <Flag className="w-9 h-9 lg:w-10 lg:h-10" style={{ color: 'var(--brand-gold)' }} />
                   <h3 className="font-display text-2xl lg:text-3xl xl:text-4xl" style={{ color: 'var(--brand-gold)' }}>
                     The Goal is Simple
                   </h3>
                 </div>
-                <p className="text-lg md:text-xl lg:text-2xl leading-relaxed text-white">
+                <p className="text-lg md:text-xl lg:text-2xl leading-relaxed" style={{ color: 'var(--text-core)' }}>
                   To help learners move from confusion to structure, from scattered reading to focused preparation, and from
                   overwhelm to exam confidence.
                 </p>
                 <div className="mt-6 lg:mt-8 pt-6 lg:pt-8 flex justify-between items-center"
-                  style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+                  style={{ borderTop: '1px solid var(--border)' }}>
                   {[
                     { value: '6', label: 'Weeks' },
                     { value: 'Daily', label: 'Tasks' },
                     { value: '100%', label: 'Clarity' },
                   ].map((item, i) => (
                     <React.Fragment key={item.label}>
-                      {i > 0 && <div className="h-8 w-px" style={{ backgroundColor: 'rgba(255,255,255,0.1)' }} />}
+                      {i > 0 && <div className="h-8 w-px" style={{ backgroundColor: 'var(--border)' }} />}
                       <div className="text-center">
                         <div className="text-2xl lg:text-3xl xl:text-4xl font-bold" style={{ color: 'var(--brand-gold)' }}>{item.value}</div>
-                        <div className="text-[10px] lg:text-xs uppercase tracking-widest text-white">{item.label}</div>
+                        <div className="text-[10px] lg:text-xs uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>{item.label}</div>
                       </div>
                     </React.Fragment>
                   ))}
@@ -611,7 +600,7 @@ export default function PackagesPageContent() {
                 Learning &amp; Support Ecosystem
               </h2>
               <p className="text-lg md:text-xl lg:text-2xl font-semibold max-w-[800px] 3xl:max-w-[1200px] mx-auto mt-4 lg:mt-6" style={{ color: 'var(--text-secondary)' }}>
-                Every element of our program is designed to guide you seamlessly through your BCS Diploma journey with expert
+                Every element of our program is designed to guide you seamlessly through your Diploma journey with expert
                 coaching and modern learning tools.
               </p>
             </div>
@@ -837,7 +826,7 @@ export default function PackagesPageContent() {
                 </div>
                 <div className="p-4 lg:p-6 rounded-lg" style={{ backgroundColor: 'rgba(255,255,255,0.5)', borderTop: '4px solid #0D1B2A' }}>
                   <p className="text-lg md:text-xl lg:text-2xl leading-relaxed font-semibold" style={{ color: '#0D1B2A' }}>
-                    Whether you are preparing for one module or working towards the full BCS International Diploma in
+                    Whether you are preparing for one module or working towards the full Professional Diploma in
                     Business Analysis, Zeelin Academy helps you study with direction, stay consistent, and move towards
                     exam readiness with confidence.
                   </p>

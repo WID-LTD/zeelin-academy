@@ -73,7 +73,7 @@ export default function ContactPage() {
     ${touched[field] && !form[field as keyof typeof form]
       ? 'text-red-400'
       : isFloating(field)
-        ? 'text-[#D4A02A]'
+        ? 'text-[color:var(--text-core)]'
         : 'text-[color:var(--text-muted)]'}
   `
 
@@ -85,19 +85,18 @@ export default function ContactPage() {
             <AnimatedSection delay={0} direction="scale">
               <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 animate-pop-in"
                 style={{ backgroundColor: 'rgba(212,160,42,0.12)' }}>
-                <Check className="w-10 h-10" style={{ color: '#D4A02A' }} />
+                <Check className="w-10 h-10" style={{ color: 'var(--brand-gold)' }} />
               </div>
-              <h1 className="font-display text-3xl sm:text-4xl font-black mb-4" style={{ color: '#0c1e36' }}>
-                Message <span style={{ color: '#D4A02A' }}>Sent!</span>
+              <h1 className="font-display text-3xl sm:text-4xl font-black mb-4" style={{ color: 'var(--text-core)' }}>
+                Message <span style={{ color: 'var(--brand-gold)' }}>Sent!</span>
               </h1>
-              <p className="text-base font-semibold mb-3" style={{ color: '#4A4A4A' }}>
+              <p className="text-base font-semibold mb-3" style={{ color: 'var(--text-secondary)' }}>
                 Thank you for reaching out. Our team will get back to you within 24 hours.
               </p>
-              <p className="text-sm mb-10" style={{ color: '#6e6e6e' }}>
-                You will receive a confirmation at <strong style={{ color: '#0c1e36' }}>{form.email}</strong>
+              <p className="text-sm mb-10" style={{ color: 'var(--text-muted)' }}>
+                You will receive a confirmation at <strong style={{ color: 'var(--text-core)' }}>{form.email}</strong>
               </p>
-              <Link href="/" className="inline-block px-8 py-3.5 rounded-lg font-bold text-sm transition-all duration-300 hover:scale-105"
-                style={{ backgroundColor: '#D4A02A', color: '#fff' }}>
+              <Link href="/" className="inline-block px-8 py-3.5 btn-gold text-sm transition-all duration-300 hover:scale-105">
                 Back to Home
               </Link>
             </AnimatedSection>
@@ -110,17 +109,34 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen py-20 relative">
       <div className="max-w-[2560px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative">
+        {/* Decorative background SVGs */}
+        <div className="absolute inset-0 overflow-hidden" style={{ pointerEvents: 'none' }}>
+          <svg className="absolute top-0 right-0 w-32 lg:w-48 opacity-[0.04]"
+            viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="0" r="100" fill="#D4A02A" />
+            <path d="M60 0 L100 40" stroke="#D4A02A" strokeWidth="0.5" fill="none" />
+            <path d="M30 0 L100 70" stroke="#D4A02A" strokeWidth="0.3" fill="none" />
+          </svg>
+          <svg className="absolute bottom-0 left-0 w-28 lg:w-40 opacity-[0.03]"
+            viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 100 L100 100 L100 0 Z" fill="none" stroke="#D4A02A" strokeWidth="1" />
+            <circle cx="20" cy="80" r="3" fill="#D4A02A" />
+            <circle cx="80" cy="20" r="3" fill="#D4A02A" />
+          </svg>
+        </div>
+        <div className="relative z-10">
         <AnimatedSection delay={0}>
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="h-px w-10" style={{ backgroundColor: '#D4A02A' }} />
-              <span className="text-xs font-bold tracking-[0.125rem]" style={{ color: '#D4A02A' }}>GET IN TOUCH</span>
-              <div className="h-px w-10" style={{ backgroundColor: '#D4A02A' }} />
+              <div className="h-px w-10" style={{ backgroundColor: 'var(--brand-gold)' }} />
+              <span className="text-xs font-bold tracking-[0.125rem]" style={{ color: 'var(--brand-gold)' }}>GET IN TOUCH</span>
+              <div className="h-px w-10" style={{ backgroundColor: 'var(--brand-gold)' }} />
             </div>
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-black mb-4" style={{ color: '#0c1e36' }}>
-              Contact <span style={{ color: '#D4A02A' }}>Us</span>
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-black mb-4" style={{ color: 'var(--text-core)' }}>
+              Contact <span style={{ color: 'var(--brand-gold)' }}>Us</span>
             </h1>
-            <p className="text-base sm:text-lg max-w-2xl mx-auto" style={{ color: '#4A4A4A', fontWeight: 500 }}>
+            <p className="text-base sm:text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>
               Have a question about our programs, enrollment, or partnership opportunities? We would love to hear from you.
             </p>
           </div>
@@ -136,26 +152,26 @@ export default function ContactPage() {
                   style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
                   <MessageCircle className="w-5 h-5" style={{ color: '#25D366' }} />
                   <div>
-                    <p className="text-xs font-bold" style={{ color: '#0c1e36' }}>WhatsApp</p>
-                    <p className="text-[0.65rem]" style={{ color: '#6e6e6e' }}>Chat with us</p>
+                <p className="text-xs font-bold" style={{ color: 'var(--text-core)' }}>WhatsApp</p>
+                <p className="text-[0.65rem]" style={{ color: 'var(--text-muted)' }}>Chat with us</p>
                   </div>
                 </a>
                 <a href="mailto:contact@zeelinacademy.com"
                   className="flex-1 flex items-center gap-2.5 p-4 rounded-xl border transition-all duration-300 hover:-translate-y-0.5"
                   style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
-                  <Mail className="w-5 h-5" style={{ color: '#D4A02A' }} />
+                  <Mail className="w-5 h-5" style={{ color: 'var(--brand-gold)' }} />
                   <div>
-                    <p className="text-xs font-bold" style={{ color: '#0c1e36' }}>Email</p>
-                    <p className="text-[0.65rem]" style={{ color: '#6e6e6e' }}>Send a message</p>
+                    <p className="text-xs font-bold" style={{ color: 'var(--text-core)' }}>Email</p>
+                    <p className="text-[0.65rem]" style={{ color: 'var(--text-muted)' }}>Send a message</p>
                   </div>
                 </a>
                 <a href="tel:+441234567890"
                   className="flex-1 flex items-center gap-2.5 p-4 rounded-xl border transition-all duration-300 hover:-translate-y-0.5"
                   style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
-                  <Phone className="w-5 h-5" style={{ color: '#D4A02A' }} />
+                  <Phone className="w-5 h-5" style={{ color: 'var(--brand-gold)' }} />
                   <div>
-                    <p className="text-xs font-bold" style={{ color: '#0c1e36' }}>Phone</p>
-                    <p className="text-[0.65rem]" style={{ color: '#6e6e6e' }}>Call us</p>
+                    <p className="text-xs font-bold" style={{ color: 'var(--text-core)' }}>Phone</p>
+                    <p className="text-[0.65rem]" style={{ color: 'var(--text-muted)' }}>Call us</p>
                   </div>
                 </a>
               </div>
@@ -173,12 +189,12 @@ export default function ContactPage() {
 
                 <div className="relative">
                   <input
-                    type="text" name="name" value={form.name} onChange={handleChange}
+                    type="text" name="name" id="name" value={form.name} onChange={handleChange}
                     onFocus={() => setFocusedField('name')} onBlur={handleBlur}
                     className={inputClass('name')} style={inputStyle('name')}
                     placeholder=" " required
                   />
-                  <label className={labelClass('name')}>Full Name</label>
+                  <label htmlFor="name" className={labelClass('name')}>Full Name</label>
                   {touched.name && form.name && (
                     <Check className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#22c55e' }} />
                   )}
@@ -186,12 +202,12 @@ export default function ContactPage() {
 
                 <div className="relative">
                   <input
-                    type="email" name="email" value={form.email} onChange={handleChange}
+                    type="email" name="email" id="email" value={form.email} onChange={handleChange}
                     onFocus={() => setFocusedField('email')} onBlur={handleBlur}
                     className={inputClass('email')} style={inputStyle('email')}
                     placeholder=" " required
                   />
-                  <label className={labelClass('email')}>Email Address</label>
+                  <label htmlFor="email" className={labelClass('email')}>Email Address</label>
                   {touched.email && form.email && /\S+@\S+\.\S+/.test(form.email) && (
                     <Check className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#22c55e' }} />
                   )}
@@ -199,22 +215,22 @@ export default function ContactPage() {
 
                 <div className="relative">
                   <input
-                    type="text" name="subject" value={form.subject} onChange={handleChange}
+                    type="text" name="subject" id="subject" value={form.subject} onChange={handleChange}
                     onFocus={() => setFocusedField('subject')} onBlur={handleBlur}
                     className={inputClass('subject')} style={inputStyle('subject')}
                     placeholder=" "
                   />
-                  <label className={labelClass('subject')}>Subject (optional)</label>
+                  <label htmlFor="subject" className={labelClass('subject')}>Subject (optional)</label>
                 </div>
 
                 <div className="relative">
                   <textarea
-                    name="message" value={form.message} onChange={handleChange}
+                    name="message" id="message" value={form.message} onChange={handleChange}
                     onFocus={() => setFocusedField('message')} onBlur={handleBlur}
                     className={inputClass('message')} style={inputStyle('message')}
                     placeholder=" " required rows={5}
                   />
-                  <label className={labelClass('message')}>Your Message</label>
+                  <label htmlFor="message" className={labelClass('message')}>Your Message</label>
                   {touched.message && form.message && (
                     <Check className="absolute right-3 top-3 w-4 h-4" style={{ color: '#22c55e' }} />
                   )}
@@ -381,8 +397,10 @@ export default function ContactPage() {
               ))}
             </div>
           </div>
-          </div>
+        </div>
         </AnimatedSection>
+        </div>
+        </div>
       </div>
     </div>
   )

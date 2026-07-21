@@ -23,7 +23,7 @@ export default function BannerSection() {
       <AnimatedSection delay={0} direction="up">
       <div style={{ textAlign: 'center', padding: '3.75rem 1.25rem', background: 'radial-gradient(circle at center, #FFFDF9 0%, #FAF7F0 100%)' }}>
         <h1 className="font-display text-4xl md:text-5xl lg:text-6xl" style={{ color: 'var(--navy-dark)', maxWidth: '56.25rem', margin: '0 auto 1.25rem', fontWeight: 700, lineHeight: 1.2 }}>
-          Stop Guessing. Start Preparing for your <span style={{ color: '#AA820A' }}>Business Analysis Exam</span> with clarity.
+          Stop Guessing. Start Preparing for your <span style={{ color: 'var(--brand-gold)' }}>Business Analysis Exam</span> with clarity.
         </h1>
       </div>
       </AnimatedSection>
@@ -43,11 +43,12 @@ export default function BannerSection() {
               >
                 <Image
                   src={book.src}
-                  alt={book.title}
+                  alt=""
                   fill
                   className="object-cover pointer-events-none"
                   draggable={false}
                   sizes="(max-width: 640px) 140px, (max-width: 768px) 160px, 190px"
+                  role="presentation"
                 />
               </div>
               <div className="mt-4 w-[8.75rem] sm:w-[10rem] md:w-[11.875rem] text-center px-1">
@@ -68,9 +69,9 @@ export default function BannerSection() {
             <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Text Content */}
               <div className="text-center lg:text-left">
-                <h3 className="font-display text-4xl md:text-5xl lg:text-6xl font-black mb-4 leading-tight" style={{ color: 'var(--text-core)' }}>
+                <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-black mb-4 leading-tight" style={{ color: 'var(--text-core)' }}>
                   <span style={{ color: 'var(--brand-gold)' }}>Business Analysis Exam Prep, Made Clear</span>
-                </h3>
+                </h2>
                 <p className="text-lg md:text-xl max-w-full mx-auto lg:mx-0 mb-8 leading-relaxed font-semibold" style={{ color: 'var(--text-secondary)' }}>
                   Zeelin Academy helps busy learners prepare for business analysis exams through structured teaching — guided study plans, mock quizzes, visual summaries, and exam-readiness support.
                 </p>

@@ -4,7 +4,7 @@ const cors = require('cors')
 const { initDB } = require('./db')
 
 const app = express()
-const PORT = process.env.BACKEND_PORT || 3031
+const PORT = process.env.BACKEND_PORT || 3030
 
 const allowedOrigins = [
   'http://localhost:3000',
@@ -41,6 +41,7 @@ app.use('/api/payments', require('./routes/payments'))
 app.use('/api/profile', require('./routes/profile'))
 app.use('/api/progress', require('./routes/progress'))
 app.use('/api/admin', require('./routes/admin'))
+app.use('/api/sitemap', require('./routes/sitemap'))
 
 // Init DB then seed admin, then start
 initDB().then(() => {

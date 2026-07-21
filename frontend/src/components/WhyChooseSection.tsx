@@ -98,10 +98,8 @@ export default function WhyChooseSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((f, idx) => (
             <AnimatedSection key={f.tag} delay={100 + idx * 60}>
-            <div className="group" style={{ background: 'var(--bg-card)', borderRadius: '0.5rem', overflow: 'hidden', textAlign: 'left', boxShadow: '0 4px 20px rgba(0,0,0,0.04)', border: '1px solid var(--border)', transition: 'box-shadow 0.4s cubic-bezier(0.16,1,0.3,1), transform 0.4s cubic-bezier(0.16,1,0.3,1)' }}
-                 onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 12px 40px rgba(180,160,130,0.2)'; e.currentTarget.style.transform = 'translateY(-4px)' }}
-                 onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.04)'; e.currentTarget.style.transform = 'translateY(0)' }}>
-              <div className="relative w-full h-[7.5rem] sm:h-[9.375rem] overflow-hidden" style={{ backgroundColor: '#E8E2D4' }}>
+            <div className="group hover-lift-shadow" style={{ background: 'var(--bg-card)', borderRadius: '1rem', overflow: 'hidden', textAlign: 'left', boxShadow: '0 4px 20px rgba(0,0,0,0.04)', border: '1px solid var(--border)' }}>
+              <div className="relative w-full h-[7.5rem] sm:h-[9.375rem] overflow-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
                 <SafeImage src={f.image} alt={f.tag} fill className="object-cover hover-image-zoom" />
               </div>
               <div style={{ padding: '1.75rem' }}>

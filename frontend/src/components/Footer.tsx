@@ -22,7 +22,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center mb-4">
               <span className="font-display text-xl font-bold tracking-tight">
                 <span style={{ color: 'var(--text-core)' }}>Zeelin</span>{' '}
-                <span style={{ color: 'var(--brand-gold)' }}>Academy</span>
+                <span style={{ color: 'var(--text-core)' }}>Academy</span>
               </span>
             </Link>
             <p className="text-sm leading-relaxed mb-4" style={{ color: 'var(--text-muted)' }}>
@@ -74,7 +74,7 @@ export default function Footer() {
             </div>
             {/* Newsletter */}
             <div className="p-4 rounded-xl border" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
-              <h4 className="text-xs font-bold mb-2" style={{ color: 'var(--text-core)' }}>Stay Updated</h4>
+              <div className="text-xs font-bold mb-2" style={{ color: 'var(--text-core)' }}>Stay Updated</div>
               <p className="text-[0.625rem] mb-3" style={{ color: 'var(--text-muted)' }}>
                 Get the latest BA tips and course updates
               </p>
@@ -88,6 +88,7 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
+                  aria-label="Subscribe to newsletter"
                   className="px-3 py-2 rounded-lg text-xs font-bold transition-all duration-300 hover:scale-105 flex items-center gap-1"
                   style={{ backgroundColor: 'var(--brand-gold)', color: 'var(--btn-gold-text)' }}
                 >
@@ -99,13 +100,13 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold mb-4 font-display text-sm" style={{ color: 'var(--text-core)' }}>Quick Links</h3>
+            <h2 className="font-semibold mb-4 font-display text-sm" style={{ color: 'var(--text-core)' }}>Quick Links</h2>
             <div className="flex flex-col">
               <Link href="/" className="text-xs py-2 transition-all duration-200 hover:translate-x-1" style={{ color: 'var(--text-muted)' }}>Home</Link>
               <Link href="/about" className="text-xs py-2 transition-all duration-200 hover:translate-x-1" style={{ color: 'var(--text-muted)' }}>About Zeelin Academy</Link>
               <Link href="/pathway-finder" className="text-xs py-2 transition-all duration-200 hover:translate-x-1" style={{ color: 'var(--text-muted)' }}>Diploma Pathway Finder</Link>
               <Link href="/courses" className="text-xs py-2 transition-all duration-200 hover:translate-x-1" style={{ color: 'var(--text-muted)' }}>Courses</Link>
-              <Link href="/exam-prep" className="text-xs py-2 transition-all duration-200 hover:translate-x-1" style={{ color: 'var(--text-muted)' }}>BA Exam Prep</Link>
+
               <Link href="/resources" className="text-xs py-2 transition-all duration-200 hover:translate-x-1" style={{ color: 'var(--text-muted)' }}>Resources</Link>
               <Link href="/contact" className="text-xs py-2 transition-all duration-200 hover:translate-x-1" style={{ color: 'var(--text-muted)' }}>Contact</Link>
             </div>
@@ -113,7 +114,7 @@ export default function Footer() {
 
           {/* Why Zeelin */}
           <div>
-            <h3 className="font-semibold mb-4 font-display text-sm" style={{ color: 'var(--text-core)' }}>Why Zeelin</h3>
+            <h2 className="font-semibold mb-4 font-display text-sm" style={{ color: 'var(--text-core)' }}>Why Zeelin</h2>
             <div className="flex flex-col">
               {whyZeelin.map((item) => (
                 <span key={item} className="text-xs py-2 flex items-center gap-2" style={{ color: 'var(--text-muted)' }}>
@@ -126,7 +127,7 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="font-semibold mb-4 font-display text-sm" style={{ color: 'var(--text-core)' }}>Legal</h3>
+            <h2 className="font-semibold mb-4 font-display text-sm" style={{ color: 'var(--text-core)' }}>Legal</h2>
             <div className="flex flex-col">
               <Link href="/privacy" className="text-xs py-2 transition-all duration-200 hover:translate-x-1" style={{ color: 'var(--text-muted)' }}>Privacy Policy</Link>
               <Link href="/terms" className="text-xs py-2 transition-all duration-200 hover:translate-x-1" style={{ color: 'var(--text-muted)' }}>Terms and Conditions</Link>
@@ -135,7 +136,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold mb-4 font-display text-sm" style={{ color: 'var(--text-core)' }}>Contact</h3>
+            <h2 className="font-semibold mb-4 font-display text-sm" style={{ color: 'var(--text-core)' }}>Contact</h2>
             <div className="flex flex-col text-xs" style={{ color: 'var(--text-muted)' }}>
               <span className="py-2">London, United Kingdom</span>
               <a href="mailto:info@zeelinacademy.com" className="py-2 transition-all duration-200 hover:text-[var(--brand-gold)]">info@zeelinacademy.com</a>

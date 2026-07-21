@@ -99,167 +99,6 @@ export const foundationCertificates: CertificateData[] = [
       { title: 'Week 6 \u2013 Managing Risk and People', desc: 'Anticipating what could go wrong and keeping communication and team structure working smoothly.' },
     ],
   },
-  {
-    id: 'ba-practice',
-    title: 'Certification in Business Analysis Practise',
-    whoItsFor: [
-      'Aspiring or practicing Business Analysts',
-      'Project Managers and Business Change Managers',
-      'Consultants supporting client organisations',
-      'Business owners wanting a clearer analytical approach to decisions',
-      'Anyone wanting a practical, step-by-step approach to business analysis — no prior experience required',
-    ],
-    format: [
-      '6-week program, one core session per week, with practical exercises and a real-world case study to apply each step immediately.',
-      'Exam format (if adding a certification-style assessment): 1-hour, closed-book, multiple-choice exam (~40 questions, ~65% pass mark) \u2014 same structure as your earlier modules.',
-    ],
-    weeks: [
-      { title: 'Week 1 \u2013 Seeing the Bigger Picture', desc: 'Understanding how business analysis fits into and supports a company\u2019s wider strategy.' },
-      { title: 'Week 2 \u2013 Knowing Who Matters', desc: 'Identifying stakeholders and understanding how to work with and manage their interests.' },
-      { title: 'Week 3 \u2013 Understanding Where the Business Stands Now', desc: 'A clear, honest look at the current situation before any changes are proposed.' },
-      { title: 'Week 4 \u2013 Defining Where the Business Needs to Be', desc: 'Setting a clear target \u2014 what success looks like once the change is made.' },
-      { title: 'Week 5 \u2013 Shaping the Right Solution', desc: 'Turning the gap between \u201cnow\u201d and \u201ctarget\u201d into a practical, well-defined solution.' },
-      { title: 'Week 6 \u2013 Making the Case for Action', desc: 'Building a solid business case to justify and support the proposed change.' },
-    ],
-  },
-  {
-    id: 'benefits-management',
-    title: 'Certificate in Benefits Management and Business Acceptance',
-    whoItsFor: [
-      'Business owners wanting to see real returns from change initiatives',
-      'Project and change managers responsible for delivering results',
-      'Business analysts tracking value beyond project completion',
-      'Quality and testing staff supporting business change',
-      'Anyone wanting a practical understanding of how to plan, test, and deliver real business benefits \u2014 no prior experience required',
-    ],
-    format: [
-      '6-week program, one core session per week, with practical exercises and a real-world case study to apply each step immediately.',
-      'Exam format (if adding a certification-style assessment): 1-hour, closed-book, multiple-choice exam (~40 questions, ~65% pass mark) \u2014 same structure as your earlier modules.',
-    ],
-    weeks: [
-      { title: 'Week 1 \u2013 What \u201cBenefit\u201d Really Means', desc: 'Understanding what a business benefit is, and why it should drive every change decision.' },
-      { title: 'Week 2 \u2013 Sorting Out What Matters', desc: 'Grouping and understanding how different benefits connect to and depend on one another.' },
-      { title: 'Week 3 \u2013 Planning to Capture Value', desc: 'Building a simple plan to track and realise benefits, not just hope they happen.' },
-      { title: 'Week 4 \u2013 Proving the Change Works', desc: 'Setting standards and methods to test whether a change is actually ready and acceptable to the business.' },
-      { title: 'Week 5 \u2013 Checking the Details', desc: 'Practical techniques for testing, planning the testing process, and confirming results.' },
-      { title: 'Week 6 \u2013 From Plan to Payoff', desc: 'Revisiting the business case, rolling out the change, and making sure the promised benefits are actually delivered.' },
-    ],
-  },
-  {
-    id: 'modelling-business-processes',
-    title: 'Certificate in Modelling Business Processes',
-    whoItsFor: [
-      'Business analysts and process improvement specialists',
-      'Operations managers wanting more efficient workflows',
-      'Business owners looking to streamline how their company runs',
-      'Project and change managers implementing new processes',
-      'Anyone wanting a practical understanding of how to map, improve, and implement better business processes \u2014 no prior experience required',
-    ],
-    format: [
-      '6-week program, one core session per week, with practical exercises and a real-world case study to apply each step immediately',
-      'Exam format (if adding a certification-style assessment): 1-hour, closed-book, multiple-choice exam (~40 questions, ~65% pass mark) \u2014 same structure as your earlier modules.',
-    ],
-    weeks: [
-      { title: 'Week 1 \u2013 Why Processes Matter', desc: 'Understanding what business processes are and why studying them properly makes change work.' },
-      { title: 'Week 2 \u2013 Seeing the Whole Business', desc: 'Mapping out how the business works at the highest level \u2014 the big picture view.' },
-      { title: 'Week 3 \u2013 Following the Triggers', desc: 'Understanding what sets processes in motion and how the business responds to events.' },
-      { title: 'Week 4 \u2013 Zooming Into the Details', desc: 'Breaking processes down to who does what, step by step.' },
-      { title: 'Week 5 \u2013 Making Things Work Better', desc: 'Identifying weaknesses in current processes and reshaping them for improvement.' },
-      { title: 'Week 6 \u2013 Rolling Out the Change', desc: 'Putting the improved processes into practice and managing the transition smoothly.' },
-    ],
-  },
-  {
-    id: 'data-management-essentials',
-    title: 'Certificate in Data Management Essentials',
-    whoItsFor: [
-      'Business owners wanting to make better use of their company\u2019s data',
-      'Operations and admin staff responsible for records and systems',
-      'IT and data professionals supporting business functions',
-      'Managers wanting cleaner, more reliable information for decisions',
-      'Anyone wanting a practical understanding of how to manage and use business data well \u2014 no prior experience required',
-    ],
-    format: [
-      '6-week program, one core session per week, with practical exercises and a real-world case study to apply each step immediately',
-      'Exam format: 1-hour, closed-book, multiple-choice exam (~40 questions, ~65% pass mark)',
-    ],
-    weeks: [
-      { title: 'Week 1 \u2013 Why Data Deserves Attention', desc: 'Understanding what data management means and why it matters to every business, big or small.' },
-      { title: 'Week 2 \u2013 Keeping Data in Order', desc: 'The everyday discipline of organising, labelling, and maintaining data so it stays useful.' },
-      { title: 'Week 3 \u2013 Looking After the Systems That Hold Data', desc: 'Understanding the basics of managing databases \u2014 where data lives and how it\u2019s kept safe.' },
-      { title: 'Week 4 \u2013 Building a Single Source of Truth', desc: 'Creating a shared, reliable place where business information can be stored and found.' },
-      { title: 'Week 5 \u2013 Knowing Where Data Fits in the Business', desc: 'Understanding how far the data function reaches \u2014 who owns it, who uses it, and who\u2019s responsible.' },
-      { title: 'Week 6 \u2013 Turning Data Into a Business Asset', desc: 'Bringing it all together \u2014 using well-managed data to support better decisions.' },
-    ],
-  },
-  {
-    id: 'systems-modelling-techniques',
-    title: 'Certificate in Systems Modelling Techniques',
-    whoItsFor: [
-      'Business analysts and systems analysts',
-      'Software developers and solution designers',
-      'IT professionals bridging business and technical teams',
-      'Project managers overseeing system-related change',
-      'Anyone wanting a practical understanding of how to model systems clearly before building or changing them \u2014 no prior experience required',
-    ],
-    format: [
-      '6-week program, one core session per week, with practical exercises and a real-world case study to apply each step immediately.',
-      'Exam format (if adding a certification-style assessment): 1-hour, closed-book, multiple-choice exam (~40 questions, ~65% pass mark) \u2014 same structure as your earlier modules.',
-    ],
-    weeks: [
-      { title: 'Week 1 \u2013 Seeing Systems Clearly', desc: 'Understanding what systems modelling is and why picturing a system helps before building anything.' },
-      { title: 'Week 2 \u2013 Putting Models in Context', desc: 'Learning how models fit within the bigger picture of a business or technical system.' },
-      { title: 'Week 3 \u2013 Mapping What a System Does', desc: 'Capturing the functions and actions a system needs to perform.' },
-      { title: 'Week 4 \u2013 Capturing What Stays the Same', desc: 'Modelling the fixed structures \u2014 the data and relationships that don\u2019t change moment to moment.' },
-      { title: 'Week 5 \u2013 Capturing What Changes Over Time', desc: 'Modelling behaviour and flow \u2014 how a system responds and moves through different states.' },
-      { title: 'Week 6 \u2013 Bringing the Models Together', desc: 'Combining functionality, structure, and behaviour into one clear, usable system view.' },
-    ],
-  },
-  {
-    id: 'systems-development-essentials',
-    title: 'Certificate in Systems Development Essentials',
-    whoItsFor: [
-      'Systems analysts and business analysts working with technical teams',
-      'Software developers and solution architects',
-      'IT project managers overseeing development work',
-      'Quality assurance professionals',
-      'Anyone wanting a practical understanding of how systems are designed, built, and maintained \u2014 no prior experience required',
-    ],
-    format: [
-      '6-week program, one core session per week, with practical exercises and a real-world case study to apply each step immediately',
-      'Exam format: 1-hour, closed-book, multiple-choice exam (~40 questions, ~65% pass mark) \u2014 same structure as your earlier modules.',
-    ],
-    weeks: [
-      { title: 'Week 1: Who Does What in Building Systems', desc: 'Understanding the different roles involved in developing a system and how they work together.' },
-      { title: 'Week 2: The Blueprint Behind the System', desc: 'Grasping the basics of architecture \u2014 how a system is structured before it\u2019s built.' },
-      { title: 'Week 3: The Journey from Idea to Working System', desc: 'Following the lifecycle a system goes through, from concept to completion.' },
-      { title: 'Week 4: How Teams Actually Build Systems', desc: 'Practical approaches and methods teams use to develop systems effectively.' },
-      { title: 'Week 5: Investigating Before Building', desc: 'Digging into the real problem before designing any solution.' },
-      { title: 'Week 6: Designing, Deploying, and Keeping It Running', desc: 'Bringing the system to life, launching it, maintaining it, and ensuring it meets quality standards \u2014 with the right tools supporting the process.' },
-    ],
-  },
-  {
-    id: 'requirements-engineering',
-    title: 'Certificate in Requirements Engineering',
-    whoItsFor: [
-      'Business analysts and requirements engineers',
-      'Project managers responsible for scope and delivery',
-      'Product owners and product managers',
-      'Consultants gathering client needs',
-      'Anyone wanting a practical understanding of how to gather, document, and manage business requirements \u2014 no prior experience required',
-    ],
-    format: [
-      '6-week program, one core session per week, with practical exercises and a real-world case study to apply each step immediately',
-      'Exam format: 1-hour, closed-book, multiple-choice exam (~40 questions, ~65% pass mark) \u2014 same structure as your earlier modules.',
-    ],
-    weeks: [
-      { title: 'Week 1 \u2013 Requirements as a Way of Working', desc: 'Understanding what \u201crequirements\u201d really means and why treating it as a proper service leads to better outcomes.' },
-      { title: 'Week 2 \u2013 Drawing Out What People Actually Need', desc: 'Practical ways to ask the right questions and uncover real requirements, not assumptions.' },
-      { title: 'Week 3 \u2013 Writing It Down Clearly', desc: 'Turning conversations and findings into clear, usable written requirements.' },
-      { title: 'Week 4 \u2013 Making Sense of What You\u2019ve Gathered', desc: 'Breaking down and examining requirements to spot gaps, conflicts, or missing pieces.' },
-      { title: 'Week 5 \u2013 Confirming You\u2019ve Got It Right', desc: 'Checking requirements with stakeholders before any work begins, to avoid costly mistakes.' },
-      { title: 'Week 6 \u2013 Keeping Requirements Under Control', desc: 'Tracking changes and keeping requirements accurate and relevant throughout the life of a project.' },
-    ],
-  },
 ]
 
 export const coreCertificates: CertificateData[] = [
@@ -312,29 +151,6 @@ export const coreCertificates: CertificateData[] = [
 ]
 
 export const practitionerCertificates: CertificateData[] = [
-  {
-    id: 'prac-modelling-processes',
-    title: 'Modelling Business Processes',
-    whoItsFor: [
-      'Business analysts and process improvement specialists',
-      'Operations managers wanting more efficient workflows',
-      'Business owners looking to streamline how their company runs',
-      'Project and change managers implementing new processes',
-      'Anyone wanting a practical understanding of how to map, improve, and implement better business processes — no prior experience required',
-    ],
-    format: [
-      '6-week program, one core session per week, with practical exercises and a real-world case study to apply each step immediately',
-      'Exam format (if adding a certification-style assessment): 1-hour, closed-book, multiple-choice exam (~40 questions, ~65% pass mark) — same structure as your earlier modules.',
-    ],
-    weeks: [
-      { title: 'Week 1 – Why Processes Matter', desc: 'Understanding what business processes are and why studying them properly makes change work.' },
-      { title: 'Week 2 – Seeing the Whole Business', desc: 'Mapping out how the business works at the highest level — the big picture view.' },
-      { title: 'Week 3 – Following the Triggers', desc: 'Understanding what sets processes in motion and how the business responds to events.' },
-      { title: 'Week 4 – Zooming Into the Details', desc: 'Breaking processes down to who does what, step by step.' },
-      { title: 'Week 5 – Making Things Work Better', desc: 'Identifying weaknesses in current processes and reshaping them for improvement.' },
-      { title: 'Week 6 – Rolling Out the Change', desc: 'Putting the improved processes into practice and managing the transition smoothly.' },
-    ],
-  },
   {
     id: 'prac-systems-modelling',
     title: 'Systems Modelling Techniques',
@@ -427,6 +243,29 @@ export const practitionerCertificates: CertificateData[] = [
       { title: 'Week 6 – From Plan to Payoff', desc: 'Revisiting the business case, rolling out the change, and making sure the promised benefits are actually delivered.' },
     ],
   },
+  {
+    id: 'prac-modelling-processes',
+    title: 'Modelling Business Processes',
+    whoItsFor: [
+      'Business analysts and process improvement specialists',
+      'Operations managers wanting more efficient workflows',
+      'Business owners looking to streamline how their company runs',
+      'Project and change managers implementing new processes',
+      'Anyone wanting a practical understanding of how to map, improve, and implement better business processes — no prior experience required',
+    ],
+    format: [
+      '6-week program, one core session per week, with practical exercises and a real-world case study to apply each step immediately',
+      'Exam format (if adding a certification-style assessment): 1-hour, closed-book, multiple-choice exam (~40 questions, ~65% pass mark) — same structure as your earlier modules.',
+    ],
+    weeks: [
+      { title: 'Week 1 – Why Processes Matter', desc: 'Understanding what business processes are and why studying them properly makes change work.' },
+      { title: 'Week 2 – Seeing the Whole Business', desc: 'Mapping out how the business works at the highest level — the big picture view.' },
+      { title: 'Week 3 – Following the Triggers', desc: 'Understanding what sets processes in motion and how the business responds to events.' },
+      { title: 'Week 4 – Zooming Into the Details', desc: 'Breaking processes down to who does what, step by step.' },
+      { title: 'Week 5 – Making Things Work Better', desc: 'Identifying weaknesses in current processes and reshaping them for improvement.' },
+      { title: 'Week 6 – Rolling Out the Change', desc: 'Putting the improved processes into practice and managing the transition smoothly.' },
+    ],
+  },
 ]
 
 export const oralCertificates: CertificateData[] = [
@@ -442,7 +281,8 @@ export const oralCertificates: CertificateData[] = [
     ],
     format: [
       '4-week program, one core session per week, with mock oral exercises, peer feedback, and personalised trainer guidance.',
-      'Oral examination format: structured panel assessment with scenario-based questions and portfolio discussion.',
+      'Oral examination format: structured panel assessment conducted by one or two examiners, with scenario-based questions and portfolio discussion.',
+      'Questions are drawn from the oral examination syllabus and your chosen specialist modules. You will be expected to apply your business analysis knowledge to scenarios presented by the examiners.',
     ],
     weeks: [
       { title: 'Week 1 \u2013 Understanding the Exam', desc: 'Learning the oral exam structure, assessment criteria, and expectations to build a clear preparation strategy.' },

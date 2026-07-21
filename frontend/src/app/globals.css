@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .text-wrap-safe {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
+
 :root {
   --primary-gold: #D4A02A;
   --dark-gold: #8B6F00;
@@ -91,7 +98,7 @@ body {
   background: var(--gradient-gold);
   color: var(--btn-gold-text);
   padding: 0.75rem 1.625rem;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   font-weight: 700;
   border: none;
   cursor: pointer;
@@ -367,6 +374,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .animate-width-expand {
   animation: width-expand 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* --- Card hover (for link-wrapped cards) --- */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(180, 160, 130, 0.2);
 }
 
 /* --- Hover Lift with Shadow --- */

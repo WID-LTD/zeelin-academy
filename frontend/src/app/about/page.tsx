@@ -96,8 +96,31 @@ export default function AboutPage() {
     <div className="min-h-screen relative">
       {/* Section 1 — Hero: Navy gradient split */}
       <section
-        style={{ background: 'linear-gradient(135deg, #040A1A 0%, #0D1530 100%)', color: '#FFFFFF', padding: '5rem 5%' }}
+        style={{ background: 'linear-gradient(135deg, #040A1A 0%, #0D1530 100%)', position: 'relative', color: '#FFFFFF', padding: '5rem 5%' }}
+        className="overflow-hidden"
       >
+        {/* Decorative background SVGs */}
+        <div className="absolute inset-0 overflow-hidden" style={{ pointerEvents: 'none' }}>
+          <svg className="absolute top-0 right-0 w-48 lg:w-64 opacity-[0.04]"
+            viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="0" r="200" fill="#D4A02A" />
+            <circle cx="160" cy="40" r="20" fill="none" stroke="#D4A02A" strokeWidth="1" />
+            <circle cx="140" cy="60" r="10" fill="none" stroke="#D4A02A" strokeWidth="0.5" />
+          </svg>
+          <svg className="absolute bottom-0 left-0 w-36 lg:w-56 opacity-[0.03]"
+            viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 150 L150 150 L150 0 Z" fill="none" stroke="#D4A02A" strokeWidth="1.5" />
+            <path d="M10 150 L150 10" fill="none" stroke="#D4A02A" strokeWidth="0.5" opacity="0.3" />
+            <path d="M40 150 L150 40" fill="none" stroke="#D4A02A" strokeWidth="0.5" opacity="0.15" />
+            <circle cx="20" cy="130" r="4" fill="#D4A02A" opacity="0.5" />
+            <circle cx="130" cy="20" r="3" fill="#D4A02A" opacity="0.3" />
+          </svg>
+          <svg className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 lg:w-96 opacity-[0.02]"
+            viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100 10 L190 100 L100 190 L10 100 Z" fill="none" stroke="#D4A02A" strokeWidth="0.5" />
+            <path d="M100 30 L170 100 L100 170 L30 100 Z" fill="none" stroke="#D4A02A" strokeWidth="0.3" />
+          </svg>
+        </div>
         <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
@@ -156,7 +179,7 @@ export default function AboutPage() {
               <p>After using a structured micro-learning approach to successfully complete Business Analysis studies, Franklin recognized that many learners struggle not because they lack ability, but because they lack structure, support, and clarity.</p>
               <p>This realization inspired the creation of Zeelin Academy — a learning platform designed to help busy learners study effectively, stay accountable, and achieve certification success without feeling overwhelmed.</p>
             </div>
-            <div style={{ borderLeft: '0.1875rem solid var(--brand-gold)', padding: '1.25rem', marginTop: '1.875rem', fontStyle: 'italic', backgroundColor: '#F1ECE1', borderRadius: '0 0.25rem 0.25rem 0' }}>
+            <div style={{ borderLeft: '0.1875rem solid var(--brand-gold)', padding: '1.25rem', marginTop: '1.875rem', fontStyle: 'italic', backgroundColor: 'var(--bg-cream)', borderRadius: '0 0.25rem 0.25rem 0' }}>
               <p className="text-lg font-semibold mb-2" style={{ color: 'var(--navy-dark)' }}>&ldquo;Success becomes achievable when learning is structured, practical, and designed for real life.&rdquo;</p>
               <cite style={{ color: 'var(--dark-gold)', fontWeight: 'bold', fontStyle: 'normal' }}>&mdash; Dr Franklin Kalu</cite>
             </div>
@@ -172,14 +195,14 @@ export default function AboutPage() {
             <h2 className="font-display text-4xl md:text-5xl font-black mb-4" style={{ color: 'var(--navy-dark)' }}>Our Journey</h2>
             <p className="text-lg font-semibold mb-8" style={{ color: 'var(--text-secondary)' }}>From a bold vision to a global learning community — our journey is built on impact, excellence, and learners at the heart of everything we do.</p>
             <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-4 p-5 rounded-lg" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--bg-cream)' }}>
+              <div className="flex items-center gap-4 p-5 rounded-xl" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--bg-cream)' }}>
                 <div style={{ width: '2.25rem', height: '2.25rem', backgroundColor: 'var(--brand-gold)', borderRadius: '0.25rem', flexShrink: 0 }} />
                 <div>
                   <div className="font-bold text-2xl" style={{ color: 'var(--navy-dark)' }}>4</div>
                   <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-muted)' }}>Years of Impact and Counting</div>
                 </div>
               </div>
-              <div className="flex items-center gap-4 p-5 rounded-lg" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--bg-cream)' }}>
+              <div className="flex items-center gap-4 p-5 rounded-xl" style={{ border: '1px solid var(--border)', backgroundColor: 'var(--bg-cream)' }}>
                 <div style={{ width: '2.25rem', height: '2.25rem', backgroundColor: 'var(--brand-gold)', borderRadius: '0.25rem', flexShrink: 0 }} />
                 <div>
                   <div className="font-bold text-2xl" style={{ color: 'var(--navy-dark)' }}>Hundreds</div>
@@ -198,10 +221,10 @@ export default function AboutPage() {
                   )}
                 </div>
                 <div className="flex-1">
-                  <div className="relative w-full h-[5rem] sm:h-[6.25rem] overflow-hidden mb-3" style={{ backgroundColor: '#DDD', borderRadius: '0.25rem' }}>
+                  <div className="relative w-full h-[5rem] sm:h-[6.25rem] overflow-hidden mb-3" style={{ backgroundColor: 'var(--bg-secondary)', borderRadius: '0.25rem' }}>
                     <SafeImage src={m.image} alt={m.year} fill className="object-cover" />
                   </div>
-                  <h4 className="font-display text-xl font-bold mb-1" style={{ color: 'var(--dark-gold)' }}>{m.year} — {m.title}</h4>
+                  <h3 className="font-display text-xl font-bold mb-1" style={{ color: 'var(--dark-gold)' }}>{m.year} — {m.title}</h3>
                   <p className="text-sm font-semibold" style={{ color: 'var(--text-muted)' }}>{m.desc}</p>
                 </div>
               </div>
@@ -213,14 +236,14 @@ export default function AboutPage() {
       {/* Section 4 — Mission & Vision: cream bg */}
       <section style={{ padding: '5rem 5%', backgroundColor: 'var(--bg-cream)' }}>
         <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div style={{ backgroundColor: 'var(--white)', padding: '2.5rem', borderRadius: '0.5rem', border: '1px solid var(--border)' }}>
+          <div style={{ backgroundColor: 'var(--white)', padding: '2.5rem', borderRadius: '1rem', border: '1px solid var(--border)' }}>
             <div style={{ width: '1.75rem', height: '1.75rem', backgroundColor: 'var(--dark-gold)', borderRadius: '50%', marginBottom: '0.9375rem' }} />
             <h3 className="font-display text-2xl md:text-3xl font-black mb-4" style={{ color: 'var(--navy-dark)' }}>Our Mission</h3>
             <p className="text-base font-semibold leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
               To democratise Business Analysis education by providing high-quality, structured, and accessible training that empowers learners from all backgrounds to achieve certification and advance their careers — regardless of their starting point or prior experience.
             </p>
           </div>
-          <div style={{ backgroundColor: 'var(--white)', padding: '2.5rem', borderRadius: '0.5rem', border: '1px solid var(--border)' }}>
+          <div style={{ backgroundColor: 'var(--white)', padding: '2.5rem', borderRadius: '1rem', border: '1px solid var(--border)' }}>
             <div style={{ width: '1.75rem', height: '1.75rem', backgroundColor: 'var(--dark-gold)', borderRadius: '50%', marginBottom: '0.9375rem' }} />
             <h3 className="font-display text-2xl md:text-3xl font-black mb-4" style={{ color: 'var(--navy-dark)' }}>Our Vision</h3>
             <p className="text-base font-semibold leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
@@ -250,14 +273,14 @@ export default function AboutPage() {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
               {objectives.map((obj) => (
-                <div key={obj.title} className="p-5 sm:p-6" style={{ background: 'rgba(255,255,255,0.04)', borderRadius: '0.375rem' }}>
+                <div key={obj.title} className="p-5 sm:p-6 rounded-lg" style={{ background: 'rgba(255,255,255,0.04)' }}>
                   <div className="mb-3" style={{ color: 'var(--brand-gold)' }}>
                     {obj.title === 'Structured Learning' && <BookOpen className="w-5 h-5" />}
                     {obj.title === 'For All Backgrounds' && <Users className="w-5 h-5" />}
                     {obj.title === 'Certification Success' && <Award className="w-5 h-5" />}
                     {obj.title === 'Global Impact' && <Globe className="w-5 h-5" />}
                   </div>
-                  <h4 className="font-display text-xl font-bold mb-1" style={{ color: '#FFFFFF' }}>{obj.title}</h4>
+                  <h3 className="font-display text-xl font-bold mb-1" style={{ color: '#FFFFFF' }}>{obj.title}</h3>
                   <p className="text-sm font-semibold" style={{ opacity: 0.8 }}>{obj.desc}</p>
                 </div>
               ))}
@@ -282,7 +305,7 @@ export default function AboutPage() {
                   {v.title === 'Confidence' && <TrendingUp className="w-5 h-5" />}
                   {v.title === 'Practical learning' && <Wrench className="w-5 h-5" />}
                 </div>
-                <h4 className="font-display text-xl font-bold mb-1" style={{ color: 'var(--navy-dark)' }}>{v.title}</h4>
+                <h3 className="font-display text-xl font-bold mb-1" style={{ color: 'var(--navy-dark)' }}>{v.title}</h3>
                 <p className="text-sm font-semibold mb-5" style={{ color: 'var(--text-muted)' }}>{v.desc}</p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                   {v.examples.map((ex, i) => (

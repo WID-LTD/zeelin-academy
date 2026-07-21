@@ -24,7 +24,7 @@ const mosaicImages = [
 
 export default function WhoWeHelpSection() {
   return (
-    <section className="py-16 lg:py-20 px-[5%]" style={{ backgroundColor: '#F3EFE3' }}>
+    <section className="py-16 lg:py-20 px-[5%]" style={{ backgroundColor: 'var(--bg-cream)' }}>
       <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <AnimatedSection direction="left">
         <div>

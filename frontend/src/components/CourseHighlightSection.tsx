@@ -101,11 +101,11 @@ export default function CourseHighlightSection() {
         </AnimatedSection>
 
         {/* Course cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {courses.map((course, idx) => (
             <AnimatedSection key={course.title} delay={200 + idx * 100}>
-              <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '0.5rem', overflow: 'hidden' }}>
-                <div className="relative w-full h-[10rem] sm:h-[12.5rem]" style={{ backgroundColor: '#DDD' }}>
+              <div className="rounded-xl" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', overflow: 'hidden' }}>
+                <div className="relative w-full h-[10rem] sm:h-[12.5rem]" style={{ backgroundColor: 'var(--bg-secondary)' }}>
                   <SafeImage src={course.image} alt={course.title} fill className="object-cover" />
                 </div>
                 <div style={{ padding: '1.75rem' }}>
@@ -140,8 +140,8 @@ export default function CourseHighlightSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {buildSkillsCourses.map((course, idx) => (
             <AnimatedSection key={course.id} delay={200 + idx * 100}>
-              <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '0.5rem', overflow: 'hidden' }}>
-                <div className="relative w-full h-[10rem] sm:h-[12.5rem]" style={{ backgroundColor: '#DDD' }}>
+              <div className="rounded-xl" style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', overflow: 'hidden' }}>
+                <div className="relative w-full h-[10rem] sm:h-[12.5rem]" style={{ backgroundColor: 'var(--bg-secondary)' }}>
                   <SafeImage src={course.image} alt={course.title} fill className="object-cover" />
                 </div>
                 <div style={{ padding: '1.75rem' }}>

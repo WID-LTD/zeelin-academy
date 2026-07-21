@@ -22,3 +22,6 @@ Thumbs.db
 
 # Logs
 npm-debug.log*
+
+# Build artifacts
+*.tsbuildinfo
