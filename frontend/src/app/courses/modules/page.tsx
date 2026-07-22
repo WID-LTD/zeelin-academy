@@ -6,12 +6,12 @@ import { Search, Layers, CheckCircle, BarChart3, Filter, ChevronRight, ArrowRigh
 import AnimatedSection from '@/components/AnimatedSection'
 
 const videoMap: Record<string, string> = {
-  'ba-foundations': '/VID-20260605-WA0123.mp4',
-  'elicitation': '/VID-20260605-WA0128.mp4',
-  'requirements-mgmt': '/VID-20260605-WA0151.mp4',
-  'strategy-analysis': '/VID-20260606-WA0000.mp4',
-  'requirements-design': '/activities/Requirements-Analysis-Design-Definition.mp4',
-  'solution-evaluation': '/activities/Solution-Evaluation.mp4'
+  'ba-foundations': '/activities/foundation_certificate_in_bussiness_analysis.mp4',
+  'elicitation': '/activities/Business_change_certificate_in_a…_202607150230.mp4',
+  'requirements-mgmt': '/activities/Requirement_Engineering_in_Busin…_202607150250.mp4',
+  'strategy-analysis': '/activities/Modelling_business_processes_mot…_202607150310.mp4',
+  'requirements-design': '/activities/Requirements-Analysis-Design.mp4',
+  'solution-evaluation': '/activities/Benefits_Management_Business_Acc…_202607150258.mp4'
 }
 
 const modules = [

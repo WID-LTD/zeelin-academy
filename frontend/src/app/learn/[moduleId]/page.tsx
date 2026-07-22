@@ -8,38 +8,38 @@ import { ChevronLeft, Check, Lightbulb } from 'lucide-react'
 
 const moduleLessons: Record<string, { id: string; title: string; duration: string; video?: string; content: string }[]> = {
   'ba-foundations': [
-    { id: 'ba-intro', title: 'What is Business Analysis?', duration: '15 min', video: '/VID-20260605-WA0123.mp4', content: 'Learn the fundamentals of Business Analysis, its role in organizations, and the value it delivers.' },
+    { id: 'ba-intro', title: 'What is Business Analysis?', duration: '15 min', video: '/activities/foundation_certificate_in_bussiness_analysis.mp4', content: 'Learn the fundamentals of Business Analysis, its role in organizations, and the value it delivers.' },
     { id: 'baccm', title: 'Core Concept Model', duration: '20 min', content: 'Understand the six core concepts: Change, Need, Solution, Stakeholder, Value, and Context.' },
     { id: 'stakeholder-id', title: 'Stakeholder Identification', duration: '18 min', content: 'Techniques for identifying stakeholders and understanding their influence and impact.' },
     { id: 'ba-planning', title: 'BA Approach Planning', duration: '22 min', content: 'How to plan the Business Analysis approach for any project or initiative.' },
     { id: 'governance', title: 'Governance & BA Metrics', duration: '15 min', content: 'Understanding governance structures and measuring BA effectiveness.' },
   ],
   'elicitation': [
-    { id: 'interviews', title: 'Interview Techniques', duration: '20 min', video: '/VID-20260605-WA0128.mp4', content: 'Master structured, semi-structured, and unstructured interview techniques.' },
+    { id: 'interviews', title: 'Interview Techniques', duration: '20 min', video: '/activities/Business_change_certificate_in_a…_202607150230.mp4', content: 'Master structured, semi-structured, and unstructured interview techniques.' },
     { id: 'workshops', title: 'Workshop Facilitation', duration: '25 min', content: 'Plan and facilitate effective requirements gathering workshops.' },
     { id: 'focus-groups', title: 'Focus Groups & Surveys', duration: '18 min', content: 'Design and moderate focus groups and create effective surveys.' },
     { id: 'document-analysis', title: 'Document Analysis', duration: '15 min', content: 'Extract requirements from existing documentation and systems.' },
   ],
   'requirements-mgmt': [
     { id: 'traceability', title: 'Requirements Traceability', duration: '22 min', content: 'Build and maintain traceability matrices from source to solution.' },
-    { id: 'prioritization', title: 'Prioritization Frameworks', duration: '20 min', video: '/VID-20260605-WA0151.mp4', content: 'Apply MoSCoW, Kano, and other prioritization techniques.' },
+    { id: 'prioritization', title: 'Prioritization Frameworks', duration: '20 min', video: '/activities/Requirement_Engineering_in_Busin…_202607150250.mp4', content: 'Apply MoSCoW, Kano, and other prioritization techniques.' },
     { id: 'change-mgmt', title: 'Change Management Process', duration: '18 min', content: 'Manage requirements changes through formal control processes.' },
     { id: 'approval', title: 'Requirements Approval', duration: '15 min', content: 'Navigate the requirements approval workflow and baseline management.' },
   ],
   'strategy-analysis': [
     { id: 'current-state', title: 'Current State Analysis', duration: '22 min', content: 'Assess the current business state using proven techniques.' },
     { id: 'future-state', title: 'Future State Definition', duration: '20 min', content: 'Define and communicate the desired future state.' },
-    { id: 'swot-pestle', title: 'SWOT & PESTLE Analysis', duration: '25 min', video: '/VID-20260606-WA0000.mp4', content: 'Conduct comprehensive SWOT and PESTLE analyses.' },
+    { id: 'swot-pestle', title: 'SWOT & PESTLE Analysis', duration: '25 min', video: '/activities/Modelling_business_processes_mot…_202607150310.mp4', content: 'Conduct comprehensive SWOT and PESTLE analyses.' },
     { id: 'business-case', title: 'Business Case Development', duration: '30 min', content: 'Build compelling business cases with cost-benefit analysis.' },
   ],
   'requirements-design': [
-    { id: 'bpmn', title: 'BPMN Process Modeling', duration: '28 min', video: '/activities/Requirements-Analysis-Design-Definition.mp4', content: 'Model business processes using BPMN notation.' },
+    { id: 'bpmn', title: 'BPMN Process Modeling', duration: '28 min', video: '/activities/Requirements-Analysis-Design.mp4', content: 'Model business processes using BPMN notation.' },
     { id: 'data-modeling', title: 'Data Modeling with ERDs', duration: '25 min', content: 'Design entity-relationship diagrams for information systems.' },
     { id: 'use-cases', title: 'Use Cases & User Stories', duration: '22 min', content: 'Write effective use cases and user stories with acceptance criteria.' },
     { id: 'wireframing', title: 'Wireframing & Prototyping', duration: '20 min', content: 'Create wireframes and prototypes to communicate design intent.' },
   ],
   'solution-evaluation': [
-    { id: 'kpis', title: 'Performance Metrics & KPIs', duration: '20 min', video: '/activities/Solution-Evaluation.mp4', content: 'Define and measure solution performance using KPIs.' },
+    { id: 'kpis', title: 'Performance Metrics & KPIs', duration: '20 min', video: '/activities/Benefits_Management_Business_Acc…_202607150258.mp4', content: 'Define and measure solution performance using KPIs.' },
     { id: 'roi-analysis', title: 'ROI & Value Assessment', duration: '22 min', content: 'Calculate return on investment and assess solution value.' },
     { id: 'limitations', title: 'Enterprise Limitations', duration: '18 min', content: 'Identify and document enterprise limitations and constraints.' },
     { id: 'dashboards', title: 'Performance Dashboards', duration: '15 min', content: 'Design dashboards for ongoing solution monitoring.' },

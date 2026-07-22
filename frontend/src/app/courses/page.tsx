@@ -150,11 +150,11 @@ export default function CoursesPage() {
         <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] 4xl:max-w-[2000px] mx-auto">
           <AnimatedSection delay={0}>
             <div className="flex items-center gap-4 mb-8 lg:mb-10 xl:mb-12">
-              <div className="h-px flex-grow max-w-[60px]" style={{ backgroundColor: '#D4A02A' }} />
-              <h2 className="font-display text-2xl lg:text-3xl xl:text-4xl font-black uppercase tracking-wider" style={{ color: '#0c1e36' }}>
+              <div className="h-px flex-grow max-w-[60px]" style={{ backgroundColor: 'var(--brand-gold)' }} />
+              <h2 className="font-display text-2xl lg:text-3xl xl:text-4xl font-black uppercase tracking-wider" style={{ color: 'var(--text-core)' }}>
                 Foundation Modules
               </h2>
-              <div className="h-px flex-grow max-w-[60px]" style={{ backgroundColor: '#D4A02A' }} />
+              <div className="h-px flex-grow max-w-[60px]" style={{ backgroundColor: 'var(--brand-gold)' }} />
             </div>
           </AnimatedSection>
         </div>
@@ -172,11 +172,11 @@ export default function CoursesPage() {
         <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] 4xl:max-w-[2000px] mx-auto">
           <AnimatedSection delay={0}>
             <div className="flex items-center gap-4 mb-8 lg:mb-10 xl:mb-12">
-              <div className="h-px flex-grow max-w-[60px]" style={{ backgroundColor: '#D4A02A' }} />
-              <h2 className="font-display text-2xl lg:text-3xl xl:text-4xl font-black uppercase tracking-wider" style={{ color: '#0c1e36' }}>
+              <div className="h-px flex-grow max-w-[60px]" style={{ backgroundColor: 'var(--brand-gold)' }} />
+              <h2 className="font-display text-2xl lg:text-3xl xl:text-4xl font-black uppercase tracking-wider" style={{ color: 'var(--text-core)' }}>
                 Core Modules
               </h2>
-              <div className="h-px flex-grow max-w-[60px]" style={{ backgroundColor: '#D4A02A' }} />
+              <div className="h-px flex-grow max-w-[60px]" style={{ backgroundColor: 'var(--brand-gold)' }} />
             </div>
           </AnimatedSection>
         </div>
@@ -194,11 +194,11 @@ export default function CoursesPage() {
         <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] 4xl:max-w-[2000px] mx-auto">
           <AnimatedSection delay={0}>
             <div className="flex items-center gap-4 mb-8 lg:mb-10 xl:mb-12">
-              <div className="h-px flex-grow max-w-[60px]" style={{ backgroundColor: '#D4A02A' }} />
-              <h2 className="font-display text-2xl lg:text-3xl xl:text-4xl font-black uppercase tracking-wider" style={{ color: '#0c1e36' }}>
+              <div className="h-px flex-grow max-w-[60px]" style={{ backgroundColor: 'var(--brand-gold)' }} />
+              <h2 className="font-display text-2xl lg:text-3xl xl:text-4xl font-black uppercase tracking-wider" style={{ color: 'var(--text-core)' }}>
                 Practitioner Modules
               </h2>
-              <div className="h-px flex-grow max-w-[60px]" style={{ backgroundColor: '#D4A02A' }} />
+              <div className="h-px flex-grow max-w-[60px]" style={{ backgroundColor: 'var(--brand-gold)' }} />
             </div>
           </AnimatedSection>
         </div>
@@ -216,11 +216,11 @@ export default function CoursesPage() {
         <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] 4xl:max-w-[2000px] mx-auto">
           <AnimatedSection delay={0}>
             <div className="flex items-center gap-4 mb-8 lg:mb-10 xl:mb-12">
-              <div className="h-px flex-grow max-w-[60px]" style={{ backgroundColor: '#D4A02A' }} />
-              <h2 className="font-display text-2xl lg:text-3xl xl:text-4xl font-black uppercase tracking-wider" style={{ color: '#0c1e36' }}>
+              <div className="h-px flex-grow max-w-[60px]" style={{ backgroundColor: 'var(--brand-gold)' }} />
+              <h2 className="font-display text-2xl lg:text-3xl xl:text-4xl font-black uppercase tracking-wider" style={{ color: 'var(--text-core)' }}>
                 Oral Module
               </h2>
-              <div className="h-px flex-grow max-w-[60px]" style={{ backgroundColor: '#D4A02A' }} />
+              <div className="h-px flex-grow max-w-[60px]" style={{ backgroundColor: 'var(--brand-gold)' }} />
             </div>
           </AnimatedSection>
         </div>
@@ -237,25 +237,25 @@ export default function CoursesPage() {
       <section className="px-[5%] py-16 lg:py-20">
         <div className="max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] 3xl:max-w-[1800px] mx-auto">
           <AnimatedSection delay={100}>
-            <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-[0.6875rem] font-bold uppercase tracking-wider" style={{ color: '#0c1e36' }}>
+            <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-[0.6875rem] font-bold uppercase tracking-wider" style={{ color: 'var(--text-core)' }}>
               <div className="flex items-center gap-2">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b89753" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--brand-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="12" cy="12" r="10" />
                   <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
                   <path d="M2 12h20" />
                 </svg>
                 Global Reach
               </div>
-              <span className="text-sm" style={{ color: 'rgba(184,151,83,0.4)' }}>|</span>
+              <span className="text-sm" style={{ color: 'rgba(212,160,42,0.35)' }}>|</span>
               <div className="flex items-center gap-2">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b89753" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--brand-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
                 Academic Excellence
               </div>
-              <span className="text-sm" style={{ color: 'rgba(184,151,83,0.4)' }}>|</span>
+              <span className="text-sm" style={{ color: 'rgba(212,160,42,0.35)' }}>|</span>
               <div className="flex items-center gap-2">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b89753" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--brand-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                   <circle cx="9" cy="7" r="4" />
                   <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
@@ -263,9 +263,9 @@ export default function CoursesPage() {
                 </svg>
                 Expert Mentors
               </div>
-              <span className="text-sm" style={{ color: 'rgba(184,151,83,0.4)' }}>|</span>
+              <span className="text-sm" style={{ color: 'rgba(212,160,42,0.35)' }}>|</span>
               <div className="flex items-center gap-2">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b89753" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--brand-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="12" cy="8" r="7" />
                   <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
                 </svg>

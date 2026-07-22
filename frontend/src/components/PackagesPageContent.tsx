@@ -187,12 +187,12 @@ export default function PackagesPageContent() {
 
       {/* ===== PRICING & PACKAGES GRID ===== */}
       <AnimatedSection delay={100}>
-        <section className="py-16 lg:py-24 px-[5%] max-w-[1280px] 3xl:max-w-[2240px] mx-auto">
+        <section className="py-16 lg:py-24 px-[5%] mx-auto w-full">
           <h2 className="sr-only">Pricing Packages</h2>
           {loading ? (
             <div className="text-center py-12 text-lg" style={{ color: 'var(--text-secondary)' }}>Loading packages...</div>
           ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 items-stretch">
             {cards.map((card, idx) => {
               const Icon = card.icon
               return card.featured ? (
@@ -282,7 +282,7 @@ export default function PackagesPageContent() {
       <AnimatedSection delay={200}>
         <section className="py-16 lg:py-24 px-[5%]"
           style={{ backgroundColor: 'var(--bg-secondary)' }}>
-          <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto">
+          <div className="w-full mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
               <div>
                 <h2 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-6" style={{ color: 'var(--text-core)' }}>
@@ -380,7 +380,7 @@ Learners are responsible for checking current certification requirements,
         <section className="relative py-16 lg:py-24 px-[5%] overflow-hidden">
           <div className="absolute inset-0 opacity-10 pointer-events-none"
             style={{ background: 'radial-gradient(circle at 50% 50%, #D4AF37 0%, transparent 50%)' }} />
-          <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center relative z-10">
+          <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center relative z-10">
             <div className="space-y-4 lg:space-y-6">
               <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-black leading-tight"
                 style={{ color: 'var(--text-core)' }}>
@@ -432,16 +432,16 @@ Learners are responsible for checking current certification requirements,
 
       {/* ===== COHORT COMPARISON ===== */}
       <AnimatedSection delay={400}>
-        <section className="py-16 lg:py-24 px-[5%] max-w-[1280px] 3xl:max-w-[2240px] mx-auto">
-          <div className="text-center mb-12 lg:mb-16">
+        <section className="py-16 lg:py-24 px-[5%] w-full mx-auto">
+          <div className="text-center mb-12 lg:mb-16 max-w-[800px] 3xl:max-w-[1200px] mx-auto">
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-2" style={{ color: 'var(--text-core)' }}>
               How our Diploma Cohorts Work
             </h2>
-            <p className="text-lg md:text-xl lg:text-2xl font-semibold max-w-[800px] 3xl:max-w-[1200px] mx-auto" style={{ color: 'var(--text-secondary)' }}>
+            <p className="text-lg md:text-xl lg:text-2xl font-semibold" style={{ color: 'var(--text-secondary)' }}>
               Choose the learning rhythm that matches your career pace and professional commitments.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 xl:gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 xl:gap-8">
             <div className="p-8 lg:p-12 xl:p-14 rounded-2xl shadow-lg transition-all group hover:scale-[1.02]"
               style={{
                 backgroundColor: 'var(--bg-card)',
@@ -520,7 +520,7 @@ Learners are responsible for checking current certification requirements,
           style={{
             backgroundColor: 'var(--bg-secondary)',
           }}>
-          <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto relative z-10">
+          <div className="w-full mx-auto relative z-10">
             <div className="text-center mb-16 lg:mb-20">
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black uppercase tracking-tight mb-4"
                 style={{ color: 'var(--brand-gold)' }}>
@@ -591,7 +591,7 @@ Learners are responsible for checking current certification requirements,
       {/* ===== LEARNING & SUPPORT ECOSYSTEM ===== */}
       <AnimatedSection delay={600}>
         <section className="py-16 lg:py-24 px-[5%]">
-          <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto">
+          <div className="w-full mx-auto">
             <div className="text-center mb-12 lg:mb-16">
               <span className="font-bold text-xs lg:text-sm uppercase tracking-widest" style={{ color: 'var(--brand-gold)' }}>
                 Unmatched Learning Experience
@@ -604,7 +604,7 @@ Learners are responsible for checking current certification requirements,
                 coaching and modern learning tools.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 xl:gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 xl:gap-8">
               {learningFeatures.map((feature, idx) => {
                 const FIcon = feature.icon
                 const isGold = feature.accent === 'gold'
@@ -654,7 +654,7 @@ Learners are responsible for checking current certification requirements,
       <AnimatedSection delay={700}>
         <section className="py-16 lg:py-24 px-[5%]"
           style={{ backgroundColor: 'var(--bg-secondary)' }}>
-          <div className="max-w-[1280px] 3xl:max-w-[2240px] mx-auto">
+          <div className="w-full mx-auto">
             <div className="text-center mb-12 lg:mb-16">
               <span className="font-bold text-xs lg:text-sm uppercase tracking-widest" style={{ color: 'var(--brand-gold)' }}>
                 Curriculum Details
@@ -723,7 +723,7 @@ Learners are responsible for checking current certification requirements,
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 xl:gap-10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 xl:gap-8">
                 <div className="p-8 lg:p-12 xl:p-14 rounded-2xl shadow-lg"
                   style={{ backgroundColor: 'var(--bg-card)', borderTop: '4px solid #0D1B2A' }}>
                   <h3 className="font-display text-2xl lg:text-3xl font-bold mb-4 lg:mb-6" style={{ color: 'var(--text-core)' }}>
@@ -784,7 +784,7 @@ Learners are responsible for checking current certification requirements,
       {/* ===== FINAL CTA ===== */}
       <AnimatedSection delay={800}>
         <section className="py-16 lg:py-24 px-[5%]">
-          <div className="mx-auto max-w-[1280px] 3xl:max-w-[2240px] rounded-2xl text-center shadow-xl relative overflow-hidden py-12 lg:py-16 xl:py-20 px-8 lg:px-12 xl:px-16"
+          <div className="mx-auto w-full rounded-2xl text-center shadow-xl relative overflow-hidden py-12 lg:py-16 xl:py-20 px-8 lg:px-12 xl:px-16"
             style={{
               backgroundColor: 'var(--brand-gold)',
               color: '#0D1B2A',
