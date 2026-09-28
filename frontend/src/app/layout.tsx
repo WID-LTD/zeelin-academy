@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import './job-readiness-secondary.css'
+import './job-readiness-forms.css'
 import ThemeProvider from '@/components/ThemeProvider'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
