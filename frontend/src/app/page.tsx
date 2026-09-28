@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight, BookOpen, BriefcaseBusiness, ChartNoAxesCombined, FolderKanban, MessageSquareText, Search, Users } from 'lucide-react'
+import { ArrowRight, BookOpen, BriefcaseBusiness, TrendingUp, FolderKanban, MessageSquareText, Search, Users } from 'lucide-react'
 import PackageCatalog from '@/components/PackageCatalog'
 import { jobReadinessPackages, stockImages } from '@/lib/jobReadinessData'
 
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const systemStages = [
   ['01','Training','Build the shared foundation across the roles in your category, then develop the differentiator skills for your target direction.',BookOpen],
-  ['02','Practice','Use daily tasks, tools, check-ins and guided activities to turn theory into repeatable working habits.',ChartNoAxesCombined],
+  ['02','Practice','Use daily tasks, tools, check-ins and guided activities to turn theory into repeatable working habits.',TrendingUp],
   ['03','Work Experience','Complete one substantial project for your package and produce evidence you can explain and defend.',FolderKanban],
   ['04','Mentorship & Evaluation','Get review, feedback, accountability and readiness signals while improving the quality of your work.',Users],
   ['05','Job Acquisition','Move into role-specific job boards, applications, tracking and structured acquisition routines.',Search],
