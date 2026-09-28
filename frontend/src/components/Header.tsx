@@ -4,15 +4,15 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
-import { Menu, X, ArrowRight } from 'lucide-react'
+import { ArrowRight, Menu, X } from 'lucide-react'
 
 const nav = [
-  ['/', 'Home'],
   ['/packages', 'Packages'],
   ['/pathway-finder', 'Pathway Finder'],
+  ['/courses', 'How It Works'],
   ['/about', 'About'],
   ['/resources', 'Resources'],
-  ['/contact', 'Contact'],
+  ['/support', 'Support'],
 ]
 
 export default function Header() {
@@ -26,38 +26,40 @@ export default function Header() {
     return () => document.removeEventListener('keydown', onKey)
   }, [])
 
-  const active = (href: string) => href === '/' ? pathname === '/' : pathname.startsWith(href)
+  const active = (href: string) => pathname.startsWith(href)
 
   return (
-    <header className="jr-header">
-      <div className="jr-header-inner">
-        <Link href="/" className="jr-brand" aria-label="Zeelin Academy home">
-          <Image src="/logo-light.png" alt="Zeelin Academy" width={170} height={60} priority />
-          <span><b>ZEELIN ACADEMY</b><small>Job Readiness System</small></span>
-        </Link>
-
-        <nav className="jr-desktop-nav" aria-label="Main navigation">
-          {nav.map(([href, label]) => (
-            <Link key={href} href={href} className={active(href) ? 'active' : ''}>{label}</Link>
-          ))}
-        </nav>
-
-        <div className="jr-header-actions">
-          <Link href="/login" className="jr-signin">Sign in</Link>
-          <Link href="/packages" className="jr-btn-primary">Find your package <ArrowRight size={15} /></Link>
-          <button className="jr-menu-btn" onClick={() => setOpen(!open)} aria-label="Toggle navigation" aria-expanded={open}>
-            {open ? <X size={22} /> : <Menu size={22} />}
-          </button>
-        </div>
+    <>
+      <div className="zr-topline">
+        <div>Training → Work Experience → Mentorship → Job Acquisition</div>
+        <div><Link href="/contact">Talk to Zeelin</Link><Link href="/login">Learner sign in</Link></div>
       </div>
+      <header className="zr-header">
+        <div className="zr-header-inner">
+          <Link href="/" className="zr-logo" aria-label="Zeelin Academy home">
+            <Image src="/logo-light.png" alt="Zeelin Academy" width={176} height={60} priority />
+          </Link>
 
-      {open && (
-        <div className="jr-mobile-nav">
-          {nav.map(([href, label]) => <Link key={href} href={href}>{label}</Link>)}
-          <Link href="/login">Sign in</Link>
-          <Link href="/packages" className="jr-btn-primary">Find your package <ArrowRight size={15} /></Link>
+          <nav className="zr-nav" aria-label="Main navigation">
+            {nav.map(([href,label]) => (
+              <Link key={href} href={href} className={active(href) ? 'active' : ''}>{label}</Link>
+            ))}
+          </nav>
+
+          <div className="zr-header-actions">
+            <Link href="/pathway-finder" className="zr-cta">Find your pathway <ArrowRight size={15}/></Link>
+            <button className="zr-menu" onClick={() => setOpen(v => !v)} aria-label="Toggle navigation" aria-expanded={open}>
+              {open ? <X size={22}/> : <Menu size={22}/>}
+            </button>
+          </div>
         </div>
-      )}
-    </header>
+        {open && <nav className="zr-mobile-nav" aria-label="Mobile navigation">
+          {nav.map(([href,label]) => <Link key={href} href={href}>{label}</Link>)}
+          <Link href="/contact">Contact</Link>
+          <Link href="/login">Learner sign in</Link>
+          <Link href="/pathway-finder" className="zr-cta">Find your pathway <ArrowRight size={15}/></Link>
+        </nav>}
+      </header>
+    </>
   )
 }
