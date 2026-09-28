@@ -1,44 +1,6 @@
-'use client'
-
-import { Suspense } from 'react'
 import Link from 'next/link'
-import { XCircle } from 'lucide-react'
+import { ArrowLeft, CreditCard } from 'lucide-react'
 
-function CancelContent() {
-  return (
-    <div className="min-h-screen flex items-center justify-center px-[5%]">
-      <div className="max-w-[600px] mx-auto text-center space-y-6">
-        <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto"
-          style={{ backgroundColor: 'rgba(212,160,42,0.1)' }}>
-          <XCircle className="w-10 h-10" style={{ color: 'var(--brand-gold)' }} />
-        </div>
-        <h1 className="font-display text-4xl md:text-5xl font-black" style={{ color: 'var(--text-core)' }}>
-          Payment <span style={{ color: 'var(--brand-gold)' }}>Cancelled</span>
-        </h1>
-        <p className="text-lg md:text-xl" style={{ color: 'var(--text-secondary)' }}>
-          Your payment was not completed. You can retry when you are ready.
-        </p>
-        <div className="flex gap-4 justify-center">
-          <Link href="/packages"
-            className="inline-block px-10 py-4 rounded-lg font-bold text-base uppercase tracking-wider shadow-xl hover:scale-105 transition-transform"
-            style={{ backgroundColor: '#0D1B2A', color: '#ffffff' }}>
-            View Packages
-          </Link>
-          <Link href="/"
-            className="inline-block px-10 py-4 rounded-lg font-bold text-base uppercase tracking-wider shadow-xl border-2 hover:scale-105 transition-transform"
-            style={{ borderColor: '#0D1B2A', color: '#0D1B2A' }}>
-            Home
-          </Link>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-export default function CancelPage() {
-  return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
-      <CancelContent />
-    </Suspense>
-  )
+export default function CancelPage(){
+  return <section className="jr-checkout-state"><CreditCard/><span>CHECKOUT NOT COMPLETED</span><h1>Your package has not been purchased.</h1><p>No problem. You can return to the package catalogue, compare your options or contact Zeelin if you need help deciding.</p><div><Link href="/packages" className="jr-btn-primary">Return to packages</Link><Link href="/" className="jr-btn-secondary"><ArrowLeft size={15}/> Home</Link></div></section>
 }
