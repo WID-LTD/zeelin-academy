@@ -42,7 +42,7 @@ export const jobReadinessPackages: JobReadinessPackage[] = [
     roles: [
       'Business Analyst','Business Systems Analyst','Systems Analyst','Functional Analyst / Functional Consultant',
       'Requirements Analyst / Requirements Engineer','Process Analyst / Business Process Analyst','Business Process Improvement Analyst',
-      'Operations Analyst','Management Analyst','Enterprise Analyst','Solutions Analyst','Business Consultant / Management Consultant',
+      'Operations Analyst','Management Analyst (common US government / consulting term)','Enterprise Analyst','Solutions Analyst','Business Consultant / Management Consultant',
     ],
     foundationModules: sharedFoundation,
     differentiatorLabel: 'Role-specific differentiator modules for each of the 12 career paths',
@@ -120,8 +120,8 @@ export const jobReadinessPackages: JobReadinessPackage[] = [
     description: 'For analysts targeting sector-specific titles across finance, healthcare, insurance, telecoms, retail, government, HR and marketing.',
     image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=85',
     roles: [
-      'Credit Risk Analyst','Regulatory Reporting Analyst','Treasury Analyst','Payments Business Analyst','Core Banking Analyst','AML / Compliance Analyst',
-      'Clinical Systems Analyst','Healthcare Business Analyst','EHR / Epic Analyst','Revenue Cycle Analyst','Underwriting Analyst','Claims Business Analyst',
+      'Credit Risk Analyst','Regulatory Reporting Analyst','Treasury Analyst','Payments Business Analyst','Core Banking Analyst','AML / Compliance Analyst','Murex / Temenos / Finacle Analyst',
+      'Clinical Systems Analyst','Healthcare Business Analyst','EHR / Epic Analyst','Revenue Cycle Analyst','Underwriting Analyst','Claims Business Analyst','Actuarial Analyst (adjacent)',
       'OSS / BSS Analyst','Billing Systems Analyst','Merchandising Analyst','Supply Chain Analyst','Category Analyst','Program Analyst','Policy Analyst',
       'Acquisition Analyst','HRIS Analyst','People Analytics Analyst','Marketing Analyst','Growth Analyst','Campaign Analyst',
     ],
