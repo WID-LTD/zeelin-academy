@@ -49,8 +49,8 @@ module.exports = async (req, res) => {
               <p style="color:rgba(255,255,255,0.3);font-size:14px;">This code expires in 10 minutes.</p>
               <hr style="border-color:rgba(255,255,255,0.08);margin:20px 0;" />
               <p style="color:rgba(255,255,255,0.3);font-size:12px;">
-                <strong style="color:rgba(255,255,255,0.5);">Module:</strong> ${selectedModule || 'Not selected'}<br/>
-                <strong style="color:rgba(255,255,255,0.5);">Type:</strong> ${enrollmentType}<br/>
+                <strong style="color:rgba(255,255,255,0.5);">Package:</strong> ${packageSlug || selectedModule || 'Not selected'}<br/>
+                <strong style="color:rgba(255,255,255,0.5);">Journey:</strong> Training → Work Experience → Job Acquisition<br/>
               </p>
             </div>
           </div>
@@ -78,7 +78,7 @@ module.exports = async (req, res) => {
           body: new URLSearchParams({
             From: `whatsapp:${process.env.TWILIO_WHATSAPP_FROM || '+14155238886'}`,
             To: `whatsapp:${process.env.ADMIN_WHATSAPP || '+2349028970609'}`,
-            Body: `New enrollment at Zeelin Academy!\nName: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nModule: ${selectedModule || 'N/A'}\nType: ${enrollmentType}\nCode: ${code}`
+            Body: `New enrollment at Zeelin Academy!\nName: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nPackage: ${packageSlug || selectedModule || 'N/A'}\nEnrollment: Job Readiness Package\nCode: ${code}`
           }).toString()
         })
       }
